@@ -25,8 +25,8 @@ theme:
       icon: material/toggle-switch
       name: Switch to light mode
 
-  logo: cfc_logo_white_circle.png
-  favicon: cfc_logo_white_circle.png
+  logo: images/cfc_logo_white_circle.png
+  favicon: images/cfc_logo_white_circle.png
   features: # Refer to https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/
       - navigation.instant
   #   - navigation.tabs
