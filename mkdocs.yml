@@ -13,13 +13,11 @@ theme:
   custom_dir: overrides # remove this if you removed the override/partial
   palette:
   - media: "(prefers-color-scheme: light)" # below here is a palette for light mode
-    primary: black
-    scheme: default
+    scheme: cfc light
     toggle:
       icon: material/toggle-switch-off-outline
       name: Switch to dark mode
   - media: "(prefers-color-scheme: dark)"  # below here is a palette for dark mode
-    primary: black
     scheme: slate
     toggle:
       icon: material/toggle-switch
@@ -114,8 +112,8 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 # If you want to put extra CSS
-# extra_css:
-#   - 
+extra_css:
+  - stylesheets/extra.css
 
 # This is where you adjust the hierarchy if the documentation
 # You can erase this if you want. If you erase this, Mkdocs will alphabetically sort your documentation
