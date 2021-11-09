@@ -1,11 +1,10 @@
 # This configuration can be changed from this https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/
 # I will be putting comments on certain places where necessary
 
-site_name: System Health Lab Mkdocs Tutorial and Template
-copyright: Copyright System Health Lab 2021
-author: Frinze Erin Lapuz # remove this if you removed the override/partial
-author_website: https://frinzelapuz.vercel.app/ # remove this if you removed the override/partial
-repo_url: https://github.com/uwasystemhealth/shl-mkdocs-tutorial-and-template/
+site_name: Coders for Causes Workshops
+author: Coders for Causes # remove this if you removed the override/partial
+author_website: https://codersforcauses.org/ # remove this if you removed the override/partial
+repo_url: https://github.com/codersforcauses/workshops/
 
 # This uri refers to the github path to edit, change this if you branch is different in name
 edit_uri: edit/main/docs/
@@ -14,23 +13,24 @@ theme:
   custom_dir: overrides # remove this if you removed the override/partial
   palette:
   - media: "(prefers-color-scheme: light)" # below here is a palette for light mode
-    primary: brown
-    scheme: default
+    scheme: cfc light
     toggle:
       icon: material/toggle-switch-off-outline
       name: Switch to dark mode
   - media: "(prefers-color-scheme: dark)"  # below here is a palette for dark mode
-    primary: brown
     scheme: slate
     toggle:
       icon: material/toggle-switch
       name: Switch to light mode
 
-  logo: images/shl.png
-  favicon: images/shl.png
+  logo: images/cfc_logo_white_circle.png
+  favicon: images/cfc_logo_white_circle.png
   features: # Refer to https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/
       - navigation.instant
-  #   - navigation.tabs
+      - navigation.tabs
+      - toc.integrate
+      - header.autohide
+
 plugins:
   - search
   - mermaid2:
@@ -44,10 +44,10 @@ plugins:
   # - Relative Path only with images
   # - Mermaid Markdown doesn't render at the moment in PDF
   - with-pdf:
-      author: Frinze Erin Lapuz
-      cover_title: Mkdocs Tutorial and Template
-      cover_subtitle: Making writing documentations easier!
-      cover_logo: ./docs/images/shl_with_text.png
+      author: Coders for Causes
+      cover_title: Workshops
+      cover_subtitle: ./Innovation with a mission
+      cover_logo: ./docs/images/cfc_logo_black_full.png
       enabled_if_env: ENABLE_PDF_EXPORT # This prevents generation of pdf when using `mkdocs serve` because it takes a long time. This will however generate the PDF when the environment variable is setup OR in the github action
 
 # These are markdown extensions I have included that makes the documentation look nicer
@@ -88,19 +88,17 @@ markdown_extensions:
 extra:
   social:
     - icon: octicons/globe-16
-      link: https://systemhealthlab.com/
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/uwasystemhealth
+      link: https://codersforcauses.org/
     - icon: fontawesome/brands/instagram
-      link: https://www.instagram.com/uwasystemhealth/
+      link: https://www.instagram.com/cfc_uwa/
     - icon: fontawesome/brands/facebook
-      link: https://www.facebook.com/SystemHealthLab/
+      link: https://www.facebook.com/codersforcauses
     - icon: fontawesome/brands/youtube
-      link: https://www.youtube.com/channel/UCzrEiyVpb3xix8yYt1m6BNw
+      link: https://www.youtube.com/channel/UCp47I0qUXeGgSK0AtFJSkbQ
     - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com/company/systemhealthlab/
+      link: https://www.linkedin.com/company/coders-for-causes/
     - icon: fontawesome/solid/paper-plane
-      link: mailto:systemhealthlab@gmail.com
+      link: mailto:hello@codersforcauses.org
 
 
 # Add google Analytics when you need it
@@ -117,17 +115,16 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 # If you want to put extra CSS
-# extra_css:
-#   - 
+extra_css:
+  - stylesheets/extra.css
 
 # This is where you adjust the hierarchy if the documentation
 # You can erase this if you want. If you erase this, Mkdocs will alphabetically sort your documentation
 nav:
-- Overview: index.md
-- Writing Markdown: writing_markdown.md
-- Flavoured Markdown: flavoured_markdown.md
-- Deployment and Automated Site Deployment: deployment_and_automated_site_deployment.md
-- Contributions: contributions.md
-# You can also create folder/file structure by following this syntax
-# - Folder:
-#   - Files : <Insert File here>
+- About: 
+  - Overview: index.md
+  - Contributions: contributions.md
+- 2021/2022 Summer:
+  - Overview: 2021-2022-summer/index.md
+- 2021 Winter:
+  - Overview: 2021-winter/index.md
