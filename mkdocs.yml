@@ -29,7 +29,7 @@ theme:
   favicon: images/cfc_logo_white_circle.png
   features: # Refer to https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/
       - navigation.instant
-  #   - navigation.tabs
+      - navigation.tabs
 plugins:
   - search
   - mermaid2:
