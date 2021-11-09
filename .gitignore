@@ -1,3 +1,5 @@
 site
 .env
 *.ipynb_checkpoints/
+
+.vscode/settings.json
