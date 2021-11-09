@@ -28,6 +28,9 @@ theme:
   features: # Refer to https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/
       - navigation.instant
       - navigation.tabs
+      - toc.integrate
+      - header.autohide
+
 plugins:
   - search
   - mermaid2:
