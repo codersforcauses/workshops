@@ -12,7 +12,7 @@ These two projects have their own corresponding technology stacks being used, he
 ## Project Technology
 
 ### Foodbank
-Foodbank is mainly with frontend with React + TailwindCSS.
+Foodbank is mainly with frontend with React + TailwindCSS with Firebase and Notion CMS.
 
 ### WAIS
 WAIS is a full-stack application with Vue and Django. It uses Docker containerisation for both development (and production in the future).
