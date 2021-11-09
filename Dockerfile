@@ -2,11 +2,11 @@ FROM python:3.8.6-slim-buster AS docsbuild
 ENV PYTHONUNBUFFERED 1
 
 # Install mkdocs-material requirements
-COPY /mkdocs /mkdocs
+COPY / /docs
 
-RUN pip install -r /mkdocs/requirements.txt
+RUN pip install -r /docs/requirements.txt
 
-WORKDIR /mkdocs/
+WORKDIR /docs/
 
 # Install PDF Dependencies for Mkdocs
 RUN apt-get update && apt-get install -y libcairo2-dev libpangocairo-1.0-0
