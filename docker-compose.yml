@@ -1,0 +1,17 @@
+version: "3.3"
+
+services:
+  docs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: workshop_docs
+    restart: unless-stopped
+    ports:
+      - 8000:8000
+    volumes:
+      - ./docs:/mkdocs
+    stdin_open: true # docker run -i
+    tty: true # docker run -t
+
+
