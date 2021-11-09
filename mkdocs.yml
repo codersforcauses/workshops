@@ -87,19 +87,17 @@ markdown_extensions:
 extra:
   social:
     - icon: octicons/globe-16
-      link: https://systemhealthlab.com/
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/uwasystemhealth
+      link: https://codersforcauses.org/
     - icon: fontawesome/brands/instagram
-      link: https://www.instagram.com/uwasystemhealth/
+      link: https://www.instagram.com/cfc_uwa/
     - icon: fontawesome/brands/facebook
-      link: https://www.facebook.com/SystemHealthLab/
+      link: https://www.facebook.com/codersforcauses
     - icon: fontawesome/brands/youtube
-      link: https://www.youtube.com/channel/UCzrEiyVpb3xix8yYt1m6BNw
+      link: https://www.youtube.com/channel/UCp47I0qUXeGgSK0AtFJSkbQ
     - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com/company/systemhealthlab/
+      link: https://www.linkedin.com/company/coders-for-causes/
     - icon: fontawesome/solid/paper-plane
-      link: mailto:systemhealthlab@gmail.com
+      link: mailto:hello@codersforcauses.org
 
 
 # Add google Analytics when you need it
