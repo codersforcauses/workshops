@@ -118,11 +118,10 @@ extra_css:
 # This is where you adjust the hierarchy if the documentation
 # You can erase this if you want. If you erase this, Mkdocs will alphabetically sort your documentation
 nav:
-- Overview: index.md
-- Writing Markdown: writing_markdown.md
-- Flavoured Markdown: flavoured_markdown.md
-- Deployment and Automated Site Deployment: deployment_and_automated_site_deployment.md
-- Contributions: contributions.md
-# You can also create folder/file structure by following this syntax
-# - Folder:
-#   - Files : <Insert File here>
+- About: 
+  - Overview: index.md
+  - Contributions: contributions.md
+- 2021/2022 Summer:
+  - Overview: 2021-2022-summer/index.md
+- 2021 Winter:
+  - Overview: 2021-winter/index.md
