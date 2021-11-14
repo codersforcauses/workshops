@@ -27,13 +27,12 @@ These are the following tools that you need:
 
     - GUI for Git: Gitkraken / GitHub Desktop
 
-
 After these installation, seek at the OS-specific tools.
 
 ### Windows
 These are tools specifically for Windows:
 
-- Virtual Machine: Vbox
+- Virtual Machine: [Vbox](https://www.virtualbox.org/wiki/Downloads)
     - You need this if you have some trouble with windows
 
 ??? warning "Warning for Windows Users"
