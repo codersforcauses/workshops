@@ -308,3 +308,111 @@ Allows for database design to be modified without complex migration or data loss
 **SQL**
 
 Typically faster and better for large amounts of data or systems that need data consistency and reliability
+
+## Others
+
+### Languages of the Web (the usual)
+- Python (Django, Flask)
+- JavaScript (Node.js, Express)
+- Ruby, Go, Rust, C
+
+### Hosting Stuff
+Many ways
+- Own a server
+- Use a 3rd party platform
+
+### CSS Frameworks
+
+**Frontend (JS)**
+
+- Vue, React
+- Nuxt.js, Next.js
+
+
+**Frontend (CSS)**
+
+- MaterialUI, Vuetify
+- Bootstrap
+
+### Developer Tools
+
+#### TypeScript
+- Type checking is super useful for complex apps
+- Allows for way better javascript developer tooling
+- Can be annoying if you’re new at it
+
+#### Testing
+
+- Selenium, Cypress
+    - End to end automated testing tools
+- Jest, Mocha, Pytest
+    - Unit testing
+- Testing is vital to software projects
+
+#### Continuous Integration / Continuous Deployment
+
+- Automated Testing
+- Event-driven scripts
+- E.g. Github Action, Bitbucket Pipelines
+
+#### Browsers
+
+- Standard browsers
+    - Google Chrome, Firefox, Edge, etc.
+- Backwards compatibility
+    - Internet Explorer
+- Other
+    - Mobile - Responsive
+    - Screen readers - Accessibility
+
+#### Firefox Developer Tools
+- Page Inspector
+    - Visualise page aspects
+    - Grid layout
+- Web Console
+    - `console.log(“Hello World”)`
+- Responsive Design Mode
+    - View from POV of different screen sizes such as mobile, tablets, etc.
+
+Some more tools:
+- JavaScript Debugger
+- Network Monitor
+- Performance Tools
+- Rulers
+- Colour Pickers
+Learn more at: https://developer.mozilla.org/en-US/docs/Tools
+
+#### Package Managers
+- Installs libraries that can be used
+- Also has code shortcuts (e.g. npm run start)
+
+(More about `package.json` and `poetry.toml` in the projects and Package Manager Workshop)
+
+#### Version Control
+- Essential for developer teams and complex software development
+- Git
+
+#### Linters and Formatters
+- Makes code formatting consistent (following standard)
+- Useful with version controls to avoid pointless change
+
+eg.ESLint, Prettier
+
+#### Teamwork
+- Many tools out there
+- Used to stop teams from stepping on each others toes
+- Github Issues + Pull Requests
+
+## Word of Encouragement
+
+??? quote "Encouragement from the Tech Lead"
+    "I can admit that this journey of learning will be difficult, and can sometimes be overwhelming and demotivating. Please, if at any point of this project, you feel that you don't know enough, or you're feeling lost, please reach out! We are all in this journey together! Nobody is born talented, skills are honed with determination and willingness to learn." 
+
+    "When I was a first year student entering on the CFC winter project, I didn't feel like I was good enough. I couldn't create a good looking interface, I didn't know how to use npm and all sorts of those things. I was just like many of you! if I gave up just because of all those things I didn't know, of all those self-doubts, then I wouldn't be here today. I admit that I was lucky because I was in CFC, I had connections where I can just ask questions instead of feeling lost of not knowing. So please do leverage that opportunity to reach out" 
+
+    "You being in this project not only gives you the opportunity to raise your talents, but you also unlock one of the biggest factor of the growth of your career, and that is the connections with your fellow software engineers."
+
+
+
+
+
