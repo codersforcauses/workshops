@@ -73,6 +73,7 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+  - tables
   - toc:
       permalink: true
       toc_depth: 4
@@ -113,6 +114,8 @@ extra_javascript:
   - https://unpkg.com/mermaid@8.8.2/dist/mermaid.min.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js
+  - javascripts/tablesort.js
 
 # If you want to put extra CSS
 extra_css:
@@ -128,5 +131,6 @@ nav:
   - Overview: 2021-2022-summer/index.md
   - Setup: 2021-2022-summer/setup.md
   - Project and Workshop Structure: 2021-2022-summer/project-and-workshop-structure.md
+  - Introduction to Web Development: 2021-2022-summer/introduction-to-web-development.md
 - 2021 Winter:
   - Overview: 2021-winter/index.md
