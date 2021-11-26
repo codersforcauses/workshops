@@ -48,8 +48,6 @@ plugins:
       author: Coders for Causes
       back_cover: true
       toc_level: 3
-      back_cover: true
-      two_columns_level: 3
       cover_title: Workshops Materials
       copyright: Copyright Coders for Causes
       cover_subtitle: ./Innovation with a mission
