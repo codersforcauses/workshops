@@ -43,9 +43,13 @@ plugins:
   # note at this current moment, to use this feature, the following must be met
   # - Relative Path only with images
   # - Mermaid Markdown doesn't render at the moment in PDF
+  # Comment this section out if you dont intend to use PDF
   - with-pdf:
       author: Coders for Causes
-      cover_title: Workshops
+      back_cover: true
+      toc_level: 3
+      cover_title: Workshops Materials
+      copyright: Copyright Coders for Causes
       cover_subtitle: ./Innovation with a mission
       cover_logo: ./docs/images/cfc_logo_black_full.png
       enabled_if_env: ENABLE_PDF_EXPORT # This prevents generation of pdf when using `mkdocs serve` because it takes a long time. This will however generate the PDF when the environment variable is setup OR in the github action
