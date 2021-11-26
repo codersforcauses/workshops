@@ -80,7 +80,7 @@ markdown_extensions:
   - tables
   - toc:
       permalink: true
-      toc_depth: 4
+      toc_depth: 2
   - codehilite
   - pymdownx.snippets:
       base_path: docs
