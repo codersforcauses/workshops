@@ -413,13 +413,13 @@ Many ways
 - Responsive Design Mode
     - View from POV of different screen sizes such as mobile, tablets, etc.
 
-Some more tools:
-- JavaScript Debugger
-- Network Monitor
-- Performance Tools
-- Rulers
-- Colour Pickers
-Learn more at: https://developer.mozilla.org/en-US/docs/Tools
+??? info "Some more tools"
+    - JavaScript Debugger
+    - Network Monitor
+    - Performance Tools
+    - Rulers
+    - Colour Pickers
+    Learn more at: https://developer.mozilla.org/en-US/docs/Tools
 
 #### Package Managers
 - Installs libraries that can be used
