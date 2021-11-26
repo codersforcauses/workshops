@@ -1,6 +1,31 @@
 # Introduction to Web Development Space
 *Navigating the Deep Dark Space of Web Development*
 
+This workshop covers a brief overview of the most common tools and technologies used in web development.
+
+## Content
+  - [What and Why Web Development?](#what-and-why-web-development)
+  - [FAQs about Web Development](#faqs-about-web-development)
+  - [Basics of Web and Limitation](#basics-of-web-and-limitation)
+  - [Server-side Applications (Backend)](#server-side-applications-backend)
+  - [Others](#others)
+    - [Languages of the Web (the usual)](#languages-of-the-web-the-usual)
+    - [Hosting Stuff](#hosting-stuff)
+    - [CSS Frameworks](#css-frameworks)
+    - [Developer Tools](#developer-tools)
+      - [TypeScript](#typescript)
+      - [Testing](#testing)
+      - [Continuous Integration / Continuous Deployment](#continuous-integration--continuous-deployment)
+      - [Virtualisation and Containerisation](#virtualisation-and-containerisation)
+      - [Browsers](#browsers)
+      - [Firefox Developer Tools](#firefox-developer-tools)
+      - [Package Managers](#package-managers)
+      - [Version Control](#version-control)
+      - [Linters and Formatters](#linters-and-formatters)
+      - [Teamwork](#teamwork)
+    - [Roadmaps](#roadmaps)
+  - [Word of Encouragement](#word-of-encouragement)
+
 ## What and Why Web Development?
 
 ### What is web development?
@@ -67,6 +92,15 @@ In summary, the best way to learn:
 - Easier to deal/teach web technologies
 - Accessibility (mobile, sensors, tablets, laptops and PCs)
 - Bigger open-source community
+
+### If I already know a frontend framework, is it better to learn another frontend framework or to learn a backend framework?
+
+- It is better to learn a backend framework
+
+??? info "Reasoning"
+    You want to build skills that complement one another rather than be an alternative.
+
+    It is much more valuable for you to learn a backend framework because that helps you build a **functional** app.
 
 
 ## Basics of Web and Limitation
