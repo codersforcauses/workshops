@@ -24,10 +24,10 @@
 
 ### Why code websites, why not use drag and drops like Wordpress, WIX?
 
-<div style="display:flex;justify-content:space-around;">
-    <img style="width:100%" src="../images/wordpress.png" alt="wordpress">
-    <img style="width:100%" src="../images/wix.jpg" alt="wix">
-    <img style="width:100%" src="../images/drupal.jpg" alt="drupal">
+<div style="display:flex;justify-content:space-around;flex-wrap:wrap;">
+    <img style="width:33%" src="../images/wordpress.png" alt="wordpress">
+    <img style="width:33%" src="../images/wix.jpg" alt="wix">
+    <img style="width:33%" src="../images/drupal.jpg" alt="drupal">
 </div>
 
 - Content Management System (CMS)
@@ -277,11 +277,11 @@ In summary, the best way to learn:
 
 ## Server-side Applications (Backend)
 
-<div style="display:flex;justify-content:space-around;flex-wrap:wrap;">
-    <img width="100vw" src="../images/nodejs.png" alt="nodejs">
-    <img width="100vw" src="../images/django.png" alt="django">
-    <img width="100vw" src="../images/php.jpg" alt="php">
-    <img width="100vw" src="../images/postgresql.png" alt="postgresql">
+<div style="display:flex;justify-content:space-around;flex-wrap:wrap;flex-wrap:wrap;">
+    <img width="33%" src="../images/nodejs.png" alt="nodejs">
+    <img width="33%" src="../images/django.png" alt="django">
+    <img width="33%" src="../images/php.jpg" alt="php">
+    <img width="33%" src="../images/postgresql.png" alt="postgresql">
 </div>
 
 
@@ -355,6 +355,11 @@ Many ways
 - Event-driven scripts
 - E.g. Github Action, Bitbucket Pipelines
 
+#### Virtualisation and Containerisation
+
+- Allows execution of services in a virtual environment
+  - eg. Docker (Containerisation), Vagrant (Virtualisation)
+
 #### Browsers
 
 - Standard browsers
@@ -402,6 +407,18 @@ eg.ESLint, Prettier
 - Many tools out there
 - Used to stop teams from stepping on each others toes
 - Github Issues + Pull Requests
+
+### Roadmaps
+There's an open-source community that maintains a learning roadmap for developers. See [https://roadmap.sh/](https://roadmap.sh/)
+
+??? info "Frontend Developer"
+    ![frontend-roadmap](https://roadmap.sh/roadmaps/frontend.png)
+
+??? info "Backend Developer"
+    ![backend-roadmap](https://roadmap.sh/roadmaps/backend.png)
+
+??? info "Dev-Ops"
+    ![devops-roadmap](https://roadmap.sh/roadmaps/devops.png)
 
 ## Word of Encouragement
 

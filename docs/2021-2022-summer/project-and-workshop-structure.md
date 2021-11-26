@@ -35,10 +35,10 @@ The following are rough guideline to the workshop schedules. All workshops are o
 |Saturday, 18 December 2021|Typical Codebase Structure|All|~30 minutes - 1 hour|
 |Saturday, 18 December 2021|Package Manager - JavaScript and Python|All|~1 hour|
 |Saturday, 8 January 2022|Introduction to Docker|All|~1 hour|
-|Saturday, 8 January 2022|Automated Testing + CI/CD|All|~1 hour|
+|Saturday, 8 January 2022|Introduction to Unit Testing and CI/CD|All|~1 hour|
 
 ??? info "Workshops after January 8, 2022"
-    The workshops right here are still being decided upon. If you have an idea for a workshop that you would like to attend, please let us know!
+    The workshops right here are still being decided upon. If you have an idea for a workshop that you would like to attend, please let us know either on Discord or at [Github](https://github.com/codersforcauses/workshops/discussions).
 
     The one that are on consideration are:
 
@@ -47,5 +47,8 @@ The following are rough guideline to the workshop schedules. All workshops are o
     - Gitkraken Workshop
     - Introduction to Prototyping with Figma
     - Introduction to Linux and Command-Line Scripting - Bash
+    - Increase your productivity in VsCode
+    - How to write good documentation
+    - Honing your detective skills with Browser Developer Tools
 
 
