@@ -1,4 +1,5 @@
 # Project and Workshop Structure
+*A mission to empower the next-generation of software engineers and delivering value to the community!*
 
 ## Ways of Working
 
@@ -52,3 +53,13 @@ The following are rough guideline to the workshop schedules. All workshops are o
     - Honing your detective skills with Browser Developer Tools
 
 
+## Who are you?
+
+Before continuing further, answer the following:
+
+- What’s your name?
+- What’s your background?
+- Why you’re here?
+
+??? note "Who are the Coders for Causes"
+    The Coders for Causes is an organisation that aims to empower the next-generation of software engineers while delivering value to the wider-community by helping charities and not-for-profit organisations.
