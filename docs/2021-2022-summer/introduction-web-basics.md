@@ -25,7 +25,7 @@ HTML, CSS and JavaScript each have a different job when it comes to creating web
 ![basics of web 2](../images/../2021-2022-summer/images/basics-of-web-2.jpg)
 
 ## HTML
-Hyter Text Markup Language (HTML) is used to structure the webpage. The general structure of a webpage can be seen below.
+Hyper Text Markup Language (HTML) is used to structure the webpage. The general structure of a webpage can be seen below.
 
 ???+ example "My First HTML Page"
     ```html
