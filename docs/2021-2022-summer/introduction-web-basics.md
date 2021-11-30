@@ -192,7 +192,7 @@ To assist you with input validation, HTML forms have in-built validation for dif
 ## CSS
 Cascading Style Sheets (CSS) provides style to the web. It is used to specify the layout and style of markup languages. CSS tells the browser *how* to display the elements that are written in HTML.
   
-We can write the CSS style rules into an element using inline style sheets, where the `style` attribute of an element is modified directly in the HTML.
+We can write the CSS style rules into an element using inline CSS, where the `style` attribute of an element is modified directly in the HTML.
 
 ???+ example "Inline style sheets"
     ```html hl_lines="1"
@@ -293,6 +293,68 @@ As mentioned earlier, selectors have a set of rules that allow you to apply styl
         Contextual selectors group elements based on their position and surroundings in the document tree. 
             ![HTML document tree](http://web.simmons.edu/~grabiner/comm244/weekfour/tree.gif)  
         Further reading into the topic can be found through searching the web for platforms that teach you all about computer science, such as <a href="https://www.geeksforgeeks.org/what-is-contextual-selector-in-css/" taget="_blank">Geeks for Geeks</a>. 
+  
+
+### Document and External Style Sheets
+Now that we know what we are doing, let's create some style sheets! Document and External style sheets help us better organise and manage the styles of the document. They are located in one location, so you do not have to go far to find them and change parts of your document. 
+  
+#### Document Style Sheets
+Document style sheets are located within the `<head>` of a HTML document, under the `<style>` tag. They work in the same was as mentioned [above](#css-format).  
+See the below example of how document style sheets are implemented within a HTML page.  
+???+ example "Document Style Sheets"
+    ```html hl_lines="6 7 8 9 10 11 12"
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <title>You see this text on your browser tab!!!</title>
+            <style>
+                body{
+                    background-color: blue;
+                }
+                p{
+                    color: red;
+                    font-size: 16px;
+                }
+            </style>
+        </head>
+        <body>
+            <!-- this is where the content goes! -->
+            <h1>My First Heading</h1>
+            <p>This is a paragraph</p>
+        </body>
+    </html>
+    ```
+  
+#### External Style Sheets
+What happens when our site grows, and the number of HTML pages increases, and suddenly styles have to change, and we have to change every document, but they all have to follow the same styling as the others, and we have to manage that?!  
+Thankfully, we can store our styles in a seperate `.css` file and then simply reference the stylesheet in our HTML document.
+???+ example "styles.css"
+    ```css
+    body{
+        background-color: blue;
+    }
+    p{
+        color: red;
+        font-size: 16px;
+    }
+    ```
+Once we have our css file completed, we can reference it in the HTML document, again in the `<head>`, so that it can apply the styles to our document.
+???+ example "Applying my CSS files to my HTML document"
+    ```html hl_lines="5"
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <title>You see this text on your browser tab!!!</title>
+            <link rel="stylesheet" href="styles.css">
+        </head>
+        <body>
+            <!-- this is where the content goes! -->
+            <h1>My First Heading</h1>
+            <p>This is a paragraph</p>
+        </body>
+    </html>
+    ```
+
 
     
 ### Flexboxes
@@ -302,4 +364,230 @@ Learning is best done when having fun and getting your hands dirty (metaphorical
 <iframe src="https://flexboxfroggy.com/" title="Learn Flexboxes the fun way" height="720" width="100%"></iframe> 
 
 ## JavaScript
-Also known as JS.
+JavaScript, also known as JS, gives a web page fucntionality and reactiveness. It allows the user to interact with the web page, and for us to make it to do things that we want it to do.  
+Similar to CSS, all your JS can be implemented into a HTML document by encapsulating it in the `<script>` tag within the `<head>` of the document, or even `<body>` in this case. However, we will be sticking to having our JS stored in external files for ease of managability.  
+See the below example of how to add a script file to your page. To add many files, simply add another `<script>` element and reference the other file.
+???+ example "Adding JavaScript to my HTML document"
+    ```html
+    <script src="script.js"></script>
+    ```
+  
+### The Basics of JavaScript
+We shall discuss the basic syntax of JS, such as variables and functions, just to get you started. Feel free to do some of your own learning, too. There is a lot of cool things you can do and shortcuts you can use when you dive deeper into JavaScript, such as the *<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator" target="_blank">ternary operator</a>*.
+
+#### Variables
+Variables are named mememory locations that store data.  
+To define a varibale, we can use three different keywords, each giving the variable specials properties.
+
+##### Variable Declaration
+- `var`
+    - allows the variable to be redeclared later on in the program
+    - gives the variable a global scope, meaning they can be accessed anywhere within the file
+- `let`
+    - once a variable has been declared using `let`, it cannot be redeclared. It's value can still change, however.
+    - gives the variable *block scope*, meaning it can only be accessed within the block of code that it has been declared in.  
+    For example, if I declare a variable using the `let` key word, I cannot access it outside of the function.
+- `const`
+    - Once the variable has been declared and assigned, it cannot be redeclared and the value never changes. It stays *constant*, sort of.
+    - It, too, gives the variable block scope.
+  
+For a full explanation on variable declaration in JS, check out <a href="https://www.w3schools.com/js/js_variables.asp" target="_blank">w3schools' page on it.</a>  
+  
+Variables can hold different data types, such as integers, strings, objects, fucntions and arrays, but JS will cover the type identification for you.
+  
+##### Datatypes
+- There are two groups of data types in JS: primitives and structural.
+- A **primitive** is data that is not an object and has no methods.  
+There are seven primitive data types:  
+    - String, Number, BigInt, undefined, null and symbol   
+- A **structural** data type is one where the data is in the form of an object, and that object has its own methods. The main structural data types are:  
+    - [Objects](#objects) and [Functions](#functions) 
+  
+#### Math and Logic
+Math and logic works similar in JS to other programming languages.  
+
+##### Math
+- `+`, `-`: addition and subtraction
+- `*`, `/`: multiplication and division, respectively.
+- `%`: modulo operator. Returns the remainder left over after division.
+    - For example, `8 % 3` returns 2.
+- `**`: exponent (*x to the power of y*)
+    - `base ** power`
+
+##### Logic
+- `&&`: AND operation
+- `||`: OR operation
+- `!`: NOT operation
+- `>`/`>=`: greater than/greater than or equal to
+- `<`/`<=`: less than/less than or equal to
+- `==`: equal to
+- `===`: exactly equal to
+    - Works in a similar way to `==`, except it also checks that the datatype is the same
+???+ example "Difference between == and ==="
+    ```javascript
+    console.log("2" == 2);  /* true */
+    console.log("2" === 2); /* false */
+    ```
+  
+#### Arrays
+Arrays are an ordered list of values. They can hold values of many datatypes. Their index starts at 0.
+```javascript
+let myArray = ["a", "b", "c", 1, 2 ,3, {name: "Jared", age: 19, canRead: false}]
+myArray[0] // returns "a"
+myArray[4] // returns 2
+```
+  
+#### Objects
+Objects are variables that can hold more than one value. One can be seen in the previous example in [Arrays](#arrays).  
+The different values of an object are called keys. The keys can hold regular primitive values, such as numbers or strings, or can hold other objects, such as functions. Think of Objects as a list of key/value pairs.  
+  
+To access a key's value within an object, you must first reference the object in question, then insert a `.` folllowed by the key you wish to get.
+???+ example "Objects in JavaScript"
+    ```javascript
+    let person = {
+        name: "Jared",
+        age: 19,
+        canRead: false
+    }
+    console.log(person.age) // outputs 19
+    ```
+  
+#### Functions
+Functions are blocks of code designed to execute a particular task.  
+In JS, the syntax for defining a function is as follows:
+???+ example "Functions in JavaScript"
+    ```javascript
+    function func_name(parameter1, parameter2, ...){
+        // your code goes here (optional, but highly recommended)
+    }
+    ```
+Functions can be called or stored in variables.
+???+ example "Calling and Storing Functions"
+    ```javascript
+    function hello_world(){
+        console.log("Hello, world!")
+    }
+
+    // Calling the function
+    helloWorld()
+
+    // Storing the function in a variable
+    const func_name = function (param1, param2){
+        // do stuff here
+    }
+    ```
+Functions can return a value (after calculation, etc) or simply perform work on existing data/variables. Functions that do not return anything are normally called *procedures*.
+  
+##### Arrow Functions
+Arrow functions are just a compact way of writing normal functions.  
+They work by removing the `function` key word, and even the `return` keyword in some cases.  
+Arrows functions lead with their parameters, usually enclosed in normal brackets. An arrow `=>` then follows, preceding the actual block of code to be executed.
+???+ example "Arrow Functions: Example 1"
+    ```javascript
+    // Traditional function
+    function addXY (x, y){
+        return x + y;
+    }
+
+    // Arrow function
+    let addXY = (x, y) => x + y;
+    ```
+In single-lined functions, such as the one above, both the { braces } and the `return` can be omitted. However, when there are extra lines of processing, both must be included.  
+???+ example "Arrow Functions: Example 2"
+    ```javascript
+    // Traditional
+    function add10(x, y){
+        x += 10
+        y += 10
+        return x + y;
+    }
+    
+    // Arrow function
+    let add10 = (x, y) => {
+        x += 10
+        y += 10
+        return x + y;
+    }
+    ```
+  
+### Loops
+=== "For"
+    For loops repeat until a condition is met. That condition is defined in the for loop. For loops have the following structure:
+    ???+ example "For Loops"
+        ```javascript
+        /*
+        for(int i = start; condition; increment){
+            // code here
+        }
+        */
+
+        // Loop 10 times
+        for(int i = 0; i < 10; i++){
+            console.log(i)
+        }
+        // Output: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+        ```
+
+=== "For-in"
+    For-in loops iterate over the indexes of data in an iterable object, such as an array.  
+    ???+ example "For-in Loops"
+        ```javascript
+        let myArray = [2, 4, 6]
+        for(let j in myArray){
+            console.log(j)
+        }
+        // Output: 0, 1, 2
+        ```
+
+=== "For-of"
+    For-of loops iterate over the data in the iterable object.  
+    ???+ example "For-of Loops"
+        ```javascript
+        let myArray = [2, 4, 6]
+        for(let k of myArray){
+            console.log(j)
+        }
+        // Output: 2, 4, 6
+        ```
+
+=== "While"
+    While loops iterate while a condition is true. They are called a "pre-test" loop, where the condition is tested before the loop can run. The condition is included in the brackets.
+    ???+ example "While Loops"
+        ```javascript
+        let b = 0
+        while(b < 3){
+            console.log("Bon")
+            b++
+        }
+        // Output: "Bon\n Bon\n Bon\n"
+        ```
+
+=== "Do-while"
+    Do-while loops are similar to while loops, except that they let the block of code run once before testing the condition. They are known as "post-test" loops, and the loop is guaranteed to execute at least once.  
+    ???+ example "Do-while Loops"
+        ```javascript
+        let b = 0
+        do {
+            console.log("Bon")
+            b++
+        } while(b > 10)
+        // Output: "Bon\n"
+        ```
+
+Loops can be broken or stopped using the `break` or `continue` statements.
+##### Breakin out
+- `break`: execution leaves the loop completely and continues on with the next lines of code
+- `continue`: disregards the rest of the code in the loop block and moves on to the next item in the loop
+
+### Creating a Pokemon API Webapp
+Now that we know a little bit about the tools of the web, let's build a simple web app that uses the skills we have learnt in this workshop, as well as some other skills we will learn along the way, to create an app that can do something cool. 
+   
+For this tutorial, we will pay homage to the recent releases of Pokemon Brilliant Diamond and Shining Pearl, of which I have spent an embarrassing number of hours on since they came out about a week ago, and create a web app that uses the PokeAPI to display images and information about any Pokemon we want.  
+  
+This tutorial will take place at 4:30pm AWST on the 31st of November, 2021 via the CFC Discord server. The recording of that tutorial will be here once it has finished.
+
+
+
+
+
+
