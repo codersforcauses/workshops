@@ -11,11 +11,19 @@ This workshop will introduce you to the basics of HTML, CSS and JavaScript, the 
     - [Images](#images)
     - [Anchors/Hyperlinks](#anchors-and-hyperlinks)
     - [Forms](#forms)
+    - [Document Object Model](#document-object-model)
   - [CSS](#css)
     - [CSS Format](#css-format)
     - [Rules of Selection](#rules-of-selection)
+    - [Document and External Style Sheets](#document-and-external-style-sheets)
     - [Flexboxes](#flexboxes)
   - [JavaScript](#javascript)
+    - [The Basics of JavaScript](#the-basics-of-javascript)
+    - [Arrays](#arrays)
+    - [Objects](#objects)
+    - [Functions](#functions)
+    - [Loops](#loops)
+  - [Web App Tutorial](#creating-a-pokemon-api-webapp)
 
 ## Key Web Technologies
 HTML, CSS and JavaScript each have a different job when it comes to creating web pages.
@@ -84,7 +92,7 @@ We will go through the important ones during this workshop, but you can find the
   
   
 ### Attributes
-Most tags have attributes that specify information or change the tag. The most common being `class` and `id`.  
+Most tags have attributes that specify information or change the tag in some way. The most common being `class` and `id`.  
 
 #### Most Common Attributes
 - `class`: used to specify one or more class names for a HTML element.
@@ -172,7 +180,7 @@ The only required attribute of `<form>` is `action`. The `action` attribute spei
 ???+example Forms
     ```html
     <p>I like:</p>
-    <form>
+    <form action="">
         <input type=”radio” value=”Red”>
         <input type=”radio” value=”Green”>
         <input type=”radio” value=”Blue”>
@@ -187,6 +195,12 @@ To assist you with input validation, HTML forms have in-built validation for dif
     ```html
     <input type="email" name="email" value="Email">
     ```
+
+### Document Object Model
+All the elements of a HTML page make up a document tree, called the Document Object Model (DOM).  
+![Document Object Model](https://www.w3schools.com/js/pic_htmltree.gif)  
+The DOM is a platform and language-neutral interface that allows programs to dynamically access and update the content, structure and style of the HTML document. Each element in a HTML document is represented by a node on the tree.  
+We can then use things such as JavaScript to access and update the HTML document using the DOM. We will see more of this in the tutorial at the end.
   
 
 ## CSS
@@ -209,7 +223,7 @@ But first, we must understand how to create these style sheets.
 ### CSS Format
 - Selector
     - A value, or list of values, that specify the elements for which the following style will be applied to
-    - Rules for specification will be discussed a little later on [see here](#rules-of-selection)
+    - Rules for specification will be discussed a little later on, [see here](#rules-of-selection)
 - Attribute
     - The attribute/property of an element you wish you change
     - Some example attributes include `background-color`, `font-size` and `width`
@@ -246,7 +260,7 @@ As mentioned earlier, selectors have a set of rules that allow you to apply styl
     ```
   
 === "Class"
-    Class selectors simply apply the defined style to all elements belonging to that class. They are similar to element selectors, except that the class name is preceded by a `.` character.
+    Class selectors apply the defined style to all elements belonging to that class. They are similar to element selectors, except that the class name is preceded by a `.` character.
     ```css
     .narrow{
         width: 10%
@@ -373,11 +387,11 @@ See the below example of how to add a script file to your page. To add many file
     ```
   
 ### The Basics of JavaScript
-We shall discuss the basic syntax of JS, such as variables and functions, just to get you started. Feel free to do some of your own learning, too. There is a lot of cool things you can do and shortcuts you can use when you dive deeper into JavaScript, such as the *<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator" target="_blank">ternary operator</a>*.
+We shall discuss the basic syntax of JS, such as variables and functions, just to get you started. Feel free to do some of your own learning, too. There is a lot of cool things you can do and shortcuts you can use when you dive deeper into JavaScript, such as the *<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator" target="_blank">ternary operator</a>*, but we will leave these for now.
 
 #### Variables
-Variables are named mememory locations that store data.  
-To define a varibale, we can use three different keywords, each giving the variable specials properties.
+Variables are named memory locations that store data.  
+To define a variable, we can use three different keywords, each giving the variable special properties.
 
 ##### Variable Declaration
 - `var`
@@ -393,7 +407,7 @@ To define a varibale, we can use three different keywords, each giving the varia
   
 For a full explanation on variable declaration in JS, check out <a href="https://www.w3schools.com/js/js_variables.asp" target="_blank">w3schools' page on it.</a>  
   
-Variables can hold different data types, such as integers, strings, objects, fucntions and arrays, but JS will cover the type identification for you.
+Variables can hold different data types, such as numbers, strings, objects, functions and arrays, but JS will cover the type identification for you.
   
 ##### Datatypes
 - There are two groups of data types in JS: primitives and structural.
@@ -429,7 +443,7 @@ Math and logic works similar in JS to other programming languages.
     console.log("2" === 2); /* false */
     ```
   
-#### Arrays
+### Arrays
 Arrays are an ordered list of values. They can hold values of many datatypes. Their index starts at 0.
 ```javascript
 let myArray = ["a", "b", "c", 1, 2 ,3, {name: "Jared", age: 19, canRead: false}]
@@ -437,7 +451,7 @@ myArray[0] // returns "a"
 myArray[4] // returns 2
 ```
   
-#### Objects
+### Objects
 Objects are variables that can hold more than one value. One can be seen in the previous example in [Arrays](#arrays).  
 The different values of an object are called keys. The keys can hold regular primitive values, such as numbers or strings, or can hold other objects, such as functions. Think of Objects as a list of key/value pairs.  
   
@@ -452,7 +466,7 @@ To access a key's value within an object, you must first reference the object in
     console.log(person.age) // outputs 19
     ```
   
-#### Functions
+### Functions
 Functions are blocks of code designed to execute a particular task.  
 In JS, the syntax for defining a function is as follows:
 ???+ example "Functions in JavaScript"
@@ -478,7 +492,7 @@ Functions can be called or stored in variables.
     ```
 Functions can return a value (after calculation, etc) or simply perform work on existing data/variables. Functions that do not return anything are normally called *procedures*.
   
-##### Arrow Functions
+#### Arrow Functions
 Arrow functions are just a compact way of writing normal functions.  
 They work by removing the `function` key word, and even the `return` keyword in some cases.  
 Arrows functions lead with their parameters, usually enclosed in normal brackets. An arrow `=>` then follows, preceding the actual block of code to be executed.
@@ -575,19 +589,19 @@ In single-lined functions, such as the one above, both the { braces } and the `r
         ```
 
 Loops can be broken or stopped using the `break` or `continue` statements.
-##### Breakin out
+#### Breakin' out
 - `break`: execution leaves the loop completely and continues on with the next lines of code
 - `continue`: disregards the rest of the code in the loop block and moves on to the next item in the loop
 
-### Creating a Pokemon API Webapp
+## Creating a Pokemon API Webapp
 Now that we know a little bit about the tools of the web, let's build a simple web app that uses the skills we have learnt in this workshop, as well as some other skills we will learn along the way, to create an app that can do something cool. 
    
 For this tutorial, we will pay homage to the recent releases of Pokemon Brilliant Diamond and Shining Pearl, of which I have spent an embarrassing number of hours on since they came out about a week ago, and create a web app that uses the PokeAPI to display images and information about any Pokemon we want.  
   
 This tutorial will take place at 4:30pm AWST on the 31st of November, 2021 via the CFC Discord server. The recording of that tutorial will be here once it has finished.
-
-
-
+  
+  
+[Back to Top](#content)
 
 
 
