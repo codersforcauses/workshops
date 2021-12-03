@@ -30,6 +30,7 @@ theme:
       - navigation.tabs
       - toc.integrate
       - header.autohide
+      - content.code.annotate
 
 plugins:
   - search
@@ -72,6 +73,7 @@ markdown_extensions:
   - attr_list
   - def_list
   - pymdownx.tasklist
+  - pymdownx.inlinehilite
   - pymdownx.keys
   - pymdownx.mark
   - pymdownx.emoji:
@@ -139,5 +141,6 @@ nav:
   - Introduction to Web Basics: 2021-2022-summer/introduction-web-basics.md
   - Practical Software Engineering Practices: 2021-2022-summer/practical-software-engineering-practices.md
   - Introduction to Frontend Frameworks: 2021-2022-summer/introduction-to-frontend-frameworks.md
+  - Introduction to React: 2021-2022-summer/introduction-to-react.md
 - 2021 Winter:
   - Overview: 2021-winter/index.md
