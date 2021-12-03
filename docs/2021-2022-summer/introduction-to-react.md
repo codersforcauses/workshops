@@ -172,9 +172,9 @@ const Nav = (title) =>
 ???+ info "Carousel Decomposition"
     The highlighted ones are the key-distinct data driven elements.
     ```html hl_lines="4 9-15"
-    <div class="carouselWrapper"> <!--(1)-->
+    <div class="carouselWrapper">
         <div id="carouselDoggo" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
+            <ol class="carousel-indicators">  <!--(1)-->
                 <li data-target="#carouselDoggo" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselDoggo" data-slide-to="1"></li>
                 <li data-target="#carouselDoggo" data-slide-to="2"></li>
