@@ -30,7 +30,11 @@ allowfullscreen></iframe>
     ![scrum](images/scrum.png)
 
 ## What is Git?
-![git](images/git.png)
+<iframe width="100%" height="500rem"
+src="https://www.youtube.com/embed/hwP7WQkmECE" 
+frameborder="0" 
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+allowfullscreen></iframe>
 
 Git is a
 
@@ -83,3 +87,6 @@ particular issue
 6. Create the change to satisfy or complete the github issue
 7. Commit (package) the change `git commit -m "{insert message here}"` and push git push.
 8. Create a pull request and request for a reviewer from CFC peeps
+
+## Other Resources
+- [Git and Github](https://www.youtube.com/watch?v=HkdAHXoRtos)
