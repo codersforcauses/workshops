@@ -1,6 +1,8 @@
 # Welcome to the Djangol!
 *We've got puns 'n' data, We’ve got everything you request*
 
+![backend-connection](./images/backend-connection.png)
+
 ## How does an application communicate with backend systems?
 **JavaScript Object Notation**
 
@@ -68,7 +70,12 @@
 ??? info "Other ways"
     JSON is not the only way. There are things like SOAP, RPC, but nevermind them for now as you will most likely have to deal with JSON for the most parts.
 
-## What is are REST-API?
+## What are APIs and REST-APIs?
+**Application Programming Interface**
+???+ info "Analogy"
+    Who interacts with the user interface? - the user
+    Who interacts with the application programming interface ? - the application program (eg. the browser) 
+
 **Representational State Transfer Application Programming Interface**
 
 - backend architectural pattern that follows the GET/POST/PUT/PATCH/DELETE
@@ -234,7 +241,7 @@ The interface at which any application program interacts with to get something d
             return Response('Item succsesfully delete!')
         ```
     ??? success "Class-Based View"
-        ...
+        
 
 ## Django Admin
 Django comes with a built-in user-interface for managing "Django Apps" with models.py
@@ -242,9 +249,6 @@ By default it in the path `/admin`
 
 ???+ example "Django Admin"
     ![django-admin](./images/django-admin.png)
-
-## Writing tests with Django Tests and Running with Pytest
-...
 
 ## Other Tools
 
@@ -271,16 +275,106 @@ When you run the django `python manage.py runserver`, you can add `breakpoint()`
 ## Demo - Live Coding
 Demonstrate how to create a backend for a Todo app.
 
-1. Setup Python environment
-2. Setup django codebase
-3. Setup django app `python manage.py startapp todo`
-4. Show sqlite
-5. Create a model `models.py`
-6. Do a python sqlite migration `python manage.py makemigrations` and `python manage.py migrate`
-7. Create serialiser `serializers.py`
-8. Create Class-based view `views.py`
-9. Manually test with postman
-10. Adjust the serialiser to see the effect
-11. Use the DRF API Test Client to write tests `tests.py` and run with pytest
-12. Create a superuser with Django commands
-13. Login with the super user and show Django Admin
+1. Setup Python environment `python -m venv venv` then activate with `source venv/bin/activate`
+2. Install Django `pip install Django`
+3. Setup django codebase `django-admin startproject todo`
+4. [Install DRF](https://www.django-rest-framework.org/#installation)
+```
+# As per https://www.django-rest-framework.org/#installation
+pip install djangorestframework
+pip install markdown       # Markdown support for the browsable API.
+pip install django-filter  # Filtering support
+pip install pytz           # Timezone support
+```
+
+5. Freeze requirements `pip freeze > requirements.txt`
+6. Do a python sqlite migration `python manage.py migrate` to initialise the Django database for the apps
+7. Create a super user `python manage.py createsuperuser`
+8. Run the django app with `python manage.py runserver`
+9. Login with the super user and show Django Admin
+10. Setup django app `python manage.py startapp api`
+11. Create a model `models.py`
+```python
+from django.db import models
+
+# Todo Model
+class Todo(models.Model):
+    title = models.CharField(max_length=100, )
+    description = models.TextField()
+    completed = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.title
+```
+
+11. Do a python sqlite migration `python manage.py makemigrations` and `python manage.py migrate`
+12. Show sqlite
+13. Create serialiser `serializers.py`
+```
+from api.models import Todo
+from rest_framework import serializers
+
+class TodoSerializer(serializers.ModelSerializer):
+    """
+    Serializer for Todo model
+    """
+    class Meta:
+        model = Todo
+        # All fields
+        fields = '__all__'
+```
+
+14.  Create Class-based view `views.py` and link back to the `urls.py`
+
+???+ info "Most concise way of doing this"
+    ```python
+    # api/views.py
+    from django.shortcuts import render
+    from rest_framework import viewsets, permissions
+    from api.serializers import TodoSerializer
+    from api.models import Todo
+
+    # Class Model Viewset
+    class TodoModelViewSet(viewsets.ModelViewSet):
+        # Define the serializer class
+        serializer_class = TodoSerializer
+        # Define the queryset
+        queryset = Todo.objects.all()
+
+        # Permissions (left to your own exercise)
+        # permission_classes = [permissions.IsAuthenticated]
+
+        # Define the list of allowed HTTP methods (by default if you didn't define it, it will just enable all)
+        http_method_names = ['get', 'post', 'put', 'patch', 'delete', 'head', 'options', 'trace']
+    ```
+
+    ```python
+    # api/urls.py
+    from django.urls import path, include
+    from rest_framework import routers
+    from api.views import TodoModelViewSet
+
+    router = routers.DefaultRouter(trailing_slash=False)
+    router.register(r'todos', TodoModelViewSet)
+
+    urlpatterns = [
+        path('', include(router.urls)),
+    ]
+    ```
+
+    ```python
+    # urls.py
+    from django.contrib import admin
+    from django.urls import path, include
+
+    urlpatterns = [
+        path('admin/', admin.site.urls),
+        path('api-auth/', include('rest_framework.urls')),
+        path('api/', include('api.urls')),
+    ]
+    ```
+
+15. Manually test with DRF Frontend or postman
+
