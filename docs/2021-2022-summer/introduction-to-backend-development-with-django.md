@@ -299,7 +299,7 @@ from django.db import models
 
 # Todo Model
 class Todo(models.Model):
-    title = models.CharField(max_length=100, )
+    title = models.CharField(max_length=100)
     description = models.TextField()
     completed = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -309,10 +309,10 @@ class Todo(models.Model):
         return self.title
 ```
 
-11. Do a python sqlite migration `python manage.py makemigrations` and `python manage.py migrate`
-12. Show sqlite
-13. Create serialiser `serializers.py`
-```
+12. Do a python sqlite migration `python manage.py makemigrations` and `python manage.py migrate`
+13. Show sqlite
+14. Create serialiser `serializers.py`
+```python
 from api.models import Todo
 from rest_framework import serializers
 
@@ -326,56 +326,52 @@ class TodoSerializer(serializers.ModelSerializer):
         fields = '__all__'
 ```
 
-14.  Create Class-based view `views.py` and link back to the `urls.py`
+15.  Create Class-based view `views.py` and link back to the `urls.py`
+```python
+# api/views.py
+from django.shortcuts import render
+from rest_framework import viewsets, permissions
+from api.serializers import TodoSerializer
+from api.models import Todo
 
-???+ example "Code for Class-Based Views and connecting to urls"
-    ```python
-    # api/views.py
-    from django.shortcuts import render
-    from rest_framework import viewsets, permissions
-    from api.serializers import TodoSerializer
-    from api.models import Todo
+# Class Model Viewset
+class TodoModelViewSet(viewsets.ModelViewSet):
+    # Define the serializer class
+    serializer_class = TodoSerializer
+    # Define the queryset
+    queryset = Todo.objects.all()
 
-    # Class Model Viewset
-    class TodoModelViewSet(viewsets.ModelViewSet):
-        # Define the serializer class
-        serializer_class = TodoSerializer
-        # Define the queryset
-        queryset = Todo.objects.all()
+    # Permissions (left to your own exercise)
+    # permission_classes = [permissions.IsAuthenticated]
 
-        # Permissions (left to your own exercise)
-        # permission_classes = [permissions.IsAuthenticated]
+    # Define the list of allowed HTTP methods (by default if you didn't define it, it will just enable all)
+    http_method_names = ['get', 'post', 'put', 'patch', 'delete', 'head', 'options', 'trace']
+```
+```python
+# api/urls.py
+from django.urls import path, include
+from rest_framework import routers
+from api.views import TodoModelViewSet
 
-        # Define the list of allowed HTTP methods (by default if you didn't define it, it will just enable all)
-        http_method_names = ['get', 'post', 'put', 'patch', 'delete', 'head', 'options', 'trace']
-    ```
+router = routers.DefaultRouter(trailing_slash=False)
+router.register(r'todos', TodoModelViewSet)
 
-    ```python
-    # api/urls.py
-    from django.urls import path, include
-    from rest_framework import routers
-    from api.views import TodoModelViewSet
+urlpatterns = [
+    path('', include(router.urls)),
+]
+```
+```python hl_lines="8"
+# urls.py
+from django.contrib import admin
+from django.urls import path, include
 
-    router = routers.DefaultRouter(trailing_slash=False)
-    router.register(r'todos', TodoModelViewSet)
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('api-auth/', include('rest_framework.urls')),
+    path('api/', include('api.urls')),
+]
+```
 
-    urlpatterns = [
-        path('', include(router.urls)),
-    ]
-    ```
-
-    ```python
-    # urls.py
-    from django.contrib import admin
-    from django.urls import path, include
-
-    urlpatterns = [
-        path('admin/', admin.site.urls),
-        path('api-auth/', include('rest_framework.urls')),
-        path('api/', include('api.urls')),
-    ]
-    ```
-
-15.  Manually test with DRF Frontend or postman
+16. Manually test with DRF Frontend or postman
 
 Final code can be seen [here](https://github.com/codersforcauses/django-todo-demo).
