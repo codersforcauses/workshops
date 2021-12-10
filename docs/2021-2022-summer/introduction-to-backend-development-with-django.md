@@ -328,7 +328,7 @@ class TodoSerializer(serializers.ModelSerializer):
 
 14.  Create Class-based view `views.py` and link back to the `urls.py`
 
-???+ info "Most concise way of doing this"
+???+ example "Code for Class-Based Views and connecting to urls"
     ```python
     # api/views.py
     from django.shortcuts import render
@@ -376,5 +376,6 @@ class TodoSerializer(serializers.ModelSerializer):
     ]
     ```
 
-15. Manually test with DRF Frontend or postman
+15.  Manually test with DRF Frontend or postman
 
+Final code can be seen [here](https://github.com/codersforcauses/django-todo-demo).
