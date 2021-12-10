@@ -375,3 +375,10 @@ urlpatterns = [
 16. Manually test with DRF Frontend or postman
 
 Final code can be seen [here](https://github.com/codersforcauses/django-todo-demo).
+
+???+ tip "Read through the Viewset Documentation"
+    [Viewsets](https://www.django-rest-framework.org/api-guide/viewsets/#example) are one of the most powerful feature ever. In just a couple of lines of code, you can create a CRUD API for your models.
+    
+    As one of my favourite developer once said,
+    ???+ quote
+        Frinze, Viewset is the future! - J. Morales
