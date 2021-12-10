@@ -241,7 +241,7 @@ The interface at which any application program interacts with to get something d
             return Response('Item succsesfully delete!')
         ```
     ??? success "Class-Based View"
-        
+        To be seen in in the live demos
 
 ## Django Admin
 Django comes with a built-in user-interface for managing "Django Apps" with models.py
