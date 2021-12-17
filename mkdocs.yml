@@ -147,5 +147,6 @@ nav:
   - Introduction to Backend Development with Django: 2021-2022-summer/introduction-to-backend-development-with-django.md
   - MVC-MVMM Architecture and Communications: 2021-2022-summer/mvc-mvmm-architecture-and-communications.md
   - Package Managers: 2021-2022-summer/package-managers.md
+  - Typical Codebase Structure: 2021-2022-summer/typical-codebase-structure.md
 - 2021 Winter:
   - Overview: 2021-winter/index.md
