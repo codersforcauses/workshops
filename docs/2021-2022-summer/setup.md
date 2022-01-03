@@ -15,7 +15,7 @@ The following access you will need to have when working on the project
 
 These are the following tools that you need:
 
-- Code Editor: VS Code
+- Code Editor: [VS Code](https://code.visualstudio.com/)
 - Version Control: [Git](https://git-scm.com/downloads)
 - Interpreter: [Nodejs](https://nodejs.org/en/download/)
 - Custom Package Manager: [Yarn](https://yarnpkg.com/)
