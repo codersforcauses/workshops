@@ -6,9 +6,9 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="../../images/cfc_logo_white_circle.png" rel="icon"/>
-<meta content="mkdocs-1.2.3, mkdocs-material-8.1.2" name="generator"/>
+<meta content="mkdocs-1.2.3, mkdocs-material-8.1.4" name="generator"/>
 <title>Setup - Coders for Causes Workshops</title>
-<link href="../../assets/stylesheets/main.f7951f6f.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/main.bb3983ee.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.e6a45f82.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
@@ -340,10 +340,10 @@
 <h2 id="developer-tools">Developer Tools<a class="headerlink" href="#developer-tools" title="Permanent link">¶</a></h2>
 <p>These are the following tools that you need:</p>
 <ul>
-<li>Code Editor: VS Code</li>
+<li>Code Editor: <a href="https://code.visualstudio.com/">VS Code</a></li>
 <li>Version Control: <a href="https://git-scm.com/downloads">Git</a></li>
 <li>Interpreter: <a href="https://nodejs.org/en/download/">Nodejs</a></li>
-<li>Custom Package Manager: Yarn</li>
+<li>Custom Package Manager: <a href="https://yarnpkg.com/">Yarn</a></li>
 <li>Interpreter (for WAIS): <a href="https://www.python.org/downloads/">Python</a></li>
 <li>Containerisation (for WAIS): <a href="https://docs.docker.com/get-docker/">Docker</a></li>
 </ul>
@@ -381,8 +381,28 @@
 <h3 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">¶</a></h3>
 <p>These are installation specific to Linux:</p>
 <ul>
-<li>Docker Post Install<ul>
-<li>Lots of user forget this <a href="https://docs.docker.com/engine/install/linux-postinstall/">documentation</a></li>
+<li>
+<p>Docker Post Installation Steps</p>
+<ul>
+<li>Lots of users forget this <a href="https://docs.docker.com/engine/install/linux-postinstall/">documentation</a></li>
+<li>This step is necessary if you intend to use the visual studio code docker extension</li>
+<li>This will also allow you to run docker without the "sudo" command</li>
+</ul>
+</li>
+<li>
+<p>Docker Compose Installation</p>
+<ul>
+<li>Docker compose is not installed by default with Linux installations of Docker</li>
+<li>Please follow this <a href="https://docs.docker.com/compose/install/">documentation</a></li>
+</ul>
+</li>
+<li>
+<p>Node installation using Node Version Manager (NVM)</p>
+<ul>
+<li>Installation steps can be found <a href="https://github.com/nvm-sh/nvm#installing-and-updating">here</a></li>
+<li>NVM is useful when dealing with multiple environments that require different versions of Node</li>
+<li>It allows you to switch between different Node versions and environments easily</li>
+<li>This tool is also available if you are using Windows Subsystem for Linux</li>
 </ul>
 </li>
 </ul>
@@ -455,8 +475,8 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "toc.integrate", "header.autohide", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.0bbba5b5.min.js"}</script>
-<script src="../../assets/javascripts/bundle.649a939e.min.js"></script>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "toc.integrate", "header.autohide", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.361d90f1.min.js"}</script>
+<script src="../../assets/javascripts/bundle.289a2a4b.min.js"></script>
 <script src="https://unpkg.com/mermaid@8.8.2/dist/mermaid.min.js"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
