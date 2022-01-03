@@ -53,8 +53,13 @@ These are tools specifically for Windows:
 
 These are installation specific to Linux:
 
-- Docker Post Install
-    - Lots of user forget this [documentation](https://docs.docker.com/engine/install/linux-postinstall/)
+- Docker Post Installation Steps
+    - Lots of users forget this [documentation](https://docs.docker.com/engine/install/linux-postinstall/)
+    - This step is necessary if you intend to use the visual studio code docker extension
+    - This will also allow you to run docker without the "sudo" command
 
+- Docker Compose Installation
+    - Docker compose is not installed by default with Linux installations of Docker
+    - Please follow this [documentation](https://docs.docker.com/compose/install/)
 
 
