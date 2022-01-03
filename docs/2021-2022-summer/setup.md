@@ -15,10 +15,10 @@ The following access you will need to have when working on the project
 
 These are the following tools that you need:
 
-- Code Editor: VS Code
+- Code Editor: [VS Code](https://code.visualstudio.com/)
 - Version Control: [Git](https://git-scm.com/downloads)
 - Interpreter: [Nodejs](https://nodejs.org/en/download/)
-- Custom Package Manager: Yarn
+- Custom Package Manager: [Yarn](https://yarnpkg.com/)
 - Interpreter (for WAIS): [Python](https://www.python.org/downloads/)
 - Containerisation (for WAIS): [Docker](https://docs.docker.com/get-docker/)
 
@@ -53,8 +53,17 @@ These are tools specifically for Windows:
 
 These are installation specific to Linux:
 
-- Docker Post Install
-    - Lots of user forget this [documentation](https://docs.docker.com/engine/install/linux-postinstall/)
+- Docker Post Installation Steps
+    - Lots of users forget this [documentation](https://docs.docker.com/engine/install/linux-postinstall/)
+    - This step is necessary if you intend to use the visual studio code docker extension
+    - This will also allow you to run docker without the "sudo" command
 
+- Docker Compose Installation
+    - Docker compose is not installed by default with Linux installations of Docker
+    - Please follow this [documentation](https://docs.docker.com/compose/install/)
 
-
+- Node installation using Node Version Manager (NVM)
+    - Installation steps can be found [here](https://github.com/nvm-sh/nvm#installing-and-updating)
+    - NVM is useful when dealing with multiple environments that require different versions of Node
+    - It allows you to switch between different Node versions and environments easily
+    - This tool is also available if you are using Windows Subsystem for Linux
