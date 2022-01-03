@@ -66,4 +66,4 @@ These are installation specific to Linux:
     - Installation steps can be found [here](https://github.com/nvm-sh/nvm#installing-and-updating)
     - NVM is useful when dealing with multiple environments that require different versions of Node
     - It allows you to switch between different Node versions and environments easily
-    - This tool is also available if you are using Windows Subsystem for Linux for development
+    - This tool is also available if you are using Windows Subsystem for Linux
