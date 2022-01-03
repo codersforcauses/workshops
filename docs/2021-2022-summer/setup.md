@@ -18,7 +18,7 @@ These are the following tools that you need:
 - Code Editor: VS Code
 - Version Control: [Git](https://git-scm.com/downloads)
 - Interpreter: [Nodejs](https://nodejs.org/en/download/)
-- Custom Package Manager: Yarn
+- Custom Package Manager: [Yarn](https://yarnpkg.com/)
 - Interpreter (for WAIS): [Python](https://www.python.org/downloads/)
 - Containerisation (for WAIS): [Docker](https://docs.docker.com/get-docker/)
 
