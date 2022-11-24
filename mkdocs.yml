@@ -133,6 +133,10 @@ nav:
 - About: 
   - Overview: index.md
   - Contributions: contributions.md
+- 2022/2023 Summer:
+  - Overview: 2022-2023-summer/index.md
+  - Setup: 2022-2023-summer/setup.md
+  - Introduction to Web Development: 2022-2023-summer/introduction-to-web-development.md
 - 2021/2022 Summer:
   - Overview: 2021-2022-summer/index.md
   - Setup: 2021-2022-summer/setup.md
