@@ -4,10 +4,22 @@
 This workshop covers a brief overview of the most common tools and technologies used in web development.
 
 ## Content
+- [Introduction to Web Development Space](#introduction-to-web-development-space)
+  - [Content](#content)
   - [What and Why Web Development?](#what-and-why-web-development)
+    - [What is web development?](#what-is-web-development)
+    - [Why Web Development ?](#why-web-development-)
   - [FAQs about Web Development](#faqs-about-web-development)
+    - [Why code websites, why not use drag and drops like Wordpress, WIX?](#why-code-websites-why-not-use-drag-and-drops-like-wordpress-wix)
+    - [What is the best way to learn all these?](#what-is-the-best-way-to-learn-all-these)
+    - [Why does CFC not do mobile development as much as web development?](#why-does-cfc-not-do-mobile-development-as-much-as-web-development)
+    - [If I already know a frontend framework, is it better to learn another frontend framework or to learn a backend framework?](#if-i-already-know-a-frontend-framework-is-it-better-to-learn-another-frontend-framework-or-to-learn-a-backend-framework)
   - [Basics of Web and Limitation](#basics-of-web-and-limitation)
+    - [Modern Frameworks](#modern-frameworks)
   - [Server-side Applications (Backend)](#server-side-applications-backend)
+    - [How do devices communicate?](#how-do-devices-communicate)
+    - [What do server applications do?](#what-do-server-applications-do)
+    - [Databases](#databases)
   - [Others](#others)
     - [Languages of the Web (the usual)](#languages-of-the-web-the-usual)
     - [Hosting Stuff](#hosting-stuff)
@@ -59,6 +71,8 @@ This workshop covers a brief overview of the most common tools and technologies 
 - Limitations on theme/template used
 - Difficult to extend
 - Cybersecurity
+
+<img style="width:50%" src="https://i.imgflip.com/723buc.jpg">
 
 ??? info "More information"
     CMS are one of the application of web development, but there are plenty more such as - internet of things, custom software for a particular industrial application (eg. using Machine Learning)
