@@ -1,5 +1,2 @@
 mkdocs-material
 mkdocs-mermaid2-plugin
-mkdocs-with-pdf
-qrcode
-weasyprint==52.5
