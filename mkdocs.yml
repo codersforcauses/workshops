@@ -13,7 +13,7 @@ theme:
   custom_dir: overrides # remove this if you removed the override/partial
   palette:
   - media: "(prefers-color-scheme: light)" # below here is a palette for light mode
-    scheme: cfc light
+    scheme: cfclight
     toggle:
       icon: material/toggle-switch-off-outline
       name: Switch to dark mode
@@ -121,6 +121,7 @@ nav:
   - Overview: 2022-2023-summer/index.md
   - Setup: 2022-2023-summer/setup.md
   - Introduction to Web Development: 2022-2023-summer/introduction-to-web-development.md
+  - Practical Software Engineering Workflow: 2022-2023-summer/practical-software-engineering-workflow.md
 - 2021/2022 Summer:
   - Overview: 2021-2022-summer/index.md
   - Setup: 2021-2022-summer/setup.md
