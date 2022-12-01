@@ -83,11 +83,11 @@ particular issue
 
 
 ## INTERACTIVE WORKSHOP TIME !!!!
-1. Do the following from [codersforcauses/software-engineering-practices-demo](https://github.com/codersforcauses/software-engineering-practices-demo-2021-summer): Demonstration of software engineering practices (github.com):
+1. Do the following from [codersforcauses/software-engineering-practices-demo](https://github.com/codersforcauses/software-engineering-practices-demo-2022-summer): Demonstration of software engineering practices (github.com):
 2. Look at the GitHub issues
 3. Assign yourself an issue
-4. Clone repo with `git clone https://github.com/codersforcauses/software-engineering-practices-demo-2021-summer.git`
-5. Create a branch with the following format s{Issue Number}-{Issue Name}. `git checkout -b s{Issue Number}-{Issue Name}`
+4. Clone repo with `git clone https://github.com/codersforcauses/software-engineering-practices-demo-2022-summer.git`
+5. Create a branch with the following format s{Issue Number}-{Issue Name}. `git checkout -b {Issue Number}-{Issue Name}`
 6. Create the change to satisfy or complete the github issue
 7. Commit (package) the change `git commit -m "{insert message here}"` and push git push.
 8. Create a pull request and request for a reviewer from CFC peeps
