@@ -27,3 +27,12 @@ In an MVC architecture, the model, view, and controller are all independent comp
 ???+ warning "Each framework is different!!!"
     While the idea is still the same, each framework implements each section of the MVC pattern slightly differently. Get to know your framework!
 
+
+## Model-View-ViewModel (MVVM)
+MVVM, or Model-View-ViewModel, is a software architecture pattern that is similar to MVC, but with some important differences. It is an architectural pattern used for building user interfaces in modern application development frameworks
+
+In an MVVM architecture, the view and the controller from the MVC pattern are combined into a single component called the ***View Model***. The view model exposes data to the View, and translates user actions, such as button clicks, into commands that are sent to the Model to perform the appropriate business logic.
+
+One of the key advantages of MVVM is that it allows for a better separation of concerns between the view and the view model. In MVC, the controller is often tightly coupled to the view, making it difficult to reuse or test. In MVVM, the view model is completely independent of the view, allowing for easier testing and reuse.
+
+
