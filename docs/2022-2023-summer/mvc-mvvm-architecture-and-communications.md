@@ -82,3 +82,45 @@ Now that we're experts in designing systems, let's talk about how each part of t
     If you feel like learning more about the different software communication channels that exist, a good place to start is with sockets or buses!   
     ![socket](./images/socket.gif)
     ![bus](./images/bus.gif)
+
+### Application Programming Interfaces (API)
+An API is a mechanism that allows two software components to communicate with other using a set of definitions and protocols. It is a sort of middleman that enables different software programs to communicate and share data in a consistent and predictable manner.
+
+APIs can act as the "Controller" in MVC systems. The API will handle incoming requests from the frontend (the View), perform some logic which may include fetching data from the Model, then return responses to the client. They can also be used in MVVM architecture to allow communication between the ViewModels and the Models, as well as between any other services used.  
+
+![api](./images/api-diagram.gif)
+
+
+### REST: Representation State Transfer
+RESTful APIs are application programming interfaces that follow the constraints of REST architectural style and allows for interaction with RESTful web services. You can read more about the details of REST, [here](https://www.redhat.com/en/topics/api/what-is-a-rest-api).   
+
+In terms of using RESTful APIs, there are some naming and implementing conventions used to accurately label the endpoint with what it does.
+???+ info "CRUD to HTTP Verb Matching for JSON standard communications with REST-APIs"
+    CRUD stands for Create, Read, Update, and Delete. RESTful APIs use HTTP verbs to specify the CRUD operation an endpoint is performing.
+
+    | HTTP Verb | CRUD Operation |    
+    | --------- | -------------- |
+    | POST | Create|
+    | GET | Read |
+    | PUT | Update/Replace |
+    | PATCH | Update/Modify |
+    | DELETE | Delete |
+
+    ![rest-verbs](./images/rest-verbs.jpg)
+
+#### Why REST APIs?
+There are many advantages to using RESTful APIs compared to other frameworks. These include:
+
+- Scalability
+    - Are able to handle a large number of requests without affecting performance
+    - Stateless nature allows each request to be handled independently
+- Flexibility
+    - Support a wide range of data formats and content types
+    - More resilient to change
+- Interoperability
+    - Are able to be used by a wide range of clients
+    - Allows developers to build applications that can integrate with a variety of different systems and services
+- Ease of use
+    - Follow a simple, standardised protocol (HTTP, HTTPS)
+    - To request a resource via a REST API, you just need to provide its URL
+
