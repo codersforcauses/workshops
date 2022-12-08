@@ -124,3 +124,6 @@ There are many advantages to using RESTful APIs compared to other frameworks. Th
     - Follow a simple, standardised protocol (HTTP, HTTPS)
     - To request a resource via a REST API, you just need to provide its URL
 
+
+## Demo
+We will be doing a demo to build simple MVC and MVVM applications (if time persists).
