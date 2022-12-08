@@ -1,12 +1,26 @@
 # MVC and MVVM: Software Architectural Patterns and Communication
 *Don't pull all your eggs in one basket!*
 
-MVC and MVVM are two popular software architectural patterns that are commonly used in the development of modern applications.
-   
-The main idea between both patterns is to address the principle of the *Seperation of Concerns*.   
-The goal of Seperation of Concerns is to establish a well-organised system, where each section has its own specific, designated role, allowing a project to be well managed and easier to grow.
+## Content
+  - [Software Architecture](#software-architecture)
+    - [Model-View-Controller (MVC)](#model-view-controller-mvc)
+    - [Model-View-ViewModel (MVVM)](#model-view-viewmodel-mvvm)
+    - [MVC or MVVM?](#mvc-or-mvvm)
+        - [Pros and Cons of MVC](#pros-and-cons-of-mvc)
+        - [Pros and Cons of MVVM](#pros-and-cons-of-mvvm)
+  - [Communication](#communication)
+    - [Application Programming Interfaces (API)](#application-programming-interfaces-api)
+    - [REST: Representation State Transfer](#rest-representation-state-transfer)
+        - [Why REST APIs?](#why-rest-apis)
+  - [Demo](#demo)
+  - [Resources](#resources)
+
 
 ## Software Architecture
+The main idea behind implementing software architectural patterns is to address the principle of the *Seperation of Concerns*.   
+
+The goal of Seperation of Concerns is to establish a well-organised system, where each section has its own specific, designated role, allowing a project to be well managed and easier to grow.
+
 Software architecture is the high-level structure of a software system, comprising the overall design of the system, the relationships between its components, and the principles that govern its design and evolution. Architecture is important because it provides a blueprint for the design and implementation of a software system, and defines the ways in which the system can be modified and extended over time.
 
 The architecture of a system is critical to the success of the software as it sets the foundations of the project, providing the basis to ensure quality and maintainability of the system. A well-designed architecture can make it easier to develop and test the system, and can help to ensure that it is flexible, **scalable**, and reliable. 
@@ -127,3 +141,17 @@ There are many advantages to using RESTful APIs compared to other frameworks. Th
 
 ## Demo
 We will be doing a demo to build simple MVC and MVVM applications (if time persists).
+
+
+## Resources
+Keep the learning going!
+
+Find some useful resources below:
+
+- [MVC Framework - Introduction](https://www.tutorialspoint.com/mvc_framework/mvc_framework_introduction.htm)
+- [The Model-View-ViewModel Pattern](https://learn.microsoft.com/en-us/xamarin/xamarin-forms/enterprise-application-patterns/mvvm)
+- [MVC vs MVVM – Difference Between Them](https://www.guru99.com/mvc-vs-mvvm.html)
+- [Red Hat: What is an API?](https://www.redhat.com/en/topics/api/what-are-application-programming-interfaces)
+- ["What is a REST API?" by Jamie Juviler](https://blog.hubspot.com/website/what-is-rest-api)
+- [Talk to an AI! (ChatGPT)](https://chat.openai.com/chat)
+    - DISCLAIMER: May generate incorrect information
