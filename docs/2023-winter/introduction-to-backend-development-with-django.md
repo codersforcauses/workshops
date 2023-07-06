@@ -392,7 +392,7 @@ There's 2 main ways to create views
         elif request.method == "DELETE":
             event.delete()
             return Response(status=204)
-        ```
+    ```
 
 ??? example "Another Example Class-based Views"
     This is the easiest way - full of magic. If you need flexibility, you can override the methods.
