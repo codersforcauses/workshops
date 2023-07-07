@@ -117,6 +117,8 @@ nav:
 - About: 
   - Overview: index.md
   - Contributions: contributions.md
+- 2023 Winter:
+  - Introduction to Backend Development With Django: 2023-winter/introduction-to-backend-development-with-django.md
 - 2022/2023 Summer:
   - Overview: 2022-2023-summer/index.md
   - Setup: 2022-2023-summer/setup.md
