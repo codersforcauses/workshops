@@ -1,0 +1,1522 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../../contributions/" rel="prev"/>
+<link href="../../2022-2023-summer/" rel="next"/>
+<link href="../../images/cfc_logo_white_circle.png" rel="icon"/>
+<meta content="mkdocs-1.4.3, mkdocs-material-9.1.18" name="generator"/>
+<title>Welcome to the Djangol! - Coders for Causes Workshops</title>
+<link href="../../assets/stylesheets/main.26e3688c.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.ecc896b0.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../stylesheets/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="cfclight" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#prerequisites-to-this-workshop">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Coders for Causes Workshops" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Coders for Causes Workshops">
+<img alt="logo" src="../../images/cfc_logo_white_circle.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Coders for Causes Workshops
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Welcome to the Djangol!
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="indigo" data-md-color-scheme="cfclight" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/codersforcauses/workshops/" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+        About
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="./">
+        2023 Winter
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../2022-2023-summer/">
+        2022/2023 Summer
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../2021-2022-summer/">
+        2021/2022 Summer
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../2021-winter/">
+        2021 Winter
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Coders for Causes Workshops" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Coders for Causes Workshops">
+<img alt="logo" src="../../images/cfc_logo_white_circle.png"/>
+</a>
+    Coders for Causes Workshops
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/codersforcauses/workshops/" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          About
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+          About
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+        Overview
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../contributions/">
+        Contributions
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          2023 Winter
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          2023 Winter
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Introduction to Backend Development With Django
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        Introduction to Backend Development With Django
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prerequisites-to-this-workshop">
+    Prerequisites to this Workshop
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-you-will-be-building-as-part-of-this-workshop">
+    What you will be building as part of this workshop?
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-are-apis-and-rest-apis">
+    What are APIs and REST-APIs?
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-is-django">
+    What is Django?
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-is-django-rest-framework-drf">
+    What is Django REST Framework (DRF)?
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#interactive-workshop-time">
+    Interactive Workshop Time!!!
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#lets-create-our-first-django-app-event">
+    Let's create our first Django app: event
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#creation-of-the-database-schema">
+    Creation of the database schema
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#creation-of-the-admin-interface">
+    Creation of the admin interface
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#creation-views-the-interface-in-api">
+    Creation Views: the Interface in API
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#automated-testing">
+    Automated Testing
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#authentication-and-authorization">
+    Authentication and Authorization
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#extra-reading-jwt-authentication">
+    Extra-Reading - JWT Authentication
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bonus-sending-emails">
+    Bonus" Sending Emails
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          2022/2023 Summer
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          2022/2023 Summer
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../2022-2023-summer/">
+        Overview
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../2022-2023-summer/setup.md">
+        Setup
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../2022-2023-summer/introduction-to-web-development/">
+        Introduction to Web Development
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../2022-2023-summer/practical-software-engineering-workflow/">
+        Practical Software Engineering Workflow
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../2022-2023-summer/mvc-mvvm-architecture-and-communications/">
+        MVC and MVVM Software Architectural Patterns and Communications
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          2021/2022 Summer
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          2021/2022 Summer
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../2021-2022-summer/">
+        Overview
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../2021-2022-summer/setup/">
+        Setup
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../2021-2022-summer/project-and-workshop-structure/">
+        Project and Workshop Structure
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../2021-2022-summer/introduction-to-web-development/">
+        Introduction to Web Development
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../2021-2022-summer/introduction-web-basics/">
+        Introduction to Web Basics
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../2021-2022-summer/practical-software-engineering-practices/">
+        Practical Software Engineering Practices
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+          Introduction to Frontend Frameworks
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_7">
+<span class="md-nav__icon md-icon"></span>
+          Introduction to Frontend Frameworks
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../2021-2022-summer/introduction-to-frontend-frameworks/">
+        Overview
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../2021-2022-summer/introduction-to-react/">
+        Introduction to React
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../2021-2022-summer/introduction-to-vue/">
+        Introduction to Vue
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../2021-2022-summer/introduction-to-backend-development-with-django/">
+        Introduction to Backend Development with Django
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../2021-2022-summer/mvc-mvmm-architecture-and-communications/">
+        MVC-MVMM Architecture and Communications
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../2021-2022-summer/package-managers/">
+        Package Managers
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../2021-2022-summer/typical-codebase-structure/">
+        Typical Codebase Structure
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../2021-2022-summer/automated-testing-and-ci-pipelines/">
+        Automated Testing and CI Pipelines
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          2021 Winter
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+          2021 Winter
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../2021-winter/">
+        Overview
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1>Introduction to Backend Development With Django</h1>
+<p>Welcome to the (Django)l !: Introduction to Backend Programming with Django </p>
+<h2 id="prerequisites-to-this-workshop">Prerequisites to this Workshop<a class="headerlink" href="#prerequisites-to-this-workshop" title="Permanent link">¶</a></h2>
+<p>You need the following installed:</p>
+<ul>
+<li>Python3</li>
+<li>Docker</li>
+<li>Git</li>
+</ul>
+<p>The starting repo for this workshop: <a href="https://github.com/CodersforLearning/django-csf">https://github.com/CodersforLearning/django-csf</a></p>
+<h2 id="what-you-will-be-building-as-part-of-this-workshop">What you will be building as part of this workshop?<a class="headerlink" href="#what-you-will-be-building-as-part-of-this-workshop" title="Permanent link">¶</a></h2>
+<p>You will be building a backend for an event management system. Below is the schematics</p>
+<p><img alt="ERD" src="../images/django-csf-workshop-erd.png"/></p>
+<h2 id="what-are-apis-and-rest-apis">What are APIs and REST-APIs?<a class="headerlink" href="#what-are-apis-and-rest-apis" title="Permanent link">¶</a></h2>
+<p><strong>Application Programming Interface</strong></p>
+<details class="info" open="open">
+<summary>Analogy</summary>
+<p>Who interacts with the user interface? - the user
+Who interacts with the application programming interface ? - the application program (eg. the browser) </p>
+</details>
+<p><strong>Representational State Transfer Application Programming Interface</strong></p>
+<ul>
+<li>
+<p>backend architectural pattern that follows the GET/POST/PUT/PATCH/DELETE</p>
+</li>
+<li>
+<p>Can be represented in Swagger/ Open API specification</p>
+</li>
+</ul>
+<details class="info" open="open">
+<summary>Swagger/ Open API specification</summary>
+<p><img alt="Swagger/ Open API specification" src="../images/swagger.png"/></p>
+</details>
+<h2 id="what-is-django">What is Django?<a class="headerlink" href="#what-is-django" title="Permanent link">¶</a></h2>
+<p><img alt="Django" src="../images/django-2.png"/></p>
+<p><strong>Django</strong></p>
+<ul>
+<li>Python web framework for creating server-side application</li>
+</ul>
+<p>Follows MVC:</p>
+<ul>
+<li>Model - database</li>
+<li>View – Interface (API or User Interface)</li>
+<li>Controller – URLs + routes</li>
+</ul>
+<p>See <a href="https://www.djangoproject.com/">Documentation</a></p>
+<h2 id="what-is-django-rest-framework-drf">What is Django REST Framework (DRF)?<a class="headerlink" href="#what-is-django-rest-framework-drf" title="Permanent link">¶</a></h2>
+<ul>
+<li>library for creating REST-API</li>
+<li>just makes it easier develop REST-API</li>
+</ul>
+<p>In:</p>
+<ul>
+<li>Authentication + Permission</li>
+<li>Generic API Views</li>
+<li>Serialisers (payload validation and format)</li>
+</ul>
+<p>See <a href="https://www.django-rest-framework.org/">Documentation</a></p>
+<h2 id="interactive-workshop-time">Interactive Workshop Time!!!<a class="headerlink" href="#interactive-workshop-time" title="Permanent link">¶</a></h2>
+<p>Firstly, open your IDE (VSCode) and open the terminal.</p>
+<ol>
+<li>Clone the repo: <code>git clone https://github.com/CodersforLearning/django-csf.git</code></li>
+<li>Go to the directory: <code>cd django-csf</code></li>
+<li>Run the setup script: <code>./setup.sh</code></li>
+</ol>
+<details class="info">
+<summary>What does the setup script do?</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+<span class="c1"># Create a Python virtual environment</span>
+python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+
+<span class="c1"># Activate Python environment</span>
+<span class="nb">source</span><span class="w"> </span>venv/bin/activate
+
+<span class="c1"># Install Django</span>
+pip3<span class="w"> </span>install<span class="w"> </span>Django
+
+<span class="c1"># Bootstraps the django codebase</span>
+django-admin<span class="w"> </span>startproject<span class="w"> </span>csfevents
+
+<span class="c1"># As per https://www.django-rest-framework.org/#installation</span>
+pip3<span class="w"> </span>install<span class="w"> </span>djangorestframework
+pip3<span class="w"> </span>install<span class="w"> </span>markdown<span class="w">       </span><span class="c1"># Markdown support for the browsable API.</span>
+pip3<span class="w"> </span>install<span class="w"> </span>django-filter<span class="w">  </span><span class="c1"># Filtering support</span>
+pip3<span class="w"> </span>install<span class="w"> </span>pytz<span class="w">           </span><span class="c1"># Timezone support</span>
+
+<span class="c1"># Freeze the requirements</span>
+<span class="nb">cd</span><span class="w"> </span>csfevents
+pip3<span class="w"> </span>freeze<span class="w"> </span>&gt;<span class="w"> </span>requirements.txt
+</code></pre></div></td></tr></table></div>
+</details>
+<h3 id="initial-files">Initial files<a class="headerlink" href="#initial-files" title="Permanent link">¶</a></h3>
+<ul>
+<li><code>manage.py</code> - the entrypoint of the Django application</li>
+<li><code>csfevents</code> - the main Django application</li>
+<li><code>csfevents/settings.py</code> - the configuration file of the Django application</li>
+<li><code>csfevents/urls.py</code> - the URL routes of the Django application</li>
+<li><code>csfevents/wsgi.py</code> and <code>csfevents/asgi.py</code> - used as the script to run production django application</li>
+</ul>
+<h3 id="lets-start-the-django-application">Let's start the Django application<a class="headerlink" href="#lets-start-the-django-application" title="Permanent link">¶</a></h3>
+<ol>
+<li>Perform the initial migration: <code>python3 manage.py migrate</code>. Notice that when you run this command, it will create a <code>db.sqlite3</code> file.</li>
+<li>Run the Django application: <code>python3 manage.py runserver</code></li>
+<li>Check out the Django application: <a href="http://localhost:8000">http://localhost:8000</a></li>
+<li>Check out the Django admin: <a href="http://localhost:8000/admin">http://localhost:8000/admin</a></li>
+<li>Create a superuser: <code>python3 manage.py createsuperuser</code>. Login and look around the Django admin.</li>
+</ol>
+<details class="info" open="open">
+<summary>Additional info</summary>
+<p>Django ships default "django apps" defined <code>settings.py</code> file. You can see the list of apps in the <code>INSTALLED_APPS</code> variable.</p>
+<p>Django apps are plugins that can be used to extend the functionality of the Django application. It's the core method of developing with this backend framework.</p>
+<p>For the <code>db.sqlite3</code> file, it's the default database that Django uses. You can change this to other databases like MySQL, PostgreSQL, etc.</p>
+</details>
+<h2 id="lets-create-our-first-django-app-event">Let's create our first Django app: event<a class="headerlink" href="#lets-create-our-first-django-app-event" title="Permanent link">¶</a></h2>
+<p>Run this command <code>python3 manage.py startapp event</code>.</p>
+<h3 id="what-did-this-command-do">What did this command do?<a class="headerlink" href="#what-did-this-command-do" title="Permanent link">¶</a></h3>
+<p>Initial files that it created:</p>
+<ul>
+<li><code>event/admin.py</code> - the admin interface</li>
+<li><code>event/apps.py</code> - the configuration</li>
+<li><code>event/models.py</code> - the database schema</li>
+<li><code>event/tests.py</code> - the test cases</li>
+<li><code>event/views.py</code> - the views</li>
+</ul>
+<p>Some files you want to create later are:</p>
+<ul>
+<li><code>event/serializers.py</code> - the serializers</li>
+<li><code>event/urls.py</code> - the URL routes</li>
+<li><code>event/permissions.py</code> - the permissions</li>
+</ul>
+<h2 id="creation-of-the-database-schema">Creation of the database schema<a class="headerlink" href="#creation-of-the-database-schema" title="Permanent link">¶</a></h2>
+<details class="info">
+<summary>Quick Reference: ERD</summary>
+<p><img alt="ERD" src="../images/django-csf-workshop-erd.png"/></p>
+</details>
+<details class="example" open="open">
+<summary>WIP Answer</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Event</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="c1"># UUID id</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">UUIDField</span><span class="p">(</span><span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">,</span> <span class="n">editable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">date</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateField</span><span class="p">()</span>
+
+    <span class="n">organizer</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span>
+        <span class="n">User</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">SET_NULL</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+</code></pre></div></td></tr></table></div>
+</details>
+<p>After creating this, you'll need to add it in the <code>INSTALLED_APPS</code> variable in the <code>settings.py</code> file.</p>
+<p>Then run <code>python3 manage.py makemigrations</code> and <code>python3 manage.py migrate</code>.</p>
+<details class="info" open="open">
+<summary>What did these commands do?</summary>
+<p><code>makemigrations</code> - creates the migration files
+These are scripts that defines how the database schema changed.</p>
+<p><code>migrate</code> - applies the migration files to the database
+Similar to how we performed our initial migration</p>
+</details>
+<p>When you have created that, check out <code>db.sqlite3</code> and you'll see that there's a new table called <code>event_event</code>.</p>
+<h2 id="creation-of-the-admin-interface">Creation of the admin interface<a class="headerlink" href="#creation-of-the-admin-interface" title="Permanent link">¶</a></h2>
+<details class="example" open="open">
+<summary>WIP Answer</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
+<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Event</span>
+
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Event</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+</details>
+<p>Now visit the admin interface and you'll see the Event model there.</p>
+<details class="example">
+<summary>A cooler example</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@admin</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Event</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">EventAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+    <span class="n">list_display</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"name"</span><span class="p">,</span> <span class="s2">"date"</span><span class="p">,</span> <span class="s2">"organizer"</span><span class="p">)</span>
+    <span class="n">list_filter</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"organizer"</span><span class="p">,)</span>
+    <span class="n">search_fields</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"name"</span><span class="p">,)</span>
+    <span class="n">ordering</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"date"</span><span class="p">,)</span>
+    <span class="n">date_hierarchy</span> <span class="o">=</span> <span class="s2">"date"</span>
+</code></pre></div></td></tr></table></div>
+</details>
+<h3 id="do-the-same-thing-again-for-attendance">Do the same thing again for Attendance<a class="headerlink" href="#do-the-same-thing-again-for-attendance" title="Permanent link">¶</a></h3>
+<details class="info" open="open">
+<summary>Quick Reference: ERD</summary>
+<p><img alt="ERD" src="../images/django-csf-workshop-erd.png"/></p>
+</details>
+<details class="example" open="open">
+<summary>WIP Answer</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># models.py</span>
+<span class="k">class</span> <span class="nc">Attendance</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">User</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">)</span>
+    <span class="n">event</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span>
+        <span class="n">Event</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s2">"attendances"</span>
+    <span class="p">)</span>
+    <span class="c1"># String field with only the valid choices "going", "maybe", "not_going"</span>
+    <span class="n">status</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span>
+        <span class="n">max_length</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+        <span class="n">choices</span><span class="o">=</span><span class="p">[(</span><span class="s2">"Going"</span><span class="p">,</span> <span class="s2">"going"</span><span class="p">),</span> <span class="p">(</span><span class="s2">"Maybe"</span><span class="p">,</span> <span class="s2">"maybe"</span><span class="p">),</span> <span class="p">(</span><span class="s2">"Not Going"</span><span class="p">,</span> <span class="s2">"not_going"</span><span class="p">)],</span>
+    <span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"Event '</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">' - Attendance '</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">username</span><span class="si">}</span><span class="s2">'"</span>
+
+<span class="c1"># admin.py</span>
+<span class="nd">@admin</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Attendance</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">AttendanceAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+    <span class="n">list_display</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"user"</span><span class="p">,</span> <span class="s2">"event"</span><span class="p">,</span> <span class="s2">"status"</span><span class="p">)</span>
+    <span class="n">list_filter</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"user"</span><span class="p">,</span> <span class="s2">"event"</span><span class="p">,</span> <span class="s2">"status"</span><span class="p">)</span>
+    <span class="n">search_fields</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"user"</span><span class="p">,</span> <span class="s2">"event"</span><span class="p">,</span> <span class="s2">"status"</span><span class="p">)</span>
+    <span class="n">ordering</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"user"</span><span class="p">,</span> <span class="s2">"event"</span><span class="p">,</span> <span class="s2">"status"</span><span class="p">)</span>
+    <span class="n">date_hierarchy</span> <span class="o">=</span> <span class="s2">"event__date"</span>
+</code></pre></div></td></tr></table></div>
+</details>
+<h2 id="creation-views-the-interface-in-api">Creation Views: the Interface in API<a class="headerlink" href="#creation-views-the-interface-in-api" title="Permanent link">¶</a></h2>
+<h3 id="serializerspy"><code>serializers.py</code><a class="headerlink" href="#serializerspy" title="Permanent link">¶</a></h3>
+<p>Serialisers are a way to convert Python models to JSON, XML or any other format you wish.</p>
+<details class="example" open="open">
+<summary>WIP Answer</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code># serializers.py
+class EventSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Event
+        fields = ("id", "name", "date", "organizer")
+</code></pre></div></td></tr></table></div>
+</details>
+<h3 id="viewspy-and-urlspy"><code>views.py</code> and <code>urls.py</code><a class="headerlink" href="#viewspy-and-urlspy" title="Permanent link">¶</a></h3>
+<p><img alt="rest-http-verbs" src="../images/rest-http-verbs.jpg"/></p>
+<p>Here's our goal:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>// Class based - programming
+GET events in the system - /events
+POST create events - /events
+PUT/PATCH update events - /events/&lt;id&gt;
+DELETE delete events - /events/&lt;id&gt;
+
+Special actions
+POST Change attendee status to an event - /events/&lt;id&gt;/change_attendee_status
+</code></pre></div></td></tr></table></div></p>
+<p>Firstly, we need to set the <code>urls.py</code> to import the views from <code>event/views.py</code>.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># urls.py</span>
+<span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
+<span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span><span class="p">,</span> <span class="n">include</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s2">"admin/"</span><span class="p">,</span> <span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">urls</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s2">"api/events/"</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s2">"event.urls"</span><span class="p">))</span> <span class="c1"># --HERE--</span>
+<span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+<p>There's 2 main ways to create views</p>
+<ul>
+<li>Functional</li>
+<li>Class-based</li>
+</ul>
+<details class="example">
+<summary>Class-based Views</summary>
+<p>This is the easiest way - full of magic. If you need flexibility, you can override the methods.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># event/views.py</span>
+<span class="k">class</span> <span class="nc">EventViewSet</span><span class="p">(</span><span class="n">viewsets</span><span class="o">.</span><span class="n">ModelViewSet</span><span class="p">):</span>
+    <span class="n">queryset</span> <span class="o">=</span> <span class="n">Event</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    <span class="n">serializer_class</span> <span class="o">=</span> <span class="n">EventSerializer</span>
+
+    <span class="k">def</span> <span class="nf">perform_create</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">serializer</span><span class="p">):</span>
+        <span class="c1"># Set whoever is creating the event as the organizer:</span>
+        <span class="n">serializer</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">organizer</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="p">)</span>
+
+    <span class="c1"># Note: This is a way to override the default methods</span>
+    <span class="k">def</span> <span class="nf">destroy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_405_METHOD_NOT_ALLOWED</span><span class="p">)</span>
+
+<span class="c1"># event/urls.py</span>
+<span class="n">router</span> <span class="o">=</span> <span class="n">DefaultRouter</span><span class="p">()</span>
+<span class="n">router</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="sa">r</span><span class="s2">""</span><span class="p">,</span> <span class="n">EventViewSet</span><span class="p">,</span> <span class="n">basename</span><span class="o">=</span><span class="s2">"events"</span><span class="p">)</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="n">router</span><span class="o">.</span><span class="n">urls</span><span class="p">)),</span>
+<span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+<p>Important to note that the <code>basename</code> is used to generate the URL name. In this case, it will be <code>events-list</code> and <code>events-detail</code>. (you will need this automated testing)</p>
+</details>
+<details class="example">
+<summary>Functional Views</summary>
+<p>This is the more flexible way. This is currently the way CSF does it.
+<a href="https://github.com/codersforcauses/csf/blob/c10c89542d8dfe64d761ec952d1aa02d9e7a71fc/server/api/event/views.py">Example</a></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># event/views.py</span>
+<span class="nd">@api_view</span><span class="p">([</span><span class="s2">"GET"</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">event_list</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="n">events</span> <span class="o">=</span> <span class="n">Event</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    <span class="n">serializer</span> <span class="o">=</span> <span class="n">EventSerializer</span><span class="p">(</span><span class="n">events</span><span class="p">,</span> <span class="n">many</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">serializer</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+
+<span class="nd">@api_view</span><span class="p">([</span><span class="s2">"GET"</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">event_detail</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">pk</span><span class="p">):</span>
+    <span class="n">event</span> <span class="o">=</span> <span class="n">get_object_or_404</span><span class="p">(</span><span class="n">Event</span><span class="p">,</span> <span class="n">pk</span><span class="o">=</span><span class="n">pk</span><span class="p">)</span>
+    <span class="n">serializer</span> <span class="o">=</span> <span class="n">EventSerializer</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">serializer</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+
+<span class="nd">@api_view</span><span class="p">([</span><span class="s2">"POST"</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">event_create</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="c1"># Set whoever is creating the event as the organizer:</span>
+    <span class="n">serializer</span> <span class="o">=</span> <span class="n">EventSerializer</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">serializer</span><span class="o">.</span><span class="n">is_valid</span><span class="p">():</span>
+        <span class="n">serializer</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">organizer</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">serializer</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_201_CREATED</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">serializer</span><span class="o">.</span><span class="n">errors</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_400_BAD_REQUEST</span><span class="p">)</span>
+
+<span class="nd">@api_view</span><span class="p">([</span><span class="s2">"PUT"</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">event_update</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">pk</span><span class="p">):</span>
+    <span class="n">event</span> <span class="o">=</span> <span class="n">get_object_or_404</span><span class="p">(</span><span class="n">Event</span><span class="p">,</span> <span class="n">pk</span><span class="o">=</span><span class="n">pk</span><span class="p">)</span>
+    <span class="n">serializer</span> <span class="o">=</span> <span class="n">EventSerializer</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">serializer</span><span class="o">.</span><span class="n">is_valid</span><span class="p">():</span>
+        <span class="n">serializer</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">serializer</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">serializer</span><span class="o">.</span><span class="n">errors</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_400_BAD_REQUEST</span><span class="p">)</span>
+
+<span class="nd">@api_view</span><span class="p">([</span><span class="s2">"DELETE"</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">event_delete</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">pk</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_405_METHOD_NOT_ALLOWED</span><span class="p">)</span>
+
+<span class="c1"># urls.py</span>
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">event_list</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s2">"&lt;int:pk&gt;/"</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">event_detail</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s2">"create/"</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">event_create</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s2">"&lt;int:pk&gt;/update/"</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">event_update</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s2">"&lt;int:pk&gt;/delete/"</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">event_delete</span><span class="p">),</span>
+<span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+</details>
+<details class="example">
+<summary>Reuse Same Path with different HTTP Methods</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@api_view</span><span class="p">([</span><span class="s2">"GET"</span><span class="p">,</span> <span class="s2">"POST"</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">event_list</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s2">"GET"</span><span class="p">:</span>
+        <span class="n">queryset</span> <span class="o">=</span> <span class="n">Event</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+        <span class="n">serializer</span> <span class="o">=</span> <span class="n">EventSerializer</span><span class="p">(</span><span class="n">queryset</span><span class="p">,</span> <span class="n">many</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">serializer</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s2">"POST"</span><span class="p">:</span>
+        <span class="n">serializer</span> <span class="o">=</span> <span class="n">EventSerializer</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">serializer</span><span class="o">.</span><span class="n">is_valid</span><span class="p">():</span>
+            <span class="n">serializer</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+            <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">serializer</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="mi">201</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">serializer</span><span class="o">.</span><span class="n">errors</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+
+<span class="nd">@api_view</span><span class="p">([</span><span class="s2">"GET"</span><span class="p">,</span> <span class="s2">"PUT"</span><span class="p">,</span> <span class="s2">"PATCH"</span><span class="p">,</span> <span class="s2">"DELETE"</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">event_detail</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">pk</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">event</span> <span class="o">=</span> <span class="n">Event</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="n">pk</span><span class="p">)</span>
+    <span class="k">except</span> <span class="n">Event</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="mi">404</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s2">"GET"</span><span class="p">:</span>
+        <span class="n">serializer</span> <span class="o">=</span> <span class="n">EventSerializer</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">serializer</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"PUT"</span><span class="p">,</span> <span class="s2">"PATCH"</span><span class="p">]:</span>
+        <span class="n">serializer</span> <span class="o">=</span> <span class="n">EventSerializer</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">serializer</span><span class="o">.</span><span class="n">is_valid</span><span class="p">():</span>
+            <span class="n">serializer</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+            <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">serializer</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">serializer</span><span class="o">.</span><span class="n">errors</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s2">"DELETE"</span><span class="p">:</span>
+        <span class="n">event</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="mi">204</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+</details>
+<details class="example">
+<summary>Another Example Class-based Views</summary>
+<p>This is the easiest way - full of magic. If you need flexibility, you can override the methods.
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># views.py</span>
+<span class="k">class</span> <span class="nc">EventViewSet</span><span class="p">(</span><span class="n">viewsets</span><span class="o">.</span><span class="n">ModelViewSet</span><span class="p">):</span>
+    <span class="n">queryset</span> <span class="o">=</span> <span class="n">Event</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    <span class="n">serializer_class</span> <span class="o">=</span> <span class="n">EventSerializer</span>
+
+    <span class="k">def</span> <span class="nf">perform_destroy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">instance</span><span class="o">.</span><span class="n">is_public</span><span class="p">:</span>  <span class="c1"># Assuming `is_public` is a boolean field in the `Event` model</span>
+            <span class="k">raise</span> <span class="n">serializers</span><span class="o">.</span><span class="n">ValidationError</span><span class="p">(</span><span class="s2">"Cannot delete a non-public event."</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">perform_destroy</span><span class="p">(</span><span class="n">instance</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div></p>
+</details>
+<p>After that long discussion, let's create the views and play around.</p>
+<h3 id="going-back-to-serializer-for-organizer">Going back to Serializer for Organizer<a class="headerlink" href="#going-back-to-serializer-for-organizer" title="Permanent link">¶</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gi">+ class UserSerializer(serializers.ModelSerializer):</span>
+<span class="gi">+     # read only serializer</span>
+<span class="gi">+     class Meta:</span>
+<span class="gi">+         model = User</span>
+<span class="gi">+         fields = ("id", "username", "email")</span>
+
+
+class EventSerializer(serializers.ModelSerializer):
+<span class="gi">+    organizer = UserSerializer(read_only=True)</span>
+
+<span class="w"> </span>   class Meta:
+<span class="w"> </span>       model = Event
+<span class="w"> </span>       fields = ("id", "name", "date", "organizer")
+</code></pre></div></td></tr></table></div>
+<p>What about if we also want to include attendees?</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gi">+ class AttendanceSerializer(serializers.ModelSerializer):</span>
+<span class="gi">+     user = UserSerializer(read_only=True)</span>
+<span class="gi">+ </span>
+<span class="gi">+     class Meta:</span>
+<span class="gi">+         model = Attendance</span>
+<span class="gi">+         fields = ("user", "status")</span>
+
+
+class EventSerializerWithAttendees(serializers.ModelSerializer):
+<span class="w"> </span>   organizer = UserSerializer(read_only=True)
+<span class="gi">+    attendances = AttendanceSerializer(many=True, read_only=True)</span>
+
+<span class="w"> </span>   class Meta:
+<span class="w"> </span>       model = Event
+<span class="gd">-       fields = ("id", "name", "date", "organizer")</span>
+<span class="gi">+       fields = ("id", "name", "date", "organizer", "attendances")</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="bonus-filters-and-search-will-not-be-covered-in-this-workshop">Bonus: Filters and Search (Will not be covered in this workshop)<a class="headerlink" href="#bonus-filters-and-search-will-not-be-covered-in-this-workshop" title="Permanent link">¶</a></h3>
+<p><a href="https://www.django-rest-framework.org/api-guide/filtering/">https://www.django-rest-framework.org/api-guide/filtering/</a></p>
+<h3 id="eventsidchange_attendee_status"><code>/events/&lt;id&gt;/change_attendee_status/</code><a class="headerlink" href="#eventsidchange_attendee_status" title="Permanent link">¶</a></h3>
+<p>Docs:
+- <a href="https://www.django-rest-framework.org/api-guide/viewsets/#viewset-actions">Viewset Actions</a></p>
+<p>eg. <code>/events/1/change_attendee_status/</code>
+Payload body looks like
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Going"</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># serializers.py</span>
+<span class="k">class</span> <span class="nc">AttendanceChangeStatusSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">Attendance</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"status"</span><span class="p">)</span>
+
+<span class="c1"># views.py</span>
+<span class="k">class</span> <span class="nc">EventViewSet</span><span class="p">(</span><span class="n">viewsets</span><span class="o">.</span><span class="n">ModelViewSet</span><span class="p">):</span>
+    <span class="o">...</span>
+    <span class="c1"># Attendance</span>
+    <span class="nd">@action</span><span class="p">(</span><span class="n">detail</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s2">"post"</span><span class="p">])</span>
+    <span class="k">def</span> <span class="nf">change_attendee_status</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">pk</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">event</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_object</span><span class="p">()</span>
+        <span class="n">serializer</span> <span class="o">=</span> <span class="n">AttendanceChangeStatusSerializer</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">serializer</span><span class="o">.</span><span class="n">is_valid</span><span class="p">(</span><span class="n">raise_exception</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="n">user</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span>
+        <span class="n">status</span> <span class="o">=</span> <span class="n">serializer</span><span class="o">.</span><span class="n">validated_data</span><span class="p">[</span><span class="s2">"status"</span><span class="p">]</span>
+        <span class="n">Attendance</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">update_or_create</span><span class="p">(</span>
+            <span class="n">user</span><span class="o">=</span><span class="n">user</span><span class="p">,</span> <span class="n">event</span><span class="o">=</span><span class="n">event</span><span class="p">,</span> <span class="n">defaults</span><span class="o">=</span><span class="p">{</span><span class="s2">"status"</span><span class="p">:</span> <span class="n">status</span><span class="p">}</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_200_OK</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="automated-testing">Automated Testing<a class="headerlink" href="#automated-testing" title="Permanent link">¶</a></h2>
+<p><a href="https://www.django-rest-framework.org/api-guide/testing/">https://www.django-rest-framework.org/api-guide/testing/</a></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">rest_framework.test</span> <span class="kn">import</span> <span class="n">APITestCase</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth.models</span> <span class="kn">import</span> <span class="n">User</span>
+<span class="kn">from</span> <span class="nn">event.models</span> <span class="kn">import</span> <span class="n">Event</span>
+
+<span class="c1"># Test to test all the HTTP methods of `EventViewSet`</span>
+<span class="k">class</span> <span class="nc">EventTest</span><span class="p">(</span><span class="n">APITestCase</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Create a user</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create_user</span><span class="p">(</span>
+            <span class="n">username</span><span class="o">=</span><span class="s2">"test_user"</span><span class="p">,</span> <span class="n">email</span><span class="o">=</span><span class="s2">"test@test.com"</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s2">"test_password"</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Create an event</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">event</span> <span class="o">=</span> <span class="n">Event</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+            <span class="n">name</span><span class="o">=</span><span class="s2">"test_event"</span><span class="p">,</span> <span class="n">date</span><span class="o">=</span><span class="s2">"2021-01-01"</span><span class="p">,</span> <span class="n">organizer</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">user</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test_get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Test GET method</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="s2">"events-list"</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">"name"</span><span class="p">],</span> <span class="s2">"test_event"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">"date"</span><span class="p">],</span> <span class="s2">"2021-01-01"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">"organizer"</span><span class="p">][</span><span class="s2">"username"</span><span class="p">],</span> <span class="s2">"test_user"</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test_post</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Test POST method</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="s2">"test_user"</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s2">"test_password"</span><span class="p">)</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="s2">"events-list"</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="p">{</span><span class="s2">"name"</span><span class="p">:</span> <span class="s2">"test_event2"</span><span class="p">,</span> <span class="s2">"date"</span><span class="p">:</span> <span class="s2">"2021-01-02"</span><span class="p">})</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="mi">201</span><span class="p">)</span>
+
+        <span class="n">event_data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">event_data</span><span class="p">[</span><span class="s2">"name"</span><span class="p">],</span> <span class="s2">"test_event2"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">event_data</span><span class="p">[</span><span class="s2">"date"</span><span class="p">],</span> <span class="s2">"2021-01-02"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">event_data</span><span class="p">[</span><span class="s2">"organizer"</span><span class="p">][</span><span class="s2">"username"</span><span class="p">],</span> <span class="s2">"test_user"</span><span class="p">)</span>
+
+        <span class="c1"># Make sure the event by checking the database</span>
+        <span class="n">event</span> <span class="o">=</span> <span class="n">Event</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"test_event2"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">id</span><span class="p">),</span> <span class="n">event_data</span><span class="p">[</span><span class="s2">"id"</span><span class="p">])</span>
+    <span class="c1"># ... All other methods are left to the reader to implement</span>
+</code></pre></div></td></tr></table></div>
+<p>To run this test, run <code>python manage.py test</code></p>
+<h2 id="authentication-and-authorization">Authentication and Authorization<a class="headerlink" href="#authentication-and-authorization" title="Permanent link">¶</a></h2>
+<p>What if we only want the <code>PUT/PATCH/DELETE</code> methods to be accessible by the organizer?</p>
+<p>Docs:
+- Authentication <a href="https://www.django-rest-framework.org/api-guide/authentication/">https://www.django-rest-framework.org/api-guide/authentication/</a>
+- Authorization/Permissions <a href="https://www.django-rest-framework.org/api-guide/permissions/">https://www.django-rest-framework.org/api-guide/permissions/</a></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># permissions.py</span>
+<span class="kn">from</span> <span class="nn">rest_framework</span> <span class="kn">import</span> <span class="n">permissions</span>
+
+<span class="c1"># The organizer is the only one allowed to update or delete an event.</span>
+<span class="k">class</span> <span class="nc">IsOrganizerOrReadOnly</span><span class="p">(</span><span class="n">permissions</span><span class="o">.</span><span class="n">BasePermission</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">has_object_permission</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+        <span class="c1"># Read permissions are allowed to any request,</span>
+        <span class="c1"># so we'll always allow GET, HEAD or OPTIONS POST.</span>
+        <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="ow">in</span> <span class="p">[</span><span class="n">permissions</span><span class="o">.</span><span class="n">SAFE_METHODS</span><span class="p">,</span> <span class="s1">'POST'</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+
+        <span class="c1"># Write permissions are only allowed to the organiser of the event.</span>
+        <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">organizer</span> <span class="o">==</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span>
+
+<span class="c1"># views.py</span>
+<span class="k">class</span> <span class="nc">EventViewSet</span><span class="p">(</span><span class="n">viewsets</span><span class="o">.</span><span class="n">ModelViewSet</span><span class="p">):</span>
+    <span class="o">...</span>
+    <span class="n">permission_classes</span> <span class="o">=</span> <span class="p">[</span><span class="n">IsOrganizerOrReadOnly</span><span class="p">]</span>
+    <span class="o">...</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="tdd-test-driven-development-with-multiple-accounts">TDD: Test-Driven Development With Multiple Accounts<a class="headerlink" href="#tdd-test-driven-development-with-multiple-accounts" title="Permanent link">¶</a></h3>
+<p>This is a perfect showcase how it's very difficult to manage manually testing with multiple accounts.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">EventTest</span><span class="p">(</span><span class="n">APITestCase</span><span class="p">):</span>
+    <span class="o">...</span>
+    <span class="k">def</span> <span class="nf">test_not_organizer_cannot_modify</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Test that a user who is not the organizer cannot modify the event</span>
+        <span class="c1"># Create another user</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">user2</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create_user</span><span class="p">(</span>
+            <span class="n">username</span><span class="o">=</span><span class="s2">"test_user2"</span><span class="p">,</span> <span class="n">email</span><span class="o">=</span><span class="s2">"test2@test.com"</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s2">"test_password"</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="s2">"test_user2"</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s2">"test_password"</span><span class="p">)</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="s2">"events-detail"</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">id</span><span class="p">])</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="p">{</span><span class="s2">"name"</span><span class="p">:</span> <span class="s2">"test_event2"</span><span class="p">,</span> <span class="s2">"date"</span><span class="p">:</span> <span class="s2">"2021-01-02"</span><span class="p">})</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="mi">403</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<details class="note" open="open">
+<summary>How to manually test this?</summary>
+<ul>
+<li>Login as the organiser</li>
+<li>Create an event</li>
+<li>Create a new user</li>
+<li>Login as the new user</li>
+<li>Try to modify the event</li>
+<li>Check that it returns a 403 Forbidden</li>
+</ul>
+</details>
+<h2 id="extra-reading-jwt-authentication">Extra-Reading - JWT Authentication<a class="headerlink" href="#extra-reading-jwt-authentication" title="Permanent link">¶</a></h2>
+<p><a href="https://django-rest-framework-simplejwt.readthedocs.io/en/latest/getting_started.html#installation">Summary of Django Simple JWT</a></p>
+<p>The only key bit to know is</p>
+<p>install <code>pip install djangorestframework-simplejwt</code></p>
+<p>in <code>settings.py</code>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">REST_FRAMEWORK</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="o">...</span>
+    <span class="s1">'DEFAULT_AUTHENTICATION_CLASSES'</span><span class="p">:</span> <span class="p">(</span>
+        <span class="o">...</span>
+        <span class="s1">'rest_framework_simplejwt.authentication.JWTAuthentication'</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="o">...</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div></p>
+<p>in <code>urls.py</code>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">rest_framework_simplejwt.views</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">TokenObtainPairView</span><span class="p">,</span>
+    <span class="n">TokenRefreshView</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="o">...</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">'api/token/'</span><span class="p">,</span> <span class="n">TokenObtainPairView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">'token_obtain_pair'</span><span class="p">),</span> <span class="c1"># Login</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">'api/token/refresh/'</span><span class="p">,</span> <span class="n">TokenRefreshView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">'token_refresh'</span><span class="p">),</span> <span class="c1"># Refresh tokens</span>
+    <span class="o">...</span>
+<span class="p">]</span>
+</code></pre></div></td></tr></table></div></p>
+<p>If you login via <code>/api/token</code> , you will send something like this </p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">"username"</span><span class="p">:</span><span class="s2">"test_user"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"password"</span><span class="p">:</span><span class="s2">"test_password"</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>you're going to get something like this back</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"access"</span><span class="p">:</span><span class="s2">"eyJh..."</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"refresh"</span><span class="p">:</span><span class="s2">"eyJhb..."</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>And if you are using an authenticated endpoint, you need to add the <code>Authorization</code> header with the token.
+<code>"Authorization: Bearer eyJhbEXAMPLEOFJWTOKEN..."</code></p>
+<h2 id="bonus-sending-emails">Bonus" Sending Emails<a class="headerlink" href="#bonus-sending-emails" title="Permanent link">¶</a></h2>
+<p>Run <code>docker-compose up</code> to start the mail server.</p>
+<p>Your mail server will have this UI at <a href="http://localhost:8025/">http://localhost:8025/</a>.
+It communicates via SMTP on port 1025.</p>
+<p>Add these in your <code>settings.py</code>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">EMAIL_BACKEND</span> <span class="o">=</span> <span class="s1">'django.core.mail.backends.smtp.EmailBackend'</span>
+<span class="n">EMAIL_HOST</span> <span class="o">=</span> <span class="s1">'localhost'</span>
+<span class="n">EMAIL_PORT</span> <span class="o">=</span> <span class="mi">1025</span>
+<span class="n">EMAIL_HOST_USER</span> <span class="o">=</span> <span class="s1">''</span>
+<span class="n">EMAIL_HOST_PASSWORD</span> <span class="o">=</span> <span class="s1">''</span>
+<span class="n">EMAIL_USE_TLS</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="n">EMAIL_ADDRESS_FROM</span> <span class="o">=</span> <span class="s1">'email-tester@test.com;</span>
+</code></pre></div></td></tr></table></div></p>
+<details class="info">
+<summary>Where are these values coming from?</summary>
+<p>If you check the <code>docker-compose.yml</code>, you will understand that we are just configuring the values to send via SMTP to the mail server.</p>
+<p>In actual production services, you will change this to your actual SMTP server like AWS SES, Sendgrid, Mailgun, etc.</p>
+</details>
+<p>New file called <code>utils.py</code>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">django.core.mail</span> <span class="kn">import</span> <span class="n">send_mail</span>
+<span class="kn">from</span> <span class="nn">django.conf</span> <span class="kn">import</span> <span class="n">settings</span>
+
+<span class="k">def</span> <span class="nf">send_email</span><span class="p">(</span><span class="n">subject</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">recipient_list</span><span class="p">):</span>
+    <span class="n">send_mail</span><span class="p">(</span>
+        <span class="n">subject</span><span class="o">=</span><span class="n">subject</span><span class="p">,</span>
+        <span class="n">message</span><span class="o">=</span><span class="n">message</span><span class="p">,</span>
+        <span class="n">from_email</span><span class="o">=</span><span class="n">settings</span><span class="o">.</span><span class="n">EMAIL_ADDRESS_FROM</span><span class="p">,</span>
+        <span class="n">recipient_list</span><span class="o">=</span><span class="n">recipient_list</span><span class="p">,</span>
+        <span class="n">fail_silently</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span>
+</code></pre></div></td></tr></table></div></p>
+<p>Now let's change it so that when a new event is created, an email is sent to the organizer.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># views.py</span>
+<span class="kn">from</span> <span class="nn">event.utils</span> <span class="kn">import</span> <span class="n">send_email</span>
+
+<span class="k">class</span> <span class="nc">EventViewSet</span><span class="p">(</span><span class="n">viewsets</span><span class="o">.</span><span class="n">ModelViewSet</span><span class="p">):</span>
+    <span class="o">...</span>
+    <span class="k">def</span> <span class="nf">perform_create</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">serializer</span><span class="p">):</span>
+        <span class="c1"># Set whoever is creating the event as the organizer:</span>
+        <span class="n">serializer</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">organizer</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="p">)</span>
+        <span class="n">send_email</span><span class="p">(</span>
+            <span class="n">subject</span><span class="o">=</span><span class="s2">"New event created"</span><span class="p">,</span>
+            <span class="n">message</span><span class="o">=</span><span class="s2">"A new event has been created"</span><span class="p">,</span>
+            <span class="n">recipient_list</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">email</span><span class="p">],</span>
+        <span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<nav aria-label="" class="md-footer__inner md-grid">
+<a class="md-footer__link md-footer__link--prev" href="../../contributions/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                  Previous
+                </span>
+                Contributions
+              </div>
+</div>
+</a>
+<a class="md-footer__link md-footer__link--next" href="../../2022-2023-summer/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                  Next
+                </span>
+                Overview
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+          
+          Web Documentation Setup By
+          <a href="https://codersforcauses.org/" rel="noopener" target="_blank">
+            Coders for Causes
+          </a>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://codersforcauses.org/" rel="noopener" target="_blank" title="codersforcauses.org">
+<svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM5.78 8.75a9.64 9.64 0 0 0 1.363 4.177c.255.426.542.832.857 1.215.245-.296.551-.705.857-1.215A9.64 9.64 0 0 0 10.22 8.75Zm4.44-1.5a9.64 9.64 0 0 0-1.363-4.177c-.307-.51-.612-.919-.857-1.215a9.927 9.927 0 0 0-.857 1.215A9.64 9.64 0 0 0 5.78 7.25Zm-5.944 1.5H1.543a6.507 6.507 0 0 0 4.666 5.5c-.123-.181-.24-.365-.352-.552-.715-1.192-1.437-2.874-1.581-4.948Zm-2.733-1.5h2.733c.144-2.074.866-3.756 1.58-4.948.12-.197.237-.381.353-.552a6.507 6.507 0 0 0-4.666 5.5Zm10.181 1.5c-.144 2.074-.866 3.756-1.58 4.948-.12.197-.237.381-.353.552a6.507 6.507 0 0 0 4.666-5.5Zm2.733-1.5a6.507 6.507 0 0 0-4.666-5.5c.123.181.24.365.353.552.714 1.192 1.436 2.874 1.58 4.948Z"></path></svg>
+</a>
+<a class="md-social__link" href="https://www.instagram.com/cfc_uwa/" rel="noopener" target="_blank" title="www.instagram.com">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg>
+</a>
+<a class="md-social__link" href="https://www.facebook.com/codersforcauses" rel="noopener" target="_blank" title="www.facebook.com">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"></path></svg>
+</a>
+<a class="md-social__link" href="https://www.youtube.com/channel/UCp47I0qUXeGgSK0AtFJSkbQ" rel="noopener" target="_blank" title="www.youtube.com">
+<svg viewbox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg>
+</a>
+<a class="md-social__link" href="https://www.linkedin.com/company/coders-for-causes/" rel="noopener" target="_blank" title="www.linkedin.com">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
+</a>
+<a class="md-social__link" href="mailto:hello@codersforcauses.org" rel="noopener" target="_blank" title="">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.7l167.6-182.9c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "toc.integrate", "header.autohide", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
+<script src="https://unpkg.com/mermaid@8.8.2/dist/mermaid.min.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js"></script>
+<script src="../../javascripts/tablesort.js"></script>
+</body>
+</html>
