@@ -598,7 +598,9 @@ Now that we know a little bit about the tools of the web, let's build a simple w
    
 For this tutorial, we will pay homage to the recent releases of Pokemon Brilliant Diamond and Shining Pearl, of which I have spent an embarrassing number of hours on since they came out about a week ago, and create a web app that uses the PokeAPI to display images and information about any Pokemon we want.  
   
-This tutorial will take place at 4:30pm AWST on the 31st of November, 2021 via the CFC Discord server. The recording of that tutorial will be here once it has finished.
+Watch the tutorial on our YouTube channel by clicking the link, [here](https://www.youtube.com/watch?v=BV93gRuIgIA), or the image below!
+
+[![Introduction to Web Basics | Building a Simple Pokedex with HTML, CSS and JavaScript](https://img.youtube.com/vi/BV93gRuIgIA/0.jpg)](https://www.youtube.com/watch?v=BV93gRuIgIA)
   
   
 [Back to Top](#content)
