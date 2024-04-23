@@ -252,9 +252,41 @@ RUN npm install && npm run build
 CMD ["npm", "run", "preview"]
 ```
 
-We're done! You can now build and run the frontend image. Notice how `npm run preview` actually starts the server on port `4173`. We're going to map it to port `3000` on the host machine.
+We're done --- not. There's one last thing we need to do: specify the port the server will run on. This is done with the `EXPOSE` command. Notice how earlier, `npm run preview` actually started the server on port `4173`, so let's expose that instead.
+
+```dockerfile
+FROM node:20-alpine
+WORKDIR /app
+
+COPY package*.json tsconfig.json src ./
+
+RUN npm install && npm run build
+
+# Serve the build files
+EXPOSE 4173
+CMD ["npm", "run", "preview"]
+```
+
+### Done
+
+ You can now build and run the frontend image. We can actually specify a specific port in the `CMD`, but I'm just going to map it to port `3000` on the host machine when running the container.
 
 ```bash
 docker build -t docker-workshop-frontend ./apps/frontend
 docker run -p 3000:4173 docker-workshop-frontend
 ```
+
+## Optimising the Dockerfile
+
+Let's think about what we've done. We've copied the source code, installed dependencies, built the app, and served the build files. But there are a few things we can do to optimise the Dockerfile:
+
+- **Only have production dependencies in the image.** Sometimes we developers install dev dependencies that aren't needed in production, but make our lives easier. If you take a look at `apps/frontend/package.json`, you'll see a bunch of them.
+- **Don't have the source code in the image.** We only need the built files to run the app. This reduces the image size.
+
+### Prune the Dependencies
+
+TODO
+
+### Multi-Stage Builds
+
+TODO
