@@ -104,13 +104,13 @@ You can view the first two by going to <http://localhost:3001> and <http://local
 We need to create a **Dockerfile** to **build** the frontend and backend to **images**, then run them as **containers**. I have already created a Dockerfile for the backend, which is located in the `apps/backend` directory. You will need to create a Dockerfile for the frontend.
 
 ??? info "Can I cheat?"
-    If you choose to look at it, you might find it helpful. However, it comes with a few optimisations which may be confusing.
+    Yes... If you choose to look at it, you might find it helpful. However, it comes with a few optimisations which may be confusing.
 
 ## Building and Running an Image
 
-Close the app dev server we ran earlier with `CTRL+C` or `CMD+C`.
+Close the app dev server we ran earlier with `CTRL+C`.
 
-Let's start by learning how to build and run a Docker image.  First, let's build the backend:
+Let's start by learning how to build and run a Docker image. First, let's build the backend:
 
 ```bash
 docker build -t docker-workshop-backend ./apps/backend
@@ -129,7 +129,7 @@ docker run -p 3001:3001 docker-workshop-backend
 
     ![Docker Port Mapping](./images/docker-port-mapping.png)
 
-    In order for our container to make connect with the outside world, we need to create a little tunnel (one part of Docker's security goals). This is done by mapping a port on the host machine to a port on the container. In our case, the I've configured the backend to run internally on port `3001`. Therefore, we need to map that internal port to a port on the host machine so we can access it. I kept it simple and mapped it to the same port, but you can change it to any port you like (given our frontend knows about it). Ports are mapped like this: `-p <host-port>:<container-port>`
+    In order for our container to make connect with the outside world, we need to create a little tunnel. This is done by mapping a port on the host machine to a port on the container. In our case, I've configured the backend to run internally on port `3001`. Therefore, we need to map that internal port to a port on the host machine so we can access it. I kept it simple and mapped it to the same port, but you can change it to any port you like (given our frontend knows about it). Ports are mapped like this: `-p <host-port>:<container-port>` This is one of the security goals of Docker.
 
 Now, visit [http://localhost:3001](http://localhost:3001) to see the backend now running from a Docker container.
 
@@ -137,9 +137,40 @@ Now, visit [http://localhost:3001](http://localhost:3001) to see the backend now
 
 To get a better idea of what we need to do, let's build the frontend manually.
 
+### Step 1: What are we building?
+
+Imagine you are a robot that will execute commands to build the app to be production-ready. Regardless of what you're making, it'll usually fall into this pattern:
+
+1. Install dependencies
+2. Build the app
+3. Serve the build files
+
+### Step 2: Mapping them to commands
+
+The frontend is a React app that uses TypeScript. Now let's:
+
+1. Install dependencies: `npm install`
+2. Build the app: `npm run build`
+3. Serve the build files: `npm run preview`
+
+The `build` and `preview` scripts are located in `apps/frontend/package.json`.
+
+```json
+{
+    // ...
+    "scripts": {
+        "build": "tsc && vite build",
+        "preview": "vite preview"
+    }
+    // ...
+}
+```
+
+You can run these commands in the terminal and open it up at <http://localhost:4173/> to see the optimised production build of the frontend. Notice how the bottom text has changed from "development" to "production".
+
 ## Creating a Dockerfile
 
-When creating a Dockerfile, you need to consider how
+When creating a Dockerfile, it's essentially the same process as manually doing it. The only difference is that you're automating it in a file.
 
 ### Base Image
 
@@ -159,3 +190,71 @@ FROM node:20-alpine
 ```
 
 ### Working Directory
+
+We're in linux land now. We're first going to create a directory to put our production files in. This is done with the `WORKDIR` command.
+
+```dockerfile
+FROM node:20-alpine
+
+# Set the working directory in the container
+WORKDIR /app
+```
+
+??? info "Why do we need a working directory?"
+    The `WORKDIR` command sets the working directory for any subsequent commands in the Dockerfile. This is where the application code will be copied to and where the application will run from. It's like changing directories in the terminal. Just like your own computer, you don't want to group important system files with your projects. It can be named anything you like, but the general convention is to name it `/app`.
+
+### Copying Files
+
+Next, we need to copy our source code into the image. This is done with the `COPY` command.
+
+```dockerfile
+# Use the official Node.js image as the base image
+FROM node:20-alpine
+WORKDIR /app
+
+# Copy the important files to the working directory
+COPY package*.json tsconfig.json src ./
+```
+
+???+ info "What are we copying?"
+    This command copies the `package.json`, `package-lock.json`, `tsconfig.json`, and `src` directory from the host machine to the working directory in the container (`./`). This is the bare minimum we need to build the frontend.
+
+### Installing Dependencies and Building
+
+Now that we have our source code in the image, we need to install the dependencies. This is done with the `RUN` command. Here, we run both `npm install` and `npm run build` in succession using `&&`.
+
+```dockerfile
+FROM node:20-alpine
+
+WORKDIR /app
+COPY package*.json tsconfig.json src ./
+
+# Install dependencies
+RUN npm install && npm run build
+```
+
+??? info "Why not do it on separate lines?"
+    The reason we chain them together is to reduce the number of layers in the image. Each `RUN` command creates a new layer in the image, which is essentially a snap of everything you've `RUN` up until now. More layers means a larger image size. By chaining the commands together, we can reduce the number of layers and make the image smaller. Docker also uses this to cache layers, so if you change a file, it will only rebuild the layers that depend on that file, saving time. In our case, our two commands both depend on the files we, so we should group them together.
+
+### Serving the Build
+
+We're almost there! The last thing we need to do is serve the build files. This is done with the `CMD` command. This command specifies the command to run when the container starts. In our case, we want to run `npm run preview`.
+
+```dockerfile
+FROM node:20-alpine
+WORKDIR /app
+
+COPY package*.json tsconfig.json src ./
+
+RUN npm install && npm run build
+
+# Serve the build files
+CMD ["npm", "run", "preview"]
+```
+
+We're done! You can now build and run the frontend image. Notice how `npm run preview` actually starts the server on port `4173`. We're going to map it to port `3000` on the host machine.
+
+```bash
+docker build -t docker-workshop-frontend ./apps/frontend
+docker run -p 3000:4173 docker-workshop-frontend
+```
