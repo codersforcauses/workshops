@@ -18,7 +18,7 @@ The starting repo for this workshop: <https://github.com/codersforcauses/docker-
 
 CFC wants to make an app for accepting coffee orders. You will be creating a Dockerfile for CFC's (totally real) new and upcoming rebrand: *Coders for Coffee 🐳*. The architecture is a simple frontend and backend both made in TypeScript. Below is a diagram of it:
 
-![Architecture](https://placehold.co/600x400)
+![App Architecture](./images/app-architecture.png)
 
 ## Important information
 
@@ -354,3 +354,7 @@ docker compose up
 ```
 
 You also might find the frontend starting on port `9876` inside the container to be a little confusing. You can change the port mapping in the `docker-compose.yml` file to map it to port `3000` on the host machine. Don't forget to change the `package.json` script and the `EXPOSE` command in the Dockerfile as well.
+
+## Conclusion
+
+This is just a small taste of what Docker can do. You could put your entire dev environment inside, push images to a registry and run them in the cloud, or even run a bunch of them in a Kubernetes cluster. Keep in mind that we only built a Dockerfile for a simple React app, so it'll be a different depending on what you do. Luckily, there are countless resources online to help you out --- just google "how to dockerise a <insert your tech stack here> app".
