@@ -106,7 +106,7 @@ We need to create a **Dockerfile** to **build** the frontend and backend to **im
 ??? info "Can I cheat?"
     Yes... If you choose to look at it, you might find it helpful. However, it comes with a few optimisations which may be confusing.
 
-## Building and Running an Image
+## Building and running an image
 
 Close the app dev server we ran earlier with `CTRL+C`.
 
@@ -133,7 +133,7 @@ docker run -p 3001:3001 docker-workshop-backend
 
 Now, visit [http://localhost:3001](http://localhost:3001) to see the backend now running from a Docker container.
 
-## Manual Build
+## Manual build
 
 To get a better idea of what we need to do, let's build the frontend manually.
 
@@ -151,28 +151,28 @@ The frontend is a React app that uses TypeScript. Now let's:
 
 1. Install dependencies: `npm install`
 2. Build the app: `npm run build`
-3. Serve the build files: `npm run preview`
+3. Serve the build files: `npm run start`
 
-The `build` and `preview` scripts are located in `apps/frontend/package.json`.
+The `build` and `start` scripts are located in `apps/frontend/package.json`.
 
 ```json
 {
     // ...
     "scripts": {
         "build": "tsc && vite build",
-        "preview": "vite preview"
+        "start": "serve dist -p 9876"
     }
     // ...
 }
 ```
 
-You can run these commands in the terminal and open it up at <http://localhost:4173/> to see the optimised production build of the frontend. Notice how the bottom text has changed from "development" to "production".
+You can run these commands in the terminal and open it up at <http://localhost:9876/> to see the optimised production build of the frontend. Notice how the bottom text has changed from "development" to "production".
 
 ## Creating a Dockerfile
 
 When creating a Dockerfile, it's essentially the same process as manually doing it. The only difference is that you're automating it in a file.
 
-### Base Image
+### Base image
 
 All Dockerfiles start with a `FROM` command, which specifies the base image to use. This image is usually a lightweight Linux distribution with the necessary tools and libraries to run the application. For our frontend, we will use the [`node:20-alpine`](https://hub.docker.com/_/node) image.
 
@@ -189,7 +189,7 @@ All Dockerfiles start with a `FROM` command, which specifies the base image to u
 FROM node:20-alpine
 ```
 
-### Working Directory
+### Working directory
 
 We're in linux land now. We're first going to create a directory to put our production files in. This is done with the `WORKDIR` command.
 
@@ -203,7 +203,7 @@ WORKDIR /app
 ??? info "Why do we need a working directory?"
     The `WORKDIR` command sets the working directory for any subsequent commands in the Dockerfile. This is where the application code will be copied to and where the application will run from. It's like changing directories in the terminal. Just like your own computer, you don't want to group important system files with your projects. It can be named anything you like, but the general convention is to name it `/app`.
 
-### Copying Files
+### Copying files
 
 Next, we need to copy our source code into the image. This is done with the `COPY` command.
 
@@ -213,13 +213,13 @@ FROM node:20-alpine
 WORKDIR /app
 
 # Copy the important files to the working directory
-COPY package*.json tsconfig.json src ./
+COPY . ./
 ```
 
 ???+ info "What are we copying?"
-    This command copies the `package.json`, `package-lock.json`, `tsconfig.json`, and `src` directory from the host machine to the working directory in the container (`./`). This is the bare minimum we need to build the frontend.
+    This command copies everything in the same directory where the Dockerfile is (`.`) from the host machine to the working directory in the container (`./`). This is the bare minimum we need to build the frontend. i.e. src, public, package.json, etc.
 
-### Installing Dependencies and Building
+### Installing dependencies and building
 
 Now that we have our source code in the image, we need to install the dependencies. This is done with the `RUN` command. Here, we run both `npm install` and `npm run build` in succession using `&&`.
 
@@ -227,44 +227,44 @@ Now that we have our source code in the image, we need to install the dependenci
 FROM node:20-alpine
 
 WORKDIR /app
-COPY package*.json tsconfig.json src ./
+COPY . ./
 
-# Install dependencies
+# Install dependencies and build the app
 RUN npm install && npm run build
 ```
 
-??? info "Why not do it on separate lines?"
-    The reason we chain them together is to reduce the number of layers in the image. Each `RUN` command creates a new layer in the image, which is essentially a snap of everything you've `RUN` up until now. More layers means a larger image size. By chaining the commands together, we can reduce the number of layers and make the image smaller. Docker also uses this to cache layers, so if you change a file, it will only rebuild the layers that depend on that file, saving time. In our case, our two commands both depend on the files we, so we should group them together.
+???+ info "Why not do it on separate lines?"
+    The reason we chain install `&&` build is to reduce the number of layers in the image. Each `RUN` command creates a new layer in the image, which is essentially a snapshot of everything you've `RUN` up until now. More layers means a larger image size. By chaining commands together, we can reduce the number of layers and make the image smaller. Docker uses this to cache layers, so if you change a file, it will only rebuild the layers that depend on that file, saving time. In our case, our two commands both depend on the same files, so we should group them together.
 
-### Serving the Build
+### Serving the build
 
-We're almost there! The last thing we need to do is serve the build files. This is done with the `CMD` command. This command specifies the command to run when the container starts. In our case, we want to run `npm run preview`.
+We're almost there! The last thing we need to do is serve the build files. This is done with the `CMD` command. This command specifies the command to run when the container starts. In our case, we want to run `npm run start`.
 
 ```dockerfile
 FROM node:20-alpine
 WORKDIR /app
 
-COPY package*.json tsconfig.json src ./
+COPY . ./
 
 RUN npm install && npm run build
 
-# Serve the build files
-CMD ["npm", "run", "preview"]
+# Serve the build files, note how it's an array
+CMD ["npm", "run", "start"]
 ```
 
-We're done --- not. There's one last thing we need to do: specify the port the server will run on. This is done with the `EXPOSE` command. Notice how earlier, `npm run preview` actually started the server on port `4173`, so let's expose that instead.
+We're done --- not. There's one last thing we need to do: specify the port the server will run on. This is done with the `EXPOSE` command. Notice how earlier, `npm run start` actually started the server on port `9876`, so let's expose that instead.
 
 ```dockerfile
 FROM node:20-alpine
 WORKDIR /app
 
-COPY package*.json tsconfig.json src ./
+COPY . ./
 
 RUN npm install && npm run build
 
 # Serve the build files
-EXPOSE 4173
-CMD ["npm", "run", "preview"]
+EXPOSE 9876
+CMD ["npm", "run", "start"]
 ```
 
 ### Done
@@ -273,8 +273,14 @@ CMD ["npm", "run", "preview"]
 
 ```bash
 docker build -t docker-workshop-frontend ./apps/frontend
-docker run -p 3000:4173 docker-workshop-frontend
+docker run -p 3000:9876 docker-workshop-frontend
 ```
+
+If we open up Docker desktop, you can even inspect the container's filesystem to see what we've done.
+
+![Docker Desktop](./images/docker-desktop.png)
+
+The frontend is now running at [http://localhost:3000](http://localhost:3000)!
 
 ## Optimising the Dockerfile
 
@@ -283,10 +289,68 @@ Let's think about what we've done. We've copied the source code, installed depen
 - **Only have production dependencies in the image.** Sometimes we developers install dev dependencies that aren't needed in production, but make our lives easier. If you take a look at `apps/frontend/package.json`, you'll see a bunch of them.
 - **Don't have the source code in the image.** We only need the built files to run the app. This reduces the image size.
 
-### Prune the Dependencies
+### Prune the dependencies
 
-TODO
+This is the easiest one. For a node app, you can do `npm prune --production` to remove all dev dependencies.
 
-### Multi-Stage Builds
+```dockerfile
+FROM node:20-alpine
+WORKDIR /app
 
-TODO
+COPY . ./
+
+# cleanup in the same layer
+RUN npm install && npm run build && npm prune --production
+
+# Serve the build files
+EXPOSE 9876
+CMD ["npm", "run", "start"]
+```
+
+### Multi-Stage builds
+
+Now we want to remove the source code from the image. You might think you could build the app outside the image, but that would mean you'd need to have Node.js installed on your machine, which defeats the purpose of containerisation. Additionally, some dependencies are platform-specific, so the app might not even work when put inside the container. This is where multi-stage builds come in.
+
+A multi-stage build is a feature of Docker that allows you to use multiple `FROM` commands in a single Dockerfile. Each `FROM` command starts a new stage in the build process. You can copy files from one stage to another, allowing you to build the app in one stage and copy the built files to another stage.
+
+```dockerfile
+# Stage 0: Define a common image for building and running
+FROM node:20-alpine AS base
+
+
+# Stage 1: Build the app
+FROM base AS builder
+WORKDIR /app
+
+COPY . ./
+
+RUN npm install && npm run build && npm prune --production
+
+# Stage 2: Serve the build files
+FROM base AS runner
+WORKDIR /app
+
+# Copy dependencies
+COPY --from=builder /app/node_modules ./node_modules
+# Copy built files
+COPY --from=builder /app/dist ./dist
+# Copy package.json so we can run `npm run start`
+COPY --from=builder /app/package.json ./package.json
+
+EXPOSE 9876
+CMD ["npm", "run", "start"]
+```
+
+## Final touches
+
+So now we know how to build a Dockerfile into an image and run it as a container. But there is one more thing we can do to make our lives easier: **Docker Compose**.
+
+Docker Compose is a tool for defining and running multi-container Docker applications. It allows you to define the services, networks, and volumes for your application in a single file. This makes it easy to start, stop, and manage your application with a single command.
+
+I've already created a `docker-compose.yml` file for you. It defines two services: `frontend` and `backend`. Instead of doing `docker run ...` in two terminals, you can now can run both services with a single command. You don't even have to build the images, as Docker Compose will do that for you!
+
+```bash
+docker compose up
+```
+
+You also might find the frontend starting on port `9876` inside the container to be a little confusing. You can change the port mapping in the `docker-compose.yml` file to map it to port `3000` on the host machine. Don't forget to change the `package.json` script and the `EXPOSE` command in the Dockerfile as well.
