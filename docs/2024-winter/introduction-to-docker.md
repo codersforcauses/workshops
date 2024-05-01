@@ -171,7 +171,7 @@ You can run these commands in the terminal yourself and open it up at <http://lo
 
 ## Creating a Dockerfile
 
-When creating a Dockerfile, it's essentially the same process as manually doing it. The only difference is that you're automating it in a file.
+When creating a Dockerfile, it's essentially the same process as manually doing it. The only difference is that you're automating it in a file. Start by creating a new file called `Dockerfile` in the `apps/frontend` directory.
 
 ### Base image
 
