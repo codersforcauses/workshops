@@ -22,7 +22,7 @@ CFC wants to make an app for accepting coffee orders. You will be creating a Doc
 
 ## Important information
 
-This workshop relies on a certain understanding of terminal commands and a bit of familiarity with Node.js projects.
+This workshop relies on a certain understanding of terminal commands and a bit of familiarity with Node.js projects. If you're not familiar with these, don't worry! I'll be explaining everything as we go along. If you have any questions, feel free to ask.
 
 ## What is Docker?
 
@@ -116,7 +116,7 @@ Let's start by learning how to build and run a Docker image. First, let's build 
 docker build -t docker-workshop-backend ./apps/backend
 ```
 
-This command builds an image from the Dockerfile in the `apps/backend` directory and tags it (`-t`) with the name `docker-workshop-backend`.
+This command builds an image from the Dockerfile in the `apps/backend` directory and tags it (`-t`) with the name `docker-workshop-backend`. Otherwise, Docker will give it a random name.
 
 Now, let's run the image we've built:
 
@@ -129,7 +129,7 @@ docker run -p 3001:3001 docker-workshop-backend
 
     ![Docker Port Mapping](./images/docker-port-mapping.png)
 
-    In order for our container to make connect with the outside world, we need to create a little tunnel. This is done by mapping a port on the host machine to a port on the container. In our case, I've configured the backend to run internally on port `3001`. Therefore, we need to map that internal port to a port on the host machine so we can access it. I kept it simple and mapped it to the same port, but you can change it to any port you like (given our frontend knows about it). Ports are mapped like this: `-p <host-port>:<container-port>` This is one of the security goals of Docker.
+    In order for our container to make connect with the outside world, we need to create a little tunnel. This is done by mapping a port on the host machine to a port on the container. In our case, I've configured the backend to run internally on port `3001`. Therefore, we need to map that internal port to a port on the host machine so we can access it. I kept it simple and mapped it to the same port, but you can change it to any port you like (given our frontend knows about it). Ports are mapped like this: `-p <host-port>:<container-port>` This also improves security, as you can run multiple containers on the same host machine without them interfering with each other.
 
 Now, visit [http://localhost:3001](http://localhost:3001) to see the backend now running from a Docker container.
 
@@ -142,13 +142,14 @@ To get a better idea of what we need to do, let's build the frontend manually.
 Imagine you are a robot that will execute commands to build the app to be production-ready. Regardless of what you're making, it'll usually fall into this pattern:
 
 1. Install dependencies
-2. Build the app
-3. Serve the build files
+2. Build the app (if needed)
+3. Serve or run the build files
 
 ### Step 2: Mapping them to commands
 
-The frontend is a React app that uses TypeScript. Now let's:
+The frontend is a React app that uses TypeScript, so we'll follow the template. If you're unsure, you can always Google what you need e.g. "How to install dependenceis React app":
 
+0. In your terminal, navigate to the frontend directory: `cd apps/frontend`
 1. Install dependencies: `npm install`
 2. Build the app: `npm run build`
 3. Serve the build files: `npm run start`
@@ -166,7 +167,7 @@ The `build` and `start` scripts are located in `apps/frontend/package.json`.
 }
 ```
 
-You can run these commands in the terminal and open it up at <http://localhost:9876/> to see the optimised production build of the frontend. Notice how the bottom text has changed from "development" to "production".
+You can run these commands in the terminal yourself and open it up at <http://localhost:9876/> to see the optimised production build of the frontend. Notice how the bottom text has changed from "development" to "production".
 
 ## Creating a Dockerfile
 
@@ -174,7 +175,7 @@ When creating a Dockerfile, it's essentially the same process as manually doing 
 
 ### Base image
 
-All Dockerfiles start with a `FROM` command, which specifies the base image to use. This image is usually a lightweight Linux distribution with the necessary tools and libraries to run the application. For our frontend, we will use the [`node:20-alpine`](https://hub.docker.com/_/node) image.
+All Dockerfiles start with a `FROM` command, which specifies the base image to use. This image is usually a lightweight Linux distribution with the necessary tools and libraries to run the application. For our frontend, we will use the [`node:20-alpine`](https://hub.docker.com/_/node) image. This specifies the (as of writing) LTS version of Node.js with the Alpine Linux distribution.
 
 ???+ info "How do I know what image to use?"
     There are a number of things to consider when choosing a base image:
@@ -191,7 +192,7 @@ FROM node:20-alpine
 
 ### Working directory
 
-We're in linux land now. We're first going to create a directory to put our production files in. This is done with the `WORKDIR` command.
+We're in linux land now. First, let's create a directory to put our production files in. This is done with the `WORKDIR` command.
 
 ```dockerfile
 FROM node:20-alpine
@@ -221,7 +222,7 @@ COPY . ./
 
 ### Installing dependencies and building
 
-Now that we have our source code in the image, we need to install the dependencies. This is done with the `RUN` command. Here, we run both `npm install` and `npm run build` in succession using `&&`.
+Now that we have our source code in the image, we need to install the dependencies. This is done with the `RUN` command. You can execute any supported command from the base image specified. Here, we run both `npm install` and `npm run build` in succession using `&&`.
 
 ```dockerfile
 FROM node:20-alpine
@@ -299,7 +300,7 @@ WORKDIR /app
 
 COPY . ./
 
-# cleanup in the same layer
+# Cleanup in the same layer
 RUN npm install && npm run build && npm prune --production
 
 # Serve the build files
