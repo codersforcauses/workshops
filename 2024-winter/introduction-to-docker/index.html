@@ -8,7 +8,7 @@
 <link href="../../contributions/" rel="prev"/>
 <link href="../../2023-winter/introduction-to-backend-development-with-django/" rel="next"/>
 <link href="../../images/cfc_logo_white_circle.png" rel="icon"/>
-<meta content="mkdocs-1.6.0, mkdocs-material-9.5.19" name="generator"/>
+<meta content="mkdocs-1.6.0, mkdocs-material-9.5.20" name="generator"/>
 <title>Introduction to Docker - Coders for Causes Workshops</title>
 <link href="../../assets/stylesheets/main.66ac8b77.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
@@ -598,7 +598,7 @@
 <p>CFC wants to make an app for accepting coffee orders. You will be creating a Dockerfile for CFC's (totally real) new and upcoming rebrand: <em>Coders for Coffee 🐳</em>. The architecture is a simple frontend and backend both made in TypeScript. Below is a diagram of it:</p>
 <p><img alt="App Architecture" src="../images/app-architecture.png"/></p>
 <h2 id="important-information">Important information<a class="headerlink" href="#important-information" title="Permanent link">¶</a></h2>
-<p>This workshop relies on a certain understanding of terminal commands and a bit of familiarity with Node.js projects.</p>
+<p>This workshop relies on a certain understanding of terminal commands and a bit of familiarity with Node.js projects. If you're not familiar with these, don't worry! I'll be explaining everything as we go along. If you have any questions, feel free to ask.</p>
 <h2 id="what-is-docker">What is Docker?<a class="headerlink" href="#what-is-docker" title="Permanent link">¶</a></h2>
 <p>Docker is a platform for developing, shipping, and running applications using containerization. It allows you to package an application and its dependencies into a container that can run on any machine. This makes it easy to deploy applications in a consistent and reproducible way. Simply put, it's like a way of running mini virtual machines inside your computer.</p>
 <h3 id="why-use-docker">Why use Docker?<a class="headerlink" href="#why-use-docker" title="Permanent link">¶</a></h3>
@@ -675,7 +675,7 @@ npm<span class="w"> </span>install<span class="w"> </span><span class="c1"># ins
 <p>Let's start by learning how to build and run a Docker image. First, let's build the backend:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>docker-workshop-backend<span class="w"> </span>./apps/backend
 </code></pre></div></td></tr></table></div>
-<p>This command builds an image from the Dockerfile in the <code>apps/backend</code> directory and tags it (<code>-t</code>) with the name <code>docker-workshop-backend</code>.</p>
+<p>This command builds an image from the Dockerfile in the <code>apps/backend</code> directory and tags it (<code>-t</code>) with the name <code>docker-workshop-backend</code>. Otherwise, Docker will give it a random name.</p>
 <p>Now, let's run the image we've built:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">3001</span>:3001<span class="w"> </span>docker-workshop-backend
 </code></pre></div></td></tr></table></div>
@@ -683,7 +683,7 @@ npm<span class="w"> </span>install<span class="w"> </span><span class="c1"># ins
 <p class="admonition-title">Port Mapping</p>
 <p>But wait, what does <code>-p 3001:3001</code> do? I mentioned earlier that Docker basically runs mini virtual machines --- so let's visualise what that looks like.</p>
 <p><img alt="Docker Port Mapping" src="../images/docker-port-mapping.png"/></p>
-<p>In order for our container to make connect with the outside world, we need to create a little tunnel. This is done by mapping a port on the host machine to a port on the container. In our case, I've configured the backend to run internally on port <code>3001</code>. Therefore, we need to map that internal port to a port on the host machine so we can access it. I kept it simple and mapped it to the same port, but you can change it to any port you like (given our frontend knows about it). Ports are mapped like this: <code>-p &lt;host-port&gt;:&lt;container-port&gt;</code> This is one of the security goals of Docker.</p>
+<p>In order for our container to make connect with the outside world, we need to create a little tunnel. This is done by mapping a port on the host machine to a port on the container. In our case, I've configured the backend to run internally on port <code>3001</code>. Therefore, we need to map that internal port to a port on the host machine so we can access it. I kept it simple and mapped it to the same port, but you can change it to any port you like (given our frontend knows about it). Ports are mapped like this: <code>-p &lt;host-port&gt;:&lt;container-port&gt;</code> This also improves security, as you can run multiple containers on the same host machine without them interfering with each other.</p>
 </div>
 <p>Now, visit <a href="http://localhost:3001">http://localhost:3001</a> to see the backend now running from a Docker container.</p>
 <h2 id="manual-build">Manual build<a class="headerlink" href="#manual-build" title="Permanent link">¶</a></h2>
@@ -692,12 +692,13 @@ npm<span class="w"> </span>install<span class="w"> </span><span class="c1"># ins
 <p>Imagine you are a robot that will execute commands to build the app to be production-ready. Regardless of what you're making, it'll usually fall into this pattern:</p>
 <ol>
 <li>Install dependencies</li>
-<li>Build the app</li>
-<li>Serve the build files</li>
+<li>Build the app (if needed)</li>
+<li>Serve or run the build files</li>
 </ol>
 <h3 id="step-2-mapping-them-to-commands">Step 2: Mapping them to commands<a class="headerlink" href="#step-2-mapping-them-to-commands" title="Permanent link">¶</a></h3>
-<p>The frontend is a React app that uses TypeScript. Now let's:</p>
+<p>The frontend is a React app that uses TypeScript, so we'll follow the template. If you're unsure, you can always Google what you need e.g. "How to install dependenceis React app":</p>
 <ol>
+<li>In your terminal, navigate to the frontend directory: <code>cd apps/frontend</code></li>
 <li>Install dependencies: <code>npm install</code></li>
 <li>Build the app: <code>npm run build</code></li>
 <li>Serve the build files: <code>npm run start</code></li>
@@ -719,11 +720,11 @@ npm<span class="w"> </span>install<span class="w"> </span><span class="c1"># ins
 <span class="w">    </span><span class="c1">// ...</span>
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<p>You can run these commands in the terminal and open it up at <a href="http://localhost:9876/">http://localhost:9876/</a> to see the optimised production build of the frontend. Notice how the bottom text has changed from "development" to "production".</p>
+<p>You can run these commands in the terminal yourself and open it up at <a href="http://localhost:9876/">http://localhost:9876/</a> to see the optimised production build of the frontend. Notice how the bottom text has changed from "development" to "production".</p>
 <h2 id="creating-a-dockerfile">Creating a Dockerfile<a class="headerlink" href="#creating-a-dockerfile" title="Permanent link">¶</a></h2>
 <p>When creating a Dockerfile, it's essentially the same process as manually doing it. The only difference is that you're automating it in a file.</p>
 <h3 id="base-image">Base image<a class="headerlink" href="#base-image" title="Permanent link">¶</a></h3>
-<p>All Dockerfiles start with a <code>FROM</code> command, which specifies the base image to use. This image is usually a lightweight Linux distribution with the necessary tools and libraries to run the application. For our frontend, we will use the <a href="https://hub.docker.com/_/node"><code>node:20-alpine</code></a> image.</p>
+<p>All Dockerfiles start with a <code>FROM</code> command, which specifies the base image to use. This image is usually a lightweight Linux distribution with the necessary tools and libraries to run the application. For our frontend, we will use the <a href="https://hub.docker.com/_/node"><code>node:20-alpine</code></a> image. This specifies the (as of writing) LTS version of Node.js with the Alpine Linux distribution.</p>
 <details class="info" open="open">
 <summary>How do I know what image to use?</summary>
 <p>There are a number of things to consider when choosing a base image:</p>
@@ -739,7 +740,7 @@ npm<span class="w"> </span>install<span class="w"> </span><span class="c1"># ins
 <span class="k">FROM</span><span class="w"> </span><span class="s">node:20-alpine</span>
 </code></pre></div></td></tr></table></div>
 <h3 id="working-directory">Working directory<a class="headerlink" href="#working-directory" title="Permanent link">¶</a></h3>
-<p>We're in linux land now. We're first going to create a directory to put our production files in. This is done with the <code>WORKDIR</code> command.</p>
+<p>We're in linux land now. First, let's create a directory to put our production files in. This is done with the <code>WORKDIR</code> command.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -771,7 +772,7 @@ npm<span class="w"> </span>install<span class="w"> </span><span class="c1"># ins
 <p>This command copies everything in the same directory where the Dockerfile is (<code>.</code>) from the host machine to the working directory in the container (<code>./</code>). This is the bare minimum we need to build the frontend. i.e. src, public, package.json, etc.</p>
 </details>
 <h3 id="installing-dependencies-and-building">Installing dependencies and building<a class="headerlink" href="#installing-dependencies-and-building" title="Permanent link">¶</a></h3>
-<p>Now that we have our source code in the image, we need to install the dependencies. This is done with the <code>RUN</code> command. Here, we run both <code>npm install</code> and <code>npm run build</code> in succession using <code>&amp;&amp;</code>.</p>
+<p>Now that we have our source code in the image, we need to install the dependencies. This is done with the <code>RUN</code> command. You can execute any supported command from the base image specified. Here, we run both <code>npm install</code> and <code>npm run build</code> in succession using <code>&amp;&amp;</code>.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -863,7 +864,7 @@ docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </sp
 
 <span class="k">COPY</span><span class="w"> </span>.<span class="w"> </span>./
 
-<span class="c"># cleanup in the same layer</span>
+<span class="c"># Cleanup in the same layer</span>
 <span class="k">RUN</span><span class="w"> </span>npm<span class="w"> </span>install<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>npm<span class="w"> </span>run<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>npm<span class="w"> </span>prune<span class="w"> </span>--production
 
 <span class="c"># Serve the build files</span>
