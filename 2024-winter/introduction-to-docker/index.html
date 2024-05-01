@@ -722,7 +722,7 @@ npm<span class="w"> </span>install<span class="w"> </span><span class="c1"># ins
 </code></pre></div></td></tr></table></div>
 <p>You can run these commands in the terminal yourself and open it up at <a href="http://localhost:9876/">http://localhost:9876/</a> to see the optimised production build of the frontend. Notice how the bottom text has changed from "development" to "production".</p>
 <h2 id="creating-a-dockerfile">Creating a Dockerfile<a class="headerlink" href="#creating-a-dockerfile" title="Permanent link">¶</a></h2>
-<p>When creating a Dockerfile, it's essentially the same process as manually doing it. The only difference is that you're automating it in a file.</p>
+<p>When creating a Dockerfile, it's essentially the same process as manually doing it. The only difference is that you're automating it in a file. Start by creating a new file called <code>Dockerfile</code> in the <code>apps/frontend</code> directory.</p>
 <h3 id="base-image">Base image<a class="headerlink" href="#base-image" title="Permanent link">¶</a></h3>
 <p>All Dockerfiles start with a <code>FROM</code> command, which specifies the base image to use. This image is usually a lightweight Linux distribution with the necessary tools and libraries to run the application. For our frontend, we will use the <a href="https://hub.docker.com/_/node"><code>node:20-alpine</code></a> image. This specifies the (as of writing) LTS version of Node.js with the Alpine Linux distribution.</p>
 <details class="info" open="open">
