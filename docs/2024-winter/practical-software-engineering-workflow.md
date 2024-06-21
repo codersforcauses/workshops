@@ -94,3 +94,4 @@ particular issue
 
 ## Other Resources
 - [Git and Github](https://www.youtube.com/watch?v=HkdAHXoRtos)
+- [Superpowers Of Git](https://webakari-docs.vercel.app/developers/)
