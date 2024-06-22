@@ -118,8 +118,9 @@ nav:
   - Overview: index.md
   - Contributions: contributions.md
 - 2024 Winter:
-  - Introduction to Docker: 2024-winter/introduction-to-docker.md
+  - Introduction to Web Development: 2024-winter/introduction-to-web-development.md
   - Practical Software Engineering Workflow: 2024-winter/practical-software-engineering-workflow.md
+  - Introduction to Docker: 2024-winter/introduction-to-docker.md
 - 2023 Winter:
   - Introduction to Backend Development With Django: 2023-winter/introduction-to-backend-development-with-django.md
 - 2022/2023 Summer:
