@@ -1,0 +1,1279 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../../contributions/" rel="prev"/>
+<link href="../practical-software-engineering-workflow/" rel="next"/>
+<link href="../../images/cfc_logo_white_circle.png" rel="icon"/>
+<meta content="mkdocs-1.6.0, mkdocs-material-9.5.27" name="generator"/>
+<title>Introduction to Web Development - Coders for Causes Workshops</title>
+<link href="../../assets/stylesheets/main.6543a935.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../stylesheets/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="cfclight" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#introduction-to-web-development-space">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Coders for Causes Workshops" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Coders for Causes Workshops">
+<img alt="logo" src="../../images/cfc_logo_white_circle.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Coders for Causes Workshops
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Introduction to Web Development
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="indigo" data-md-color-scheme="cfclight" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"></path></svg>
+</label>
+</form>
+<script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/codersforcauses/workshops/" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+          
+  
+  About
+
+        </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="./">
+          
+  
+  2024 Winter
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../2023-winter/introduction-to-backend-development-with-django/">
+          
+  
+  2023 Winter
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../2022-2023-summer/">
+          
+  
+  2022/2023 Summer
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../2021-2022-summer/">
+          
+  
+  2021/2022 Summer
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../2021-winter/">
+          
+  
+  2021 Winter
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Coders for Causes Workshops" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Coders for Causes Workshops">
+<img alt="logo" src="../../images/cfc_logo_white_circle.png"/>
+</a>
+    Coders for Causes Workshops
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/codersforcauses/workshops/" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+<span class="md-ellipsis">
+    About
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+            About
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    Overview
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../contributions/">
+<span class="md-ellipsis">
+    Contributions
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+<span class="md-ellipsis">
+    2024 Winter
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            2024 Winter
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Introduction to Web Development
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    Introduction to Web Development
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#content">
+<span class="md-ellipsis">
+      Content
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-and-why-web-development">
+<span class="md-ellipsis">
+      What and Why Web Development?
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#faqs-about-web-development">
+<span class="md-ellipsis">
+      FAQs about Web Development
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#basics-of-web-and-limitation">
+<span class="md-ellipsis">
+      Basics of Web and Limitation
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#server-side-applications-backend">
+<span class="md-ellipsis">
+      Server-side Applications (Backend)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#others">
+<span class="md-ellipsis">
+      Others
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#word-of-encouragement">
+<span class="md-ellipsis">
+      Word of Encouragement
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../practical-software-engineering-workflow/">
+<span class="md-ellipsis">
+    Practical Software Engineering Workflow
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../introduction-to-docker/">
+<span class="md-ellipsis">
+    Introduction to Docker
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-ellipsis">
+    2023 Winter
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            2023 Winter
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../2023-winter/introduction-to-backend-development-with-django/">
+<span class="md-ellipsis">
+    Introduction to Backend Development With Django
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-ellipsis">
+    2022/2023 Summer
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            2022/2023 Summer
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../2022-2023-summer/">
+<span class="md-ellipsis">
+    Overview
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../2022-2023-summer/setup.md">
+<span class="md-ellipsis">
+    Setup
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../2022-2023-summer/introduction-to-web-development/">
+<span class="md-ellipsis">
+    Introduction to Web Development
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../2022-2023-summer/practical-software-engineering-workflow/">
+<span class="md-ellipsis">
+    Practical Software Engineering Workflow
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../2022-2023-summer/mvc-mvvm-architecture-and-communications/">
+<span class="md-ellipsis">
+    MVC and MVVM Software Architectural Patterns and Communications
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<span class="md-ellipsis">
+    2021/2022 Summer
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            2021/2022 Summer
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../2021-2022-summer/">
+<span class="md-ellipsis">
+    Overview
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../2021-2022-summer/setup/">
+<span class="md-ellipsis">
+    Setup
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../2021-2022-summer/project-and-workshop-structure/">
+<span class="md-ellipsis">
+    Project and Workshop Structure
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../2021-2022-summer/introduction-to-web-development/">
+<span class="md-ellipsis">
+    Introduction to Web Development
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../2021-2022-summer/introduction-web-basics/">
+<span class="md-ellipsis">
+    Introduction to Web Basics
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../2021-2022-summer/practical-software-engineering-practices/">
+<span class="md-ellipsis">
+    Practical Software Engineering Practices
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
+<span class="md-ellipsis">
+    Introduction to Frontend Frameworks
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_7">
+<span class="md-nav__icon md-icon"></span>
+            Introduction to Frontend Frameworks
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../2021-2022-summer/introduction-to-frontend-frameworks/">
+<span class="md-ellipsis">
+    Overview
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../2021-2022-summer/introduction-to-react/">
+<span class="md-ellipsis">
+    Introduction to React
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../2021-2022-summer/introduction-to-vue/">
+<span class="md-ellipsis">
+    Introduction to Vue
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../2021-2022-summer/introduction-to-backend-development-with-django/">
+<span class="md-ellipsis">
+    Introduction to Backend Development with Django
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../2021-2022-summer/mvc-mvmm-architecture-and-communications/">
+<span class="md-ellipsis">
+    MVC-MVMM Architecture and Communications
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../2021-2022-summer/package-managers/">
+<span class="md-ellipsis">
+    Package Managers
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../2021-2022-summer/typical-codebase-structure/">
+<span class="md-ellipsis">
+    Typical Codebase Structure
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../2021-2022-summer/automated-testing-and-ci-pipelines/">
+<span class="md-ellipsis">
+    Automated Testing and CI Pipelines
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+<span class="md-ellipsis">
+    2021 Winter
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            2021 Winter
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../2021-winter/">
+<span class="md-ellipsis">
+    Overview
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="introduction-to-web-development-space">Introduction to Web Development Space<a class="headerlink" href="#introduction-to-web-development-space" title="Permanent link">¶</a></h1>
+<p><em>Navigating the Deep Dark Space of Web Development</em></p>
+<p>This workshop covers a brief overview of the most common tools and technologies used in web development.</p>
+<h2 id="content">Content<a class="headerlink" href="#content" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="#introduction-to-web-development-space">Introduction to Web Development Space</a></li>
+<li><a href="#content">Content</a></li>
+<li><a href="#what-and-why-web-development">What and Why Web Development?</a><ul>
+<li><a href="#what-is-web-development">What is web development?</a></li>
+<li><a href="#why-web-development-">Why Web Development ?</a></li>
+</ul>
+</li>
+<li><a href="#faqs-about-web-development">FAQs about Web Development</a><ul>
+<li><a href="#why-code-websites-why-not-use-drag-and-drops-like-wordpress-wix">Why code websites, why not use drag and drops like Wordpress, WIX?</a></li>
+<li><a href="#what-is-the-best-way-to-learn-all-these">What is the best way to learn all these?</a></li>
+<li><a href="#why-does-cfc-not-do-mobile-development-as-much-as-web-development">Why does CFC not do mobile development as much as web development?</a></li>
+<li><a href="#if-i-already-know-a-frontend-framework-is-it-better-to-learn-another-frontend-framework-or-to-learn-a-backend-framework">If I already know a frontend framework, is it better to learn another frontend framework or to learn a backend framework?</a></li>
+</ul>
+</li>
+<li><a href="#basics-of-web-and-limitation">Basics of Web and Limitation</a><ul>
+<li><a href="#modern-frameworks">Modern Frameworks</a></li>
+</ul>
+</li>
+<li><a href="#server-side-applications-backend">Server-side Applications (Backend)</a><ul>
+<li><a href="#how-do-devices-communicate">How do devices communicate?</a></li>
+<li><a href="#what-do-server-applications-do">What do server applications do?</a></li>
+<li><a href="#databases">Databases</a></li>
+</ul>
+</li>
+<li><a href="#others">Others</a><ul>
+<li><a href="#languages-of-the-web-the-usual">Languages of the Web (the usual)</a></li>
+<li><a href="#hosting-stuff">Hosting Stuff</a></li>
+<li><a href="#css-frameworks">CSS Frameworks</a></li>
+<li><a href="#developer-tools">Developer Tools</a></li>
+<li><a href="#typescript">TypeScript</a></li>
+<li><a href="#testing">Testing</a></li>
+<li><a href="#continuous-integration--continuous-deployment">Continuous Integration / Continuous Deployment</a></li>
+<li><a href="#virtualisation-and-containerisation">Virtualisation and Containerisation</a></li>
+<li><a href="#browsers">Browsers</a></li>
+<li><a href="#firefox-developer-tools">Firefox Developer Tools</a></li>
+<li><a href="#package-managers">Package Managers</a></li>
+<li><a href="#version-control">Version Control</a></li>
+<li><a href="#linters-and-formatters">Linters and Formatters</a></li>
+<li><a href="#teamwork">Teamwork</a></li>
+<li><a href="#roadmaps">Roadmaps</a></li>
+</ul>
+</li>
+<li><a href="#word-of-encouragement">Word of Encouragement</a></li>
+</ul>
+<h2 id="what-and-why-web-development">What and Why Web Development?<a class="headerlink" href="#what-and-why-web-development" title="Permanent link">¶</a></h2>
+<h3 id="what-is-web-development">What is web development?<a class="headerlink" href="#what-is-web-development" title="Permanent link">¶</a></h3>
+<ul>
+<li>Websites development</li>
+<li>Web applications (client-side and server-side) development</li>
+</ul>
+<h3 id="why-web-development">Why Web Development ?<a class="headerlink" href="#why-web-development" title="Permanent link">¶</a></h3>
+<ul>
+<li>Accessibility and Portability</li>
+<li>Career and On-demand in job market</li>
+<li>Huge possibility to combine with other emerging technologies (e.g. IoT, Machine Learning) and industry (e.g. Health, Mining, O&amp;G)</li>
+</ul>
+<details class="info">
+<summary>Career in Web Development</summary>
+</details>
+<p>Source: <a href="https://www.freecodecamp.org/news/2-out-of-3-developers-are-self-taught-and-other-insights-from-stack-overflow-s-2016-survey-of-50-8cf0ee5d4c21/">Insights from Stack Overflow’s 2016 survey of 50,000 developers</a></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>"Half of Developers are Web Developers"
+![occupation](https://cdn-media-1.freecodecamp.org/images/1*l3TGs4XuDhqGfIdeef9AeA.jpeg)
+</code></pre></div></td></tr></table></div>
+<h2 id="faqs-about-web-development">FAQs about Web Development<a class="headerlink" href="#faqs-about-web-development" title="Permanent link">¶</a></h2>
+<h3 id="why-code-websites-why-not-use-drag-and-drops-like-wordpress-wix">Why code websites, why not use drag and drops like Wordpress, WIX?<a class="headerlink" href="#why-code-websites-why-not-use-drag-and-drops-like-wordpress-wix" title="Permanent link">¶</a></h3>
+<div style="display:flex;justify-content:space-around;flex-wrap:wrap;">
+<img alt="wordpress" src="../images/wordpress.png" style="width:33%"/>
+<img alt="wix" src="../images/wix.jpg" style="width:33%"/>
+<img alt="drupal" src="../images/drupal.jpg" style="width:33%"/>
+</div>
+<ul>
+<li>Content Management System (CMS)</li>
+<li>Limitations on theme/template used</li>
+<li>Difficult to extend</li>
+<li>Cybersecurity</li>
+</ul>
+<details class="info">
+<summary>More information</summary>
+</details>
+<p>CMS are one of the application of web development, but there are plenty more such as - internet of things, custom software for a particular industrial application (eg. using Machine Learning)</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>CMS are usually limited to the template or plugin that you use. If those plugin don't exist, then it limits your productivity very much (difficulty to extend).
+
+CMS are usually built to cater for non-technical users. This means that thye become the subject of hackers. Think about a scenario where a hacker was able to find a vulnerability in WordPress, now every other WordPress site will be vulnerable.
+</code></pre></div></td></tr></table></div>
+<h3 id="what-is-the-best-way-to-learn-all-these">What is the best way to learn all these?<a class="headerlink" href="#what-is-the-best-way-to-learn-all-these" title="Permanent link">¶</a></h3>
+<iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="500rem" src="https://www.youtube.com/embed/nvlizC6koSc" width="100%"></iframe>
+<p>In summary, the best way to learn:</p>
+<ul>
+<li>Do personal projects (inspiration + motivation)</li>
+<li>Do team projects (get peer reviews and correct bad practices straight away)</li>
+<li>Watch Online Courses (to figure out what is available)</li>
+</ul>
+<details class="info">
+<summary>More Information</summary>
+</details>
+<p>To be told that you have to learn "this, this, and that" before you could do things is tiresome.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Often times, we want to learn to be a developer so that we can create cool things like software where thousands of people can use the app. We don't tend to be a developer for the sake of us needing to watch endless videos on different things.
+</code></pre></div></td></tr></table></div>
+<h3 id="why-does-cfc-not-do-mobile-development-as-much-as-web-development">Why does CFC not do mobile development as much as web development?<a class="headerlink" href="#why-does-cfc-not-do-mobile-development-as-much-as-web-development" title="Permanent link">¶</a></h3>
+<ul>
+<li>App stores has a developer cost</li>
+<li>Easier to deal/teach web technologies</li>
+<li>Accessibility (mobile, sensors, tablets, laptops and PCs)</li>
+<li>Bigger open-source community</li>
+</ul>
+<h3 id="if-i-already-know-a-frontend-framework-is-it-better-to-learn-another-frontend-framework-or-to-learn-a-backend-framework">If I already know a frontend framework, is it better to learn another frontend framework or to learn a backend framework?<a class="headerlink" href="#if-i-already-know-a-frontend-framework-is-it-better-to-learn-another-frontend-framework-or-to-learn-a-backend-framework" title="Permanent link">¶</a></h3>
+<ul>
+<li>It is better to learn a backend framework</li>
+</ul>
+<details class="info">
+<summary>Reasoning</summary>
+</details>
+<p>You want to build skills that complement one another rather than be an alternative.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>It is much more valuable for you to learn a backend framework because that helps you build a **functional** app.
+</code></pre></div></td></tr></table></div>
+<h2 id="basics-of-web-and-limitation">Basics of Web and Limitation<a class="headerlink" href="#basics-of-web-and-limitation" title="Permanent link">¶</a></h2>
+<p><img alt="basics of web 2" src="../../2021-2022-summer/images/basics-of-web-2.jpg"/></p>
+<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><label for="__tabbed_1_1">HTML</label><div class="tabbed-content"></div>
+</input></div>
+<p><strong>What is it?</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span></pre></div></td><td class="code"><div><pre><span></span><code>- Hypertext Markup Language
+- Describes the structure of a web page
+
+**Limitation**
+
+- Doesn’t handle repeated content well
+- No variables or calculation
+
+
+???+ example "HTML Syntax"
+    ```html
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;title&gt;Document&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        Hello World!
+    &lt;/body&gt;
+    &lt;/html&gt;
+    ```
+</code></pre></div></td></tr></table></div>
+<div class="tabbed-set" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><label for="__tabbed_2_1">CSS</label><div class="tabbed-content"></div>
+</input></div>
+<p><strong>What is it?</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code>- Cascading Style Sheets
+- Describes the presentation of a web page
+
+**Limitation**
+
+- Most css is quite similar (Handled by CSS Libraries)
+- Not very dynamic (Handled by CSS Frameworks)
+
+
+???+ example "CSS Syntax"
+    ```css
+    body {
+        background-color: #f0f0f0;
+        font-family: sans-serif;
+    }
+
+    .container{
+        width: 80%;
+        margin: 0 auto;
+    }
+    ```
+</code></pre></div></td></tr></table></div>
+<div class="tabbed-set" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><label for="__tabbed_3_1">JS</label><div class="tabbed-content"></div>
+</input></div>
+<p><strong>What is it?</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code>- JavaScript
+- Used to program complex features on a web page
+
+**Limitation**
+
+- Has the capability to modify the user interface, but becomes really tedious to modify interface (more about this in another workshop)
+
+???+ example "JS Syntax"
+    ```js
+    const bodySelector = document.querySelector('body');
+    const myFunction = () =&gt; {
+        bodySelector.innerHTML = 'Hello World 2!';
+        // Add a container class to space out
+        bodySelector.classList.add('container');
+    }
+    bodySelector.onclick = myFunction;
+    ```
+</code></pre></div></td></tr></table></div>
+<h3 id="modern-frameworks">Modern Frameworks<a class="headerlink" href="#modern-frameworks" title="Permanent link">¶</a></h3>
+<ul>
+<li>Websites can be much more… they can be web applications</li>
+<li>“App” in a website (client-side rendering)</li>
+</ul>
+<details class="success" open="open">
+<summary>Modern Frameworks</summary>
+</details>
+<p>=== "React.js" - More mature and used more in industry</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code>    ![react](../images/../2021-2022-summer/images/react.png)
+
+=== "Vue.js"
+    - Growing fast in popularity and use.
+
+    ![vue](../images/../2021-2022-summer/images/vue.png)
+
+
+
+**General Information**
+
+- Both are good to use and learn.
+- Knowledge is transferable between the two frameworks.
+</code></pre></div></td></tr></table></div>
+<details class="info">
+<summary>Comparison between HTML and JSX</summary>
+</details>
+<p><img alt="sample" src="../../2021-2022-summer/images/sample.png"/></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
+<span class="normal">  2</span>
+<span class="normal">  3</span>
+<span class="normal">  4</span>
+<span class="normal">  5</span>
+<span class="normal">  6</span>
+<span class="normal">  7</span>
+<span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span></pre></div></td><td class="code"><div><pre><span></span><code>Highlighted portions are starting chunk of distinct code.
+
+???+ example "HTML"
+    ```html hl_lines="2 15 27 41"
+    &lt;div class="row"&gt;
+        &lt;div class="m-0 col-12 col-md-6 col-lg-3"&gt;
+            &lt;div class="text-center border-0 bg-transparent card"&gt;
+            &lt;div class="px-0 card-body"&gt;
+                &lt;i class="material-icons-sharp md-lg"&gt;devices&lt;/i&gt;
+                &lt;p class="mt-4 font-weight-bold text-monospace text-larger"&gt;
+                Applications
+                &lt;/p&gt;
+                &lt;p class="mb-0"&gt;
+                Build custom web and mobile applications to engage with your audience
+                &lt;/p&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="m-0 col-12 col-md-6 col-lg-3"&gt;
+            &lt;div class="text-center border-0 bg-transparent card"&gt;
+            &lt;div class="px-0 card-body"&gt;
+                &lt;i class="material-icons-sharp md-lg"&gt;web&lt;/i&gt;
+                &lt;p class="mt-4 font-weight-bold text-monospace text-larger"&gt;Websites&lt;/p&gt;
+                &lt;p class="mb-0"&gt;
+                Build new websites or optimise existing pages to improve online
+                visibility
+                &lt;/p&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="m-0 col-12 col-md-6 col-lg-3"&gt;
+            &lt;div class="text-center border-0 bg-transparent card"&gt;
+            &lt;div class="px-0 card-body"&gt;
+                &lt;i class="material-icons-sharp md-lg"&gt;storage&lt;/i&gt;
+                &lt;p class="mt-4 font-weight-bold text-monospace text-larger"&gt;
+                Data Storage
+                &lt;/p&gt;
+                &lt;p class="mb-0"&gt;
+                Design and create databases for efficient information storage and
+                retrieval
+                &lt;/p&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="m-0 col-12 col-md-6 col-lg-3"&gt;
+            &lt;div class="text-center border-0 bg-transparent card"&gt;
+            &lt;div class="px-0 card-body"&gt;
+                &lt;i class="material-icons-sharp md-lg"&gt;how_to_reg&lt;/i&gt;
+                &lt;p class="mt-4 font-weight-bold text-monospace text-larger"&gt;
+                Consulting
+                &lt;/p&gt;
+                &lt;p class="mb-0"&gt;
+                Empower your organisation through technical knowledge and advice
+                &lt;/p&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    ```
+
+???+ example "JSX"
+    ```js hl_lines="24"
+    import { memo } from 'react'
+    import { Row, Col, Card, CardBody } from 'reactstrap'
+    import services from 'data/services.json'
+
+    const Service = (props: {
+    icon: string
+    title: string
+    description: string
+    }) =&gt; (
+    &lt;Card className='text-center border-0 bg-transparent'&gt;
+        &lt;CardBody className='px-0'&gt;
+        &lt;i className='material-icons-sharp md-lg'&gt;{props.icon}&lt;/i&gt;
+        &lt;p className='mt-4 font-weight-bold text-monospace text-larger'&gt;
+            {props.title}
+        &lt;/p&gt;
+        &lt;p className='mb-0'&gt;{props.description}&lt;/p&gt;
+        &lt;/CardBody&gt;
+    &lt;/Card&gt;
+    )
+
+    const Services = () =&gt; (
+    &lt;Row&gt;
+        {services.map(service =&gt; (
+        &lt;Col
+            xs={12}
+            md={6}
+            lg={12 / services.length}
+            className='m-0'
+            key={service.title}
+        &gt;
+            &lt;Service {...service} /&gt;
+        &lt;/Col&gt;
+        ))}
+    &lt;/Row&gt;
+    )
+
+    export default memo(Services)
+    ```
+</code></pre></div></td></tr></table></div>
+<h2 id="server-side-applications-backend">Server-side Applications (Backend)<a class="headerlink" href="#server-side-applications-backend" title="Permanent link">¶</a></h2>
+<div style="display:flex;justify-content:space-around;flex-wrap:wrap;flex-wrap:wrap;">
+<img alt="nodejs" src="../images/nodejs.png" width="33%"/>
+<img alt="django" src="../images/django.png" width="33%"/>
+<img alt="php" src="../images/php.jpg" width="33%"/>
+<img alt="postgresql" src="../images/postgresql.png" width="33%"/>
+</div>
+<h3 id="how-do-devices-communicate">How do devices communicate?<a class="headerlink" href="#how-do-devices-communicate" title="Permanent link">¶</a></h3>
+<ul>
+<li>HTTP Request - Hypertext Transfer Protocol</li>
+</ul>
+<p><img alt="backend-connection" src="../../2021-2022-summer/images/backend-connection.png"/></p>
+<h3 id="what-do-server-applications-do">What do server applications do?<a class="headerlink" href="#what-do-server-applications-do" title="Permanent link">¶</a></h3>
+<ul>
+<li>Serve frontends (server-side rendering)</li>
+<li>Web API (Application Programming Interface)</li>
+<li>Serve data (usually from a database)</li>
+<li>Process Request (Sending emails or SMS, Machine Learning)</li>
+</ul>
+<h3 id="databases">Databases<a class="headerlink" href="#databases" title="Permanent link">¶</a></h3>
+<p>Place to store the data</p>
+<p><strong>Mongodb</strong></p>
+<p>Allows for database design to be modified without complex migration or data loss</p>
+<p><strong>SQL</strong></p>
+<p>Typically faster and better for large amounts of data or systems that need data consistency and reliability</p>
+<h2 id="others">Others<a class="headerlink" href="#others" title="Permanent link">¶</a></h2>
+<h3 id="languages-of-the-web-the-usual">Languages of the Web (the usual)<a class="headerlink" href="#languages-of-the-web-the-usual" title="Permanent link">¶</a></h3>
+<ul>
+<li>Python (Django, Flask)</li>
+<li>JavaScript (Node.js, Express)</li>
+<li>Ruby, Go, Rust, C</li>
+</ul>
+<h3 id="hosting-stuff">Hosting Stuff<a class="headerlink" href="#hosting-stuff" title="Permanent link">¶</a></h3>
+<p>Many ways</p>
+<ul>
+<li>Own a server</li>
+<li>Use a 3<sup>rd</sup> party platform</li>
+</ul>
+<h3 id="css-frameworks">CSS Frameworks<a class="headerlink" href="#css-frameworks" title="Permanent link">¶</a></h3>
+<p><strong>Frontend (JS)</strong></p>
+<ul>
+<li>Vue, React</li>
+<li>Nuxt.js, Next.js</li>
+</ul>
+<p><strong>Frontend (CSS)</strong></p>
+<ul>
+<li>MaterialUI, Vuetify</li>
+<li>Bootstrap</li>
+</ul>
+<h3 id="developer-tools">Developer Tools<a class="headerlink" href="#developer-tools" title="Permanent link">¶</a></h3>
+<h4 id="typescript">TypeScript<a class="headerlink" href="#typescript" title="Permanent link">¶</a></h4>
+<ul>
+<li>Type checking is super useful for complex apps</li>
+<li>Allows for way better javascript developer tooling</li>
+<li>Can be annoying if you’re new at it</li>
+</ul>
+<h4 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">¶</a></h4>
+<ul>
+<li>Selenium, Cypress</li>
+<li>End to end automated testing tools</li>
+<li>Jest, Mocha, Pytest</li>
+<li>Unit testing</li>
+<li>Testing is vital to software projects</li>
+</ul>
+<h4 id="continuous-integration-continuous-deployment">Continuous Integration / Continuous Deployment<a class="headerlink" href="#continuous-integration-continuous-deployment" title="Permanent link">¶</a></h4>
+<ul>
+<li>Automated Testing</li>
+<li>Event-driven scripts</li>
+<li>E.g. Github Action, Bitbucket Pipelines</li>
+</ul>
+<h4 id="virtualisation-and-containerisation">Virtualisation and Containerisation<a class="headerlink" href="#virtualisation-and-containerisation" title="Permanent link">¶</a></h4>
+<ul>
+<li>Allows execution of services in a virtual environment</li>
+<li>eg. Docker (Containerisation), Vagrant (Virtualisation)</li>
+</ul>
+<h4 id="browsers">Browsers<a class="headerlink" href="#browsers" title="Permanent link">¶</a></h4>
+<ul>
+<li>Standard browsers</li>
+<li>Google Chrome, Firefox, Edge, etc.</li>
+<li>Backwards compatibility</li>
+<li>Internet Explorer</li>
+<li>Other</li>
+<li>Mobile - Responsive</li>
+<li>Screen readers - Accessibility</li>
+</ul>
+<h4 id="firefox-developer-tools">Firefox Developer Tools<a class="headerlink" href="#firefox-developer-tools" title="Permanent link">¶</a></h4>
+<ul>
+<li>Page Inspector</li>
+<li>Visualise page aspects</li>
+<li>Grid layout</li>
+<li>Web Console</li>
+<li><code>console.log(“Hello World”)</code></li>
+<li>Responsive Design Mode</li>
+<li>View from POV of different screen sizes such as mobile, tablets, etc.</li>
+</ul>
+<p>??? info "Some more tools" - JavaScript Debugger - Network Monitor - Performance Tools - Rulers - Colour Pickers
+Learn more at: https://developer.mozilla.org/en-US/docs/Tools</p>
+<h4 id="package-managers">Package Managers<a class="headerlink" href="#package-managers" title="Permanent link">¶</a></h4>
+<ul>
+<li>Installs libraries that can be used</li>
+<li>Also has code shortcuts (e.g. npm run start)</li>
+</ul>
+<p>(More about <code>package.json</code> and <code>poetry.toml</code> in the projects and Package Manager Workshop)</p>
+<h4 id="version-control">Version Control<a class="headerlink" href="#version-control" title="Permanent link">¶</a></h4>
+<ul>
+<li>Essential for developer teams and complex software development</li>
+<li>Git</li>
+</ul>
+<h4 id="linters-and-formatters">Linters and Formatters<a class="headerlink" href="#linters-and-formatters" title="Permanent link">¶</a></h4>
+<ul>
+<li>Makes code formatting consistent (following standard)</li>
+<li>Useful with version controls to avoid pointless change</li>
+</ul>
+<p>eg.ESLint, Prettier</p>
+<h4 id="teamwork">Teamwork<a class="headerlink" href="#teamwork" title="Permanent link">¶</a></h4>
+<ul>
+<li>Many tools out there</li>
+<li>Used to stop teams from stepping on each others toes</li>
+<li>Github Issues + Pull Requests</li>
+</ul>
+<h3 id="roadmaps">Roadmaps<a class="headerlink" href="#roadmaps" title="Permanent link">¶</a></h3>
+<p>There's an open-source community that maintains a learning roadmap for developers. See <a href="https://roadmap.sh/">https://roadmap.sh/</a></p>
+<details class="info">
+<summary>Frontend Developer</summary>
+</details>
+<p><img alt="frontend-roadmap" src="https://roadmap.sh/roadmaps/frontend.png"/></p>
+<details class="info">
+<summary>Backend Developer</summary>
+</details>
+<p><img alt="backend-roadmap" src="https://roadmap.sh/roadmaps/backend.png"/></p>
+<details class="info">
+<summary>Dev-Ops</summary>
+</details>
+<p><img alt="devops-roadmap" src="https://roadmap.sh/roadmaps/devops.png"/></p>
+<h2 id="word-of-encouragement">Word of Encouragement<a class="headerlink" href="#word-of-encouragement" title="Permanent link">¶</a></h2>
+<details class="quote">
+<summary>Encouragement from the Tech Lead</summary>
+</details>
+<p>"I can admit that this journey of learning will be difficult, and can sometimes be overwhelming and demotivating. Please, if at any point of this project, you feel that you don't know enough, or you're feeling lost, please reach out! We are all in this journey together! Nobody is born talented, skills are honed with determination and willingness to learn."</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>"When I was a first year student entering on the CFC winter project, I didn't feel like I was good enough. I couldn't create a good looking interface, I didn't know how to use npm and all sorts of those things. I was just like many of you! if I gave up just because of all those things I didn't know, of all those self-doubts, then I wouldn't be here today. I admit that I was lucky because I was in CFC, I had connections where I can just ask questions instead of feeling lost of not knowing. So please do leverage that opportunity to reach out"
+
+"You being in this project not only gives you the opportunity to raise your talents, but you also unlock one of the biggest factor of the growth of your career, and that is the connections with your fellow software engineers."
+</code></pre></div></td></tr></table></div>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<nav aria-label="footer.title" class="md-footer__inner md-grid">
+<a class="md-footer__link md-footer__link--prev" href="../../contributions/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                  Previous
+                </span>
+                Contributions
+              </div>
+</div>
+</a>
+<a class="md-footer__link md-footer__link--next" href="../practical-software-engineering-workflow/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                  Next
+                </span>
+                Practical Software Engineering Workflow
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+          
+          Web Documentation Setup By
+          <a href="https://codersforcauses.org/" rel="noopener" target="_blank">
+            Coders for Causes
+          </a>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://codersforcauses.org/" rel="noopener" target="_blank" title="codersforcauses.org">
+<svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM5.78 8.75a9.64 9.64 0 0 0 1.363 4.177c.255.426.542.832.857 1.215.245-.296.551-.705.857-1.215A9.64 9.64 0 0 0 10.22 8.75Zm4.44-1.5a9.64 9.64 0 0 0-1.363-4.177c-.307-.51-.612-.919-.857-1.215a9.927 9.927 0 0 0-.857 1.215A9.64 9.64 0 0 0 5.78 7.25Zm-5.944 1.5H1.543a6.507 6.507 0 0 0 4.666 5.5c-.123-.181-.24-.365-.352-.552-.715-1.192-1.437-2.874-1.581-4.948Zm-2.733-1.5h2.733c.144-2.074.866-3.756 1.58-4.948.12-.197.237-.381.353-.552a6.507 6.507 0 0 0-4.666 5.5Zm10.181 1.5c-.144 2.074-.866 3.756-1.58 4.948-.12.197-.237.381-.353.552a6.507 6.507 0 0 0 4.666-5.5Zm2.733-1.5a6.507 6.507 0 0 0-4.666-5.5c.123.181.24.365.353.552.714 1.192 1.436 2.874 1.58 4.948Z"></path></svg>
+</a>
+<a class="md-social__link" href="https://www.instagram.com/cfc_uwa/" rel="noopener" target="_blank" title="www.instagram.com">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg>
+</a>
+<a class="md-social__link" href="https://www.facebook.com/codersforcauses" rel="noopener" target="_blank" title="www.facebook.com">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256c0 120 82.7 220.8 194.2 248.5V334.2h-52.8V256h52.8v-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287v175.9C413.8 494.8 512 386.9 512 256z"></path></svg>
+</a>
+<a class="md-social__link" href="https://www.youtube.com/channel/UCp47I0qUXeGgSK0AtFJSkbQ" rel="noopener" target="_blank" title="www.youtube.com">
+<svg viewbox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg>
+</a>
+<a class="md-social__link" href="https://www.linkedin.com/company/coders-for-causes/" rel="noopener" target="_blank" title="www.linkedin.com">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
+</a>
+<a class="md-social__link" href="mailto:hello@codersforcauses.org" rel="noopener" target="_blank" title="">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.7l167.6-182.9c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "toc.integrate", "header.autohide", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.ad660dcc.min.js"></script>
+<script src="https://unpkg.com/mermaid@8.8.2/dist/mermaid.min.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js"></script>
+<script src="../../javascripts/tablesort.js"></script>
+</body>
+</html>
