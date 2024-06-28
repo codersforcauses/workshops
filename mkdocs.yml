@@ -34,10 +34,6 @@ theme:
 
 plugins:
   - search
-  - mermaid2:
-      version: 8.8.2
-      arguments:
-        theme: white # change this as you see fit - ["white", "dark"]
 
 # These are markdown extensions I have included that makes the documentation look nicer
 # These extensions are from here https://facelessuser.github.io/pymdown-extensions/
@@ -74,7 +70,7 @@ markdown_extensions:
       custom_fences:
         - name: mermaid
           class: mermaid
-          format: !!python/name:mermaid2.fence_mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
 
 extra:
   social:
@@ -101,7 +97,6 @@ extra:
 
 # This is the extra javascript included in the documentation
 extra_javascript:
-  - https://unpkg.com/mermaid@8.8.2/dist/mermaid.min.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   - https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js
@@ -121,6 +116,7 @@ nav:
   - Introduction to Web Development: 2024-winter/introduction-to-web-development.md
   - Practical Software Engineering Workflow: 2024-winter/practical-software-engineering-workflow.md
   - Introduction to Docker: 2024-winter/introduction-to-docker.md
+  - Introduction to Backend Development With Django: 2024-winter/introduction-to-backend-development-with-django.md
 - 2023 Winter:
   - Introduction to Backend Development With Django: 2023-winter/introduction-to-backend-development-with-django.md
 - 2022/2023 Summer:
