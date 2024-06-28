@@ -1,579 +1,1401 @@
 
-<!DOCTYPE html>
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../introduction-to-vue/">
+      
+      
+        <link rel="next" href="../mvc-mvmm-architecture-and-communications/">
+      
+      
+      <link rel="icon" href="../../images/cfc_logo_white_circle.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
+    
+    
+      
+        <title>Introduction to Backend Development with Django - Coders for Causes Workshops</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
 
-<html class="no-js" lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../introduction-to-vue/" rel="prev"/>
-<link href="../mvc-mvmm-architecture-and-communications/" rel="next"/>
-<link href="../../images/cfc_logo_white_circle.png" rel="icon"/>
-<meta content="mkdocs-1.6.0, mkdocs-material-9.5.27" name="generator"/>
-<title>Introduction to Backend Development with Django - Coders for Causes Workshops</title>
-<link href="../../assets/stylesheets/main.6543a935.min.css" rel="stylesheet"/>
-<link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
-<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<link href="../../stylesheets/extra.css" rel="stylesheet"/>
-<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-</head>
-<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="cfclight" dir="ltr">
-<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
-<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
-<label class="md-overlay" for="__drawer"></label>
-<div data-md-component="skip">
-<a class="md-skip" href="#welcome-to-the-djangol">
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="cfclight" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#welcome-to-the-djangol" class="md-skip">
           Skip to content
         </a>
-</div>
-<div data-md-component="announce">
-</div>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
 <header class="md-header" data-md-component="header">
-<nav aria-label="Header" class="md-header__inner md-grid">
-<a aria-label="Coders for Causes Workshops" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Coders for Causes Workshops">
-<img alt="logo" src="../../images/cfc_logo_white_circle.png"/>
-</a>
-<label class="md-header__button md-icon" for="__drawer">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
-</label>
-<div class="md-header__title" data-md-component="header-title">
-<div class="md-header__ellipsis">
-<div class="md-header__topic">
-<span class="md-ellipsis">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Coders for Causes Workshops" class="md-header__button md-logo" aria-label="Coders for Causes Workshops" data-md-component="logo">
+      
+  <img src="../../images/cfc_logo_white_circle.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
             Coders for Causes Workshops
           </span>
-</div>
-<div class="md-header__topic" data-md-component="header-topic">
-<span class="md-ellipsis">
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
             
               Introduction to Backend Development with Django
             
           </span>
-</div>
-</div>
-</div>
-<form class="md-header__option" data-md-component="palette">
-<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="indigo" data-md-color-scheme="cfclight" id="__palette_0" name="__palette" type="radio"/>
-<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"></path></svg>
-</label>
-<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
-<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to light mode">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"></path></svg>
-</label>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="cfclight" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
 </form>
-<script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
-<label class="md-header__button md-icon" for="__search">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
-</label>
-<div class="md-search" data-md-component="search" role="dialog">
-<label class="md-search__overlay" for="__search"></label>
-<div class="md-search__inner" role="search">
-<form class="md-search__form" name="search">
-<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
-<label class="md-search__icon md-icon" for="__search">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
-</label>
-<nav aria-label="Search" class="md-search__options">
-<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
-</button>
-</nav>
-</form>
-<div class="md-search__output">
-<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
-<div class="md-search-result" data-md-component="search-result">
-<div class="md-search-result__meta">
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
             Initializing search
           </div>
-<ol class="md-search-result__list" role="presentation"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="md-header__source">
-<a class="md-source" data-md-component="source" href="https://github.com/codersforcauses/workshops/" title="Go to repository">
-<div class="md-source__icon md-icon">
-<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
-</div>
-<div class="md-source__repository">
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/codersforcauses/workshops/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
     GitHub
   </div>
 </a>
-</div>
-</nav>
+      </div>
+    
+  </nav>
+  
 </header>
-<div class="md-container" data-md-component="container">
-<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
-<div class="md-grid">
-<ul class="md-tabs__list">
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../..">
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
           
   
   About
 
         </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../../2024-winter/introduction-to-web-development/">
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../2024-winter/introduction-to-web-development/" class="md-tabs__link">
           
   
   2024 Winter
 
         </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../../2023-winter/introduction-to-backend-development-with-django/">
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../2023-winter/introduction-to-backend-development-with-django/" class="md-tabs__link">
           
   
   2023 Winter
 
         </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../../2022-2023-summer/">
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../2022-2023-summer/" class="md-tabs__link">
           
   
   2022/2023 Summer
 
         </a>
-</li>
-<li class="md-tabs__item md-tabs__item--active">
-<a class="md-tabs__link" href="../">
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
   2021/2022 Summer
 
         </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../../2021-winter/">
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../2021-winter/" class="md-tabs__link">
           
   
   2021 Winter
 
         </a>
-</li>
-</ul>
-</div>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
 </nav>
-<main class="md-main" data-md-component="main">
-<div class="md-main__inner md-grid">
-<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
-<div class="md-sidebar__scrollwrap">
-<div class="md-sidebar__inner">
-<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
-<label class="md-nav__title" for="__drawer">
-<a aria-label="Coders for Causes Workshops" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Coders for Causes Workshops">
-<img alt="logo" src="../../images/cfc_logo_white_circle.png"/>
-</a>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Coders for Causes Workshops" class="md-nav__button md-logo" aria-label="Coders for Causes Workshops" data-md-component="logo">
+      
+  <img src="../../images/cfc_logo_white_circle.png" alt="logo">
+
+    </a>
     Coders for Causes Workshops
   </label>
-<div class="md-nav__source">
-<a class="md-source" data-md-component="source" href="https://github.com/codersforcauses/workshops/" title="Go to repository">
-<div class="md-source__icon md-icon">
-<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
-</div>
-<div class="md-source__repository">
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/codersforcauses/workshops/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
     GitHub
   </div>
 </a>
-</div>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
-<span class="md-ellipsis">
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
     About
   </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_1">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
             About
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../..">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Overview
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../contributions/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Contributions
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
     2024 Winter
   </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_2">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
             2024 Winter
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../2024-winter/introduction-to-web-development/">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2024-winter/introduction-to-web-development/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Introduction to Web Development
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../2024-winter/practical-software-engineering-workflow/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2024-winter/practical-software-engineering-workflow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Practical Software Engineering Workflow
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../2024-winter/introduction-to-docker/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2024-winter/introduction-to-docker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Introduction to Docker
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-<span class="md-ellipsis">
-    2023 Winter
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_3">
-<span class="md-nav__icon md-icon"></span>
-            2023 Winter
-          </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../2023-winter/introduction-to-backend-development-with-django/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2024-winter/introduction-to-backend-development-with-django/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Introduction to Backend Development With Django
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2023 Winter
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            2023 Winter
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2023-winter/introduction-to-backend-development-with-django/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction to Backend Development With Django
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
     2022/2023 Summer
   </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_4">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
             2022/2023 Summer
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../2022-2023-summer/">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2022-2023-summer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Overview
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../2022-2023-summer/setup.md">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2022-2023-summer/setup.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Setup
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../2022-2023-summer/introduction-to-web-development/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2022-2023-summer/introduction-to-web-development/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Introduction to Web Development
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../2022-2023-summer/practical-software-engineering-workflow/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2022-2023-summer/practical-software-engineering-workflow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Practical Software Engineering Workflow
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../2022-2023-summer/mvc-mvvm-architecture-and-communications/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2022-2023-summer/mvc-mvvm-architecture-and-communications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     MVC and MVVM Software Architectural Patterns and Communications
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
-<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
     2021/2022 Summer
   </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="true" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_5">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
             2021/2022 Summer
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Overview
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../setup/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Setup
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../project-and-workshop-structure/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project-and-workshop-structure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Project and Workshop Structure
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../introduction-to-web-development/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction-to-web-development/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Introduction to Web Development
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../introduction-web-basics/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction-web-basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Introduction to Web Basics
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../practical-software-engineering-practices/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../practical-software-engineering-practices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Practical Software Engineering Practices
   </span>
-</a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_5_7" type="checkbox"/>
-<label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
     Introduction to Frontend Frameworks
   </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_5_7_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_5_7">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7">
+            <span class="md-nav__icon md-icon"></span>
             Introduction to Frontend Frameworks
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../introduction-to-frontend-frameworks/">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction-to-frontend-frameworks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Overview
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../introduction-to-react/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction-to-react/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Introduction to React
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../introduction-to-vue/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction-to-vue/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Introduction to Vue
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
     Introduction to Backend Development with Django
   </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
-<span class="md-ellipsis">
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
     Introduction to Backend Development with Django
   </span>
-</a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#how-does-an-application-communicate-with-backend-systems">
-<span class="md-ellipsis">
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-does-an-application-communicate-with-backend-systems" class="md-nav__link">
+    <span class="md-ellipsis">
       How does an application communicate with backend systems?
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#what-are-apis-and-rest-apis">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#what-are-apis-and-rest-apis" class="md-nav__link">
+    <span class="md-ellipsis">
       What are APIs and REST-APIs?
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#what-is-django">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#what-is-django" class="md-nav__link">
+    <span class="md-ellipsis">
       What is Django?
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#what-is-django-rest-framework-drf">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#what-is-django-rest-framework-drf" class="md-nav__link">
+    <span class="md-ellipsis">
       What is Django REST Framework (DRF)?
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#features-of-django-and-drf">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#features-of-django-and-drf" class="md-nav__link">
+    <span class="md-ellipsis">
       Features of Django and DRF
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#packaging-a-django-app">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#packaging-a-django-app" class="md-nav__link">
+    <span class="md-ellipsis">
       Packaging a "Django App"
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#django-admin">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#django-admin" class="md-nav__link">
+    <span class="md-ellipsis">
       Django Admin
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#other-tools">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#other-tools" class="md-nav__link">
+    <span class="md-ellipsis">
       Other Tools
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#demo-live-coding">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#demo-live-coding" class="md-nav__link">
+    <span class="md-ellipsis">
       Demo - Live Coding
     </span>
-</a>
+  </a>
+  
 </li>
-</ul>
+      
+    </ul>
+  
 </nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../mvc-mvmm-architecture-and-communications/">
-<span class="md-ellipsis">
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mvc-mvmm-architecture-and-communications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     MVC-MVMM Architecture and Communications
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../package-managers/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../package-managers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Package Managers
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../typical-codebase-structure/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../typical-codebase-structure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Typical Codebase Structure
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../automated-testing-and-ci-pipelines/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../automated-testing-and-ci-pipelines/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Automated Testing and CI Pipelines
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
-<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
     2021 Winter
   </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_6">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
             2021 Winter
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../2021-winter/">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2021-winter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Overview
   </span>
-</a>
-</li>
-</ul>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
 </nav>
-</li>
-</ul>
-</nav>
-</div>
-</div>
-</div>
-<div class="md-content" data-md-component="content">
-<article class="md-content__inner md-typeset">
-<h1 id="welcome-to-the-djangol">Welcome to the Djangol!<a class="headerlink" href="#welcome-to-the-djangol" title="Permanent link">¶</a></h1>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="welcome-to-the-djangol">Welcome to the Djangol!<a class="headerlink" href="#welcome-to-the-djangol" title="Permanent link">&para;</a></h1>
 <p><em>We've got puns 'n' data, We’ve got everything you request</em></p>
-<p><img alt="backend-connection" src="../images/backend-connection.png"/></p>
-<h2 id="how-does-an-application-communicate-with-backend-systems">How does an application communicate with backend systems?<a class="headerlink" href="#how-does-an-application-communicate-with-backend-systems" title="Permanent link">¶</a></h2>
+<p><img alt="backend-connection" src="../images/backend-connection.png" /></p>
+<h2 id="how-does-an-application-communicate-with-backend-systems">How does an application communicate with backend systems?<a class="headerlink" href="#how-does-an-application-communicate-with-backend-systems" title="Permanent link">&para;</a></h2>
 <p><strong>JavaScript Object Notation</strong></p>
 <details class="example" open="open">
 <summary>JSON</summary>
@@ -628,50 +1450,50 @@
 <span class="normal">48</span>
 <span class="normal">49</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">[</span>
 <span class="p">{</span>
-<span class="w">    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Leanne Graham"</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bret"</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sincere@april.biz"</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">"street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kulas Light"</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"suite"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Apt. 556"</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gwenborough"</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"zipcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92998-3874"</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"geo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-37.3159"</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">"lng"</span><span class="p">:</span><span class="w"> </span><span class="s2">"81.1496"</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Leanne Graham&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bret&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Sincere@april.biz&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;street&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Kulas Light&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;suite&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Apt. 556&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;city&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Gwenborough&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;zipcode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;92998-3874&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;geo&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;lat&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;-37.3159&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;lng&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;81.1496&quot;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="nt">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-770-736-8031 x56442"</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"website"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hildegard.org"</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"company"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Romaguera-Crona"</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"catchPhrase"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Multi-layered client-server neural-net"</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"bs"</span><span class="p">:</span><span class="w"> </span><span class="s2">"harness real-time e-markets"</span>
+<span class="w">    </span><span class="nt">&quot;phone&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1-770-736-8031 x56442&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;website&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;hildegard.org&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;company&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Romaguera-Crona&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;catchPhrase&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Multi-layered client-server neural-net&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;bs&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;harness real-time e-markets&quot;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">},</span>
 <span class="err">...</span>
 <span class="p">{</span>
-<span class="w">    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Clementina DuBuque"</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Moriah.Stanton"</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rey.Padberg@karina.biz"</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">"street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kattie Turnpike"</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"suite"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Suite 198"</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lebsackbury"</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"zipcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"31428-2261"</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"geo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-38.2386"</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">"lng"</span><span class="p">:</span><span class="w"> </span><span class="s2">"57.2232"</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Clementina DuBuque&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Moriah.Stanton&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Rey.Padberg@karina.biz&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;street&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Kattie Turnpike&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;suite&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Suite 198&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;city&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Lebsackbury&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;zipcode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;31428-2261&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;geo&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;lat&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;-38.2386&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;lng&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;57.2232&quot;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="nt">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"024-648-3804"</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"website"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ambrose.net"</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"company"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hoeger LLC"</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"catchPhrase"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Centralized empowering task-force"</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"bs"</span><span class="p">:</span><span class="w"> </span><span class="s2">"target end-to-end models"</span>
+<span class="w">    </span><span class="nt">&quot;phone&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;024-648-3804&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;website&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ambrose.net&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;company&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Hoeger LLC&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;catchPhrase&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Centralized empowering task-force&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;bs&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;target end-to-end models&quot;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 <span class="p">]</span>
@@ -681,7 +1503,7 @@
 </details>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">fetch</span><span class="p">(</span><span class="s2">"https://jsonplaceholder.typicode.com/users"</span><span class="p">)</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;https://jsonplaceholder.typicode.com/users&quot;</span><span class="p">)</span>
 <span class="w">    </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
 <span class="w">    </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">))</span>
 </code></pre></div></td></tr></table></div>
@@ -690,7 +1512,7 @@
 <summary>Other ways</summary>
 <p>JSON is not the only way. There are things like SOAP, RPC, but nevermind them for now as you will most likely have to deal with JSON for the most parts.</p>
 </details>
-<h2 id="what-are-apis-and-rest-apis">What are APIs and REST-APIs?<a class="headerlink" href="#what-are-apis-and-rest-apis" title="Permanent link">¶</a></h2>
+<h2 id="what-are-apis-and-rest-apis">What are APIs and REST-APIs?<a class="headerlink" href="#what-are-apis-and-rest-apis" title="Permanent link">&para;</a></h2>
 <p><strong>Application Programming Interface</strong></p>
 <details class="info" open="open">
 <summary>Analogy</summary>
@@ -708,10 +1530,10 @@ Who interacts with the application programming interface ? - the application pro
 </ul>
 <details class="info" open="open">
 <summary>Swagger/ Open API specification</summary>
-<p><img alt="Swagger/ Open API specification" src="../images/swagger.png"/></p>
+<p><img alt="Swagger/ Open API specification" src="../images/swagger.png" /></p>
 </details>
-<h2 id="what-is-django">What is Django?<a class="headerlink" href="#what-is-django" title="Permanent link">¶</a></h2>
-<p><img alt="Django" src="../images/django-2.png"/></p>
+<h2 id="what-is-django">What is Django?<a class="headerlink" href="#what-is-django" title="Permanent link">&para;</a></h2>
+<p><img alt="Django" src="../images/django-2.png" /></p>
 <p><strong>Django</strong></p>
 <ul>
 <li>Python web framework for creating server-side application</li>
@@ -723,7 +1545,7 @@ Who interacts with the application programming interface ? - the application pro
 <li>Controller – URLs + routes</li>
 </ul>
 <p>See <a href="https://www.djangoproject.com/">Documentation</a></p>
-<h2 id="what-is-django-rest-framework-drf">What is Django REST Framework (DRF)?<a class="headerlink" href="#what-is-django-rest-framework-drf" title="Permanent link">¶</a></h2>
+<h2 id="what-is-django-rest-framework-drf">What is Django REST Framework (DRF)?<a class="headerlink" href="#what-is-django-rest-framework-drf" title="Permanent link">&para;</a></h2>
 <ul>
 <li>library for creating REST-API</li>
 <li>just makes it easier develop REST-API</li>
@@ -735,24 +1557,24 @@ Who interacts with the application programming interface ? - the application pro
 <li>Serialisers (payload validation and format)</li>
 </ul>
 <p>See <a href="https://www.django-rest-framework.org/">Documentation</a></p>
-<h2 id="features-of-django-and-drf">Features of Django and DRF<a class="headerlink" href="#features-of-django-and-drf" title="Permanent link">¶</a></h2>
-<h3 id="serializers">Serializers<a class="headerlink" href="#serializers" title="Permanent link">¶</a></h3>
+<h2 id="features-of-django-and-drf">Features of Django and DRF<a class="headerlink" href="#features-of-django-and-drf" title="Permanent link">&para;</a></h2>
+<h3 id="serializers">Serializers<a class="headerlink" href="#serializers" title="Permanent link">&para;</a></h3>
 <ul>
 <li>converter to and from Python Data types to JSON/XML</li>
 <li>can be used to do validation</li>
 </ul>
 <p>More info <a href="https://www.django-rest-framework.org/api-guide/serializers/">here</a></p>
-<h3 id="models">Models<a class="headerlink" href="#models" title="Permanent link">¶</a></h3>
+<h3 id="models">Models<a class="headerlink" href="#models" title="Permanent link">&para;</a></h3>
 <p><strong>Models</strong></p>
 <ul>
 <li>representation of database connection or schema
 Example: <a href="https://github.com/frinzekt/React-Django-To-Do-App/blob/master/api/models.py">Todo Django + React</a></li>
 </ul>
-<h4 id="models-with-serializers">Models with Serializers<a class="headerlink" href="#models-with-serializers" title="Permanent link">¶</a></h4>
+<h4 id="models-with-serializers">Models with Serializers<a class="headerlink" href="#models-with-serializers" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Model already defined the structure of the data</li>
 </ul>
-<h3 id="configuration-file-settingspy">Configuration file <code>settings.py</code><a class="headerlink" href="#configuration-file-settingspy" title="Permanent link">¶</a></h3>
+<h3 id="configuration-file-settingspy">Configuration file <code>settings.py</code><a class="headerlink" href="#configuration-file-settingspy" title="Permanent link">&para;</a></h3>
 <p><strong>One of the most important file</strong> - determines the app configurations and default</p>
 <details class="example" open="open">
 <summary>Example of Items you can configure</summary>
@@ -765,12 +1587,12 @@ Example: <a href="https://github.com/frinzekt/React-Django-To-Do-App/blob/master
 <li>database configuration</li>
 </ul>
 </details>
-<h3 id="route-with-urls">Route with URLs<a class="headerlink" href="#route-with-urls" title="Permanent link">¶</a></h3>
+<h3 id="route-with-urls">Route with URLs<a class="headerlink" href="#route-with-urls" title="Permanent link">&para;</a></h3>
 <p><strong>Determines the URL route of the API</strong></p>
 <ul>
 <li>starts with the <code>urls.py</code> in the config (settings.py)</li>
 </ul>
-<h2 id="packaging-a-django-app">Packaging a "Django App"<a class="headerlink" href="#packaging-a-django-app" title="Permanent link">¶</a></h2>
+<h2 id="packaging-a-django-app">Packaging a "Django App"<a class="headerlink" href="#packaging-a-django-app" title="Permanent link">&para;</a></h2>
 <p>"Django Apps" are plugin system of Django. Django codebase prefers packaging each endpoint feature to a "Django App"</p>
 <details class="example" open="open">
 <summary>Authenticate with Microsoft</summary>
@@ -784,14 +1606,14 @@ Example: <a href="https://github.com/frinzekt/React-Django-To-Do-App/blob/master
 <li><code>python manage.py makemigrations</code> to create the migration scripts</li>
 <li><code>python manage.py migrate</code> to run the migration script</li>
 </ol>
-<h3 id="views">Views<a class="headerlink" href="#views" title="Permanent link">¶</a></h3>
+<h3 id="views">Views<a class="headerlink" href="#views" title="Permanent link">&para;</a></h3>
 <p>The interface at which any application program interacts with to get something done in the backend.</p>
 <details class="tip" open="open">
 <summary>Use DRF instead of Base Django</summary>
 <p>This is where it gets a little tricky. Django accomodates both frontend and backend, but where it shines is with <a href="https://www.django-rest-framework.org/">DRF</a>. So always refer to documentation regarding write it from the documentation.</p>
 <p>If you plan to use Django as an entire full-stack option, then you may not need DRF at all. Just use the <a href="https://docs.djangoproject.com/en/4.0/topics/class-based-views/">generic views</a>.</p>
 </details>
-<h4 id="function-based-views-and-class-based-views">Function-based Views and Class-based Views<a class="headerlink" href="#function-based-views-and-class-based-views" title="Permanent link">¶</a></h4>
+<h4 id="function-based-views-and-class-based-views">Function-based Views and Class-based Views<a class="headerlink" href="#function-based-views-and-class-based-views" title="Permanent link">&para;</a></h4>
 <details class="example" open="open">
 <summary>Codes</summary>
 <p>Summary: In DRF, there's a lot more advantage to use class-based views. However, if you want the flexibility and writing things on your own, then you might want to use function-based view.</p>
@@ -866,32 +1688,32 @@ Example: <a href="https://github.com/frinzekt/React-Django-To-Do-App/blob/master
 
 <span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Task</span>
 
-<span class="nd">@api_view</span><span class="p">([</span><span class="s1">'GET'</span><span class="p">])</span>
+<span class="nd">@api_view</span><span class="p">([</span><span class="s1">&#39;GET&#39;</span><span class="p">])</span>
 <span class="k">def</span> <span class="nf">apiOverview</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
     <span class="n">api_urls</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s1">'List'</span><span class="p">:</span><span class="s1">'/task-list/'</span><span class="p">,</span>
-        <span class="s1">'Detail View'</span><span class="p">:</span><span class="s1">'/task-detail/&lt;str:pk&gt;/'</span><span class="p">,</span>
-        <span class="s1">'Create'</span><span class="p">:</span><span class="s1">'/task-create/'</span><span class="p">,</span>
-        <span class="s1">'Update'</span><span class="p">:</span><span class="s1">'/task-update/&lt;str:pk&gt;/'</span><span class="p">,</span>
-        <span class="s1">'Delete'</span><span class="p">:</span><span class="s1">'/task-delete/&lt;str:pk&gt;/'</span><span class="p">,</span>
+        <span class="s1">&#39;List&#39;</span><span class="p">:</span><span class="s1">&#39;/task-list/&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Detail View&#39;</span><span class="p">:</span><span class="s1">&#39;/task-detail/&lt;str:pk&gt;/&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Create&#39;</span><span class="p">:</span><span class="s1">&#39;/task-create/&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Update&#39;</span><span class="p">:</span><span class="s1">&#39;/task-update/&lt;str:pk&gt;/&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Delete&#39;</span><span class="p">:</span><span class="s1">&#39;/task-delete/&lt;str:pk&gt;/&#39;</span><span class="p">,</span>
         <span class="p">}</span>
 
     <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">api_urls</span><span class="p">)</span>
 
-<span class="nd">@api_view</span><span class="p">([</span><span class="s1">'GET'</span><span class="p">])</span>
+<span class="nd">@api_view</span><span class="p">([</span><span class="s1">&#39;GET&#39;</span><span class="p">])</span>
 <span class="k">def</span> <span class="nf">taskList</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
-    <span class="n">tasks</span> <span class="o">=</span> <span class="n">Task</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">'-id'</span><span class="p">)</span>
+    <span class="n">tasks</span> <span class="o">=</span> <span class="n">Task</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">&#39;-id&#39;</span><span class="p">)</span>
     <span class="n">serializer</span> <span class="o">=</span> <span class="n">TaskSerializer</span><span class="p">(</span><span class="n">tasks</span><span class="p">,</span> <span class="n">many</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">serializer</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
 
-<span class="nd">@api_view</span><span class="p">([</span><span class="s1">'GET'</span><span class="p">])</span>
+<span class="nd">@api_view</span><span class="p">([</span><span class="s1">&#39;GET&#39;</span><span class="p">])</span>
 <span class="k">def</span> <span class="nf">taskDetail</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">pk</span><span class="p">):</span>
     <span class="n">tasks</span> <span class="o">=</span> <span class="n">Task</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">pk</span><span class="p">)</span>
     <span class="n">serializer</span> <span class="o">=</span> <span class="n">TaskSerializer</span><span class="p">(</span><span class="n">tasks</span><span class="p">,</span> <span class="n">many</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">serializer</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
 
 
-<span class="nd">@api_view</span><span class="p">([</span><span class="s1">'POST'</span><span class="p">])</span>
+<span class="nd">@api_view</span><span class="p">([</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
 <span class="k">def</span> <span class="nf">taskCreate</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
     <span class="n">serializer</span> <span class="o">=</span> <span class="n">TaskSerializer</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
 
@@ -900,7 +1722,7 @@ Example: <a href="https://github.com/frinzekt/React-Django-To-Do-App/blob/master
 
     <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">serializer</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
 
-<span class="nd">@api_view</span><span class="p">([</span><span class="s1">'POST'</span><span class="p">])</span>
+<span class="nd">@api_view</span><span class="p">([</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
 <span class="k">def</span> <span class="nf">taskUpdate</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">pk</span><span class="p">):</span>
     <span class="n">task</span> <span class="o">=</span> <span class="n">Task</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">pk</span><span class="p">)</span>
     <span class="n">serializer</span> <span class="o">=</span> <span class="n">TaskSerializer</span><span class="p">(</span><span class="n">instance</span><span class="o">=</span><span class="n">task</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
@@ -911,12 +1733,12 @@ Example: <a href="https://github.com/frinzekt/React-Django-To-Do-App/blob/master
     <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">serializer</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
 
 
-<span class="nd">@api_view</span><span class="p">([</span><span class="s1">'DELETE'</span><span class="p">])</span>
+<span class="nd">@api_view</span><span class="p">([</span><span class="s1">&#39;DELETE&#39;</span><span class="p">])</span>
 <span class="k">def</span> <span class="nf">taskDelete</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">pk</span><span class="p">):</span>
     <span class="n">task</span> <span class="o">=</span> <span class="n">Task</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">pk</span><span class="p">)</span>
     <span class="n">task</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
 
-    <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="s1">'Item succsesfully delete!'</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="s1">&#39;Item succsesfully delete!&#39;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div></p>
 </details>
 <details class="success">
@@ -924,21 +1746,21 @@ Example: <a href="https://github.com/frinzekt/React-Django-To-Do-App/blob/master
 <p>To be seen in in the live demos</p>
 </details>
 </details>
-<h2 id="django-admin">Django Admin<a class="headerlink" href="#django-admin" title="Permanent link">¶</a></h2>
+<h2 id="django-admin">Django Admin<a class="headerlink" href="#django-admin" title="Permanent link">&para;</a></h2>
 <p>Django comes with a built-in user-interface for managing "Django Apps" with models.py
 By default it in the path <code>/admin</code></p>
 <details class="example" open="open">
 <summary>Django Admin</summary>
-<p><img alt="django-admin" src="../images/django-admin.png"/></p>
+<p><img alt="django-admin" src="../images/django-admin.png" /></p>
 </details>
-<h2 id="other-tools">Other Tools<a class="headerlink" href="#other-tools" title="Permanent link">¶</a></h2>
-<h3 id="drf-frontend-for-consuming-api">DRF Frontend for Consuming API<a class="headerlink" href="#drf-frontend-for-consuming-api" title="Permanent link">¶</a></h3>
+<h2 id="other-tools">Other Tools<a class="headerlink" href="#other-tools" title="Permanent link">&para;</a></h2>
+<h3 id="drf-frontend-for-consuming-api">DRF Frontend for Consuming API<a class="headerlink" href="#drf-frontend-for-consuming-api" title="Permanent link">&para;</a></h3>
 <p>When you use DRF for developing API, and use the generic API views and serializers, it will automatically create this for you.</p>
 <details class="example" open="open">
 <summary>DRF Frontend</summary>
-<p><img alt="drf" src="../images/drf.png"/></p>
+<p><img alt="drf" src="../images/drf.png" /></p>
 </details>
-<h3 id="postman">Postman<a class="headerlink" href="#postman" title="Permanent link">¶</a></h3>
+<h3 id="postman">Postman<a class="headerlink" href="#postman" title="Permanent link">&para;</a></h3>
 <p>Development tool for interacting with APIs:</p>
 <ul>
 <li>environment variables</li>
@@ -947,11 +1769,11 @@ By default it in the path <code>/admin</code></p>
 </ul>
 <details class="info" open="open">
 <summary>Postman</summary>
-<p><img alt="postman" src="../images/postman.png"/></p>
+<p><img alt="postman" src="../images/postman.png" /></p>
 </details>
-<h3 id="python-debugger-pdb">Python Debugger (pdb)<a class="headerlink" href="#python-debugger-pdb" title="Permanent link">¶</a></h3>
+<h3 id="python-debugger-pdb">Python Debugger (pdb)<a class="headerlink" href="#python-debugger-pdb" title="Permanent link">&para;</a></h3>
 <p>When you run the django <code>python manage.py runserver</code>, you can add <code>breakpoint()</code> to anywhere piece of your code. This will stop the terminal line to the breakpoint if it hits it. From here you can do debugging.</p>
-<h2 id="demo-live-coding">Demo - Live Coding<a class="headerlink" href="#demo-live-coding" title="Permanent link">¶</a></h2>
+<h2 id="demo-live-coding">Demo - Live Coding<a class="headerlink" href="#demo-live-coding" title="Permanent link">&para;</a></h2>
 <p>Demonstrate how to create a backend for a Todo app.</p>
 <ol>
 <li>Setup Python environment <code>python -m venv venv</code> then activate with <code>source venv/bin/activate</code></li>
@@ -1025,13 +1847,13 @@ pip install pytz           # Timezone support
 <span class="kn">from</span> <span class="nn">rest_framework</span> <span class="kn">import</span> <span class="n">serializers</span>
 
 <span class="k">class</span> <span class="nc">TodoSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Serializer for Todo model</span>
-<span class="sd">    """</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
         <span class="n">model</span> <span class="o">=</span> <span class="n">Todo</span>
         <span class="c1"># All fields</span>
-        <span class="n">fields</span> <span class="o">=</span> <span class="s1">'__all__'</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;__all__&#39;</span>
 </code></pre></div></td></tr></table></div></p>
 </li>
 <li>
@@ -1069,8 +1891,8 @@ pip install pytz           # Timezone support
     <span class="c1"># Permissions (left to your own exercise)</span>
     <span class="c1"># permission_classes = [permissions.IsAuthenticated]</span>
 
-    <span class="c1"># Define the list of allowed HTTP methods (by default if you didn't define it, it will just enable all)</span>
-    <span class="n">http_method_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'get'</span><span class="p">,</span> <span class="s1">'post'</span><span class="p">,</span> <span class="s1">'put'</span><span class="p">,</span> <span class="s1">'patch'</span><span class="p">,</span> <span class="s1">'delete'</span><span class="p">,</span> <span class="s1">'head'</span><span class="p">,</span> <span class="s1">'options'</span><span class="p">,</span> <span class="s1">'trace'</span><span class="p">]</span>
+    <span class="c1"># Define the list of allowed HTTP methods (by default if you didn&#39;t define it, it will just enable all)</span>
+    <span class="n">http_method_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;get&#39;</span><span class="p">,</span> <span class="s1">&#39;post&#39;</span><span class="p">,</span> <span class="s1">&#39;put&#39;</span><span class="p">,</span> <span class="s1">&#39;patch&#39;</span><span class="p">,</span> <span class="s1">&#39;delete&#39;</span><span class="p">,</span> <span class="s1">&#39;head&#39;</span><span class="p">,</span> <span class="s1">&#39;options&#39;</span><span class="p">,</span> <span class="s1">&#39;trace&#39;</span><span class="p">]</span>
 </code></pre></div></td></tr></table></div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -1088,10 +1910,10 @@ pip install pytz           # Timezone support
 <span class="kn">from</span> <span class="nn">api.views</span> <span class="kn">import</span> <span class="n">TodoModelViewSet</span>
 
 <span class="n">router</span> <span class="o">=</span> <span class="n">routers</span><span class="o">.</span><span class="n">DefaultRouter</span><span class="p">(</span><span class="n">trailing_slash</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">router</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="sa">r</span><span class="s1">'todos'</span><span class="p">,</span> <span class="n">TodoModelViewSet</span><span class="p">)</span>
+<span class="n">router</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;todos&#39;</span><span class="p">,</span> <span class="n">TodoModelViewSet</span><span class="p">)</span>
 
 <span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="n">path</span><span class="p">(</span><span class="s1">''</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="n">router</span><span class="o">.</span><span class="n">urls</span><span class="p">)),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="n">router</span><span class="o">.</span><span class="n">urls</span><span class="p">)),</span>
 <span class="p">]</span>
 </code></pre></div></td></tr></table></div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -1107,9 +1929,9 @@ pip install pytz           # Timezone support
 <span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span><span class="p">,</span> <span class="n">include</span>
 
 <span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="n">path</span><span class="p">(</span><span class="s1">'admin/'</span><span class="p">,</span> <span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">urls</span><span class="p">),</span>
-    <span class="n">path</span><span class="p">(</span><span class="s1">'api-auth/'</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s1">'rest_framework.urls'</span><span class="p">)),</span>
-<span class="hll">    <span class="n">path</span><span class="p">(</span><span class="s1">'api/'</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s1">'api.urls'</span><span class="p">)),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;admin/&#39;</span><span class="p">,</span> <span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">urls</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;api-auth/&#39;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s1">&#39;rest_framework.urls&#39;</span><span class="p">)),</span>
+<span class="hll">    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;api/&#39;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s1">&#39;api.urls&#39;</span><span class="p">)),</span>
 </span><span class="p">]</span>
 </code></pre></div></td></tr></table></div></p>
 </li>
@@ -1127,82 +1949,164 @@ pip install pytz           # Timezone support
 <p>Frinze, Viewset is the future! - J. Morales</p>
 </details>
 </details>
-</article>
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
-</div>
-</main>
-<footer class="md-footer">
-<nav aria-label="footer.title" class="md-footer__inner md-grid">
-<a class="md-footer__link md-footer__link--prev" href="../introduction-to-vue/" rel="prev">
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
-</div>
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
+        </div>
+        
+      </main>
+      
+        
+  <footer class="md-footer">
+    
+      <nav class="md-footer__inner md-grid" aria-label="footer.title">
+        
+          <a href="../introduction-to-vue/" class="md-footer__link md-footer__link--prev" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
                   Previous
                 </span>
                 Introduction to Vue
               </div>
-</div>
-</a>
-<a class="md-footer__link md-footer__link--next" href="../mvc-mvmm-architecture-and-communications/" rel="next">
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
+            </div>
+          </a>
+        
+        
+          <a href="../mvc-mvmm-architecture-and-communications/" class="md-footer__link md-footer__link--next" rel="next">
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
                   Next
                 </span>
                 MVC-MVMM Architecture and Communications
               </div>
-</div>
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
-</div>
-</a>
-</nav>
-<div class="md-footer-meta md-typeset">
-<div class="md-footer-meta__inner md-grid">
-<div class="md-footer-copyright">
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
           
           Web Documentation Setup By
-          <a href="https://codersforcauses.org/" rel="noopener" target="_blank">
+          <a href="https://codersforcauses.org/" target="_blank" rel="noopener">
             Coders for Causes
           </a>
+          
+        </div>
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://codersforcauses.org/" target="_blank" rel="noopener" title="codersforcauses.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM5.78 8.75a9.64 9.64 0 0 0 1.363 4.177c.255.426.542.832.857 1.215.245-.296.551-.705.857-1.215A9.64 9.64 0 0 0 10.22 8.75Zm4.44-1.5a9.64 9.64 0 0 0-1.363-4.177c-.307-.51-.612-.919-.857-1.215a9.927 9.927 0 0 0-.857 1.215A9.64 9.64 0 0 0 5.78 7.25Zm-5.944 1.5H1.543a6.507 6.507 0 0 0 4.666 5.5c-.123-.181-.24-.365-.352-.552-.715-1.192-1.437-2.874-1.581-4.948Zm-2.733-1.5h2.733c.144-2.074.866-3.756 1.58-4.948.12-.197.237-.381.353-.552a6.507 6.507 0 0 0-4.666 5.5Zm10.181 1.5c-.144 2.074-.866 3.756-1.58 4.948-.12.197-.237.381-.353.552a6.507 6.507 0 0 0 4.666-5.5Zm2.733-1.5a6.507 6.507 0 0 0-4.666-5.5c.123.181.24.365.353.552.714 1.192 1.436 2.874 1.58 4.948Z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.instagram.com/cfc_uwa/" target="_blank" rel="noopener" title="www.instagram.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.facebook.com/codersforcauses" target="_blank" rel="noopener" title="www.facebook.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256c0 120 82.7 220.8 194.2 248.5V334.2h-52.8V256h52.8v-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287v175.9C413.8 494.8 512 386.9 512 256z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/channel/UCp47I0qUXeGgSK0AtFJSkbQ" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/company/coders-for-causes/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:hello@codersforcauses.org" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.7l167.6-182.9c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4z"/></svg>
+    </a>
+  
 </div>
-<div class="md-social">
-<a class="md-social__link" href="https://codersforcauses.org/" rel="noopener" target="_blank" title="codersforcauses.org">
-<svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM5.78 8.75a9.64 9.64 0 0 0 1.363 4.177c.255.426.542.832.857 1.215.245-.296.551-.705.857-1.215A9.64 9.64 0 0 0 10.22 8.75Zm4.44-1.5a9.64 9.64 0 0 0-1.363-4.177c-.307-.51-.612-.919-.857-1.215a9.927 9.927 0 0 0-.857 1.215A9.64 9.64 0 0 0 5.78 7.25Zm-5.944 1.5H1.543a6.507 6.507 0 0 0 4.666 5.5c-.123-.181-.24-.365-.352-.552-.715-1.192-1.437-2.874-1.581-4.948Zm-2.733-1.5h2.733c.144-2.074.866-3.756 1.58-4.948.12-.197.237-.381.353-.552a6.507 6.507 0 0 0-4.666 5.5Zm10.181 1.5c-.144 2.074-.866 3.756-1.58 4.948-.12.197-.237.381-.353.552a6.507 6.507 0 0 0 4.666-5.5Zm2.733-1.5a6.507 6.507 0 0 0-4.666-5.5c.123.181.24.365.353.552.714 1.192 1.436 2.874 1.58 4.948Z"></path></svg>
-</a>
-<a class="md-social__link" href="https://www.instagram.com/cfc_uwa/" rel="noopener" target="_blank" title="www.instagram.com">
-<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg>
-</a>
-<a class="md-social__link" href="https://www.facebook.com/codersforcauses" rel="noopener" target="_blank" title="www.facebook.com">
-<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256c0 120 82.7 220.8 194.2 248.5V334.2h-52.8V256h52.8v-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287v175.9C413.8 494.8 512 386.9 512 256z"></path></svg>
-</a>
-<a class="md-social__link" href="https://www.youtube.com/channel/UCp47I0qUXeGgSK0AtFJSkbQ" rel="noopener" target="_blank" title="www.youtube.com">
-<svg viewbox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg>
-</a>
-<a class="md-social__link" href="https://www.linkedin.com/company/coders-for-causes/" rel="noopener" target="_blank" title="www.linkedin.com">
-<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
-</a>
-<a class="md-social__link" href="mailto:hello@codersforcauses.org" rel="noopener" target="_blank" title="">
-<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.7l167.6-182.9c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4z"></path></svg>
-</a>
-</div>
-</div>
-</div>
-</footer>
-</div>
-<div class="md-dialog" data-md-component="dialog">
-<div class="md-dialog__inner md-typeset"></div>
-</div>
-<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "toc.integrate", "header.autohide", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../assets/javascripts/bundle.ad660dcc.min.js"></script>
-<script src="https://unpkg.com/mermaid@8.8.2/dist/mermaid.min.js"></script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js"></script>
-<script src="../../javascripts/tablesort.js"></script>
-</body>
+      </div>
+    </div>
+  </footer>
+  
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "toc.integrate", "header.autohide", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js"></script>
+      
+        <script src="../../javascripts/tablesort.js"></script>
+      
+    
+  </body>
 </html>

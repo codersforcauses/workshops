@@ -1,558 +1,1374 @@
 
-<!DOCTYPE html>
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../introduction-to-web-development/">
+      
+      
+        <link rel="next" href="../practical-software-engineering-practices/">
+      
+      
+      <link rel="icon" href="../../images/cfc_logo_white_circle.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
+    
+    
+      
+        <title>Introduction to Web Basics - Coders for Causes Workshops</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
 
-<html class="no-js" lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../introduction-to-web-development/" rel="prev"/>
-<link href="../practical-software-engineering-practices/" rel="next"/>
-<link href="../../images/cfc_logo_white_circle.png" rel="icon"/>
-<meta content="mkdocs-1.6.0, mkdocs-material-9.5.27" name="generator"/>
-<title>Introduction to Web Basics - Coders for Causes Workshops</title>
-<link href="../../assets/stylesheets/main.6543a935.min.css" rel="stylesheet"/>
-<link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
-<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<link href="../../stylesheets/extra.css" rel="stylesheet"/>
-<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-</head>
-<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="cfclight" dir="ltr">
-<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
-<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
-<label class="md-overlay" for="__drawer"></label>
-<div data-md-component="skip">
-<a class="md-skip" href="#introduction-to-the-web-basics-html-css-javascript">
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="cfclight" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction-to-the-web-basics-html-css-javascript" class="md-skip">
           Skip to content
         </a>
-</div>
-<div data-md-component="announce">
-</div>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
 <header class="md-header" data-md-component="header">
-<nav aria-label="Header" class="md-header__inner md-grid">
-<a aria-label="Coders for Causes Workshops" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Coders for Causes Workshops">
-<img alt="logo" src="../../images/cfc_logo_white_circle.png"/>
-</a>
-<label class="md-header__button md-icon" for="__drawer">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
-</label>
-<div class="md-header__title" data-md-component="header-title">
-<div class="md-header__ellipsis">
-<div class="md-header__topic">
-<span class="md-ellipsis">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Coders for Causes Workshops" class="md-header__button md-logo" aria-label="Coders for Causes Workshops" data-md-component="logo">
+      
+  <img src="../../images/cfc_logo_white_circle.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
             Coders for Causes Workshops
           </span>
-</div>
-<div class="md-header__topic" data-md-component="header-topic">
-<span class="md-ellipsis">
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
             
               Introduction to Web Basics
             
           </span>
-</div>
-</div>
-</div>
-<form class="md-header__option" data-md-component="palette">
-<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="indigo" data-md-color-scheme="cfclight" id="__palette_0" name="__palette" type="radio"/>
-<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"></path></svg>
-</label>
-<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
-<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to light mode">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"></path></svg>
-</label>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="cfclight" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
 </form>
-<script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
-<label class="md-header__button md-icon" for="__search">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
-</label>
-<div class="md-search" data-md-component="search" role="dialog">
-<label class="md-search__overlay" for="__search"></label>
-<div class="md-search__inner" role="search">
-<form class="md-search__form" name="search">
-<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
-<label class="md-search__icon md-icon" for="__search">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
-</label>
-<nav aria-label="Search" class="md-search__options">
-<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
-</button>
-</nav>
-</form>
-<div class="md-search__output">
-<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
-<div class="md-search-result" data-md-component="search-result">
-<div class="md-search-result__meta">
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
             Initializing search
           </div>
-<ol class="md-search-result__list" role="presentation"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="md-header__source">
-<a class="md-source" data-md-component="source" href="https://github.com/codersforcauses/workshops/" title="Go to repository">
-<div class="md-source__icon md-icon">
-<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
-</div>
-<div class="md-source__repository">
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/codersforcauses/workshops/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
     GitHub
   </div>
 </a>
-</div>
-</nav>
+      </div>
+    
+  </nav>
+  
 </header>
-<div class="md-container" data-md-component="container">
-<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
-<div class="md-grid">
-<ul class="md-tabs__list">
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../..">
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
           
   
   About
 
         </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../../2024-winter/introduction-to-web-development/">
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../2024-winter/introduction-to-web-development/" class="md-tabs__link">
           
   
   2024 Winter
 
         </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../../2023-winter/introduction-to-backend-development-with-django/">
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../2023-winter/introduction-to-backend-development-with-django/" class="md-tabs__link">
           
   
   2023 Winter
 
         </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../../2022-2023-summer/">
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../2022-2023-summer/" class="md-tabs__link">
           
   
   2022/2023 Summer
 
         </a>
-</li>
-<li class="md-tabs__item md-tabs__item--active">
-<a class="md-tabs__link" href="../">
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
   2021/2022 Summer
 
         </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../../2021-winter/">
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../2021-winter/" class="md-tabs__link">
           
   
   2021 Winter
 
         </a>
-</li>
-</ul>
-</div>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
 </nav>
-<main class="md-main" data-md-component="main">
-<div class="md-main__inner md-grid">
-<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
-<div class="md-sidebar__scrollwrap">
-<div class="md-sidebar__inner">
-<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
-<label class="md-nav__title" for="__drawer">
-<a aria-label="Coders for Causes Workshops" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Coders for Causes Workshops">
-<img alt="logo" src="../../images/cfc_logo_white_circle.png"/>
-</a>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Coders for Causes Workshops" class="md-nav__button md-logo" aria-label="Coders for Causes Workshops" data-md-component="logo">
+      
+  <img src="../../images/cfc_logo_white_circle.png" alt="logo">
+
+    </a>
     Coders for Causes Workshops
   </label>
-<div class="md-nav__source">
-<a class="md-source" data-md-component="source" href="https://github.com/codersforcauses/workshops/" title="Go to repository">
-<div class="md-source__icon md-icon">
-<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
-</div>
-<div class="md-source__repository">
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/codersforcauses/workshops/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
     GitHub
   </div>
 </a>
-</div>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
-<span class="md-ellipsis">
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
     About
   </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_1">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
             About
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../..">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Overview
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../contributions/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Contributions
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
     2024 Winter
   </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_2">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
             2024 Winter
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../2024-winter/introduction-to-web-development/">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2024-winter/introduction-to-web-development/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Introduction to Web Development
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../2024-winter/practical-software-engineering-workflow/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2024-winter/practical-software-engineering-workflow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Practical Software Engineering Workflow
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../2024-winter/introduction-to-docker/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2024-winter/introduction-to-docker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Introduction to Docker
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-<span class="md-ellipsis">
-    2023 Winter
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_3">
-<span class="md-nav__icon md-icon"></span>
-            2023 Winter
-          </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../2023-winter/introduction-to-backend-development-with-django/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2024-winter/introduction-to-backend-development-with-django/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Introduction to Backend Development With Django
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2023 Winter
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            2023 Winter
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2023-winter/introduction-to-backend-development-with-django/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction to Backend Development With Django
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
     2022/2023 Summer
   </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_4">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
             2022/2023 Summer
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../2022-2023-summer/">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2022-2023-summer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Overview
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../2022-2023-summer/setup.md">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2022-2023-summer/setup.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Setup
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../2022-2023-summer/introduction-to-web-development/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2022-2023-summer/introduction-to-web-development/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Introduction to Web Development
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../2022-2023-summer/practical-software-engineering-workflow/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2022-2023-summer/practical-software-engineering-workflow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Practical Software Engineering Workflow
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../2022-2023-summer/mvc-mvvm-architecture-and-communications/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2022-2023-summer/mvc-mvvm-architecture-and-communications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     MVC and MVVM Software Architectural Patterns and Communications
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
-<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
     2021/2022 Summer
   </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="true" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_5">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
             2021/2022 Summer
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Overview
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../setup/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Setup
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../project-and-workshop-structure/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project-and-workshop-structure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Project and Workshop Structure
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../introduction-to-web-development/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction-to-web-development/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Introduction to Web Development
   </span>
-</a>
-</li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
     Introduction to Web Basics
   </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
-<span class="md-ellipsis">
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
     Introduction to Web Basics
   </span>
-</a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#content">
-<span class="md-ellipsis">
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#content" class="md-nav__link">
+    <span class="md-ellipsis">
       Content
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#key-web-technologies">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#key-web-technologies" class="md-nav__link">
+    <span class="md-ellipsis">
       Key Web Technologies
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#html">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#html" class="md-nav__link">
+    <span class="md-ellipsis">
       HTML
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#css">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#css" class="md-nav__link">
+    <span class="md-ellipsis">
       CSS
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#javascript">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#javascript" class="md-nav__link">
+    <span class="md-ellipsis">
       JavaScript
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#creating-a-pokemon-api-webapp">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-pokemon-api-webapp" class="md-nav__link">
+    <span class="md-ellipsis">
       Creating a Pokemon API Webapp
     </span>
-</a>
+  </a>
+  
 </li>
-</ul>
+      
+    </ul>
+  
 </nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../practical-software-engineering-practices/">
-<span class="md-ellipsis">
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../practical-software-engineering-practices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Practical Software Engineering Practices
   </span>
-</a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_5_7" type="checkbox"/>
-<label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
     Introduction to Frontend Frameworks
   </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_5_7_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_5_7">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7">
+            <span class="md-nav__icon md-icon"></span>
             Introduction to Frontend Frameworks
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../introduction-to-frontend-frameworks/">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction-to-frontend-frameworks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Overview
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../introduction-to-react/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction-to-react/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Introduction to React
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../introduction-to-vue/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction-to-vue/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Introduction to Vue
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../introduction-to-backend-development-with-django/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction-to-backend-development-with-django/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Introduction to Backend Development with Django
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../mvc-mvmm-architecture-and-communications/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mvc-mvmm-architecture-and-communications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     MVC-MVMM Architecture and Communications
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../package-managers/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../package-managers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Package Managers
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../typical-codebase-structure/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../typical-codebase-structure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Typical Codebase Structure
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../automated-testing-and-ci-pipelines/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../automated-testing-and-ci-pipelines/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Automated Testing and CI Pipelines
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
-<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
     2021 Winter
   </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_6">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
             2021 Winter
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../2021-winter/">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2021-winter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Overview
   </span>
-</a>
-</li>
-</ul>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
 </nav>
-</li>
-</ul>
-</nav>
-</div>
-</div>
-</div>
-<div class="md-content" data-md-component="content">
-<article class="md-content__inner md-typeset">
-<h1 id="introduction-to-the-web-basics-html-css-javascript">Introduction to the Web Basics - HTML, CSS &amp; JavaScript<a class="headerlink" href="#introduction-to-the-web-basics-html-css-javascript" title="Permanent link">¶</a></h1>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="introduction-to-the-web-basics-html-css-javascript">Introduction to the Web Basics - HTML, CSS &amp; JavaScript<a class="headerlink" href="#introduction-to-the-web-basics-html-css-javascript" title="Permanent link">&para;</a></h1>
 <p><em>The tools of the web</em></p>
 <p>This workshop will introduce you to the basics of HTML, CSS and JavaScript, the fundamental technologies of web development. This is a very introductory workshop, and there is still so much we can learn, but this will be a good place to start.</p>
-<h2 id="content">Content<a class="headerlink" href="#content" title="Permanent link">¶</a></h2>
+<h2 id="content">Content<a class="headerlink" href="#content" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="#key-web-technologies">Key Web Technologies</a></li>
 <li><a href="#html">HTML</a><ul>
@@ -581,16 +1397,16 @@
 </li>
 <li><a href="#creating-a-pokemon-api-webapp">Web App Tutorial</a></li>
 </ul>
-<h2 id="key-web-technologies">Key Web Technologies<a class="headerlink" href="#key-web-technologies" title="Permanent link">¶</a></h2>
+<h2 id="key-web-technologies">Key Web Technologies<a class="headerlink" href="#key-web-technologies" title="Permanent link">&para;</a></h2>
 <p>HTML, CSS and JavaScript each have a different job when it comes to creating web pages.</p>
-<h3 id="what-do-they-do">What do they do?<a class="headerlink" href="#what-do-they-do" title="Permanent link">¶</a></h3>
+<h3 id="what-do-they-do">What do they do?<a class="headerlink" href="#what-do-they-do" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="#html">HTML</a>: describes the content and structure of the web page</li>
 <li><a href="#css">CSS</a>: describes the style and appearance of the web page</li>
 <li><a href="#javascript">JavaScript</a>: provides funtionality to a web page</li>
 </ul>
-<p><img alt="basics of web 2" src="../images/basics-of-web-2.jpg"/></p>
-<h2 id="html">HTML<a class="headerlink" href="#html" title="Permanent link">¶</a></h2>
+<p><img alt="basics of web 2" src="../images/basics-of-web-2.jpg" /></p>
+<h2 id="html">HTML<a class="headerlink" href="#html" title="Permanent link">&para;</a></h2>
 <p>Hyper Text Markup Language (HTML) is used to structure the webpage. The general structure of a webpage can be seen below.</p>
 <details class="example" open="open">
 <summary>My First HTML Page</summary>
@@ -605,7 +1421,7 @@
 <span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"en"</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>You see this text on your browser tab!!!<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
@@ -617,8 +1433,8 @@
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 </details>
-<h3 id="elements">Elements<a class="headerlink" href="#elements" title="Permanent link">¶</a></h3>
-<p>A webpage is made of elements, each with their own properties, that contain content to be displayed on the page. Elements are defined by tags, such as <code>h1</code>, <code>div</code> and <code>body</code>. Most elements have an open and close tab. The container and its content, together, are called an element.<br/>
+<h3 id="elements">Elements<a class="headerlink" href="#elements" title="Permanent link">&para;</a></h3>
+<p>A webpage is made of elements, each with their own properties, that contain content to be displayed on the page. Elements are defined by tags, such as <code>h1</code>, <code>div</code> and <code>body</code>. Most elements have an open and close tab. The container and its content, together, are called an element.<br />
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>This is a header element.<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div></p>
 <p>The most notable, and probably the tag you will use most, is the <code>&lt;div&gt;</code> tag. It defines a division or section within the HTML document, and is used as a container that holds other elements.</p>
@@ -648,7 +1464,7 @@
 <span class="normal">22</span>
 <span class="normal">23</span>
 <span class="normal">24</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"en"</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>The Web Dev Fairytale<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
@@ -674,9 +1490,9 @@
 </code></pre></div></td></tr></table></div>
 </details>
 <p>We will go through the important ones during this workshop, but you can find the full of them <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element" target="_blank">here</a>.  </p>
-<h3 id="attributes">Attributes<a class="headerlink" href="#attributes" title="Permanent link">¶</a></h3>
+<h3 id="attributes">Attributes<a class="headerlink" href="#attributes" title="Permanent link">&para;</a></h3>
 <p>Most tags have attributes that specify information or change the tag in some way. The most common being <code>class</code> and <code>id</code>.  </p>
-<h4 id="most-common-attributes">Most Common Attributes<a class="headerlink" href="#most-common-attributes" title="Permanent link">¶</a></h4>
+<h4 id="most-common-attributes">Most Common Attributes<a class="headerlink" href="#most-common-attributes" title="Permanent link">&para;</a></h4>
 <ul>
 <li><code>class</code>: used to specify one or more class names for a HTML element.<ul>
 <li>Classes are used to group certain elements in order to give them specific features through CSS and to allow many elements to be manipulated using JavaScript. </li>
@@ -706,33 +1522,33 @@
 <span class="normal">14</span>
 <span class="normal">15</span>
 <span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"en"</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>You see this text on your browser tab!!!<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-<span class="hll">    <span class="p">&lt;</span><span class="nt">body</span> <span class="na">style</span><span class="o">=</span><span class="s">"background-color: red"</span><span class="p">&gt;</span>
-</span><span class="hll">        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"bigSection"</span><span class="p">&gt;</span>
+<span class="hll">    <span class="p">&lt;</span><span class="nt">body</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;background-color: red&quot;</span><span class="p">&gt;</span>
+</span><span class="hll">        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;bigSection&quot;</span><span class="p">&gt;</span>
 </span>            <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>BIG HEADER!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-<span class="hll">            <span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">"first"</span><span class="p">&gt;</span>This is the first paragraph of the webpage<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="hll">            <span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;first&quot;</span><span class="p">&gt;</span>This is the first paragraph of the webpage<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </span>            <span class="cm">&lt;!-- more cool stuff goes here --&gt;</span>
         <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="hll">        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"smallSection"</span><span class="p">&gt;</span>
+<span class="hll">        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;smallSection&quot;</span><span class="p">&gt;</span>
 </span>            <span class="p">&lt;</span><span class="nt">h6</span><span class="p">&gt;</span>small header<span class="p">&lt;/</span><span class="nt">h6</span><span class="p">&gt;</span>
         <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 </details>
-<h3 id="images">Images<a class="headerlink" href="#images" title="Permanent link">¶</a></h3>
+<h3 id="images">Images<a class="headerlink" href="#images" title="Permanent link">&para;</a></h3>
 <p>Images are added by using the <code>&lt;img&gt;</code> element tag. It can also be used to add gifs!</p>
 <details class="example adding an image in html" open="open">
 <summary>Example</summary>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://i.imgur.com/SjZxZza.jpeg"</span> <span class="na">alt</span><span class="o">=</span><span class="s">"Three Cute Dog Mermaids"</span><span class="p">&gt;</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://i.imgur.com/SjZxZza.jpeg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Three Cute Dog Mermaids&quot;</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 </details>
-<p><img alt="Three Cute Dog Mermaids" src="https://i.imgur.com/SjZxZza.jpeg" style="display: block; width: 30%; margin-left: auto; margin-right: auto"/>
+<p><img src="https://i.imgur.com/SjZxZza.jpeg" alt="Three Cute Dog Mermaids" style="display: block; width: 30%; margin-left: auto; margin-right: auto">
 Cute, right?</p>
-<h4 id="image-attributes">Image Attributes<a class="headerlink" href="#image-attributes" title="Permanent link">¶</a></h4>
+<h4 id="image-attributes">Image Attributes<a class="headerlink" href="#image-attributes" title="Permanent link">&para;</a></h4>
 <ul>
 <li><code>src</code>: specifies the location of the image to be displayed<ul>
 <li>This can either be a url, as in the example above, or the relative path of an image within the site's directory</li>
@@ -743,15 +1559,15 @@ Cute, right?</p>
 </ul>
 </li>
 </ul>
-<h3 id="anchors-and-hyperlinks">Anchors and Hyperlinks<a class="headerlink" href="#anchors-and-hyperlinks" title="Permanent link">¶</a></h3>
+<h3 id="anchors-and-hyperlinks">Anchors and Hyperlinks<a class="headerlink" href="#anchors-and-hyperlinks" title="Permanent link">&para;</a></h3>
 <p>We can add links to other websites, or even to sections within the same page, using the <code>&lt;a&gt;</code> element, known as an anchor.</p>
 <details class="example" open="open">
 <summary>Adding a hyperlink to an HTML page</summary>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://codersforcauses.org/"</span> <span class="na">target</span><span class="o">=</span><span class="s">"_blank"</span><span class="p">&gt;</span>Coders for Causes<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://codersforcauses.org/&quot;</span> <span class="na">target</span><span class="o">=</span><span class="s">&quot;_blank&quot;</span><span class="p">&gt;</span>Coders for Causes<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 </details>
 <p>They can be adding added by themself, or within text such as <a href="https://codersforcauses.org/" target="_blank">here</a>.</p>
-<h4 id="anchor-attributes">Anchor Attributes<a class="headerlink" href="#anchor-attributes" title="Permanent link">¶</a></h4>
+<h4 id="anchor-attributes">Anchor Attributes<a class="headerlink" href="#anchor-attributes" title="Permanent link">&para;</a></h4>
 <ul>
 <li><code>href</code>: specifies the destination to link to<ul>
 <li>External site: simply include the url you wish to visit</li>
@@ -769,24 +1585,24 @@ Cute, right?</p>
 </ul>
 </li>
 </ul>
-<p>Always be careul when clicking links. You never know when there is something you <a download="bon" href="/images/../2021-2022-summer/images/bon.jpg">should not click.</a></p>
-<h4 id="images-and-hyperlinks">Images and Hyperlinks<a class="headerlink" href="#images-and-hyperlinks" title="Permanent link">¶</a></h4>
+<p>Always be careul when clicking links. You never know when there is something you <a href="/images/../2021-2022-summer/images/bon.jpg" download="bon">should not click.</a></p>
+<h4 id="images-and-hyperlinks">Images and Hyperlinks<a class="headerlink" href="#images-and-hyperlinks" title="Permanent link">&para;</a></h4>
 <p>Any image, or any element in general, can be turned into a link by enclosing the element within the anchor tabs.</p>
 <details class="example" open="open">
 <summary>Hyperlinked image</summary>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://codersforcauses.org/"</span> <span class="na">target</span><span class="o">=</span><span class="s">"_blank"</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://www.uwastudentguild.com/assets/clubs/logos/logo---coders-for-causes-1567649329.jpg"</span><span class="p">&gt;</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://codersforcauses.org/&quot;</span> <span class="na">target</span><span class="o">=</span><span class="s">&quot;_blank&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.uwastudentguild.com/assets/clubs/logos/logo---coders-for-causes-1567649329.jpg&quot;</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 </details>
 <p><a href="https://codersforcauses.org/" target="_blank">
-<img src="https://i.ytimg.com/vi/Dj3pmxlWM6s/maxresdefault.jpg" style="display: block; width: 50%; margin-left: auto; margin-right: auto"/>
+    <img src="https://i.ytimg.com/vi/Dj3pmxlWM6s/maxresdefault.jpg" style="display: block; width: 50%; margin-left: auto; margin-right: auto">
 </a></p>
-<h3 id="forms">Forms<a class="headerlink" href="#forms" title="Permanent link">¶</a></h3>
+<h3 id="forms">Forms<a class="headerlink" href="#forms" title="Permanent link">&para;</a></h3>
 <p>Forms are used to collect user input. They are defined by the <code>&lt;form&gt;</code> tags and usually contain form elements such as <code>&lt;input&gt;</code>, <code>&lt;textbox&gt;</code>, etc.  </p>
-<p>Inputs can come in many different forms, such as textboxes, radio buttons, checkboxes and drop down menus. Each input field is given a <code>value</code><br/>
+<p>Inputs can come in many different forms, such as textboxes, radio buttons, checkboxes and drop down menus. Each input field is given a <code>value</code><br />
 Once a form is complete and filled out, we need to submit, or POST, it. This can be done through a special input of type <code>submit</code>.  </p>
 <p>The only required attribute of <code>&lt;form&gt;</code> is <code>action</code>. The <code>action</code> attribute speicifies the URL of the application that is to be called when the Submit button is pressed. If no action, then the attribute takes the value of an empty string and the current page is the destination.</p>
 <details class="example forms" open="open">
@@ -798,7 +1614,7 @@ Once a form is complete and filled out, we need to submit, or POST, it. This can
 <span class="normal">5</span>
 <span class="normal">6</span>
 <span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>I like:<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">""</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">”radio”</span> <span class="na">value</span><span class="o">=</span><span class="s">”Red”</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">”radio”</span> <span class="na">value</span><span class="o">=</span><span class="s">”Green”</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">”radio”</span> <span class="na">value</span><span class="o">=</span><span class="s">”Blue”</span><span class="p">&gt;</span>
@@ -806,35 +1622,35 @@ Once a form is complete and filled out, we need to submit, or POST, it. This can
 <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 </details>
-<h4 id="input-validation">Input Validation<a class="headerlink" href="#input-validation" title="Permanent link">¶</a></h4>
-<p>Input validation is a very important aspect to consider when dealing with forms. Remember the famous acronym GIGO, Garbage-in Garbage-Out.<br/>
+<h4 id="input-validation">Input Validation<a class="headerlink" href="#input-validation" title="Permanent link">&para;</a></h4>
+<p>Input validation is a very important aspect to consider when dealing with forms. Remember the famous acronym GIGO, Garbage-in Garbage-Out.<br />
 To assist you with input validation, HTML forms have in-built validation for different types of data, such as emails, numbers and dates. This can be achieved by changing the input type of a field to the respective data entry type.</p>
 <details class="example" open="open">
 <summary>Baseline input validation with HTML</summary>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"email"</span> <span class="na">name</span><span class="o">=</span><span class="s">"email"</span> <span class="na">value</span><span class="o">=</span><span class="s">"Email"</span><span class="p">&gt;</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Email&quot;</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 </details>
-<h3 id="document-object-model">Document Object Model<a class="headerlink" href="#document-object-model" title="Permanent link">¶</a></h3>
-<p>All the elements of a HTML page make up a document tree, called the Document Object Model (DOM).<br/>
-<img alt="Document Object Model" src="https://www.w3schools.com/js/pic_htmltree.gif"><br/>
-The DOM is a platform and language-neutral interface that allows programs to dynamically access and update the content, structure and style of the HTML document. Each element in a HTML document is represented by a node on the tree.<br/>
-We can then use things such as JavaScript to access and update the HTML document using the DOM. We will see more of this in the tutorial at the end.</img></p>
-<h2 id="css">CSS<a class="headerlink" href="#css" title="Permanent link">¶</a></h2>
+<h3 id="document-object-model">Document Object Model<a class="headerlink" href="#document-object-model" title="Permanent link">&para;</a></h3>
+<p>All the elements of a HTML page make up a document tree, called the Document Object Model (DOM).<br />
+<img alt="Document Object Model" src="https://www.w3schools.com/js/pic_htmltree.gif" /><br />
+The DOM is a platform and language-neutral interface that allows programs to dynamically access and update the content, structure and style of the HTML document. Each element in a HTML document is represented by a node on the tree.<br />
+We can then use things such as JavaScript to access and update the HTML document using the DOM. We will see more of this in the tutorial at the end.</p>
+<h2 id="css">CSS<a class="headerlink" href="#css" title="Permanent link">&para;</a></h2>
 <p>Cascading Style Sheets (CSS) provides style to the web. It is used to specify the layout and style of markup languages. CSS tells the browser <em>how</em> to display the elements that are written in HTML.</p>
 <p>We can write the CSS style rules into an element using inline CSS, where the <code>style</code> attribute of an element is modified directly in the HTML.</p>
 <details class="example" open="open">
 <summary>Inline style sheets</summary>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="hll"><span class="p">&lt;</span><span class="nt">body</span> <span class="na">style</span><span class="o">=</span><span class="s">"background-color: red;"</span><span class="p">&gt;</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="hll"><span class="p">&lt;</span><span class="nt">body</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;background-color: red;&quot;</span><span class="p">&gt;</span>
 </span>    <span class="cm">&lt;!-- rest of body goes here --&gt;</span>
 <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 </details>
-<p>However, this gets hard to manage and maintain, especially when the number of elements in a document grows, and when we want to change many elements that have the same style.<br/>
+<p>However, this gets hard to manage and maintain, especially when the number of elements in a document grows, and when we want to change many elements that have the same style.<br />
 We use <em>document-level</em> style sheets or <em>external</em> style sheets to combat this issue.</p>
 <p>But first, we must understand how to create these style sheets.</p>
-<h3 id="css-format">CSS Format<a class="headerlink" href="#css-format" title="Permanent link">¶</a></h3>
+<h3 id="css-format">CSS Format<a class="headerlink" href="#css-format" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Selector<ul>
 <li>A value, or list of values, that specify the elements for which the following style will be applied to</li>
@@ -872,13 +1688,13 @@ We use <em>document-level</em> style sheets or <em>external</em> style sheets to
 </details>
 <details class="info">
 <summary>How do I know what attributes exist, and what do I change to get my desired effect?</summary>
-<p>There are two simple answers to this question:<br/>
-1. <strong>Google it.</strong> Chances are, someone has already tried to do something similar and your solution already exists.<br/>
+<p>There are two simple answers to this question:<br />
+1. <strong>Google it.</strong> Chances are, someone has already tried to do something similar and your solution already exists.<br />
 2. <strong>Play around</strong>. Learn what attributes exist, and how changing thier effects changes their on screen appearance. </p>
 </details>
-<h3 id="rules-of-selection">Rules of Selection<a class="headerlink" href="#rules-of-selection" title="Permanent link">¶</a></h3>
+<h3 id="rules-of-selection">Rules of Selection<a class="headerlink" href="#rules-of-selection" title="Permanent link">&para;</a></h3>
 <p>As mentioned earlier, selectors have a set of rules that allow you to apply styles to certain, or even very specific, groups of elements. These can range selecting elements based on the type of element they are, or what class they are in, to selecting all elements of a certain type that are immediately preceded by an element of another type.</p>
-<div class="tabbed-set" data-tabs="1:6"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><label for="__tabbed_1_1">Element</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="1:6"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Element</label><div class="tabbed-content">
 <p>Element selectors simply apply the defined style to all elements of the same type.
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -887,7 +1703,7 @@ We use <em>document-level</em> style sheets or <em>external</em> style sheets to
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div></p>
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio"><label for="__tabbed_1_2">Class</label><div class="tabbed-content">
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Class</label><div class="tabbed-content">
 <p>Class selectors apply the defined style to all elements belonging to that class. They are similar to element selectors, except that the class name is preceded by a <code>.</code> character.
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -895,7 +1711,7 @@ We use <em>document-level</em> style sheets or <em>external</em> style sheets to
 <span class="w">    </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">%</span>
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div></p>
-<p>We can also specify the type of element within a class we wish to apply the style to by including it before the <code>.</code> character.<br/>
+<p>We can also specify the type of element within a class we wish to apply the style to by including it before the <code>.</code> character.<br />
 The following code selects all <code>&lt;p&gt;</code> elements that are of the class <code>narrow</code>:
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -904,7 +1720,7 @@ The following code selects all <code>&lt;p&gt;</code> elements that are of the c
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div></p>
 </div>
-<input id="__tabbed_1_3" name="__tabbed_1" type="radio"><label for="__tabbed_1_3">id</label><div class="tabbed-content">
+<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">id</label><div class="tabbed-content">
 <p>These selectors apply the style to an element based on its <code>id</code>. The <code>id</code> is preceded by <code>#</code> in the selector definition.
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -913,7 +1729,7 @@ The following code selects all <code>&lt;p&gt;</code> elements that are of the c
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div></p>
 </div>
-<input id="__tabbed_1_4" name="__tabbed_1" type="radio"><label for="__tabbed_1_4">Psuedo Classes</label><div class="tabbed-content">
+<input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><label for="__tabbed_1_4">Psuedo Classes</label><div class="tabbed-content">
 <p>Psuedo classes are styles that apply only when a certian action occurs or a condition is met, and not all the time. Some common selectors include <code>hover</code>, <code>focus</code> and <code>active</code>. They are included after the element, class or id has been specified, and are preceded with a colon <code>:</code>.
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -923,7 +1739,7 @@ The following code selects all <code>&lt;p&gt;</code> elements that are of the c
 </code></pre></div></td></tr></table></div></p>
 <p>The full list of them can be found <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes">here</a>.</p>
 </div>
-<input id="__tabbed_1_5" name="__tabbed_1" type="radio"><label for="__tabbed_1_5">Group</label><div class="tabbed-content">
+<input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><label for="__tabbed_1_5">Group</label><div class="tabbed-content">
 <p>To specify a group of elements to apply a style to, simply list the elements, ids or classes delimitted by a comma (<code>,</code>).
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -932,20 +1748,20 @@ The following code selects all <code>&lt;p&gt;</code> elements that are of the c
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div></p>
 </div>
-<input id="__tabbed_1_6" name="__tabbed_1" type="radio"><label for="__tabbed_1_6">Other</label><div class="tabbed-content">
+<input id="__tabbed_1_6" name="__tabbed_1" type="radio" /><label for="__tabbed_1_6">Other</label><div class="tabbed-content">
 <p>There exists other selectors that allow you to be more specific as to what elements are to be selected, such as contextual selectors, but we will leave those as <em>self-learning</em>.</p>
 <details class="info">
 <summary>Contextual Selectors</summary>
 <p>Contextual selectors group elements based on their position and surroundings in the document tree. 
-    <img alt="HTML document tree" src="http://web.simmons.edu/~grabiner/comm244/weekfour/tree.gif"><br/>
-Further reading into the topic can be found through searching the web for platforms that teach you all about computer science, such as <a href="https://www.geeksforgeeks.org/what-is-contextual-selector-in-css/" taget="_blank">Geeks for Geeks</a>. </img></p>
+    <img alt="HTML document tree" src="http://web.simmons.edu/~grabiner/comm244/weekfour/tree.gif" /><br />
+Further reading into the topic can be found through searching the web for platforms that teach you all about computer science, such as <a href="https://www.geeksforgeeks.org/what-is-contextual-selector-in-css/" taget="_blank">Geeks for Geeks</a>. </p>
 </details>
 </div>
-</input></input></input></input></input></input></div>
-<h3 id="document-and-external-style-sheets">Document and External Style Sheets<a class="headerlink" href="#document-and-external-style-sheets" title="Permanent link">¶</a></h3>
+</div>
+<h3 id="document-and-external-style-sheets">Document and External Style Sheets<a class="headerlink" href="#document-and-external-style-sheets" title="Permanent link">&para;</a></h3>
 <p>Now that we know what we are doing, let's create some style sheets! Document and External style sheets help us better organise and manage the styles of the document. They are located in one location, so you do not have to go far to find them and change parts of your document. </p>
-<h4 id="document-style-sheets">Document Style Sheets<a class="headerlink" href="#document-style-sheets" title="Permanent link">¶</a></h4>
-<p>Document style sheets are located within the <code>&lt;head&gt;</code> of a HTML document, under the <code>&lt;style&gt;</code> tag. They work in the same was as mentioned <a href="#css-format">above</a>.<br/>
+<h4 id="document-style-sheets">Document Style Sheets<a class="headerlink" href="#document-style-sheets" title="Permanent link">&para;</a></h4>
+<p>Document style sheets are located within the <code>&lt;head&gt;</code> of a HTML document, under the <code>&lt;style&gt;</code> tag. They work in the same was as mentioned <a href="#css-format">above</a>.<br />
 See the below example of how document style sheets are implemented within a HTML page.  </p>
 <details class="example" open="open">
 <summary>Document Style Sheets</summary>
@@ -969,7 +1785,7 @@ See the below example of how document style sheets are implemented within a HTML
 <span class="normal">18</span>
 <span class="normal">19</span>
 <span class="normal">20</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"en"</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>You see this text on your browser tab!!!<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
@@ -990,8 +1806,8 @@ See the below example of how document style sheets are implemented within a HTML
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 </details>
-<h4 id="external-style-sheets">External Style Sheets<a class="headerlink" href="#external-style-sheets" title="Permanent link">¶</a></h4>
-<p>What happens when our site grows, and the number of HTML pages increases, and suddenly styles have to change, and we have to change every document, but they all have to follow the same styling as the others, and we have to manage that?!<br/>
+<h4 id="external-style-sheets">External Style Sheets<a class="headerlink" href="#external-style-sheets" title="Permanent link">&para;</a></h4>
+<p>What happens when our site grows, and the number of HTML pages increases, and suddenly styles have to change, and we have to change every document, but they all have to follow the same styling as the others, and we have to manage that?!<br />
 Thankfully, we can store our styles in a seperate <code>.css</code> file and then simply reference the stylesheet in our HTML document.</p>
 <details class="example" open="open">
 <summary>styles.css</summary>
@@ -1025,10 +1841,10 @@ Thankfully, we can store our styles in a seperate <code>.css</code> file and the
 <span class="normal">10</span>
 <span class="normal">11</span>
 <span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"en"</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>You see this text on your browser tab!!!<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-<span class="hll">        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="na">href</span><span class="o">=</span><span class="s">"styles.css"</span><span class="p">&gt;</span>
+<span class="hll">        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;styles.css&quot;</span><span class="p">&gt;</span>
 </span>    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
         <span class="cm">&lt;!-- this is where the content goes! --&gt;</span>
@@ -1038,25 +1854,26 @@ Thankfully, we can store our styles in a seperate <code>.css</code> file and the
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 </details>
-<h3 id="flexboxes">Flexboxes<a class="headerlink" href="#flexboxes" title="Permanent link">¶</a></h3>
+<h3 id="flexboxes">Flexboxes<a class="headerlink" href="#flexboxes" title="Permanent link">&para;</a></h3>
 <p>Flexboxes are a great way to position your items within a container.  </p>
 <p>Learning is best done when having fun and getting your hands dirty (metaphorically). <a href="https://flexboxfroggy.com/">Flexbox Froggy</a> is an interactive website that teaches you all about flexboxes, one step at a time. Your aim is to allign all the frogs to their corresponding lilypads. It is a much better learning tool than sitting and reading about some code I wrote.  </p>
-<iframe height="720" src="https://flexboxfroggy.com/" title="Learn Flexboxes the fun way" width="100%"></iframe>
-<h2 id="javascript">JavaScript<a class="headerlink" href="#javascript" title="Permanent link">¶</a></h2>
-<p>JavaScript, also known as JS, gives a web page fucntionality and reactiveness. It allows the user to interact with the web page, and for us to make it to do things that we want it to do.<br/>
-Similar to CSS, all your JS can be implemented into a HTML document by encapsulating it in the <code>&lt;script&gt;</code> tag within the <code>&lt;head&gt;</code> of the document, or even <code>&lt;body&gt;</code> in this case. However, we will be sticking to having our JS stored in external files for ease of managability.<br/>
+<iframe src="https://flexboxfroggy.com/" title="Learn Flexboxes the fun way" height="720" width="100%"></iframe>
+
+<h2 id="javascript">JavaScript<a class="headerlink" href="#javascript" title="Permanent link">&para;</a></h2>
+<p>JavaScript, also known as JS, gives a web page fucntionality and reactiveness. It allows the user to interact with the web page, and for us to make it to do things that we want it to do.<br />
+Similar to CSS, all your JS can be implemented into a HTML document by encapsulating it in the <code>&lt;script&gt;</code> tag within the <code>&lt;head&gt;</code> of the document, or even <code>&lt;body&gt;</code> in this case. However, we will be sticking to having our JS stored in external files for ease of managability.<br />
 See the below example of how to add a script file to your page. To add many files, simply add another <code>&lt;script&gt;</code> element and reference the other file.</p>
 <details class="example" open="open">
 <summary>Adding JavaScript to my HTML document</summary>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"script.js"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;script.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 </details>
-<h3 id="the-basics-of-javascript">The Basics of JavaScript<a class="headerlink" href="#the-basics-of-javascript" title="Permanent link">¶</a></h3>
+<h3 id="the-basics-of-javascript">The Basics of JavaScript<a class="headerlink" href="#the-basics-of-javascript" title="Permanent link">&para;</a></h3>
 <p>We shall discuss the basic syntax of JS, such as variables and functions, just to get you started. Feel free to do some of your own learning, too. There is a lot of cool things you can do and shortcuts you can use when you dive deeper into JavaScript, such as the <em><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator" target="_blank">ternary operator</a></em>, but we will leave these for now.</p>
-<h4 id="variables">Variables<a class="headerlink" href="#variables" title="Permanent link">¶</a></h4>
-<p>Variables are named memory locations that store data.<br/>
+<h4 id="variables">Variables<a class="headerlink" href="#variables" title="Permanent link">&para;</a></h4>
+<p>Variables are named memory locations that store data.<br />
 To define a variable, we can use three different keywords, each giving the variable special properties.</p>
-<h5 id="variable-declaration">Variable Declaration<a class="headerlink" href="#variable-declaration" title="Permanent link">¶</a></h5>
+<h5 id="variable-declaration">Variable Declaration<a class="headerlink" href="#variable-declaration" title="Permanent link">&para;</a></h5>
 <ul>
 <li><code>var</code><ul>
 <li>allows the variable to be redeclared later on in the program</li>
@@ -1065,7 +1882,7 @@ To define a variable, we can use three different keywords, each giving the varia
 </li>
 <li><code>let</code><ul>
 <li>once a variable has been declared using <code>let</code>, it cannot be redeclared. It's value can still change, however.</li>
-<li>gives the variable <em>block scope</em>, meaning it can only be accessed within the block of code that it has been declared in.<br/>
+<li>gives the variable <em>block scope</em>, meaning it can only be accessed within the block of code that it has been declared in.<br />
 For example, if I declare a variable using the <code>let</code> key word, I cannot access it outside of the function.</li>
 </ul>
 </li>
@@ -1075,12 +1892,12 @@ For example, if I declare a variable using the <code>let</code> key word, I cann
 </ul>
 </li>
 </ul>
-<p>For a full explanation on variable declaration in JS, check out <a href="https://www.w3schools.com/js/js_variables.asp" target="_blank">w3schools' page on it.</a> </p>
+<p>For a full explanation on variable declaration in JS, check out <a href="https://www.w3schools.com/js/js_variables.asp" target="_blank">w3schools' page on it.</a>  </p>
 <p>Variables can hold different data types, such as numbers, strings, objects, functions and arrays, but JS will cover the type identification for you.</p>
-<h5 id="datatypes">Datatypes<a class="headerlink" href="#datatypes" title="Permanent link">¶</a></h5>
+<h5 id="datatypes">Datatypes<a class="headerlink" href="#datatypes" title="Permanent link">&para;</a></h5>
 <ul>
 <li>There are two groups of data types in JS: primitives and structural.</li>
-<li>A <strong>primitive</strong> is data that is not an object and has no methods.<br/>
+<li>A <strong>primitive</strong> is data that is not an object and has no methods.<br />
 There are seven primitive data types:  <ul>
 <li>String, Number, BigInt, undefined, null and symbol   </li>
 </ul>
@@ -1090,9 +1907,9 @@ There are seven primitive data types:  <ul>
 </ul>
 </li>
 </ul>
-<h4 id="math-and-logic">Math and Logic<a class="headerlink" href="#math-and-logic" title="Permanent link">¶</a></h4>
+<h4 id="math-and-logic">Math and Logic<a class="headerlink" href="#math-and-logic" title="Permanent link">&para;</a></h4>
 <p>Math and logic works similar in JS to other programming languages.  </p>
-<h5 id="math">Math<a class="headerlink" href="#math" title="Permanent link">¶</a></h5>
+<h5 id="math">Math<a class="headerlink" href="#math" title="Permanent link">&para;</a></h5>
 <ul>
 <li><code>+</code>, <code>-</code>: addition and subtraction</li>
 <li><code>*</code>, <code>/</code>: multiplication and division, respectively.</li>
@@ -1105,7 +1922,7 @@ There are seven primitive data types:  <ul>
 </ul>
 </li>
 </ul>
-<h5 id="logic">Logic<a class="headerlink" href="#logic" title="Permanent link">¶</a></h5>
+<h5 id="logic">Logic<a class="headerlink" href="#logic" title="Permanent link">&para;</a></h5>
 <ul>
 <li><code>&amp;&amp;</code>: AND operation</li>
 <li><code>||</code>: OR operation</li>
@@ -1121,20 +1938,20 @@ There are seven primitive data types:  <ul>
 <details class="example" open="open">
 <summary>Difference between == and ===</summary>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"2"</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span><span class="w">  </span><span class="cm">/* true */</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"2"</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span><span class="w"> </span><span class="cm">/* false */</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span><span class="w">  </span><span class="cm">/* true */</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span><span class="w"> </span><span class="cm">/* false */</span>
 </code></pre></div></td></tr></table></div>
 </details>
-<h3 id="arrays">Arrays<a class="headerlink" href="#arrays" title="Permanent link">¶</a></h3>
+<h3 id="arrays">Arrays<a class="headerlink" href="#arrays" title="Permanent link">&para;</a></h3>
 <p>Arrays are an ordered list of values. They can hold values of many datatypes. Their index starts at 0.
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">myArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"a"</span><span class="p">,</span><span class="w"> </span><span class="s2">"b"</span><span class="p">,</span><span class="w"> </span><span class="s2">"c"</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">"Jared"</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">19</span><span class="p">,</span><span class="w"> </span><span class="nx">canRead</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">}]</span>
-<span class="nx">myArray</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="w"> </span><span class="c1">// returns "a"</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">myArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;c&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Jared&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">19</span><span class="p">,</span><span class="w"> </span><span class="nx">canRead</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">}]</span>
+<span class="nx">myArray</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="w"> </span><span class="c1">// returns &quot;a&quot;</span>
 <span class="nx">myArray</span><span class="p">[</span><span class="mf">4</span><span class="p">]</span><span class="w"> </span><span class="c1">// returns 2</span>
 </code></pre></div></td></tr></table></div></p>
-<h3 id="objects">Objects<a class="headerlink" href="#objects" title="Permanent link">¶</a></h3>
-<p>Objects are variables that can hold more than one value. One can be seen in the previous example in <a href="#arrays">Arrays</a>.<br/>
+<h3 id="objects">Objects<a class="headerlink" href="#objects" title="Permanent link">&para;</a></h3>
+<p>Objects are variables that can hold more than one value. One can be seen in the previous example in <a href="#arrays">Arrays</a>.<br />
 The different values of an object are called keys. The keys can hold regular primitive values, such as numbers or strings, or can hold other objects, such as functions. Think of Objects as a list of key/value pairs.  </p>
 <p>To access a key's value within an object, you must first reference the object in question, then insert a <code>.</code> folllowed by the key you wish to get.</p>
 <details class="example" open="open">
@@ -1145,15 +1962,15 @@ The different values of an object are called keys. The keys can hold regular pri
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">"Jared"</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Jared&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">19</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">canRead</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
 <span class="p">}</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">age</span><span class="p">)</span><span class="w"> </span><span class="c1">// outputs 19</span>
 </code></pre></div></td></tr></table></div>
 </details>
-<h3 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">¶</a></h3>
-<p>Functions are blocks of code designed to execute a particular task.<br/>
+<h3 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h3>
+<p>Functions are blocks of code designed to execute a particular task.<br />
 In JS, the syntax for defining a function is as follows:</p>
 <details class="example" open="open">
 <summary>Functions in JavaScript</summary>
@@ -1178,7 +1995,7 @@ In JS, the syntax for defining a function is as follows:</p>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">hello_world</span><span class="p">(){</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Hello, world!"</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">)</span>
 <span class="p">}</span>
 
 <span class="c1">// Calling the function</span>
@@ -1191,9 +2008,9 @@ In JS, the syntax for defining a function is as follows:</p>
 </code></pre></div></td></tr></table></div>
 </details>
 <p>Functions can return a value (after calculation, etc) or simply perform work on existing data/variables. Functions that do not return anything are normally called <em>procedures</em>.</p>
-<h4 id="arrow-functions">Arrow Functions<a class="headerlink" href="#arrow-functions" title="Permanent link">¶</a></h4>
-<p>Arrow functions are just a compact way of writing normal functions.<br/>
-They work by removing the <code>function</code> key word, and even the <code>return</code> keyword in some cases.<br/>
+<h4 id="arrow-functions">Arrow Functions<a class="headerlink" href="#arrow-functions" title="Permanent link">&para;</a></h4>
+<p>Arrow functions are just a compact way of writing normal functions.<br />
+They work by removing the <code>function</code> key word, and even the <code>return</code> keyword in some cases.<br />
 Arrows functions lead with their parameters, usually enclosed in normal brackets. An arrow <code>=&gt;</code> then follows, preceding the actual block of code to be executed.</p>
 <details class="example" open="open">
 <summary>Arrow Functions: Example 1</summary>
@@ -1242,8 +2059,8 @@ Arrows functions lead with their parameters, usually enclosed in normal brackets
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 </details>
-<h3 id="loops">Loops<a class="headerlink" href="#loops" title="Permanent link">¶</a></h3>
-<div class="tabbed-set" data-tabs="2:5"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><label for="__tabbed_2_1">For</label><div class="tabbed-content">
+<h3 id="loops">Loops<a class="headerlink" href="#loops" title="Permanent link">&para;</a></h3>
+<div class="tabbed-set" data-tabs="2:5"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">For</label><div class="tabbed-content">
 <p>For loops repeat until a condition is met. That condition is defined in the for loop. For loops have the following structure:</p>
 <details class="example" open="open">
 <summary>For Loops</summary>
@@ -1271,7 +2088,7 @@ Arrows functions lead with their parameters, usually enclosed in normal brackets
 </code></pre></div></td></tr></table></div>
 </details>
 </div>
-<input id="__tabbed_2_2" name="__tabbed_2" type="radio"><label for="__tabbed_2_2">For-in</label><div class="tabbed-content">
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">For-in</label><div class="tabbed-content">
 <p>For-in loops iterate over the indexes of data in an iterable object, such as an array.  </p>
 <details class="example" open="open">
 <summary>For-in Loops</summary>
@@ -1287,7 +2104,7 @@ Arrows functions lead with their parameters, usually enclosed in normal brackets
 </code></pre></div></td></tr></table></div>
 </details>
 </div>
-<input id="__tabbed_2_3" name="__tabbed_2" type="radio"><label for="__tabbed_2_3">For-of</label><div class="tabbed-content">
+<input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><label for="__tabbed_2_3">For-of</label><div class="tabbed-content">
 <p>For-of loops iterate over the data in the iterable object.  </p>
 <details class="example" open="open">
 <summary>For-of Loops</summary>
@@ -1303,7 +2120,7 @@ Arrows functions lead with their parameters, usually enclosed in normal brackets
 </code></pre></div></td></tr></table></div>
 </details>
 </div>
-<input id="__tabbed_2_4" name="__tabbed_2" type="radio"><label for="__tabbed_2_4">While</label><div class="tabbed-content">
+<input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><label for="__tabbed_2_4">While</label><div class="tabbed-content">
 <p>While loops iterate while a condition is true. They are called a "pre-test" loop, where the condition is tested before the loop can run. The condition is included in the brackets.</p>
 <details class="example" open="open">
 <summary>While Loops</summary>
@@ -1314,14 +2131,14 @@ Arrows functions lead with their parameters, usually enclosed in normal brackets
 <span class="normal">5</span>
 <span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span>
 <span class="k">while</span><span class="p">(</span><span class="nx">b</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">3</span><span class="p">){</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Bon"</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Bon&quot;</span><span class="p">)</span>
 <span class="w">    </span><span class="nx">b</span><span class="o">++</span>
 <span class="p">}</span>
-<span class="c1">// Output: "Bon\n Bon\n Bon\n"</span>
+<span class="c1">// Output: &quot;Bon\n Bon\n Bon\n&quot;</span>
 </code></pre></div></td></tr></table></div>
 </details>
 </div>
-<input id="__tabbed_2_5" name="__tabbed_2" type="radio"><label for="__tabbed_2_5">Do-while</label><div class="tabbed-content">
+<input id="__tabbed_2_5" name="__tabbed_2" type="radio" /><label for="__tabbed_2_5">Do-while</label><div class="tabbed-content">
 <p>Do-while loops are similar to while loops, except that they let the block of code run once before testing the condition. They are known as "post-test" loops, and the loop is guaranteed to execute at least once.  </p>
 <details class="example" open="open">
 <summary>Do-while Loops</summary>
@@ -1332,102 +2149,184 @@ Arrows functions lead with their parameters, usually enclosed in normal brackets
 <span class="normal">5</span>
 <span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span>
 <span class="k">do</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Bon"</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Bon&quot;</span><span class="p">)</span>
 <span class="w">    </span><span class="nx">b</span><span class="o">++</span>
 <span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="p">(</span><span class="nx">b</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">10</span><span class="p">)</span>
-<span class="c1">// Output: "Bon\n"</span>
+<span class="c1">// Output: &quot;Bon\n&quot;</span>
 </code></pre></div></td></tr></table></div>
 </details>
 </div>
-</input></input></input></input></input></div>
+</div>
 <p>Loops can be broken or stopped using the <code>break</code> or <code>continue</code> statements.</p>
-<h4 id="breakin-out">Breakin' out<a class="headerlink" href="#breakin-out" title="Permanent link">¶</a></h4>
+<h4 id="breakin-out">Breakin' out<a class="headerlink" href="#breakin-out" title="Permanent link">&para;</a></h4>
 <ul>
 <li><code>break</code>: execution leaves the loop completely and continues on with the next lines of code</li>
 <li><code>continue</code>: disregards the rest of the code in the loop block and moves on to the next item in the loop</li>
 </ul>
-<h2 id="creating-a-pokemon-api-webapp">Creating a Pokemon API Webapp<a class="headerlink" href="#creating-a-pokemon-api-webapp" title="Permanent link">¶</a></h2>
+<h2 id="creating-a-pokemon-api-webapp">Creating a Pokemon API Webapp<a class="headerlink" href="#creating-a-pokemon-api-webapp" title="Permanent link">&para;</a></h2>
 <p>Now that we know a little bit about the tools of the web, let's build a simple web app that uses the skills we have learnt in this workshop, as well as some other skills we will learn along the way, to create an app that can do something cool. </p>
 <p>For this tutorial, we will pay homage to the recent releases of Pokemon Brilliant Diamond and Shining Pearl, of which I have spent an embarrassing number of hours on since they came out about a week ago, and create a web app that uses the PokeAPI to display images and information about any Pokemon we want.  </p>
 <p>Watch the tutorial on our YouTube channel by clicking the link, <a href="https://www.youtube.com/watch?v=BV93gRuIgIA">here</a>, or the image below!</p>
-<p><a href="https://www.youtube.com/watch?v=BV93gRuIgIA"><img alt="Introduction to Web Basics | Building a Simple Pokedex with HTML, CSS and JavaScript" src="https://img.youtube.com/vi/BV93gRuIgIA/0.jpg"/></a></p>
+<p><a href="https://www.youtube.com/watch?v=BV93gRuIgIA"><img alt="Introduction to Web Basics | Building a Simple Pokedex with HTML, CSS and JavaScript" src="https://img.youtube.com/vi/BV93gRuIgIA/0.jpg" /></a></p>
 <p><a href="#content">Back to Top</a></p>
-</article>
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
-</div>
-</main>
-<footer class="md-footer">
-<nav aria-label="footer.title" class="md-footer__inner md-grid">
-<a class="md-footer__link md-footer__link--prev" href="../introduction-to-web-development/" rel="prev">
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
-</div>
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
+        </div>
+        
+      </main>
+      
+        
+  <footer class="md-footer">
+    
+      <nav class="md-footer__inner md-grid" aria-label="footer.title">
+        
+          <a href="../introduction-to-web-development/" class="md-footer__link md-footer__link--prev" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
                   Previous
                 </span>
                 Introduction to Web Development
               </div>
-</div>
-</a>
-<a class="md-footer__link md-footer__link--next" href="../practical-software-engineering-practices/" rel="next">
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
+            </div>
+          </a>
+        
+        
+          <a href="../practical-software-engineering-practices/" class="md-footer__link md-footer__link--next" rel="next">
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
                   Next
                 </span>
                 Practical Software Engineering Practices
               </div>
-</div>
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
-</div>
-</a>
-</nav>
-<div class="md-footer-meta md-typeset">
-<div class="md-footer-meta__inner md-grid">
-<div class="md-footer-copyright">
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
           
           Web Documentation Setup By
-          <a href="https://codersforcauses.org/" rel="noopener" target="_blank">
+          <a href="https://codersforcauses.org/" target="_blank" rel="noopener">
             Coders for Causes
           </a>
+          
+        </div>
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://codersforcauses.org/" target="_blank" rel="noopener" title="codersforcauses.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM5.78 8.75a9.64 9.64 0 0 0 1.363 4.177c.255.426.542.832.857 1.215.245-.296.551-.705.857-1.215A9.64 9.64 0 0 0 10.22 8.75Zm4.44-1.5a9.64 9.64 0 0 0-1.363-4.177c-.307-.51-.612-.919-.857-1.215a9.927 9.927 0 0 0-.857 1.215A9.64 9.64 0 0 0 5.78 7.25Zm-5.944 1.5H1.543a6.507 6.507 0 0 0 4.666 5.5c-.123-.181-.24-.365-.352-.552-.715-1.192-1.437-2.874-1.581-4.948Zm-2.733-1.5h2.733c.144-2.074.866-3.756 1.58-4.948.12-.197.237-.381.353-.552a6.507 6.507 0 0 0-4.666 5.5Zm10.181 1.5c-.144 2.074-.866 3.756-1.58 4.948-.12.197-.237.381-.353.552a6.507 6.507 0 0 0 4.666-5.5Zm2.733-1.5a6.507 6.507 0 0 0-4.666-5.5c.123.181.24.365.353.552.714 1.192 1.436 2.874 1.58 4.948Z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.instagram.com/cfc_uwa/" target="_blank" rel="noopener" title="www.instagram.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.facebook.com/codersforcauses" target="_blank" rel="noopener" title="www.facebook.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256c0 120 82.7 220.8 194.2 248.5V334.2h-52.8V256h52.8v-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287v175.9C413.8 494.8 512 386.9 512 256z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/channel/UCp47I0qUXeGgSK0AtFJSkbQ" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/company/coders-for-causes/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:hello@codersforcauses.org" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.7l167.6-182.9c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4z"/></svg>
+    </a>
+  
 </div>
-<div class="md-social">
-<a class="md-social__link" href="https://codersforcauses.org/" rel="noopener" target="_blank" title="codersforcauses.org">
-<svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM5.78 8.75a9.64 9.64 0 0 0 1.363 4.177c.255.426.542.832.857 1.215.245-.296.551-.705.857-1.215A9.64 9.64 0 0 0 10.22 8.75Zm4.44-1.5a9.64 9.64 0 0 0-1.363-4.177c-.307-.51-.612-.919-.857-1.215a9.927 9.927 0 0 0-.857 1.215A9.64 9.64 0 0 0 5.78 7.25Zm-5.944 1.5H1.543a6.507 6.507 0 0 0 4.666 5.5c-.123-.181-.24-.365-.352-.552-.715-1.192-1.437-2.874-1.581-4.948Zm-2.733-1.5h2.733c.144-2.074.866-3.756 1.58-4.948.12-.197.237-.381.353-.552a6.507 6.507 0 0 0-4.666 5.5Zm10.181 1.5c-.144 2.074-.866 3.756-1.58 4.948-.12.197-.237.381-.353.552a6.507 6.507 0 0 0 4.666-5.5Zm2.733-1.5a6.507 6.507 0 0 0-4.666-5.5c.123.181.24.365.353.552.714 1.192 1.436 2.874 1.58 4.948Z"></path></svg>
-</a>
-<a class="md-social__link" href="https://www.instagram.com/cfc_uwa/" rel="noopener" target="_blank" title="www.instagram.com">
-<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg>
-</a>
-<a class="md-social__link" href="https://www.facebook.com/codersforcauses" rel="noopener" target="_blank" title="www.facebook.com">
-<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256c0 120 82.7 220.8 194.2 248.5V334.2h-52.8V256h52.8v-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287v175.9C413.8 494.8 512 386.9 512 256z"></path></svg>
-</a>
-<a class="md-social__link" href="https://www.youtube.com/channel/UCp47I0qUXeGgSK0AtFJSkbQ" rel="noopener" target="_blank" title="www.youtube.com">
-<svg viewbox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg>
-</a>
-<a class="md-social__link" href="https://www.linkedin.com/company/coders-for-causes/" rel="noopener" target="_blank" title="www.linkedin.com">
-<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
-</a>
-<a class="md-social__link" href="mailto:hello@codersforcauses.org" rel="noopener" target="_blank" title="">
-<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.7l167.6-182.9c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4z"></path></svg>
-</a>
-</div>
-</div>
-</div>
-</footer>
-</div>
-<div class="md-dialog" data-md-component="dialog">
-<div class="md-dialog__inner md-typeset"></div>
-</div>
-<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "toc.integrate", "header.autohide", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../assets/javascripts/bundle.ad660dcc.min.js"></script>
-<script src="https://unpkg.com/mermaid@8.8.2/dist/mermaid.min.js"></script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js"></script>
-<script src="../../javascripts/tablesort.js"></script>
-</body>
+      </div>
+    </div>
+  </footer>
+  
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "toc.integrate", "header.autohide", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js"></script>
+      
+        <script src="../../javascripts/tablesort.js"></script>
+      
+    
+  </body>
 </html>

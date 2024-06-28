@@ -1,565 +1,1383 @@
 
-<!DOCTYPE html>
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../practical-software-engineering-workflow/">
+      
+      
+      <link rel="icon" href="../../images/cfc_logo_white_circle.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
+    
+    
+      
+        <title>Introduction to Web Development - Coders for Causes Workshops</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
 
-<html class="no-js" lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../" rel="prev"/>
-<link href="../practical-software-engineering-workflow/" rel="next"/>
-<link href="../../images/cfc_logo_white_circle.png" rel="icon"/>
-<meta content="mkdocs-1.6.0, mkdocs-material-9.5.27" name="generator"/>
-<title>Introduction to Web Development - Coders for Causes Workshops</title>
-<link href="../../assets/stylesheets/main.6543a935.min.css" rel="stylesheet"/>
-<link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
-<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<link href="../../stylesheets/extra.css" rel="stylesheet"/>
-<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-</head>
-<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="cfclight" dir="ltr">
-<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
-<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
-<label class="md-overlay" for="__drawer"></label>
-<div data-md-component="skip">
-<a class="md-skip" href="#introduction-to-web-development-space">
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="cfclight" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction-to-web-development-space" class="md-skip">
           Skip to content
         </a>
-</div>
-<div data-md-component="announce">
-</div>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
 <header class="md-header" data-md-component="header">
-<nav aria-label="Header" class="md-header__inner md-grid">
-<a aria-label="Coders for Causes Workshops" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Coders for Causes Workshops">
-<img alt="logo" src="../../images/cfc_logo_white_circle.png"/>
-</a>
-<label class="md-header__button md-icon" for="__drawer">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
-</label>
-<div class="md-header__title" data-md-component="header-title">
-<div class="md-header__ellipsis">
-<div class="md-header__topic">
-<span class="md-ellipsis">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Coders for Causes Workshops" class="md-header__button md-logo" aria-label="Coders for Causes Workshops" data-md-component="logo">
+      
+  <img src="../../images/cfc_logo_white_circle.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
             Coders for Causes Workshops
           </span>
-</div>
-<div class="md-header__topic" data-md-component="header-topic">
-<span class="md-ellipsis">
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
             
               Introduction to Web Development
             
           </span>
-</div>
-</div>
-</div>
-<form class="md-header__option" data-md-component="palette">
-<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="indigo" data-md-color-scheme="cfclight" id="__palette_0" name="__palette" type="radio"/>
-<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"></path></svg>
-</label>
-<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
-<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to light mode">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"></path></svg>
-</label>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="cfclight" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
 </form>
-<script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
-<label class="md-header__button md-icon" for="__search">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
-</label>
-<div class="md-search" data-md-component="search" role="dialog">
-<label class="md-search__overlay" for="__search"></label>
-<div class="md-search__inner" role="search">
-<form class="md-search__form" name="search">
-<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
-<label class="md-search__icon md-icon" for="__search">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
-</label>
-<nav aria-label="Search" class="md-search__options">
-<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
-</button>
-</nav>
-</form>
-<div class="md-search__output">
-<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
-<div class="md-search-result" data-md-component="search-result">
-<div class="md-search-result__meta">
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
             Initializing search
           </div>
-<ol class="md-search-result__list" role="presentation"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="md-header__source">
-<a class="md-source" data-md-component="source" href="https://github.com/codersforcauses/workshops/" title="Go to repository">
-<div class="md-source__icon md-icon">
-<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
-</div>
-<div class="md-source__repository">
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/codersforcauses/workshops/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
     GitHub
   </div>
 </a>
-</div>
-</nav>
+      </div>
+    
+  </nav>
+  
 </header>
-<div class="md-container" data-md-component="container">
-<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
-<div class="md-grid">
-<ul class="md-tabs__list">
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../..">
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
           
   
   About
 
         </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../../2024-winter/introduction-to-web-development/">
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../2024-winter/introduction-to-web-development/" class="md-tabs__link">
           
   
   2024 Winter
 
         </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../../2023-winter/introduction-to-backend-development-with-django/">
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../2023-winter/introduction-to-backend-development-with-django/" class="md-tabs__link">
           
   
   2023 Winter
 
         </a>
-</li>
-<li class="md-tabs__item md-tabs__item--active">
-<a class="md-tabs__link" href="../">
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
   2022/2023 Summer
 
         </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../../2021-2022-summer/">
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../2021-2022-summer/" class="md-tabs__link">
           
   
   2021/2022 Summer
 
         </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../../2021-winter/">
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../2021-winter/" class="md-tabs__link">
           
   
   2021 Winter
 
         </a>
-</li>
-</ul>
-</div>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
 </nav>
-<main class="md-main" data-md-component="main">
-<div class="md-main__inner md-grid">
-<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
-<div class="md-sidebar__scrollwrap">
-<div class="md-sidebar__inner">
-<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
-<label class="md-nav__title" for="__drawer">
-<a aria-label="Coders for Causes Workshops" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Coders for Causes Workshops">
-<img alt="logo" src="../../images/cfc_logo_white_circle.png"/>
-</a>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Coders for Causes Workshops" class="md-nav__button md-logo" aria-label="Coders for Causes Workshops" data-md-component="logo">
+      
+  <img src="../../images/cfc_logo_white_circle.png" alt="logo">
+
+    </a>
     Coders for Causes Workshops
   </label>
-<div class="md-nav__source">
-<a class="md-source" data-md-component="source" href="https://github.com/codersforcauses/workshops/" title="Go to repository">
-<div class="md-source__icon md-icon">
-<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
-</div>
-<div class="md-source__repository">
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/codersforcauses/workshops/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
     GitHub
   </div>
 </a>
-</div>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
-<span class="md-ellipsis">
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
     About
   </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_1">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
             About
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../..">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Overview
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../contributions/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Contributions
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
     2024 Winter
   </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_2">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
             2024 Winter
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../2024-winter/introduction-to-web-development/">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2024-winter/introduction-to-web-development/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Introduction to Web Development
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../2024-winter/practical-software-engineering-workflow/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2024-winter/practical-software-engineering-workflow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Practical Software Engineering Workflow
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../2024-winter/introduction-to-docker/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2024-winter/introduction-to-docker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Introduction to Docker
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-<span class="md-ellipsis">
-    2023 Winter
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_3">
-<span class="md-nav__icon md-icon"></span>
-            2023 Winter
-          </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../2023-winter/introduction-to-backend-development-with-django/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2024-winter/introduction-to-backend-development-with-django/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Introduction to Backend Development With Django
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2023 Winter
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            2023 Winter
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2023-winter/introduction-to-backend-development-with-django/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction to Backend Development With Django
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
     2022/2023 Summer
   </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="true" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_4">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
             2022/2023 Summer
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Overview
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../setup.md">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Setup
   </span>
-</a>
-</li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
     Introduction to Web Development
   </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
-<span class="md-ellipsis">
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
     Introduction to Web Development
   </span>
-</a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#content">
-<span class="md-ellipsis">
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#content" class="md-nav__link">
+    <span class="md-ellipsis">
       Content
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#what-and-why-web-development">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#what-and-why-web-development" class="md-nav__link">
+    <span class="md-ellipsis">
       What and Why Web Development?
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#faqs-about-web-development">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#faqs-about-web-development" class="md-nav__link">
+    <span class="md-ellipsis">
       FAQs about Web Development
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#basics-of-web-and-limitation">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#basics-of-web-and-limitation" class="md-nav__link">
+    <span class="md-ellipsis">
       Basics of Web and Limitation
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#server-side-applications-backend">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#server-side-applications-backend" class="md-nav__link">
+    <span class="md-ellipsis">
       Server-side Applications (Backend)
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#others">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#others" class="md-nav__link">
+    <span class="md-ellipsis">
       Others
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#word-of-encouragement">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#word-of-encouragement" class="md-nav__link">
+    <span class="md-ellipsis">
       Word of Encouragement
     </span>
-</a>
+  </a>
+  
 </li>
-</ul>
+      
+    </ul>
+  
 </nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../practical-software-engineering-workflow/">
-<span class="md-ellipsis">
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../practical-software-engineering-workflow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Practical Software Engineering Workflow
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../mvc-mvvm-architecture-and-communications/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mvc-mvvm-architecture-and-communications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     MVC and MVVM Software Architectural Patterns and Communications
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
-<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
     2021/2022 Summer
   </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_5">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
             2021/2022 Summer
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../2021-2022-summer/">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2021-2022-summer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Overview
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../2021-2022-summer/setup/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2021-2022-summer/setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Setup
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../2021-2022-summer/project-and-workshop-structure/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2021-2022-summer/project-and-workshop-structure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Project and Workshop Structure
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../2021-2022-summer/introduction-to-web-development/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2021-2022-summer/introduction-to-web-development/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Introduction to Web Development
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../2021-2022-summer/introduction-web-basics/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2021-2022-summer/introduction-web-basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Introduction to Web Basics
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../2021-2022-summer/practical-software-engineering-practices/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2021-2022-summer/practical-software-engineering-practices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Practical Software Engineering Practices
   </span>
-</a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_5_7" type="checkbox"/>
-<label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
     Introduction to Frontend Frameworks
   </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_5_7_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_5_7">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7">
+            <span class="md-nav__icon md-icon"></span>
             Introduction to Frontend Frameworks
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../2021-2022-summer/introduction-to-frontend-frameworks/">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2021-2022-summer/introduction-to-frontend-frameworks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Overview
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../2021-2022-summer/introduction-to-react/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2021-2022-summer/introduction-to-react/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Introduction to React
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../2021-2022-summer/introduction-to-vue/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2021-2022-summer/introduction-to-vue/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Introduction to Vue
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../2021-2022-summer/introduction-to-backend-development-with-django/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2021-2022-summer/introduction-to-backend-development-with-django/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Introduction to Backend Development with Django
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../2021-2022-summer/mvc-mvmm-architecture-and-communications/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2021-2022-summer/mvc-mvmm-architecture-and-communications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     MVC-MVMM Architecture and Communications
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../2021-2022-summer/package-managers/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2021-2022-summer/package-managers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Package Managers
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../2021-2022-summer/typical-codebase-structure/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2021-2022-summer/typical-codebase-structure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Typical Codebase Structure
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../2021-2022-summer/automated-testing-and-ci-pipelines/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2021-2022-summer/automated-testing-and-ci-pipelines/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Automated Testing and CI Pipelines
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
-<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
     2021 Winter
   </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_6">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
             2021 Winter
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../2021-winter/">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2021-winter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Overview
   </span>
-</a>
-</li>
-</ul>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
 </nav>
-</li>
-</ul>
-</nav>
-</div>
-</div>
-</div>
-<div class="md-content" data-md-component="content">
-<article class="md-content__inner md-typeset">
-<h1 id="introduction-to-web-development-space">Introduction to Web Development Space<a class="headerlink" href="#introduction-to-web-development-space" title="Permanent link">¶</a></h1>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="introduction-to-web-development-space">Introduction to Web Development Space<a class="headerlink" href="#introduction-to-web-development-space" title="Permanent link">&para;</a></h1>
 <p><em>Navigating the Deep Dark Space of Web Development</em></p>
 <p>This workshop covers a brief overview of the most common tools and technologies used in web development.</p>
-<h2 id="content">Content<a class="headerlink" href="#content" title="Permanent link">¶</a></h2>
+<h2 id="content">Content<a class="headerlink" href="#content" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="#introduction-to-web-development-space">Introduction to Web Development Space</a></li>
 <li><a href="#content">Content</a></li>
@@ -605,13 +1423,13 @@
 </li>
 <li><a href="#word-of-encouragement">Word of Encouragement</a></li>
 </ul>
-<h2 id="what-and-why-web-development">What and Why Web Development?<a class="headerlink" href="#what-and-why-web-development" title="Permanent link">¶</a></h2>
-<h3 id="what-is-web-development">What is web development?<a class="headerlink" href="#what-is-web-development" title="Permanent link">¶</a></h3>
+<h2 id="what-and-why-web-development">What and Why Web Development?<a class="headerlink" href="#what-and-why-web-development" title="Permanent link">&para;</a></h2>
+<h3 id="what-is-web-development">What is web development?<a class="headerlink" href="#what-is-web-development" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Websites development</li>
 <li>Web applications (client-side and server-side) development</li>
 </ul>
-<h3 id="why-web-development">Why Web Development ?<a class="headerlink" href="#why-web-development" title="Permanent link">¶</a></h3>
+<h3 id="why-web-development">Why Web Development ?<a class="headerlink" href="#why-web-development" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Accessibility and Portability</li>
 <li>Career and On-demand in job market</li>
@@ -621,30 +1439,36 @@
 <summary>Career in Web Development</summary>
 <p>Source: <a href="https://www.freecodecamp.org/news/2-out-of-3-developers-are-self-taught-and-other-insights-from-stack-overflow-s-2016-survey-of-50-8cf0ee5d4c21/">Insights from Stack Overflow’s 2016 survey of 50,000 developers</a></p>
 <p>"Half of Developers are Web Developers"
-<img alt="occupation" src="https://cdn-media-1.freecodecamp.org/images/1*l3TGs4XuDhqGfIdeef9AeA.jpeg"/></p>
+<img alt="occupation" src="https://cdn-media-1.freecodecamp.org/images/1*l3TGs4XuDhqGfIdeef9AeA.jpeg" /></p>
 </details>
-<h2 id="faqs-about-web-development">FAQs about Web Development<a class="headerlink" href="#faqs-about-web-development" title="Permanent link">¶</a></h2>
-<h3 id="why-code-websites-why-not-use-drag-and-drops-like-wordpress-wix">Why code websites, why not use drag and drops like Wordpress, WIX?<a class="headerlink" href="#why-code-websites-why-not-use-drag-and-drops-like-wordpress-wix" title="Permanent link">¶</a></h3>
+<h2 id="faqs-about-web-development">FAQs about Web Development<a class="headerlink" href="#faqs-about-web-development" title="Permanent link">&para;</a></h2>
+<h3 id="why-code-websites-why-not-use-drag-and-drops-like-wordpress-wix">Why code websites, why not use drag and drops like Wordpress, WIX?<a class="headerlink" href="#why-code-websites-why-not-use-drag-and-drops-like-wordpress-wix" title="Permanent link">&para;</a></h3>
 <div style="display:flex;justify-content:space-around;flex-wrap:wrap;">
-<img alt="wordpress" src="../images/wordpress.png" style="width:33%"/>
-<img alt="wix" src="../images/wix.jpg" style="width:33%"/>
-<img alt="drupal" src="../images/drupal.jpg" style="width:33%"/>
+    <img style="width:33%" src="../images/wordpress.png" alt="wordpress">
+    <img style="width:33%" src="../images/wix.jpg" alt="wix">
+    <img style="width:33%" src="../images/drupal.jpg" alt="drupal">
 </div>
+
 <ul>
 <li>Content Management System (CMS)</li>
 <li>Limitations on theme/template used</li>
 <li>Difficult to extend</li>
 <li>Cybersecurity</li>
 </ul>
-<p><img src="https://i.imgflip.com/723buc.jpg" style="width:50%"/></p>
+<p><img style="width:50%" src="https://i.imgflip.com/723buc.jpg"></p>
 <details class="info">
 <summary>More information</summary>
 <p>CMS are one of the application of web development, but there are plenty more such as - internet of things, custom software for a particular industrial application (eg. using Machine Learning)</p>
 <p>CMS are usually limited to the template or plugin that you use. If those plugin don't exist, then it limits your productivity very much (difficulty to extend).</p>
 <p>CMS are usually built to cater for non-technical users. This means that thye become the subject of hackers. Think about a scenario where a hacker was able to find a vulnerability in WordPress, now every other WordPress site will be vulnerable.</p>
 </details>
-<h3 id="what-is-the-best-way-to-learn-all-these">What is the best way to learn all these?<a class="headerlink" href="#what-is-the-best-way-to-learn-all-these" title="Permanent link">¶</a></h3>
-<iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="500rem" src="https://www.youtube.com/embed/nvlizC6koSc" width="100%"></iframe>
+<h3 id="what-is-the-best-way-to-learn-all-these">What is the best way to learn all these?<a class="headerlink" href="#what-is-the-best-way-to-learn-all-these" title="Permanent link">&para;</a></h3>
+<iframe width="100%" height="500rem"
+src="https://www.youtube.com/embed/nvlizC6koSc" 
+frameborder="0" 
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+allowfullscreen></iframe>
+
 <p>In summary, the best way to learn:</p>
 <ul>
 <li>Do personal projects (inspiration + motivation)</li>
@@ -656,14 +1480,14 @@
 <p>To be told that you have to learn "this, this, and that" before you could do things is tiresome.</p>
 <p>Often times, we want to learn to be a developer so that we can create cool things like software where thousands of people can use the app. We don't tend to be a developer for the sake of us needing to watch endless videos on different things.</p>
 </details>
-<h3 id="why-does-cfc-not-do-mobile-development-as-much-as-web-development">Why does CFC not do mobile development as much as web development?<a class="headerlink" href="#why-does-cfc-not-do-mobile-development-as-much-as-web-development" title="Permanent link">¶</a></h3>
+<h3 id="why-does-cfc-not-do-mobile-development-as-much-as-web-development">Why does CFC not do mobile development as much as web development?<a class="headerlink" href="#why-does-cfc-not-do-mobile-development-as-much-as-web-development" title="Permanent link">&para;</a></h3>
 <ul>
 <li>App stores has a developer cost</li>
 <li>Easier to deal/teach web technologies</li>
 <li>Accessibility (mobile, sensors, tablets, laptops and PCs)</li>
 <li>Bigger open-source community</li>
 </ul>
-<h3 id="if-i-already-know-a-frontend-framework-is-it-better-to-learn-another-frontend-framework-or-to-learn-a-backend-framework">If I already know a frontend framework, is it better to learn another frontend framework or to learn a backend framework?<a class="headerlink" href="#if-i-already-know-a-frontend-framework-is-it-better-to-learn-another-frontend-framework-or-to-learn-a-backend-framework" title="Permanent link">¶</a></h3>
+<h3 id="if-i-already-know-a-frontend-framework-is-it-better-to-learn-another-frontend-framework-or-to-learn-a-backend-framework">If I already know a frontend framework, is it better to learn another frontend framework or to learn a backend framework?<a class="headerlink" href="#if-i-already-know-a-frontend-framework-is-it-better-to-learn-another-frontend-framework-or-to-learn-a-backend-framework" title="Permanent link">&para;</a></h3>
 <ul>
 <li>It is better to learn a backend framework</li>
 </ul>
@@ -672,9 +1496,9 @@
 <p>You want to build skills that complement one another rather than be an alternative.</p>
 <p>It is much more valuable for you to learn a backend framework because that helps you build a <strong>functional</strong> app.</p>
 </details>
-<h2 id="basics-of-web-and-limitation">Basics of Web and Limitation<a class="headerlink" href="#basics-of-web-and-limitation" title="Permanent link">¶</a></h2>
-<p><img alt="basics of web 2" src="../../2021-2022-summer/images/basics-of-web-2.jpg"/></p>
-<div class="tabbed-set" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><label for="__tabbed_1_1">HTML</label><div class="tabbed-content">
+<h2 id="basics-of-web-and-limitation">Basics of Web and Limitation<a class="headerlink" href="#basics-of-web-and-limitation" title="Permanent link">&para;</a></h2>
+<p><img alt="basics of web 2" src="../../2021-2022-summer/images/basics-of-web-2.jpg" /></p>
+<div class="tabbed-set" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">HTML</label><div class="tabbed-content">
 <p><strong>What is it?</strong></p>
 <ul>
 <li>Hypertext Markup Language</li>
@@ -699,11 +1523,11 @@
 <span class="normal">10</span>
 <span class="normal">11</span>
 <span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"en"</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"UTF-8"</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">"X-UA-Compatible"</span> <span class="na">content</span><span class="o">=</span><span class="s">"IE=edge"</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">"viewport"</span> <span class="na">content</span><span class="o">=</span><span class="s">"width=device-width, initial-scale=1.0"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;X-UA-Compatible&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;IE=edge&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Document<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
@@ -713,7 +1537,7 @@
 </code></pre></div></td></tr></table></div>
 </details>
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio"><label for="__tabbed_1_2">CSS</label><div class="tabbed-content">
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">CSS</label><div class="tabbed-content">
 <p><strong>What is it?</strong></p>
 <ul>
 <li>Cascading Style Sheets</li>
@@ -746,7 +1570,7 @@
 </code></pre></div></td></tr></table></div>
 </details>
 </div>
-<input id="__tabbed_1_3" name="__tabbed_1" type="radio"><label for="__tabbed_1_3">JS</label><div class="tabbed-content">
+<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">JS</label><div class="tabbed-content">
 <p><strong>What is it?</strong></p>
 <ul>
 <li>JavaScript</li>
@@ -764,37 +1588,37 @@
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">bodySelector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'body'</span><span class="p">);</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">bodySelector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;body&#39;</span><span class="p">);</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">myFunction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">bodySelector</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'Hello World 2!'</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">bodySelector</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Hello World 2!&#39;</span><span class="p">;</span>
 <span class="w">    </span><span class="c1">// Add a container class to space out</span>
-<span class="w">    </span><span class="nx">bodySelector</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'container'</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">bodySelector</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;container&#39;</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="nx">bodySelector</span><span class="p">.</span><span class="nx">onclick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">myFunction</span><span class="p">;</span>
 </code></pre></div></td></tr></table></div>
 </details>
 </div>
-</input></input></input></div>
-<h3 id="modern-frameworks">Modern Frameworks<a class="headerlink" href="#modern-frameworks" title="Permanent link">¶</a></h3>
+</div>
+<h3 id="modern-frameworks">Modern Frameworks<a class="headerlink" href="#modern-frameworks" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Websites can be much more… they can be web applications</li>
 <li>“App” in a website (client-side rendering)</li>
 </ul>
 <details class="success" open="open">
 <summary>Modern Frameworks</summary>
-<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><label for="__tabbed_2_1">React.js</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">React.js</label><div class="tabbed-content">
 <ul>
 <li>More mature and used more in industry</li>
 </ul>
-<p><img alt="react" src="../../2021-2022-summer/images/react.png"/></p>
+<p><img alt="react" src="../../2021-2022-summer/images/react.png" /></p>
 </div>
-<input id="__tabbed_2_2" name="__tabbed_2" type="radio"><label for="__tabbed_2_2">Vue.js</label><div class="tabbed-content">
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Vue.js</label><div class="tabbed-content">
 <ul>
 <li>Growing fast in popularity and use.</li>
 </ul>
-<p><img alt="vue" src="../../2021-2022-summer/images/vue.png"/></p>
+<p><img alt="vue" src="../../2021-2022-summer/images/vue.png" /></p>
 </div>
-</input></input></div>
+</div>
 <p><strong>General Information</strong></p>
 <ul>
 <li>Both are good to use and learn. </li>
@@ -803,7 +1627,7 @@
 </details>
 <details class="info">
 <summary>Comparison between HTML and JSX</summary>
-<p><img alt="sample" src="../../2021-2022-summer/images/sample.png"/></p>
+<p><img alt="sample" src="../../2021-2022-summer/images/sample.png" /></p>
 <p>Highlighted portions are starting chunk of distinct code.</p>
 <details class="example" open="open">
 <summary>HTML</summary>
@@ -860,54 +1684,54 @@
 <span class="normal">51</span>
 <span class="normal">52</span>
 <span class="normal">53</span>
-<span class="normal">54</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"row"</span><span class="p">&gt;</span>
-<span class="hll">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"m-0 col-12 col-md-6 col-lg-3"</span><span class="p">&gt;</span>
-</span>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"text-center border-0 bg-transparent card"</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"px-0 card-body"</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">"material-icons-sharp md-lg"</span><span class="p">&gt;</span>devices<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">"mt-4 font-weight-bold text-monospace text-larger"</span><span class="p">&gt;</span>
+<span class="normal">54</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;row&quot;</span><span class="p">&gt;</span>
+<span class="hll">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;m-0 col-12 col-md-6 col-lg-3&quot;</span><span class="p">&gt;</span>
+</span>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-center border-0 bg-transparent card&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;px-0 card-body&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;material-icons-sharp md-lg&quot;</span><span class="p">&gt;</span>devices<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mt-4 font-weight-bold text-monospace text-larger&quot;</span><span class="p">&gt;</span>
             Applications
             <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">"mb-0"</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mb-0&quot;</span><span class="p">&gt;</span>
             Build custom web and mobile applications to engage with your audience
             <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
         <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
         <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="hll">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"m-0 col-12 col-md-6 col-lg-3"</span><span class="p">&gt;</span>
-</span>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"text-center border-0 bg-transparent card"</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"px-0 card-body"</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">"material-icons-sharp md-lg"</span><span class="p">&gt;</span>web<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">"mt-4 font-weight-bold text-monospace text-larger"</span><span class="p">&gt;</span>Websites<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">"mb-0"</span><span class="p">&gt;</span>
+<span class="hll">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;m-0 col-12 col-md-6 col-lg-3&quot;</span><span class="p">&gt;</span>
+</span>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-center border-0 bg-transparent card&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;px-0 card-body&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;material-icons-sharp md-lg&quot;</span><span class="p">&gt;</span>web<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mt-4 font-weight-bold text-monospace text-larger&quot;</span><span class="p">&gt;</span>Websites<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mb-0&quot;</span><span class="p">&gt;</span>
             Build new websites or optimise existing pages to improve online
             visibility
             <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
         <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
         <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="hll">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"m-0 col-12 col-md-6 col-lg-3"</span><span class="p">&gt;</span>
-</span>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"text-center border-0 bg-transparent card"</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"px-0 card-body"</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">"material-icons-sharp md-lg"</span><span class="p">&gt;</span>storage<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">"mt-4 font-weight-bold text-monospace text-larger"</span><span class="p">&gt;</span>
+<span class="hll">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;m-0 col-12 col-md-6 col-lg-3&quot;</span><span class="p">&gt;</span>
+</span>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-center border-0 bg-transparent card&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;px-0 card-body&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;material-icons-sharp md-lg&quot;</span><span class="p">&gt;</span>storage<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mt-4 font-weight-bold text-monospace text-larger&quot;</span><span class="p">&gt;</span>
             Data Storage
             <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">"mb-0"</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mb-0&quot;</span><span class="p">&gt;</span>
             Design and create databases for efficient information storage and
             retrieval
             <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
         <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
         <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="hll">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"m-0 col-12 col-md-6 col-lg-3"</span><span class="p">&gt;</span>
-</span>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"text-center border-0 bg-transparent card"</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"px-0 card-body"</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">"material-icons-sharp md-lg"</span><span class="p">&gt;</span>how_to_reg<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">"mt-4 font-weight-bold text-monospace text-larger"</span><span class="p">&gt;</span>
+<span class="hll">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;m-0 col-12 col-md-6 col-lg-3&quot;</span><span class="p">&gt;</span>
+</span>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-center border-0 bg-transparent card&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;px-0 card-body&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;material-icons-sharp md-lg&quot;</span><span class="p">&gt;</span>how_to_reg<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mt-4 font-weight-bold text-monospace text-larger&quot;</span><span class="p">&gt;</span>
             Consulting
             <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">"mb-0"</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mb-0&quot;</span><span class="p">&gt;</span>
             Empower your organisation through technical knowledge and advice
             <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
         <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
@@ -954,22 +1778,22 @@
 <span class="normal">34</span>
 <span class="normal">35</span>
 <span class="normal">36</span>
-<span class="normal">37</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">memo</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'react'</span>
-<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Row</span><span class="p">,</span><span class="w"> </span><span class="nx">Col</span><span class="p">,</span><span class="w"> </span><span class="nx">Card</span><span class="p">,</span><span class="w"> </span><span class="nx">CardBody</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'reactstrap'</span>
-<span class="k">import</span><span class="w"> </span><span class="nx">services</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'data/services.json'</span>
+<span class="normal">37</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">memo</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Row</span><span class="p">,</span><span class="w"> </span><span class="nx">Col</span><span class="p">,</span><span class="w"> </span><span class="nx">Card</span><span class="p">,</span><span class="w"> </span><span class="nx">CardBody</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;reactstrap&#39;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">services</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;data/services.json&#39;</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">Service</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">props</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
 <span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="nx">string</span>
 <span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="nx">string</span>
 <span class="nx">description</span><span class="o">:</span><span class="w"> </span><span class="nx">string</span>
 <span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span>
-<span class="o">&lt;</span><span class="nx">Card</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s1">'text-center border-0 bg-transparent'</span><span class="o">&gt;</span>
-<span class="w">    </span><span class="o">&lt;</span><span class="nx">CardBody</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s1">'px-0'</span><span class="o">&gt;</span>
-<span class="w">    </span><span class="o">&lt;</span><span class="nx">i</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s1">'material-icons-sharp md-lg'</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">icon</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/i&gt;</span>
-<span class="w">    </span><span class="o">&lt;</span><span class="nx">p</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s1">'mt-4 font-weight-bold text-monospace text-larger'</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">Card</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s1">&#39;text-center border-0 bg-transparent&#39;</span><span class="o">&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">CardBody</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s1">&#39;px-0&#39;</span><span class="o">&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">i</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s1">&#39;material-icons-sharp md-lg&#39;</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">icon</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/i&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">p</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s1">&#39;mt-4 font-weight-bold text-monospace text-larger&#39;</span><span class="o">&gt;</span>
 <span class="w">        </span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">title</span><span class="p">}</span>
 <span class="w">    </span><span class="o">&lt;</span><span class="err">/p&gt;</span>
-<span class="w">    </span><span class="o">&lt;</span><span class="nx">p</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s1">'mb-0'</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">description</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">p</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s1">&#39;mb-0&#39;</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">description</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
 <span class="w">    </span><span class="o">&lt;</span><span class="err">/CardBody&gt;</span>
 <span class="o">&lt;</span><span class="err">/Card&gt;</span>
 <span class="p">)</span>
@@ -981,7 +1805,7 @@
 </span><span class="w">        </span><span class="nx">xs</span><span class="o">=</span><span class="p">{</span><span class="mf">12</span><span class="p">}</span>
 <span class="w">        </span><span class="nx">md</span><span class="o">=</span><span class="p">{</span><span class="mf">6</span><span class="p">}</span>
 <span class="w">        </span><span class="nx">lg</span><span class="o">=</span><span class="p">{</span><span class="mf">12</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">services</span><span class="p">.</span><span class="nx">length</span><span class="p">}</span>
-<span class="w">        </span><span class="nx">className</span><span class="o">=</span><span class="s1">'m-0'</span>
+<span class="w">        </span><span class="nx">className</span><span class="o">=</span><span class="s1">&#39;m-0&#39;</span>
 <span class="w">        </span><span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">service</span><span class="p">.</span><span class="nx">title</span><span class="p">}</span>
 <span class="w">    </span><span class="o">&gt;</span>
 <span class="w">        </span><span class="o">&lt;</span><span class="nx">Service</span><span class="w"> </span><span class="p">{...</span><span class="nx">service</span><span class="p">}</span><span class="w"> </span><span class="o">/&gt;</span>
@@ -994,19 +1818,20 @@
 </code></pre></div></td></tr></table></div>
 </details>
 </details>
-<h2 id="server-side-applications-backend">Server-side Applications (Backend)<a class="headerlink" href="#server-side-applications-backend" title="Permanent link">¶</a></h2>
+<h2 id="server-side-applications-backend">Server-side Applications (Backend)<a class="headerlink" href="#server-side-applications-backend" title="Permanent link">&para;</a></h2>
 <div style="display:flex;justify-content:space-around;flex-wrap:wrap;flex-wrap:wrap;">
-<img alt="nodejs" src="../images/nodejs.png" width="33%"/>
-<img alt="django" src="../images/django.png" width="33%"/>
-<img alt="php" src="../images/php.jpg" width="33%"/>
-<img alt="postgresql" src="../images/postgresql.png" width="33%"/>
+    <img width="33%" src="../images/nodejs.png" alt="nodejs">
+    <img width="33%" src="../images/django.png" alt="django">
+    <img width="33%" src="../images/php.jpg" alt="php">
+    <img width="33%" src="../images/postgresql.png" alt="postgresql">
 </div>
-<h3 id="how-do-devices-communicate">How do devices communicate?<a class="headerlink" href="#how-do-devices-communicate" title="Permanent link">¶</a></h3>
+
+<h3 id="how-do-devices-communicate">How do devices communicate?<a class="headerlink" href="#how-do-devices-communicate" title="Permanent link">&para;</a></h3>
 <ul>
 <li>HTTP Request - Hypertext Transfer Protocol</li>
 </ul>
-<p><img alt="backend-connection" src="../../2021-2022-summer/images/backend-connection.png"/></p>
-<h3 id="what-do-server-applications-do">What do server applications do?<a class="headerlink" href="#what-do-server-applications-do" title="Permanent link">¶</a></h3>
+<p><img alt="backend-connection" src="../../2021-2022-summer/images/backend-connection.png" /></p>
+<h3 id="what-do-server-applications-do">What do server applications do?<a class="headerlink" href="#what-do-server-applications-do" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Serve frontends (server-side rendering)</li>
 <li>Web API (Application Programming Interface)<ul>
@@ -1015,24 +1840,24 @@
 </ul>
 </li>
 </ul>
-<h3 id="databases">Databases<a class="headerlink" href="#databases" title="Permanent link">¶</a></h3>
+<h3 id="databases">Databases<a class="headerlink" href="#databases" title="Permanent link">&para;</a></h3>
 <p>Place to store the data</p>
 <p><strong>Mongodb</strong></p>
 <p>Allows for database design to be modified without complex migration or data loss</p>
 <p><strong>SQL</strong></p>
 <p>Typically faster and better for large amounts of data or systems that need data consistency and reliability</p>
-<h2 id="others">Others<a class="headerlink" href="#others" title="Permanent link">¶</a></h2>
-<h3 id="languages-of-the-web-the-usual">Languages of the Web (the usual)<a class="headerlink" href="#languages-of-the-web-the-usual" title="Permanent link">¶</a></h3>
+<h2 id="others">Others<a class="headerlink" href="#others" title="Permanent link">&para;</a></h2>
+<h3 id="languages-of-the-web-the-usual">Languages of the Web (the usual)<a class="headerlink" href="#languages-of-the-web-the-usual" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Python (Django, Flask)</li>
 <li>JavaScript (Node.js, Express)</li>
 <li>Ruby, Go, Rust, C</li>
 </ul>
-<h3 id="hosting-stuff">Hosting Stuff<a class="headerlink" href="#hosting-stuff" title="Permanent link">¶</a></h3>
+<h3 id="hosting-stuff">Hosting Stuff<a class="headerlink" href="#hosting-stuff" title="Permanent link">&para;</a></h3>
 <p>Many ways
 - Own a server
 - Use a 3<sup>rd</sup> party platform</p>
-<h3 id="css-frameworks">CSS Frameworks<a class="headerlink" href="#css-frameworks" title="Permanent link">¶</a></h3>
+<h3 id="css-frameworks">CSS Frameworks<a class="headerlink" href="#css-frameworks" title="Permanent link">&para;</a></h3>
 <p><strong>Frontend (JS)</strong></p>
 <ul>
 <li>Vue, React</li>
@@ -1043,14 +1868,14 @@
 <li>MaterialUI, Vuetify</li>
 <li>Bootstrap</li>
 </ul>
-<h3 id="developer-tools">Developer Tools<a class="headerlink" href="#developer-tools" title="Permanent link">¶</a></h3>
-<h4 id="typescript">TypeScript<a class="headerlink" href="#typescript" title="Permanent link">¶</a></h4>
+<h3 id="developer-tools">Developer Tools<a class="headerlink" href="#developer-tools" title="Permanent link">&para;</a></h3>
+<h4 id="typescript">TypeScript<a class="headerlink" href="#typescript" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Type checking is super useful for complex apps</li>
 <li>Allows for way better javascript developer tooling</li>
 <li>Can be annoying if you’re new at it</li>
 </ul>
-<h4 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">¶</a></h4>
+<h4 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Selenium, Cypress<ul>
 <li>End to end automated testing tools</li>
@@ -1062,18 +1887,18 @@
 </li>
 <li>Testing is vital to software projects</li>
 </ul>
-<h4 id="continuous-integration-continuous-deployment">Continuous Integration / Continuous Deployment<a class="headerlink" href="#continuous-integration-continuous-deployment" title="Permanent link">¶</a></h4>
+<h4 id="continuous-integration-continuous-deployment">Continuous Integration / Continuous Deployment<a class="headerlink" href="#continuous-integration-continuous-deployment" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Automated Testing</li>
 <li>Event-driven scripts</li>
 <li>E.g. Github Action, Bitbucket Pipelines</li>
 </ul>
-<h4 id="virtualisation-and-containerisation">Virtualisation and Containerisation<a class="headerlink" href="#virtualisation-and-containerisation" title="Permanent link">¶</a></h4>
+<h4 id="virtualisation-and-containerisation">Virtualisation and Containerisation<a class="headerlink" href="#virtualisation-and-containerisation" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Allows execution of services in a virtual environment</li>
 <li>eg. Docker (Containerisation), Vagrant (Virtualisation)</li>
 </ul>
-<h4 id="browsers">Browsers<a class="headerlink" href="#browsers" title="Permanent link">¶</a></h4>
+<h4 id="browsers">Browsers<a class="headerlink" href="#browsers" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Standard browsers<ul>
 <li>Google Chrome, Firefox, Edge, etc.</li>
@@ -1089,7 +1914,7 @@
 </ul>
 </li>
 </ul>
-<h4 id="firefox-developer-tools">Firefox Developer Tools<a class="headerlink" href="#firefox-developer-tools" title="Permanent link">¶</a></h4>
+<h4 id="firefox-developer-tools">Firefox Developer Tools<a class="headerlink" href="#firefox-developer-tools" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Page Inspector<ul>
 <li>Visualise page aspects</li>
@@ -1116,126 +1941,208 @@
 Learn more at: https://developer.mozilla.org/en-US/docs/Tools</li>
 </ul>
 </details>
-<h4 id="package-managers">Package Managers<a class="headerlink" href="#package-managers" title="Permanent link">¶</a></h4>
+<h4 id="package-managers">Package Managers<a class="headerlink" href="#package-managers" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Installs libraries that can be used</li>
 <li>Also has code shortcuts (e.g. npm run start)</li>
 </ul>
 <p>(More about <code>package.json</code> and <code>poetry.toml</code> in the projects and Package Manager Workshop)</p>
-<h4 id="version-control">Version Control<a class="headerlink" href="#version-control" title="Permanent link">¶</a></h4>
+<h4 id="version-control">Version Control<a class="headerlink" href="#version-control" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Essential for developer teams and complex software development</li>
 <li>Git</li>
 </ul>
-<h4 id="linters-and-formatters">Linters and Formatters<a class="headerlink" href="#linters-and-formatters" title="Permanent link">¶</a></h4>
+<h4 id="linters-and-formatters">Linters and Formatters<a class="headerlink" href="#linters-and-formatters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Makes code formatting consistent (following standard)</li>
 <li>Useful with version controls to avoid pointless change</li>
 </ul>
 <p>eg.ESLint, Prettier</p>
-<h4 id="teamwork">Teamwork<a class="headerlink" href="#teamwork" title="Permanent link">¶</a></h4>
+<h4 id="teamwork">Teamwork<a class="headerlink" href="#teamwork" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Many tools out there</li>
 <li>Used to stop teams from stepping on each others toes</li>
 <li>Github Issues + Pull Requests</li>
 </ul>
-<h3 id="roadmaps">Roadmaps<a class="headerlink" href="#roadmaps" title="Permanent link">¶</a></h3>
+<h3 id="roadmaps">Roadmaps<a class="headerlink" href="#roadmaps" title="Permanent link">&para;</a></h3>
 <p>There's an open-source community that maintains a learning roadmap for developers. See <a href="https://roadmap.sh/">https://roadmap.sh/</a></p>
 <details class="info">
 <summary>Frontend Developer</summary>
-<p><img alt="frontend-roadmap" src="https://roadmap.sh/roadmaps/frontend.png"/></p>
+<p><img alt="frontend-roadmap" src="https://roadmap.sh/roadmaps/frontend.png" /></p>
 </details>
 <details class="info">
 <summary>Backend Developer</summary>
-<p><img alt="backend-roadmap" src="https://roadmap.sh/roadmaps/backend.png"/></p>
+<p><img alt="backend-roadmap" src="https://roadmap.sh/roadmaps/backend.png" /></p>
 </details>
 <details class="info">
 <summary>Dev-Ops</summary>
-<p><img alt="devops-roadmap" src="https://roadmap.sh/roadmaps/devops.png"/></p>
+<p><img alt="devops-roadmap" src="https://roadmap.sh/roadmaps/devops.png" /></p>
 </details>
-<h2 id="word-of-encouragement">Word of Encouragement<a class="headerlink" href="#word-of-encouragement" title="Permanent link">¶</a></h2>
+<h2 id="word-of-encouragement">Word of Encouragement<a class="headerlink" href="#word-of-encouragement" title="Permanent link">&para;</a></h2>
 <details class="quote">
 <summary>Encouragement from the Tech Lead</summary>
 <p>"I can admit that this journey of learning will be difficult, and can sometimes be overwhelming and demotivating. Please, if at any point of this project, you feel that you don't know enough, or you're feeling lost, please reach out! We are all in this journey together! Nobody is born talented, skills are honed with determination and willingness to learn." </p>
 <p>"When I was a first year student entering on the CFC winter project, I didn't feel like I was good enough. I couldn't create a good looking interface, I didn't know how to use npm and all sorts of those things. I was just like many of you! if I gave up just because of all those things I didn't know, of all those self-doubts, then I wouldn't be here today. I admit that I was lucky because I was in CFC, I had connections where I can just ask questions instead of feeling lost of not knowing. So please do leverage that opportunity to reach out" </p>
 <p>"You being in this project not only gives you the opportunity to raise your talents, but you also unlock one of the biggest factor of the growth of your career, and that is the connections with your fellow software engineers."</p>
 </details>
-</article>
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
-</div>
-</main>
-<footer class="md-footer">
-<nav aria-label="footer.title" class="md-footer__inner md-grid">
-<a class="md-footer__link md-footer__link--prev" href="../" rel="prev">
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
-</div>
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
+        </div>
+        
+      </main>
+      
+        
+  <footer class="md-footer">
+    
+      <nav class="md-footer__inner md-grid" aria-label="footer.title">
+        
+          <a href="../" class="md-footer__link md-footer__link--prev" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
                   Previous
                 </span>
                 Overview
               </div>
-</div>
-</a>
-<a class="md-footer__link md-footer__link--next" href="../practical-software-engineering-workflow/" rel="next">
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
+            </div>
+          </a>
+        
+        
+          <a href="../practical-software-engineering-workflow/" class="md-footer__link md-footer__link--next" rel="next">
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
                   Next
                 </span>
                 Practical Software Engineering Workflow
               </div>
-</div>
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
-</div>
-</a>
-</nav>
-<div class="md-footer-meta md-typeset">
-<div class="md-footer-meta__inner md-grid">
-<div class="md-footer-copyright">
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
           
           Web Documentation Setup By
-          <a href="https://codersforcauses.org/" rel="noopener" target="_blank">
+          <a href="https://codersforcauses.org/" target="_blank" rel="noopener">
             Coders for Causes
           </a>
+          
+        </div>
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://codersforcauses.org/" target="_blank" rel="noopener" title="codersforcauses.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM5.78 8.75a9.64 9.64 0 0 0 1.363 4.177c.255.426.542.832.857 1.215.245-.296.551-.705.857-1.215A9.64 9.64 0 0 0 10.22 8.75Zm4.44-1.5a9.64 9.64 0 0 0-1.363-4.177c-.307-.51-.612-.919-.857-1.215a9.927 9.927 0 0 0-.857 1.215A9.64 9.64 0 0 0 5.78 7.25Zm-5.944 1.5H1.543a6.507 6.507 0 0 0 4.666 5.5c-.123-.181-.24-.365-.352-.552-.715-1.192-1.437-2.874-1.581-4.948Zm-2.733-1.5h2.733c.144-2.074.866-3.756 1.58-4.948.12-.197.237-.381.353-.552a6.507 6.507 0 0 0-4.666 5.5Zm10.181 1.5c-.144 2.074-.866 3.756-1.58 4.948-.12.197-.237.381-.353.552a6.507 6.507 0 0 0 4.666-5.5Zm2.733-1.5a6.507 6.507 0 0 0-4.666-5.5c.123.181.24.365.353.552.714 1.192 1.436 2.874 1.58 4.948Z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.instagram.com/cfc_uwa/" target="_blank" rel="noopener" title="www.instagram.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.facebook.com/codersforcauses" target="_blank" rel="noopener" title="www.facebook.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256c0 120 82.7 220.8 194.2 248.5V334.2h-52.8V256h52.8v-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287v175.9C413.8 494.8 512 386.9 512 256z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/channel/UCp47I0qUXeGgSK0AtFJSkbQ" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/company/coders-for-causes/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:hello@codersforcauses.org" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.7l167.6-182.9c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4z"/></svg>
+    </a>
+  
 </div>
-<div class="md-social">
-<a class="md-social__link" href="https://codersforcauses.org/" rel="noopener" target="_blank" title="codersforcauses.org">
-<svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM5.78 8.75a9.64 9.64 0 0 0 1.363 4.177c.255.426.542.832.857 1.215.245-.296.551-.705.857-1.215A9.64 9.64 0 0 0 10.22 8.75Zm4.44-1.5a9.64 9.64 0 0 0-1.363-4.177c-.307-.51-.612-.919-.857-1.215a9.927 9.927 0 0 0-.857 1.215A9.64 9.64 0 0 0 5.78 7.25Zm-5.944 1.5H1.543a6.507 6.507 0 0 0 4.666 5.5c-.123-.181-.24-.365-.352-.552-.715-1.192-1.437-2.874-1.581-4.948Zm-2.733-1.5h2.733c.144-2.074.866-3.756 1.58-4.948.12-.197.237-.381.353-.552a6.507 6.507 0 0 0-4.666 5.5Zm10.181 1.5c-.144 2.074-.866 3.756-1.58 4.948-.12.197-.237.381-.353.552a6.507 6.507 0 0 0 4.666-5.5Zm2.733-1.5a6.507 6.507 0 0 0-4.666-5.5c.123.181.24.365.353.552.714 1.192 1.436 2.874 1.58 4.948Z"></path></svg>
-</a>
-<a class="md-social__link" href="https://www.instagram.com/cfc_uwa/" rel="noopener" target="_blank" title="www.instagram.com">
-<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg>
-</a>
-<a class="md-social__link" href="https://www.facebook.com/codersforcauses" rel="noopener" target="_blank" title="www.facebook.com">
-<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256c0 120 82.7 220.8 194.2 248.5V334.2h-52.8V256h52.8v-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287v175.9C413.8 494.8 512 386.9 512 256z"></path></svg>
-</a>
-<a class="md-social__link" href="https://www.youtube.com/channel/UCp47I0qUXeGgSK0AtFJSkbQ" rel="noopener" target="_blank" title="www.youtube.com">
-<svg viewbox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg>
-</a>
-<a class="md-social__link" href="https://www.linkedin.com/company/coders-for-causes/" rel="noopener" target="_blank" title="www.linkedin.com">
-<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
-</a>
-<a class="md-social__link" href="mailto:hello@codersforcauses.org" rel="noopener" target="_blank" title="">
-<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.7l167.6-182.9c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4z"></path></svg>
-</a>
-</div>
-</div>
-</div>
-</footer>
-</div>
-<div class="md-dialog" data-md-component="dialog">
-<div class="md-dialog__inner md-typeset"></div>
-</div>
-<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "toc.integrate", "header.autohide", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../assets/javascripts/bundle.ad660dcc.min.js"></script>
-<script src="https://unpkg.com/mermaid@8.8.2/dist/mermaid.min.js"></script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js"></script>
-<script src="../../javascripts/tablesort.js"></script>
-</body>
+      </div>
+    </div>
+  </footer>
+  
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "toc.integrate", "header.autohide", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js"></script>
+      
+        <script src="../../javascripts/tablesort.js"></script>
+      
+    
+  </body>
 </html>
