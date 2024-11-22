@@ -1,4 +1,4 @@
-FROM python:3.8.6-slim-buster AS docsbuild
+FROM python:3.13.0-slim-bookworm AS docsbuild
 ENV PYTHONUNBUFFERED 1
 
 # Install mkdocs-material requirements

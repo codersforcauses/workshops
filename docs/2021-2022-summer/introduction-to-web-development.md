@@ -15,7 +15,7 @@ This workshop covers a brief overview of the most common tools and technologies 
     - [Developer Tools](#developer-tools)
       - [TypeScript](#typescript)
       - [Testing](#testing)
-      - [Continuous Integration / Continuous Deployment](#continuous-integration--continuous-deployment)
+      - [Continuous Integration / Continuous Deployment](#continuous-integration-continuous-deployment)
       - [Virtualisation and Containerisation](#virtualisation-and-containerisation)
       - [Browsers](#browsers)
       - [Firefox Developer Tools](#firefox-developer-tools)
