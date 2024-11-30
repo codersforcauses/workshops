@@ -18,7 +18,7 @@ theme:
       icon: material/toggle-switch-off-outline
       name: Switch to dark mode
   - media: "(prefers-color-scheme: dark)"  # below here is a palette for dark mode
-    scheme: slate
+    scheme: cfcdark
     toggle:
       icon: material/toggle-switch
       name: Switch to light mode
@@ -115,6 +115,7 @@ nav:
 - 2024/2025 Summer:
   - Introduction to Web Development: 2024-2025-summer/introduction-to-web-development.md
   - Practical Software Engineering Workflow: 2024-2025-summer/practical-software-engineering-workflow.md
+  - Working With Typescript: 2024-2025-summer/working-with-typescript.md
 - 2024 Winter:
   - Introduction to Web Development: 2024-winter/introduction-to-web-development.md
   - Practical Software Engineering Workflow: 2024-winter/practical-software-engineering-workflow.md
