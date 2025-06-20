@@ -299,10 +299,10 @@ This workshop covers a brief overview of the most common tools and technologies 
 ## Server-side Applications (Backend)
 
 <div style="display:flex;justify-content:space-around;flex-wrap:wrap;flex-wrap:wrap;">
-    <img width="33%" src="/2021-2022-summer/images/images/nodejs.png" alt="nodejs">
-    <img width="33%" src="/2021-2022-summer/images/images/django.png" alt="django">
-    <img width="33%" src="/2021-2022-summer/images/images/php.jpg" alt="php">
-    <img width="33%" src="/2021-2022-summer/images/images/postgresql.png" alt="postgresql">
+    <img width="33%" src="/2021-2022-summer/images/nodejs.png" alt="nodejs">
+    <img width="33%" src="/2021-2022-summer/images/django.png" alt="django">
+    <img width="33%" src="/2021-2022-summer/images/php.jpg" alt="php">
+    <img width="33%" src="/2021-2022-summer/images/postgresql.png" alt="postgresql">
 </div>
 
 
