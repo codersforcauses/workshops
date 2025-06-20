@@ -3,23 +3,38 @@ title: Practical Software Engineering Workflow
 ᴴₒᴴₒᴴₒ: true
 ---
 
-*How software engineer [GSD](https://www.atlassian.com/team-playbook/plays/gsd-day)!*
+## This workshop is proudly supported by
+
+![sponsors](./images/sponsors.png)
+
 
 ## How do software engineers work?
-They use **issue/ticket management system** to track their work.
+- Project management system
+    - Jira
+    - Trello
+    - Gitub Issues
+    - Sticky notes
+- Version control system:
+    - Git
+        - Github
+        - Bitbucket
+        - Gitlab
+        - Gitea
+    - Subversion
+    - Email...?
 
 ???+ example "Github Issues and Jira"
     The examples are Github Issues and Jira.
 
-    ![github](images/github.png)
-    ![jira](images/jira.png)
+    ![github](../2021-2022-summer/images/github.png)
+    ![jira](../2021-2022-summer/images/jira.png)
 
 Listing of issues can be displayed in **kanban boards**.
 
 ???+ example "Kanban Boards"
 
-    ![github-kanban](images/github-kanban.png)
-    ![jira-kanban](images/jira-kanban.png)
+    ![github-kanban](../2021-2022-summer/images/github-kanban.png)
+    ![jira-kanban](../2021-2022-summer/images/jira-kanban.png)
 
 ## Why do Software Engineers Work like this?
 
@@ -31,7 +46,7 @@ allowfullscreen></iframe>
 
 ???+ info "Scrums"
     One example of "agile" ways of working and it looks like this.
-    ![scrum](images/scrum.png)
+    ![scrum](../2021-2022-summer/images/scrum.png)
 
 ## What is Git?
 <iframe width="100%" height="500rem"
@@ -40,57 +55,58 @@ frameborder="0"
 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
 allowfullscreen></iframe>
 
-Git is a
+## Git vs Git providers
 
-- **version control system**
-- tools for **coordinating work for different changes**
+### Git
 
-### Main Parts of Git
+- Version control system
+- Acts on code repositories
 
-Main Parts of git:
+Basic features of Git:
 
-- Change Node (commit node)
-- Branch
+- Repositories
+- Commits
+- Branches
+- Merging
 
-![parts-of-git](images/parts-of-git.png)
+Advanced features:
 
-### Git Different Versions
+- Bisect
+- Cherry pick
+- Rebase
+- Tags
+- Stash
+- Patches
+- Many more!
 
-??? info "Software Versions"
-    ![versioning](images/versioning.png){align=left}
+![parts-of-git](../2021-2022-summer/images/parts-of-git.png)
 
-**Nodes**
-- Representation of a change (commits + merge)
+### Github
 
-**Main/Master:**
-- Branch usually as production or deployed
+- Hosts code repositories
+- Supporting functionality to assist with development
 
-**Development Branch**
-- Branch used for development
-Used for compiling features for a release
+Basic features of Github:
 
-**Feature Branch**
-- Branch used for development for a
-particular issue
+- Pull requests
+- Code reviews
+- Comments
+- Github Actions
+- Permissions
 
-## GitHub and Code Repositories
+## Git Versioning Strategies
 
-**GitHub**
-- Place to hold code repositories
+- Trunk based (we will be using this model!)
+- Feature based
+    - GitFlow
+    - Gitlab Flow
 
-**Repositories**
-- Place where codes are stored with different versions
+??? info "GitFlow"
+    ![versioning](../2021-2022-summer/images/versioning.png){align=left}
 
+## Live demonstration
 
-## INTERACTIVE WORKSHOP TIME !!!!
-1. Do the following from [codersforcauses/software-engineering-practices-demo-2024-summer](https://github.com/codersforcauses/software-engineering-practices-demo-2024-summer): Demonstration of software engineering practices (github.com):
-2. Look at the GitHub issues
-3. Assign yourself an issue
-4. Clone repo with `git clone https://github.com/codersforcauses/software-engineering-practices-demo-2024-summer.git`
-5. Create a branch with the following format s{Issue Number}-{Issue Name}. `git checkout -b {Issue Number}-{Issue Name}`
-6. Create the change to satisfy or complete the github issue
-7. Commit (package) the change `git commit -m "{insert message here}"` and push git push.
-8. Create a pull request and request for a reviewer from CFC peeps
+- [Demo Repository](https://github.com/codersforcauses/software-engineering-practices-demo-2025-winter)
 
 ## Other Resources
 - [Git and Github](https://www.youtube.com/watch?v=HkdAHXoRtos)
