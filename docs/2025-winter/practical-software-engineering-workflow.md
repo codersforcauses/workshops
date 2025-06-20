@@ -9,10 +9,11 @@ title: Practical Software Engineering Workflow
 
 
 ## How do software engineers work?
-- project management system
+- Project management system
     - Jira
     - Trello
     - Gitub Issues
+    - Sticky notes
 - Version control system:
     - Git
         - Github
@@ -45,7 +46,7 @@ allowfullscreen></iframe>
 
 ???+ info "Scrums"
     One example of "agile" ways of working and it looks like this.
-    ![scrum](../2021-2022-summer/scrum.png)
+    ![scrum](../2021-2022-summer/images/scrum.png)
 
 ## What is Git?
 <iframe width="100%" height="500rem"
@@ -53,11 +54,6 @@ src="https://www.youtube.com/embed/hwP7WQkmECE"
 frameborder="0" 
 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
 allowfullscreen></iframe>
-
-Git is a
-
-- **version control system**
-- tools for **coordinating work for different changes**
 
 ## Git vs Git providers
 
@@ -72,6 +68,14 @@ Basic features of git:
 - Commits
 - Branches
 - Merging
+
+Advanced features:
+- Bisect
+- Cherry pick
+- Rebase
+- Tags
+- Patches
+- Many more!
 
 ### Github
 
