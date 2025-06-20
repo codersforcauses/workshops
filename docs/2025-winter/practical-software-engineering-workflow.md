@@ -62,7 +62,7 @@ allowfullscreen></iframe>
 - Version control system
 - Acts on code repositories
 
-Basic features of git:
+Basic features of Git:
 
 - Repositories
 - Commits
@@ -70,12 +70,16 @@ Basic features of git:
 - Merging
 
 Advanced features:
+
 - Bisect
 - Cherry pick
 - Rebase
 - Tags
+- Stash
 - Patches
 - Many more!
+
+![parts-of-git](../2021-2022-summer/images/parts-of-git.png)
 
 ### Github
 
@@ -89,8 +93,6 @@ Basic features of Github:
 - Comments
 - Github Actions
 - Permissions
-
-![parts-of-git](../2021-2022-summer/images/parts-of-git.png)
 
 ## Git Versioning Strategies
 
