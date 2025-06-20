@@ -3,6 +3,10 @@
 
 This workshop covers a brief overview of the most common tools and technologies used in web development.
 
+## This workshop is proudly sponsorsed by
+
+![sponsors](./images/sponsors.png)
+
 ## Content
   - [What and Why Web Development?](#what-and-why-web-development)
   - [FAQs about Web Development](#faqs-about-web-development)
