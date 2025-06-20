@@ -1,38 +1,35 @@
 # Introduction to Web Development Space
-
-_Navigating the Deep Dark Space of Web Development_
+*Navigating the Deep Dark Space of Web Development*
 
 This workshop covers a brief overview of the most common tools and technologies used in web development.
 
 ## Content
-
-- [What and Why Web Development?](#what-and-why-web-development)
-- [FAQs about Web Development](#faqs-about-web-development)
-- [Basics of Web and Limitation](#basics-of-web-and-limitation)
-- [Server-side Applications (Backend)](#server-side-applications-backend)
-- [Others](#others)
-  - [Languages of the Web (the usual)](#languages-of-the-web-the-usual)
-  - [Hosting Stuff](#hosting-stuff)
-  - [CSS Frameworks](#css-frameworks)
-  - [Developer Tools](#developer-tools)
-    - [TypeScript](#typescript)
-    - [Testing](#testing)
-    - [Continuous Integration / Continuous Deployment](#continuous-integration--continuous-deployment)
-    - [Virtualisation and Containerisation](#virtualisation-and-containerisation)
-    - [Browsers](#browsers)
-    - [Firefox Developer Tools](#firefox-developer-tools)
-    - [Package Managers](#package-managers)
-    - [Version Control](#version-control)
-    - [Linters and Formatters](#linters-and-formatters)
-    - [Teamwork](#teamwork)
-  - [Roadmaps](#roadmaps)
-- [Word of Encouragement](#word-of-encouragement)
+  - [What and Why Web Development?](#what-and-why-web-development)
+  - [FAQs about Web Development](#faqs-about-web-development)
+  - [Basics of Web and Limitation](#basics-of-web-and-limitation)
+  - [Server-side Applications (Backend)](#server-side-applications-backend)
+  - [Others](#others)
+    - [Languages of the Web (the usual)](#languages-of-the-web-the-usual)
+    - [Hosting Stuff](#hosting-stuff)
+    - [CSS Frameworks](#css-frameworks)
+    - [Developer Tools](#developer-tools)
+      - [TypeScript](#typescript)
+      - [Testing](#testing)
+      - [Continuous Integration / Continuous Deployment](#continuous-integration--continuous-deployment)
+      - [Virtualisation and Containerisation](#virtualisation-and-containerisation)
+      - [Browsers](#browsers)
+      - [Firefox Developer Tools](#firefox-developer-tools)
+      - [Package Managers](#package-managers)
+      - [Version Control](#version-control)
+      - [Linters and Formatters](#linters-and-formatters)
+      - [Teamwork](#teamwork)
+    - [Roadmaps](#roadmaps)
+  - [Word of Encouragement](#word-of-encouragement)
 
 ## What and Why Web Development?
 
 ### What is web development?
-
-- Websites development
+- Website development
 - Web applications (client-side and server-side) development
 
 ### Why Web Development ?
@@ -42,19 +39,20 @@ This workshop covers a brief overview of the most common tools and technologies 
 - Huge possibility to combine with other emerging technologies (e.g. IoT, Machine Learning) and industry (e.g. Health, Mining, O&G)
 
 ??? info "Career in Web Development"
-Source: [Insights from Stack Overflow’s 2016 survey of 50,000 developers](https://www.freecodecamp.org/news/2-out-of-3-developers-are-self-taught-and-other-insights-from-stack-overflow-s-2016-survey-of-50-8cf0ee5d4c21/)
+    Source: [Insights from Stack Overflow’s 2016 survey of 50,000 developers](https://www.freecodecamp.org/news/2-out-of-3-developers-are-self-taught-and-other-insights-from-stack-overflow-s-2016-survey-of-50-8cf0ee5d4c21/)
 
-    "Half of Developers are Web Developers"
-    ![occupation](https://cdn-media-1.freecodecamp.org/images/1*l3TGs4XuDhqGfIdeef9AeA.jpeg)
+    "over half of Developers are Web Developers"
+    ![occupation](./images/stack-overflow.png)
+
 
 ## FAQs about Web Development
 
 ### Why code websites, why not use drag and drops like Wordpress, WIX?
 
 <div style="display:flex;justify-content:space-around;flex-wrap:wrap;">
-    <img style="width:33%" src="../images/../2021-2022-summer/wordpress.png" alt="wordpress">
-    <img style="width:33%" src="../images/../2021-2022-summer/wix.jpg" alt="wix">
-    <img style="width:33%" src="../images/../2021-2022-summer/drupal.jpg" alt="drupal">
+    <img style="width:33%" src="../2021-2022-summer/images/wordpress.png" alt="wordpress">
+    <img style="width:33%" src="../2021-2022-summer/images/wix.jpg" alt="wix">
+    <img style="width:33%" src="../2021-2022-summer/images/drupal.jpg" alt="drupal">
 </div>
 
 - Content Management System (CMS)
@@ -63,7 +61,7 @@ Source: [Insights from Stack Overflow’s 2016 survey of 50,000 developers](http
 - Cybersecurity
 
 ??? info "More information"
-CMS are one of the application of web development, but there are plenty more such as - internet of things, custom software for a particular industrial application (eg. using Machine Learning)
+    CMS are one of the application of web development, but there are plenty more such as - internet of things, custom software for a particular industrial application (eg. using Machine Learning)
 
     CMS are usually limited to the template or plugin that you use. If those plugin don't exist, then it limits your productivity very much (difficulty to extend).
 
@@ -79,12 +77,12 @@ allowfullscreen></iframe>
 
 In summary, the best way to learn:
 
-- Do personal projects (inspiration + motivation)
-- Do team projects (get peer reviews and correct bad practices straight away)
-- Watch Online Courses (to figure out what is available)
+  - Do personal projects (inspiration + motivation)
+  - Do team projects (get peer reviews and correct bad practices straight away)
+  - Watch Online Courses (to figure out what is available)
 
 ??? info "More Information"
-To be told that you have to learn "this, this, and that" before you could do things is tiresome.
+    To be told that you have to learn "this, this, and that" before you could do things is tiresome.
 
     Often times, we want to learn to be a developer so that we can create cool things like software where thousands of people can use the app. We don't tend to be a developer for the sake of us needing to watch endless videos on different things.
 
@@ -100,16 +98,17 @@ To be told that you have to learn "this, this, and that" before you could do thi
 - It is better to learn a backend framework
 
 ??? info "Reasoning"
-You want to build skills that complement one another rather than be an alternative.
+    You want to build skills that complement one another rather than be an alternative.
 
     It is much more valuable for you to learn a backend framework because that helps you build a **functional** app.
 
+
 ## Basics of Web and Limitation
 
-![basics of web 2](../images/../2021-2022-summer/images/basics-of-web-2.jpg)
+![basics of web 2](../2021-2022-summer/images/basics-of-web-2.jpg)
 
 === "HTML"
-**What is it?**
+    **What is it?**
 
     - Hypertext Markup Language
     - Describes the structure of a web page
@@ -137,7 +136,7 @@ You want to build skills that complement one another rather than be an alternati
         ```
 
 === "CSS"
-**What is it?**
+    **What is it?**
 
     - Cascading Style Sheets
     - Describes the presentation of a web page
@@ -162,7 +161,7 @@ You want to build skills that complement one another rather than be an alternati
         ```
 
 === "JS"
-**What is it?**
+    **What is it?**
 
     - JavaScript
     - Used to program complex features on a web page
@@ -182,30 +181,32 @@ You want to build skills that complement one another rather than be an alternati
         bodySelector.onclick = myFunction;
         ```
 
+
 ### Modern Frameworks
 
 - Websites can be much more… they can be web applications
 - “App” in a website (client-side rendering)
 
 ???+ success "Modern Frameworks"
-=== "React.js" - More mature and used more in industry
+    === "React.js"
+        - More mature and used more in industry
 
-        ![react](../images/../2021-2022-summer/images/react.png)
+        ![react](../2021-2022-summer/images/react.png)
 
     === "Vue.js"
         - Growing fast in popularity and use.
 
-        ![vue](../images/../2021-2022-summer/images/vue.png)
+        ![vue](../2021-2022-summer/images/vue.png)
 
 
 
     **General Information**
 
-    - Both are good to use and learn.
+    - Both are good to use and learn. 
     - Knowledge is transferable between the two frameworks.
 
 ??? info "Comparison between HTML and JSX"
-![sample](../images/../2021-2022-summer/images/sample.png)
+    ![sample](../2021-2022-summer/images/sample.png)
 
     Highlighted portions are starting chunk of distinct code.
 
@@ -311,27 +312,27 @@ You want to build skills that complement one another rather than be an alternati
 ## Server-side Applications (Backend)
 
 <div style="display:flex;justify-content:space-around;flex-wrap:wrap;flex-wrap:wrap;">
-    <img width="33%" src="../images/../2021-2022-summer/images/nodejs.png" alt="nodejs">
-    <img width="33%" src="../images/../2021-2022-summer/images/django.png" alt="django">
-    <img width="33%" src="../images/../2021-2022-summer/images/php.jpg" alt="php">
-    <img width="33%" src="../images/../2021-2022-summer/images/postgresql.png" alt="postgresql">
+    <img width="33%" src="../2021-2022-summer/nodejs.png" alt="nodejs">
+    <img width="33%" src="../2021-2022-summer/django.png" alt="django">
+    <img width="33%" src="../2021-2022-summer/php.jpg" alt="php">
+    <img width="33%" src="../2021-2022-summer/postgresql.png" alt="postgresql">
 </div>
+
 
 ### How do devices communicate?
 
 - HTTP Request - Hypertext Transfer Protocol
 
-![backend-connection](../images/../2021-2022-summer/images/backend-connection.png)
+![backend-connection](../2021-2022-summer/images/backend-connection.png)
 
 ### What do server applications do?
 
 - Serve frontends (server-side rendering)
 - Web API (Application Programming Interface)
-  - Serve data (usually from a database)
-  - Process Request (Sending emails or SMS, Machine Learning)
-
+    - Serve data (usually from a database)
+    - Process Request (Sending emails or SMS, Machine Learning)
+ 
 ### Databases
-
 Place to store the data
 
 **Mongodb**
@@ -345,15 +346,12 @@ Typically faster and better for large amounts of data or systems that need data 
 ## Others
 
 ### Languages of the Web (the usual)
-
 - Python (Django, Flask)
 - JavaScript (Node.js, Express)
 - Ruby, Go, Rust, C
 
 ### Hosting Stuff
-
 Many ways
-
 - Own a server
 - Use a 3rd party platform
 
@@ -364,6 +362,7 @@ Many ways
 - Vue, React
 - Nuxt.js, Next.js
 
+
 **Frontend (CSS)**
 
 - MaterialUI, Vuetify
@@ -372,7 +371,6 @@ Many ways
 ### Developer Tools
 
 #### TypeScript
-
 - Type checking is super useful for complex apps
 - Allows for way better javascript developer tooling
 - Can be annoying if you’re new at it
@@ -380,9 +378,9 @@ Many ways
 #### Testing
 
 - Selenium, Cypress
-  - End to end automated testing tools
+    - End to end automated testing tools
 - Jest, Mocha, Pytest
-  - Unit testing
+    - Unit testing
 - Testing is vital to software projects
 
 #### Continuous Integration / Continuous Deployment
@@ -399,69 +397,73 @@ Many ways
 #### Browsers
 
 - Standard browsers
-  - Google Chrome, Firefox, Edge, etc.
+    - Google Chrome, Firefox, Edge, etc.
 - Backwards compatibility
-  - Internet Explorer
+    - Internet Explorer
 - Other
-  - Mobile - Responsive
-  - Screen readers - Accessibility
+    - Mobile - Responsive
+    - Screen readers - Accessibility
 
 #### Firefox Developer Tools
-
 - Page Inspector
-  - Visualise page aspects
-  - Grid layout
+    - Visualise page aspects
+    - Grid layout
 - Web Console
-  - `console.log(“Hello World”)`
+    - `console.log(“Hello World”)`
 - Responsive Design Mode
-  - View from POV of different screen sizes such as mobile, tablets, etc.
+    - View from POV of different screen sizes such as mobile, tablets, etc.
 
-??? info "Some more tools" - JavaScript Debugger - Network Monitor - Performance Tools - Rulers - Colour Pickers
-Learn more at: https://developer.mozilla.org/en-US/docs/Tools
+??? info "Some more tools"
+    - JavaScript Debugger
+    - Network Monitor
+    - Performance Tools
+    - Rulers
+    - Colour Pickers
+    Learn more at: https://developer.mozilla.org/en-US/docs/Tools
 
 #### Package Managers
-
 - Installs libraries that can be used
 - Also has code shortcuts (e.g. npm run start)
 
 (More about `package.json` and `poetry.toml` in the projects and Package Manager Workshop)
 
 #### Version Control
-
 - Essential for developer teams and complex software development
 - Git
 
 #### Linters and Formatters
-
 - Makes code formatting consistent (following standard)
 - Useful with version controls to avoid pointless change
 
 eg.ESLint, Prettier
 
 #### Teamwork
-
 - Many tools out there
 - Used to stop teams from stepping on each others toes
 - Github Issues + Pull Requests
 
 ### Roadmaps
-
 There's an open-source community that maintains a learning roadmap for developers. See [https://roadmap.sh/](https://roadmap.sh/)
 
 ??? info "Frontend Developer"
-![frontend-roadmap](https://roadmap.sh/roadmaps/frontend.png)
+    ![frontend-roadmap](https://roadmap.sh/roadmaps/frontend.png)
 
 ??? info "Backend Developer"
-![backend-roadmap](https://roadmap.sh/roadmaps/backend.png)
+    ![backend-roadmap](https://roadmap.sh/roadmaps/backend.png)
 
 ??? info "Dev-Ops"
-![devops-roadmap](https://roadmap.sh/roadmaps/devops.png)
+    ![devops-roadmap](https://roadmap.sh/roadmaps/devops.png)
 
 ## Word of Encouragement
 
 ??? quote "Encouragement from the Tech Lead"
-"I can admit that this journey of learning will be difficult, and can sometimes be overwhelming and demotivating. Please, if at any point of this project, you feel that you don't know enough, or you're feeling lost, please reach out! We are all in this journey together! Nobody is born talented, skills are honed with determination and willingness to learn."
+    "I can admit that this journey of learning will be difficult, and can sometimes be overwhelming and demotivating. Please, if at any point of this project, you feel that you don't know enough, or you're feeling lost, please reach out! We are all in this journey together! Nobody is born talented, skills are honed with determination and willingness to learn." 
 
-    "When I was a first year student entering on the CFC winter project, I didn't feel like I was good enough. I couldn't create a good looking interface, I didn't know how to use npm and all sorts of those things. I was just like many of you! if I gave up just because of all those things I didn't know, of all those self-doubts, then I wouldn't be here today. I admit that I was lucky because I was in CFC, I had connections where I can just ask questions instead of feeling lost of not knowing. So please do leverage that opportunity to reach out"
+    "When I was a first year student entering on the CFC winter project, I didn't feel like I was good enough. I couldn't create a good looking interface, I didn't know how to use npm and all sorts of those things. I was just like many of you! if I gave up just because of all those things I didn't know, of all those self-doubts, then I wouldn't be here today. I admit that I was lucky because I was in CFC, I had connections where I can just ask questions instead of feeling lost of not knowing. So please do leverage that opportunity to reach out" 
 
     "You being in this project not only gives you the opportunity to raise your talents, but you also unlock one of the biggest factor of the growth of your career, and that is the connections with your fellow software engineers."
+
+
+
+
+
