@@ -39,7 +39,7 @@ This workshop covers a brief overview of the most common tools and technologies 
 - Huge possibility to combine with other emerging technologies (e.g. IoT, Machine Learning) and industry (e.g. Health, Mining, O&G)
 
 ??? info "Career in Web Development"
-    Source: [Insights from Stack Overflow’s 2016 survey of 50,000 developers](https://www.freecodecamp.org/news/2-out-of-3-developers-are-self-taught-and-other-insights-from-stack-overflow-s-2016-survey-of-50-8cf0ee5d4c21/)
+    Source: [Stack Overflow 2024 Developer Survey](https://survey.stackoverflow.co/2024/developer-profile#developer-roles)
 
     "over half of Developers are Web Developers"
     ![occupation](./images/stack-overflow.png)
