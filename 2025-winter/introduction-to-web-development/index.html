@@ -670,15 +670,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#word-of-encouragement" class="md-nav__link">
-    <span class="md-ellipsis">
-      Word of Encouragement
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1727,11 +1718,11 @@
 <li><a href="#faqs-about-web-development">FAQs about Web Development</a></li>
 <li><a href="#basics-of-web-and-limitation">Basics of Web and Limitation</a></li>
 <li><a href="#server-side-applications-backend">Server-side Applications (Backend)</a></li>
-<li><a href="#others">Others</a></li>
+<li><a href="#others">Others</a><ul>
 <li><a href="#languages-of-the-web-the-usual">Languages of the Web (the usual)</a></li>
 <li><a href="#hosting-stuff">Hosting Stuff</a></li>
 <li><a href="#css-frameworks">CSS Frameworks</a></li>
-<li><a href="#developer-tools">Developer Tools</a><ul>
+<li><a href="#developer-tools">Developer Tools</a></li>
 <li><a href="#typescript">TypeScript</a></li>
 <li><a href="#testing">Testing</a></li>
 <li><a href="#continuous-integration--continuous-deployment">Continuous Integration / Continuous Deployment</a></li>
@@ -1742,37 +1733,35 @@
 <li><a href="#version-control">Version Control</a></li>
 <li><a href="#linters-and-formatters">Linters and Formatters</a></li>
 <li><a href="#teamwork">Teamwork</a></li>
+<li><a href="#roadmaps">Roadmaps</a></li>
 </ul>
 </li>
-<li><a href="#roadmaps">Roadmaps</a></li>
 <li><a href="#word-of-encouragement">Word of Encouragement</a></li>
 </ul>
 <h2 id="what-and-why-web-development">What and Why Web Development?<a class="headerlink" href="#what-and-why-web-development" title="Permanent link">&para;</a></h2>
 <h3 id="what-is-web-development">What is web development?<a class="headerlink" href="#what-is-web-development" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Websites development</li>
-<li>Web applications (client-side and server-side) development</li>
+<li>Static websites (e.g. this workshop website!)</li>
+<li>Web applications (e.g. Youtube)</li>
 </ul>
 <h3 id="why-web-development">Why Web Development ?<a class="headerlink" href="#why-web-development" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Accessibility and Portability</li>
-<li>Career and On-demand in job market</li>
+<li>Career and In-demand job opportunities</li>
 <li>Huge possibility to combine with other emerging technologies (e.g. IoT, Machine Learning) and industry (e.g. Health, Mining, O&amp;G)</li>
 </ul>
 <details class="info">
 <summary>Career in Web Development</summary>
+<p>Source: <a href="https://survey.stackoverflow.co/2024/developer-profile#developer-roles">Stack Overflow 2024 Developer Survey</a></p>
+<p>"over half of Developers are Web Developers"
+<img alt="occupation" src="../images/stack-overflow.png" /></p>
 </details>
-<p>Source: <a href="https://www.freecodecamp.org/news/2-out-of-3-developers-are-self-taught-and-other-insights-from-stack-overflow-s-2016-survey-of-50-8cf0ee5d4c21/">Insights from Stack Overflow’s 2016 survey of 50,000 developers</a></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>&quot;Half of Developers are Web Developers&quot;
-![occupation](https://cdn-media-1.freecodecamp.org/images/1*l3TGs4XuDhqGfIdeef9AeA.jpeg)
-</code></pre></div></td></tr></table></div>
 <h2 id="faqs-about-web-development">FAQs about Web Development<a class="headerlink" href="#faqs-about-web-development" title="Permanent link">&para;</a></h2>
 <h3 id="why-code-websites-why-not-use-drag-and-drops-like-wordpress-wix">Why code websites, why not use drag and drops like Wordpress, WIX?<a class="headerlink" href="#why-code-websites-why-not-use-drag-and-drops-like-wordpress-wix" title="Permanent link">&para;</a></h3>
 <div style="display:flex;justify-content:space-around;flex-wrap:wrap;">
-    <img style="width:33%" src="../images/../2021-2022-summer/wordpress.png" alt="wordpress">
-    <img style="width:33%" src="../images/../2021-2022-summer/wix.jpg" alt="wix">
-    <img style="width:33%" src="../images/../2021-2022-summer/drupal.jpg" alt="drupal">
+    <img style="width:33%" src="../2021-2022-summer/images/wordpress.png" alt="wordpress">
+    <img style="width:33%" src="../2021-2022-summer/images/wix.jpg" alt="wix">
+    <img style="width:33%" src="../2021-2022-summer/images/drupal.jpg" alt="drupal">
 </div>
 
 <ul>
@@ -1783,39 +1772,20 @@
 </ul>
 <details class="info">
 <summary>More information</summary>
-</details>
 <p>CMS are one of the application of web development, but there are plenty more such as - internet of things, custom software for a particular industrial application (eg. using Machine Learning)</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>CMS are usually limited to the template or plugin that you use. If those plugin don&#39;t exist, then it limits your productivity very much (difficulty to extend).
-
-CMS are usually built to cater for non-technical users. This means that thye become the subject of hackers. Think about a scenario where a hacker was able to find a vulnerability in WordPress, now every other WordPress site will be vulnerable.
-</code></pre></div></td></tr></table></div>
-<h3 id="what-is-the-best-way-to-learn-all-these">What is the best way to learn all these?<a class="headerlink" href="#what-is-the-best-way-to-learn-all-these" title="Permanent link">&para;</a></h3>
-<iframe width="100%" height="500rem"
-src="https://www.youtube.com/embed/nvlizC6koSc" 
-frameborder="0" 
-allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-allowfullscreen></iframe>
-
-<p>In summary, the best way to learn:</p>
-<ul>
-<li>Do personal projects (inspiration + motivation)</li>
-<li>Do team projects (get peer reviews and correct bad practices straight away)</li>
-<li>Watch Online Courses (to figure out what is available)</li>
-</ul>
-<details class="info">
-<summary>More Information</summary>
+<p>CMS are usually limited to the template or plugin that you use. If those plugin don't exist, then it limits your productivity very much (difficulty to extend).</p>
+<p>CMS are usually built to cater for non-technical users. This means that thye become the subject of hackers. Think about a scenario where a hacker was able to find a vulnerability in WordPress, now every other WordPress site will be vulnerable.</p>
 </details>
-<p>To be told that you have to learn "this, this, and that" before you could do things is tiresome.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Often times, we want to learn to be a developer so that we can create cool things like software where thousands of people can use the app. We don&#39;t tend to be a developer for the sake of us needing to watch endless videos on different things.
-</code></pre></div></td></tr></table></div>
 <h3 id="why-does-cfc-not-do-mobile-development-as-much-as-web-development">Why does CFC not do mobile development as much as web development?<a class="headerlink" href="#why-does-cfc-not-do-mobile-development-as-much-as-web-development" title="Permanent link">&para;</a></h3>
 <ul>
-<li>App stores has a developer cost</li>
+<li>App stores have a developer cost</li>
 <li>Easier to deal/teach web technologies</li>
 <li>Accessibility (mobile, sensors, tablets, laptops and PCs)</li>
-<li>Bigger open-source community</li>
+<li>Bigger communities</li>
+<li>We sometimes do mobile development! (Kind of)<ul>
+<li>Progressive web apps</li>
+</ul>
+</li>
 </ul>
 <h3 id="if-i-already-know-a-frontend-framework-is-it-better-to-learn-another-frontend-framework-or-to-learn-a-backend-framework">If I already know a frontend framework, is it better to learn another frontend framework or to learn a backend framework?<a class="headerlink" href="#if-i-already-know-a-frontend-framework-is-it-better-to-learn-another-frontend-framework-or-to-learn-a-backend-framework" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1823,15 +1793,144 @@ allowfullscreen></iframe>
 </ul>
 <details class="info">
 <summary>Reasoning</summary>
-</details>
 <p>You want to build skills that complement one another rather than be an alternative.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>It is much more valuable for you to learn a backend framework because that helps you build a **functional** app.
-</code></pre></div></td></tr></table></div>
+<p>It is much more valuable for you to learn a backend framework because that helps you build a <strong>functional</strong> app.</p>
+</details>
 <h2 id="basics-of-web-and-limitation">Basics of Web and Limitation<a class="headerlink" href="#basics-of-web-and-limitation" title="Permanent link">&para;</a></h2>
 <p><img alt="basics of web 2" src="../../2021-2022-summer/images/basics-of-web-2.jpg" /></p>
-<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">HTML</label><div class="tabbed-content"></div>
-</div>
+<div class="tabbed-set" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">HTML</label><div class="tabbed-content">
 <p><strong>What is it?</strong></p>
+<ul>
+<li>Hypertext Markup Language</li>
+<li>Describes the structure of a web page</li>
+</ul>
+<p><strong>Limitation</strong></p>
+<ul>
+<li>Doesn’t handle repeated content well</li>
+<li>No variables or calculation</li>
+</ul>
+<details class="example" open="open">
+<summary>HTML Syntax</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;X-UA-Compatible&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;IE=edge&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Document<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    Hello World!
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div>
+</details>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">CSS</label><div class="tabbed-content">
+<p><strong>What is it?</strong></p>
+<ul>
+<li>Cascading Style Sheets</li>
+<li>Describes the presentation of a web page</li>
+</ul>
+<p><strong>Limitation</strong></p>
+<ul>
+<li>Most css is quite similar (Handled by CSS Libraries)</li>
+<li>Not very dynamic (Handled by CSS Frameworks)</li>
+</ul>
+<details class="example" open="open">
+<summary>CSS Syntax</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">body</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#f0f0f0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">container</span><span class="p">{</span>
+<span class="w">    </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="kt">%</span><span class="p">;</span>
+<span class="w">    </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</details>
+</div>
+<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">JS</label><div class="tabbed-content">
+<p><strong>What is it?</strong></p>
+<ul>
+<li>JavaScript</li>
+<li>Used to program complex features on a web page</li>
+</ul>
+<p><strong>Limitation</strong></p>
+<ul>
+<li>Has the capability to modify the user interface, but becomes really tedious to modify interface (more about this in another workshop)</li>
+</ul>
+<details class="example" open="open">
+<summary>JS Syntax</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">bodySelector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;body&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">myFunction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">bodySelector</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Hello World 2!&#39;</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// Add a container class to space out</span>
+<span class="w">    </span><span class="nx">bodySelector</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;container&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">bodySelector</span><span class="p">.</span><span class="nx">onclick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">myFunction</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+</details>
+</div>
+</div>
+<h3 id="modern-frameworks">Modern Frameworks<a class="headerlink" href="#modern-frameworks" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Websites can be much more… they can be web applications</li>
+<li>“App” in a website (client-side rendering)</li>
+</ul>
+<details class="success" open="open">
+<summary>Modern Frameworks</summary>
+<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">React.js</label><div class="tabbed-content">
+<ul>
+<li>More mature and used more in industry</li>
+</ul>
+<p><img alt="react" src="../../2021-2022-summer/images/react.png" /></p>
+</div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Vue.js</label><div class="tabbed-content">
+<ul>
+<li>Growing fast in popularity and use.</li>
+</ul>
+<p><img alt="vue" src="../../2021-2022-summer/images/vue.png" /></p>
+</div>
+</div>
+<p><strong>General Information</strong></p>
+<ul>
+<li>Both are good to use and learn. </li>
+<li>Knowledge is transferable between the two frameworks.</li>
+</ul>
+</details>
+<details class="info">
+<summary>Comparison between HTML and JSX</summary>
+<p><img alt="sample" src="../../2021-2022-summer/images/sample.png" /></p>
+<p>Highlighted portions are starting chunk of distinct code.</p>
+<details class="example" open="open">
+<summary>HTML</summary>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1855,34 +1954,94 @@ allowfullscreen></iframe>
 <span class="normal">21</span>
 <span class="normal">22</span>
 <span class="normal">23</span>
-<span class="normal">24</span></pre></div></td><td class="code"><div><pre><span></span><code>- Hypertext Markup Language
-- Describes the structure of a web page
-
-**Limitation**
-
-- Doesn’t handle repeated content well
-- No variables or calculation
-
-
-???+ example &quot;HTML Syntax&quot;
-    ```html
-    &lt;!DOCTYPE html&gt;
-    &lt;html lang=&quot;en&quot;&gt;
-    &lt;head&gt;
-        &lt;meta charset=&quot;UTF-8&quot;&gt;
-        &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-        &lt;title&gt;Document&lt;/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        Hello World!
-    &lt;/body&gt;
-    &lt;/html&gt;
-    ```
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;row&quot;</span><span class="p">&gt;</span>
+<span class="hll">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;m-0 col-12 col-md-6 col-lg-3&quot;</span><span class="p">&gt;</span>
+</span>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-center border-0 bg-transparent card&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;px-0 card-body&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;material-icons-sharp md-lg&quot;</span><span class="p">&gt;</span>devices<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mt-4 font-weight-bold text-monospace text-larger&quot;</span><span class="p">&gt;</span>
+            Applications
+            <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mb-0&quot;</span><span class="p">&gt;</span>
+            Build custom web and mobile applications to engage with your audience
+            <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="hll">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;m-0 col-12 col-md-6 col-lg-3&quot;</span><span class="p">&gt;</span>
+</span>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-center border-0 bg-transparent card&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;px-0 card-body&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;material-icons-sharp md-lg&quot;</span><span class="p">&gt;</span>web<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mt-4 font-weight-bold text-monospace text-larger&quot;</span><span class="p">&gt;</span>Websites<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mb-0&quot;</span><span class="p">&gt;</span>
+            Build new websites or optimise existing pages to improve online
+            visibility
+            <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="hll">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;m-0 col-12 col-md-6 col-lg-3&quot;</span><span class="p">&gt;</span>
+</span>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-center border-0 bg-transparent card&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;px-0 card-body&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;material-icons-sharp md-lg&quot;</span><span class="p">&gt;</span>storage<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mt-4 font-weight-bold text-monospace text-larger&quot;</span><span class="p">&gt;</span>
+            Data Storage
+            <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mb-0&quot;</span><span class="p">&gt;</span>
+            Design and create databases for efficient information storage and
+            retrieval
+            <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="hll">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;m-0 col-12 col-md-6 col-lg-3&quot;</span><span class="p">&gt;</span>
+</span>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-center border-0 bg-transparent card&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;px-0 card-body&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;material-icons-sharp md-lg&quot;</span><span class="p">&gt;</span>how_to_reg<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mt-4 font-weight-bold text-monospace text-larger&quot;</span><span class="p">&gt;</span>
+            Consulting
+            <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mb-0&quot;</span><span class="p">&gt;</span>
+            Empower your organisation through technical knowledge and advice
+            <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
-<div class="tabbed-set" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">CSS</label><div class="tabbed-content"></div>
-</div>
-<p><strong>What is it?</strong></p>
+</details>
+<details class="example" open="open">
+<summary>JSX</summary>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1903,310 +2062,68 @@ allowfullscreen></iframe>
 <span class="normal">18</span>
 <span class="normal">19</span>
 <span class="normal">20</span>
-<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code>- Cascading Style Sheets
-- Describes the presentation of a web page
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">memo</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Row</span><span class="p">,</span><span class="w"> </span><span class="nx">Col</span><span class="p">,</span><span class="w"> </span><span class="nx">Card</span><span class="p">,</span><span class="w"> </span><span class="nx">CardBody</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;reactstrap&#39;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">services</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;data/services.json&#39;</span>
 
-**Limitation**
+<span class="kd">const</span><span class="w"> </span><span class="nx">Service</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">props</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="nx">string</span>
+<span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="nx">string</span>
+<span class="nx">description</span><span class="o">:</span><span class="w"> </span><span class="nx">string</span>
+<span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span>
+<span class="o">&lt;</span><span class="nx">Card</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s1">&#39;text-center border-0 bg-transparent&#39;</span><span class="o">&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">CardBody</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s1">&#39;px-0&#39;</span><span class="o">&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">i</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s1">&#39;material-icons-sharp md-lg&#39;</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">icon</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/i&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">p</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s1">&#39;mt-4 font-weight-bold text-monospace text-larger&#39;</span><span class="o">&gt;</span>
+<span class="w">        </span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">title</span><span class="p">}</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">p</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s1">&#39;mb-0&#39;</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">description</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/CardBody&gt;</span>
+<span class="o">&lt;</span><span class="err">/Card&gt;</span>
+<span class="p">)</span>
 
-- Most css is quite similar (Handled by CSS Libraries)
-- Not very dynamic (Handled by CSS Frameworks)
+<span class="kd">const</span><span class="w"> </span><span class="nx">Services</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span>
+<span class="o">&lt;</span><span class="nx">Row</span><span class="o">&gt;</span>
+<span class="w">    </span><span class="p">{</span><span class="nx">services</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">service</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span>
+<span class="hll"><span class="w">    </span><span class="o">&lt;</span><span class="nx">Col</span>
+</span><span class="w">        </span><span class="nx">xs</span><span class="o">=</span><span class="p">{</span><span class="mf">12</span><span class="p">}</span>
+<span class="w">        </span><span class="nx">md</span><span class="o">=</span><span class="p">{</span><span class="mf">6</span><span class="p">}</span>
+<span class="w">        </span><span class="nx">lg</span><span class="o">=</span><span class="p">{</span><span class="mf">12</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">services</span><span class="p">.</span><span class="nx">length</span><span class="p">}</span>
+<span class="w">        </span><span class="nx">className</span><span class="o">=</span><span class="s1">&#39;m-0&#39;</span>
+<span class="w">        </span><span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">service</span><span class="p">.</span><span class="nx">title</span><span class="p">}</span>
+<span class="w">    </span><span class="o">&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">Service</span><span class="w"> </span><span class="p">{...</span><span class="nx">service</span><span class="p">}</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/Col&gt;</span>
+<span class="w">    </span><span class="p">))}</span>
+<span class="o">&lt;</span><span class="err">/Row&gt;</span>
+<span class="p">)</span>
 
-
-???+ example &quot;CSS Syntax&quot;
-    ```css
-    body {
-        background-color: #f0f0f0;
-        font-family: sans-serif;
-    }
-
-    .container{
-        width: 80%;
-        margin: 0 auto;
-    }
-    ```
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">memo</span><span class="p">(</span><span class="nx">Services</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-<div class="tabbed-set" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">JS</label><div class="tabbed-content"></div>
-</div>
-<p><strong>What is it?</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code>- JavaScript
-- Used to program complex features on a web page
-
-**Limitation**
-
-- Has the capability to modify the user interface, but becomes really tedious to modify interface (more about this in another workshop)
-
-???+ example &quot;JS Syntax&quot;
-    ```js
-    const bodySelector = document.querySelector(&#39;body&#39;);
-    const myFunction = () =&gt; {
-        bodySelector.innerHTML = &#39;Hello World 2!&#39;;
-        // Add a container class to space out
-        bodySelector.classList.add(&#39;container&#39;);
-    }
-    bodySelector.onclick = myFunction;
-    ```
-</code></pre></div></td></tr></table></div>
-<h3 id="modern-frameworks">Modern Frameworks<a class="headerlink" href="#modern-frameworks" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Websites can be much more… they can be web applications</li>
-<li>“App” in a website (client-side rendering)</li>
-</ul>
-<details class="success" open="open">
-<summary>Modern Frameworks</summary>
 </details>
-<p>=== "React.js" - More mature and used more in industry</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code>    ![react](../images/../2021-2022-summer/images/react.png)
-
-=== &quot;Vue.js&quot;
-    - Growing fast in popularity and use.
-
-    ![vue](../images/../2021-2022-summer/images/vue.png)
-
-
-
-**General Information**
-
-- Both are good to use and learn.
-- Knowledge is transferable between the two frameworks.
-</code></pre></div></td></tr></table></div>
-<details class="info">
-<summary>Comparison between HTML and JSX</summary>
 </details>
-<p><img alt="sample" src="../../2021-2022-summer/images/sample.png" /></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
-<span class="normal">  2</span>
-<span class="normal">  3</span>
-<span class="normal">  4</span>
-<span class="normal">  5</span>
-<span class="normal">  6</span>
-<span class="normal">  7</span>
-<span class="normal">  8</span>
-<span class="normal">  9</span>
-<span class="normal"> 10</span>
-<span class="normal"> 11</span>
-<span class="normal"> 12</span>
-<span class="normal"> 13</span>
-<span class="normal"> 14</span>
-<span class="normal"> 15</span>
-<span class="normal"> 16</span>
-<span class="normal"> 17</span>
-<span class="normal"> 18</span>
-<span class="normal"> 19</span>
-<span class="normal"> 20</span>
-<span class="normal"> 21</span>
-<span class="normal"> 22</span>
-<span class="normal"> 23</span>
-<span class="normal"> 24</span>
-<span class="normal"> 25</span>
-<span class="normal"> 26</span>
-<span class="normal"> 27</span>
-<span class="normal"> 28</span>
-<span class="normal"> 29</span>
-<span class="normal"> 30</span>
-<span class="normal"> 31</span>
-<span class="normal"> 32</span>
-<span class="normal"> 33</span>
-<span class="normal"> 34</span>
-<span class="normal"> 35</span>
-<span class="normal"> 36</span>
-<span class="normal"> 37</span>
-<span class="normal"> 38</span>
-<span class="normal"> 39</span>
-<span class="normal"> 40</span>
-<span class="normal"> 41</span>
-<span class="normal"> 42</span>
-<span class="normal"> 43</span>
-<span class="normal"> 44</span>
-<span class="normal"> 45</span>
-<span class="normal"> 46</span>
-<span class="normal"> 47</span>
-<span class="normal"> 48</span>
-<span class="normal"> 49</span>
-<span class="normal"> 50</span>
-<span class="normal"> 51</span>
-<span class="normal"> 52</span>
-<span class="normal"> 53</span>
-<span class="normal"> 54</span>
-<span class="normal"> 55</span>
-<span class="normal"> 56</span>
-<span class="normal"> 57</span>
-<span class="normal"> 58</span>
-<span class="normal"> 59</span>
-<span class="normal"> 60</span>
-<span class="normal"> 61</span>
-<span class="normal"> 62</span>
-<span class="normal"> 63</span>
-<span class="normal"> 64</span>
-<span class="normal"> 65</span>
-<span class="normal"> 66</span>
-<span class="normal"> 67</span>
-<span class="normal"> 68</span>
-<span class="normal"> 69</span>
-<span class="normal"> 70</span>
-<span class="normal"> 71</span>
-<span class="normal"> 72</span>
-<span class="normal"> 73</span>
-<span class="normal"> 74</span>
-<span class="normal"> 75</span>
-<span class="normal"> 76</span>
-<span class="normal"> 77</span>
-<span class="normal"> 78</span>
-<span class="normal"> 79</span>
-<span class="normal"> 80</span>
-<span class="normal"> 81</span>
-<span class="normal"> 82</span>
-<span class="normal"> 83</span>
-<span class="normal"> 84</span>
-<span class="normal"> 85</span>
-<span class="normal"> 86</span>
-<span class="normal"> 87</span>
-<span class="normal"> 88</span>
-<span class="normal"> 89</span>
-<span class="normal"> 90</span>
-<span class="normal"> 91</span>
-<span class="normal"> 92</span>
-<span class="normal"> 93</span>
-<span class="normal"> 94</span>
-<span class="normal"> 95</span>
-<span class="normal"> 96</span>
-<span class="normal"> 97</span>
-<span class="normal"> 98</span>
-<span class="normal"> 99</span>
-<span class="normal">100</span></pre></div></td><td class="code"><div><pre><span></span><code>Highlighted portions are starting chunk of distinct code.
-
-???+ example &quot;HTML&quot;
-    ```html hl_lines=&quot;2 15 27 41&quot;
-    &lt;div class=&quot;row&quot;&gt;
-        &lt;div class=&quot;m-0 col-12 col-md-6 col-lg-3&quot;&gt;
-            &lt;div class=&quot;text-center border-0 bg-transparent card&quot;&gt;
-            &lt;div class=&quot;px-0 card-body&quot;&gt;
-                &lt;i class=&quot;material-icons-sharp md-lg&quot;&gt;devices&lt;/i&gt;
-                &lt;p class=&quot;mt-4 font-weight-bold text-monospace text-larger&quot;&gt;
-                Applications
-                &lt;/p&gt;
-                &lt;p class=&quot;mb-0&quot;&gt;
-                Build custom web and mobile applications to engage with your audience
-                &lt;/p&gt;
-            &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;m-0 col-12 col-md-6 col-lg-3&quot;&gt;
-            &lt;div class=&quot;text-center border-0 bg-transparent card&quot;&gt;
-            &lt;div class=&quot;px-0 card-body&quot;&gt;
-                &lt;i class=&quot;material-icons-sharp md-lg&quot;&gt;web&lt;/i&gt;
-                &lt;p class=&quot;mt-4 font-weight-bold text-monospace text-larger&quot;&gt;Websites&lt;/p&gt;
-                &lt;p class=&quot;mb-0&quot;&gt;
-                Build new websites or optimise existing pages to improve online
-                visibility
-                &lt;/p&gt;
-            &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;m-0 col-12 col-md-6 col-lg-3&quot;&gt;
-            &lt;div class=&quot;text-center border-0 bg-transparent card&quot;&gt;
-            &lt;div class=&quot;px-0 card-body&quot;&gt;
-                &lt;i class=&quot;material-icons-sharp md-lg&quot;&gt;storage&lt;/i&gt;
-                &lt;p class=&quot;mt-4 font-weight-bold text-monospace text-larger&quot;&gt;
-                Data Storage
-                &lt;/p&gt;
-                &lt;p class=&quot;mb-0&quot;&gt;
-                Design and create databases for efficient information storage and
-                retrieval
-                &lt;/p&gt;
-            &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;m-0 col-12 col-md-6 col-lg-3&quot;&gt;
-            &lt;div class=&quot;text-center border-0 bg-transparent card&quot;&gt;
-            &lt;div class=&quot;px-0 card-body&quot;&gt;
-                &lt;i class=&quot;material-icons-sharp md-lg&quot;&gt;how_to_reg&lt;/i&gt;
-                &lt;p class=&quot;mt-4 font-weight-bold text-monospace text-larger&quot;&gt;
-                Consulting
-                &lt;/p&gt;
-                &lt;p class=&quot;mb-0&quot;&gt;
-                Empower your organisation through technical knowledge and advice
-                &lt;/p&gt;
-            &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    ```
-
-???+ example &quot;JSX&quot;
-    ```js hl_lines=&quot;24&quot;
-    import { memo } from &#39;react&#39;
-    import { Row, Col, Card, CardBody } from &#39;reactstrap&#39;
-    import services from &#39;data/services.json&#39;
-
-    const Service = (props: {
-    icon: string
-    title: string
-    description: string
-    }) =&gt; (
-    &lt;Card className=&#39;text-center border-0 bg-transparent&#39;&gt;
-        &lt;CardBody className=&#39;px-0&#39;&gt;
-        &lt;i className=&#39;material-icons-sharp md-lg&#39;&gt;{props.icon}&lt;/i&gt;
-        &lt;p className=&#39;mt-4 font-weight-bold text-monospace text-larger&#39;&gt;
-            {props.title}
-        &lt;/p&gt;
-        &lt;p className=&#39;mb-0&#39;&gt;{props.description}&lt;/p&gt;
-        &lt;/CardBody&gt;
-    &lt;/Card&gt;
-    )
-
-    const Services = () =&gt; (
-    &lt;Row&gt;
-        {services.map(service =&gt; (
-        &lt;Col
-            xs={12}
-            md={6}
-            lg={12 / services.length}
-            className=&#39;m-0&#39;
-            key={service.title}
-        &gt;
-            &lt;Service {...service} /&gt;
-        &lt;/Col&gt;
-        ))}
-    &lt;/Row&gt;
-    )
-
-    export default memo(Services)
-    ```
-</code></pre></div></td></tr></table></div>
 <h2 id="server-side-applications-backend">Server-side Applications (Backend)<a class="headerlink" href="#server-side-applications-backend" title="Permanent link">&para;</a></h2>
 <div style="display:flex;justify-content:space-around;flex-wrap:wrap;flex-wrap:wrap;">
-    <img width="33%" src="../images/../2021-2022-summer/images/nodejs.png" alt="nodejs">
-    <img width="33%" src="../images/../2021-2022-summer/images/django.png" alt="django">
-    <img width="33%" src="../images/../2021-2022-summer/images/php.jpg" alt="php">
-    <img width="33%" src="../images/../2021-2022-summer/images/postgresql.png" alt="postgresql">
+    <img width="33%" src="../2021-2022-summer/images/nodejs.png" alt="nodejs">
+    <img width="33%" src="../2021-2022-summer/images/django.png" alt="django">
+    <img width="33%" src="../2021-2022-summer/images/php.jpg" alt="php">
+    <img width="33%" src="../2021-2022-summer/images/postgresql.png" alt="postgresql">
 </div>
 
 <h3 id="how-do-devices-communicate">How do devices communicate?<a class="headerlink" href="#how-do-devices-communicate" title="Permanent link">&para;</a></h3>
@@ -2217,9 +2134,11 @@ allowfullscreen></iframe>
 <h3 id="what-do-server-applications-do">What do server applications do?<a class="headerlink" href="#what-do-server-applications-do" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Serve frontends (server-side rendering)</li>
-<li>Web API (Application Programming Interface)</li>
+<li>Web API (Application Programming Interface)<ul>
 <li>Serve data (usually from a database)</li>
 <li>Process Request (Sending emails or SMS, Machine Learning)</li>
+</ul>
+</li>
 </ul>
 <h3 id="databases">Databases<a class="headerlink" href="#databases" title="Permanent link">&para;</a></h3>
 <p>Place to store the data</p>
@@ -2235,21 +2154,24 @@ allowfullscreen></iframe>
 <li>Ruby, Go, Rust, C</li>
 </ul>
 <h3 id="hosting-stuff">Hosting Stuff<a class="headerlink" href="#hosting-stuff" title="Permanent link">&para;</a></h3>
-<p>Many ways</p>
-<ul>
-<li>Own a server</li>
-<li>Use a 3<sup>rd</sup> party platform</li>
-</ul>
-<h3 id="css-frameworks">CSS Frameworks<a class="headerlink" href="#css-frameworks" title="Permanent link">&para;</a></h3>
+<p>Many ways
+- Self host/On premise
+- 3<sup>rd</sup> party options
+    - shared/dedicated server
+    - Serverless
+    - AWS ECS/Digital Ocean App Platform</p>
+<h3 id="frontend-frameworks">Frontend Frameworks<a class="headerlink" href="#frontend-frameworks" title="Permanent link">&para;</a></h3>
 <p><strong>Frontend (JS)</strong></p>
 <ul>
 <li>Vue, React</li>
 <li>Nuxt.js, Next.js</li>
+<li>Svelte</li>
 </ul>
 <p><strong>Frontend (CSS)</strong></p>
 <ul>
 <li>MaterialUI, Vuetify</li>
 <li>Bootstrap</li>
+<li>Tailwind</li>
 </ul>
 <h3 id="developer-tools">Developer Tools<a class="headerlink" href="#developer-tools" title="Permanent link">&para;</a></h3>
 <h4 id="typescript">TypeScript<a class="headerlink" href="#typescript" title="Permanent link">&para;</a></h4>
@@ -2260,10 +2182,14 @@ allowfullscreen></iframe>
 </ul>
 <h4 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Selenium, Cypress</li>
+<li>Selenium, Cypress<ul>
 <li>End to end automated testing tools</li>
-<li>Jest, Mocha, Pytest</li>
+</ul>
+</li>
+<li>Jest, Mocha, Pytest<ul>
 <li>Unit testing</li>
+</ul>
+</li>
 <li>Testing is vital to software projects</li>
 </ul>
 <h4 id="continuous-integration-continuous-deployment">Continuous Integration / Continuous Deployment<a class="headerlink" href="#continuous-integration-continuous-deployment" title="Permanent link">&para;</a></h4>
@@ -2279,26 +2205,47 @@ allowfullscreen></iframe>
 </ul>
 <h4 id="browsers">Browsers<a class="headerlink" href="#browsers" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Standard browsers</li>
+<li>Standard browsers<ul>
 <li>Google Chrome, Firefox, Edge, etc.</li>
-<li>Backwards compatibility</li>
+</ul>
+</li>
+<li>Backwards compatibility<ul>
 <li>Internet Explorer</li>
-<li>Other</li>
+</ul>
+</li>
+<li>Other<ul>
 <li>Mobile - Responsive</li>
 <li>Screen readers - Accessibility</li>
 </ul>
+</li>
+</ul>
 <h4 id="firefox-developer-tools">Firefox Developer Tools<a class="headerlink" href="#firefox-developer-tools" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Page Inspector</li>
+<li>Page Inspector<ul>
 <li>Visualise page aspects</li>
 <li>Grid layout</li>
-<li>Web Console</li>
+</ul>
+</li>
+<li>Web Console<ul>
 <li><code>console.log(“Hello World”)</code></li>
-<li>Responsive Design Mode</li>
+</ul>
+</li>
+<li>Responsive Design Mode<ul>
 <li>View from POV of different screen sizes such as mobile, tablets, etc.</li>
 </ul>
-<p>??? info "Some more tools" - JavaScript Debugger - Network Monitor - Performance Tools - Rulers - Colour Pickers
-Learn more at: https://developer.mozilla.org/en-US/docs/Tools</p>
+</li>
+</ul>
+<details class="info">
+<summary>Some more tools</summary>
+<ul>
+<li>JavaScript Debugger</li>
+<li>Network Monitor</li>
+<li>Performance Tools</li>
+<li>Rulers</li>
+<li>Colour Pickers
+Learn more at: https://developer.mozilla.org/en-US/docs/Tools</li>
+</ul>
+</details>
 <h4 id="package-managers">Package Managers<a class="headerlink" href="#package-managers" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Installs libraries that can be used</li>
@@ -2308,7 +2255,16 @@ Learn more at: https://developer.mozilla.org/en-US/docs/Tools</p>
 <h4 id="version-control">Version Control<a class="headerlink" href="#version-control" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Essential for developer teams and complex software development</li>
-<li>Git</li>
+<li>Git<ul>
+<li>Hosted options<ul>
+<li>Bitbucket</li>
+<li>Github</li>
+<li>Gitlab</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Subversion</li>
 </ul>
 <h4 id="linters-and-formatters">Linters and Formatters<a class="headerlink" href="#linters-and-formatters" title="Permanent link">&para;</a></h4>
 <ul>
@@ -2326,27 +2282,16 @@ Learn more at: https://developer.mozilla.org/en-US/docs/Tools</p>
 <p>There's an open-source community that maintains a learning roadmap for developers. See <a href="https://roadmap.sh/">https://roadmap.sh/</a></p>
 <details class="info">
 <summary>Frontend Developer</summary>
-</details>
 <p><img alt="frontend-roadmap" src="https://roadmap.sh/roadmaps/frontend.png" /></p>
+</details>
 <details class="info">
 <summary>Backend Developer</summary>
-</details>
 <p><img alt="backend-roadmap" src="https://roadmap.sh/roadmaps/backend.png" /></p>
+</details>
 <details class="info">
 <summary>Dev-Ops</summary>
-</details>
 <p><img alt="devops-roadmap" src="https://roadmap.sh/roadmaps/devops.png" /></p>
-<h2 id="word-of-encouragement">Word of Encouragement<a class="headerlink" href="#word-of-encouragement" title="Permanent link">&para;</a></h2>
-<details class="quote">
-<summary>Encouragement from the Tech Lead</summary>
 </details>
-<p>"I can admit that this journey of learning will be difficult, and can sometimes be overwhelming and demotivating. Please, if at any point of this project, you feel that you don't know enough, or you're feeling lost, please reach out! We are all in this journey together! Nobody is born talented, skills are honed with determination and willingness to learn."</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>&quot;When I was a first year student entering on the CFC winter project, I didn&#39;t feel like I was good enough. I couldn&#39;t create a good looking interface, I didn&#39;t know how to use npm and all sorts of those things. I was just like many of you! if I gave up just because of all those things I didn&#39;t know, of all those self-doubts, then I wouldn&#39;t be here today. I admit that I was lucky because I was in CFC, I had connections where I can just ask questions instead of feeling lost of not knowing. So please do leverage that opportunity to reach out&quot;
-
-&quot;You being in this project not only gives you the opportunity to raise your talents, but you also unlock one of the biggest factor of the growth of your career, and that is the connections with your fellow software engineers.&quot;
-</code></pre></div></td></tr></table></div>
 
 
 
