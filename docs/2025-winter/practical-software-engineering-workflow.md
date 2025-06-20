@@ -7,10 +7,20 @@ title: Practical Software Engineering Workflow
 
 ![sponsors](./images/sponsors.png)
 
-*How software engineer [GSD](https://www.atlassian.com/team-playbook/plays/gsd-day)!*
 
 ## How do software engineers work?
-They use a **issue/ticket management system** to track their work.
+- project management system
+    - Jira
+    - Trello
+    - Gitub Issues
+- Version control system:
+    - Git
+        - Github
+        - Bitbucket
+        - Gitlab
+        - Gitea
+    - Subversion
+    - Email...?
 
 ???+ example "Github Issues and Jira"
     The examples are Github Issues and Jira.
@@ -49,52 +59,48 @@ Git is a
 - **version control system**
 - tools for **coordinating work for different changes**
 
-### Main Parts of Git
+## Git vs Git providers
 
-Main Parts of git:
+### Git
 
-- Change Node (commit node)
-- Branch
+- Version control system
+- Acts on code repositories
+
+Basic features of git:
+
+- Repositories
+- Commits
+- Branches
+- Merging
+
+### Github
+
+- Hosts code repositories
+- Supporting functionality to assist with development
+
+Basic features of Github:
+
+- Pull requests
+- Code reviews
+- Comments
+- Github Actions
+- Permissions
 
 ![parts-of-git](../2021-2022-summer/images/parts-of-git.png)
 
-### Git Different Versions
+## Git Versioning Strategies
 
-??? info "Software Versions"
+- Trunk based (we will be using this model!)
+- Feature based
+    - GitFlow
+    - Gitlab Flow
+
+??? info "GitFlow"
     ![versioning](../2021-2022-summer/images/versioning.png){align=left}
 
-**Nodes**
-- Representation of a change (commits + merge)
+## Live demonstration
 
-**Main/Master:**
-- Branch usually as production or deployed
-
-**Development Branch**
-- Branch used for development
-Used for compiling features for a release
-
-**Feature Branch**
-- Branch used for development for a
-particular issue
-
-## GitHub and Code Repositories
-
-**GitHub**
-- Place to hold code repositories
-
-**Repositories**
-- Place where codes are stored with different versions
-
-
-## INTERACTIVE WORKSHOP TIME !!!!
-1. Do the following from [codersforcauses/software-engineering-practices-demo-2024-summer](https://github.com/codersforcauses/software-engineering-practices-demo-2024-summer): Demonstration of software engineering practices (github.com):
-2. Look at the GitHub issues
-3. Assign yourself an issue
-4. Clone repo with `git clone https://github.com/codersforcauses/software-engineering-practices-demo-2024-summer.git`
-5. Create a branch with the following format s{Issue Number}-{Issue Name}. `git checkout -b {Issue Number}-{Issue Name}`
-6. Create the change to satisfy or complete the github issue
-7. Commit (package) the change `git commit -m "{insert message here}"` and push git push.
-8. Create a pull request and request for a reviewer from CFC peeps
+- [Demo Repository](https://github.com/codersforcauses/software-engineering-practices-demo-2025-winter)
 
 ## Other Resources
 - [Git and Github](https://www.youtube.com/watch?v=HkdAHXoRtos)
