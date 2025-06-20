@@ -3,23 +3,27 @@ title: Practical Software Engineering Workflow
 ᴴₒᴴₒᴴₒ: true
 ---
 
+## This workshop is proudly supported by
+
+![sponsors](./images/sponsors.png)
+
 *How software engineer [GSD](https://www.atlassian.com/team-playbook/plays/gsd-day)!*
 
 ## How do software engineers work?
-They use **issue/ticket management system** to track their work.
+They use a **issue/ticket management system** to track their work.
 
 ???+ example "Github Issues and Jira"
     The examples are Github Issues and Jira.
 
-    ![github](images/github.png)
-    ![jira](images/jira.png)
+    ![github](../2021-2022-summer/images/github.png)
+    ![jira](../2021-2022-summer/images/jira.png)
 
 Listing of issues can be displayed in **kanban boards**.
 
 ???+ example "Kanban Boards"
 
-    ![github-kanban](images/github-kanban.png)
-    ![jira-kanban](images/jira-kanban.png)
+    ![github-kanban](../2021-2022-summer/images/github-kanban.png)
+    ![jira-kanban](../2021-2022-summer/images/jira-kanban.png)
 
 ## Why do Software Engineers Work like this?
 
@@ -31,7 +35,7 @@ allowfullscreen></iframe>
 
 ???+ info "Scrums"
     One example of "agile" ways of working and it looks like this.
-    ![scrum](images/scrum.png)
+    ![scrum](../2021-2022-summer/scrum.png)
 
 ## What is Git?
 <iframe width="100%" height="500rem"
@@ -52,12 +56,12 @@ Main Parts of git:
 - Change Node (commit node)
 - Branch
 
-![parts-of-git](images/parts-of-git.png)
+![parts-of-git](../2021-2022-summer/images/parts-of-git.png)
 
 ### Git Different Versions
 
 ??? info "Software Versions"
-    ![versioning](images/versioning.png){align=left}
+    ![versioning](../2021-2022-summer/images/versioning.png){align=left}
 
 **Nodes**
 - Representation of a change (commits + merge)
