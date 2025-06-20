@@ -3,7 +3,7 @@
 
 This workshop covers a brief overview of the most common tools and technologies used in web development.
 
-## This workshop is proudly sponsorsed by
+## This workshop is proudly supported by
 
 ![sponsors](./images/sponsors.png)
 
@@ -54,9 +54,9 @@ This workshop covers a brief overview of the most common tools and technologies 
 ### Why code websites, why not use drag and drops like Wordpress, WIX?
 
 <div style="display:flex;justify-content:space-around;flex-wrap:wrap;">
-    <img style="width:33%" src="../images/wordpress.png" alt="wordpress">
-    <img style="width:33%" src="../images/wix.jpg" alt="wix">
-    <img style="width:33%" src="../images/drupal.jpg" alt="drupal">
+    <img style="width:33%" src="/2021-2022-summer/images/wordpress.png" alt="wordpress">
+    <img style="width:33%" src="/2021-2022-summer/images/wix.jpg" alt="wix">
+    <img style="width:33%" src="/2021-2022-summer/images/drupal.jpg" alt="drupal">
 </div>
 
 - Content Management System (CMS)
@@ -299,10 +299,10 @@ This workshop covers a brief overview of the most common tools and technologies 
 ## Server-side Applications (Backend)
 
 <div style="display:flex;justify-content:space-around;flex-wrap:wrap;flex-wrap:wrap;">
-    <img width="33%" src="../images/nodejs.png" alt="nodejs">
-    <img width="33%" src="../images/django.png" alt="django">
-    <img width="33%" src="../images/php.jpg" alt="php">
-    <img width="33%" src="../images/postgresql.png" alt="postgresql">
+    <img width="33%" src="/2021-2022-summer/images/images/nodejs.png" alt="nodejs">
+    <img width="33%" src="/2021-2022-summer/images/images/django.png" alt="django">
+    <img width="33%" src="/2021-2022-summer/images/images/php.jpg" alt="php">
+    <img width="33%" src="/2021-2022-summer/images/images/postgresql.png" alt="postgresql">
 </div>
 
 
