@@ -29,13 +29,13 @@ This workshop covers a brief overview of the most common tools and technologies 
 ## What and Why Web Development?
 
 ### What is web development?
-- Website development
-- Web applications (client-side and server-side) development
+- Static websites (e.g. this workshop website!)
+- Web applications (e.g. Youtube)
 
 ### Why Web Development ?
 
 - Accessibility and Portability
-- Career and On-demand in job market
+- Career and In-demand job opportunities
 - Huge possibility to combine with other emerging technologies (e.g. IoT, Machine Learning) and industry (e.g. Health, Mining, O&G)
 
 ??? info "Career in Web Development"
@@ -67,31 +67,14 @@ This workshop covers a brief overview of the most common tools and technologies 
 
     CMS are usually built to cater for non-technical users. This means that thye become the subject of hackers. Think about a scenario where a hacker was able to find a vulnerability in WordPress, now every other WordPress site will be vulnerable.
 
-### What is the best way to learn all these?
-
-<iframe width="100%" height="500rem"
-src="https://www.youtube.com/embed/nvlizC6koSc" 
-frameborder="0" 
-allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-allowfullscreen></iframe>
-
-In summary, the best way to learn:
-
-  - Do personal projects (inspiration + motivation)
-  - Do team projects (get peer reviews and correct bad practices straight away)
-  - Watch Online Courses (to figure out what is available)
-
-??? info "More Information"
-    To be told that you have to learn "this, this, and that" before you could do things is tiresome.
-
-    Often times, we want to learn to be a developer so that we can create cool things like software where thousands of people can use the app. We don't tend to be a developer for the sake of us needing to watch endless videos on different things.
-
 ### Why does CFC not do mobile development as much as web development?
 
-- App stores has a developer cost
+- App stores have a developer cost
 - Easier to deal/teach web technologies
 - Accessibility (mobile, sensors, tablets, laptops and PCs)
-- Bigger open-source community
+- Bigger communities
+- We sometimes do mobile development! (Kind of)
+    - Progressive web apps
 
 ### If I already know a frontend framework, is it better to learn another frontend framework or to learn a backend framework?
 
@@ -312,10 +295,10 @@ In summary, the best way to learn:
 ## Server-side Applications (Backend)
 
 <div style="display:flex;justify-content:space-around;flex-wrap:wrap;flex-wrap:wrap;">
-    <img width="33%" src="../2021-2022-summer/nodejs.png" alt="nodejs">
-    <img width="33%" src="../2021-2022-summer/django.png" alt="django">
-    <img width="33%" src="../2021-2022-summer/php.jpg" alt="php">
-    <img width="33%" src="../2021-2022-summer/postgresql.png" alt="postgresql">
+    <img width="33%" src="../2021-2022-summer/images/nodejs.png" alt="nodejs">
+    <img width="33%" src="../2021-2022-summer/images/django.png" alt="django">
+    <img width="33%" src="../2021-2022-summer/images/php.jpg" alt="php">
+    <img width="33%" src="../2021-2022-summer/images/postgresql.png" alt="postgresql">
 </div>
 
 
@@ -352,21 +335,25 @@ Typically faster and better for large amounts of data or systems that need data 
 
 ### Hosting Stuff
 Many ways
-- Own a server
-- Use a 3rd party platform
+- Self host/On premise
+- 3rd party options
+    - shared/dedicated server
+    - Serverless
+    - AWS ECS/Digital Ocean App Platform
 
-### CSS Frameworks
+### Frontend Frameworks
 
 **Frontend (JS)**
 
 - Vue, React
 - Nuxt.js, Next.js
-
+- Svelte
 
 **Frontend (CSS)**
 
 - MaterialUI, Vuetify
 - Bootstrap
+- Tailwind
 
 ### Developer Tools
 
@@ -430,6 +417,11 @@ Many ways
 #### Version Control
 - Essential for developer teams and complex software development
 - Git
+    - Hosted options
+        - Bitbucket
+        - Github
+        - Gitlab
+- Subversion
 
 #### Linters and Formatters
 - Makes code formatting consistent (following standard)
@@ -453,17 +445,3 @@ There's an open-source community that maintains a learning roadmap for developer
 
 ??? info "Dev-Ops"
     ![devops-roadmap](https://roadmap.sh/roadmaps/devops.png)
-
-## Word of Encouragement
-
-??? quote "Encouragement from the Tech Lead"
-    "I can admit that this journey of learning will be difficult, and can sometimes be overwhelming and demotivating. Please, if at any point of this project, you feel that you don't know enough, or you're feeling lost, please reach out! We are all in this journey together! Nobody is born talented, skills are honed with determination and willingness to learn." 
-
-    "When I was a first year student entering on the CFC winter project, I didn't feel like I was good enough. I couldn't create a good looking interface, I didn't know how to use npm and all sorts of those things. I was just like many of you! if I gave up just because of all those things I didn't know, of all those self-doubts, then I wouldn't be here today. I admit that I was lucky because I was in CFC, I had connections where I can just ask questions instead of feeling lost of not knowing. So please do leverage that opportunity to reach out" 
-
-    "You being in this project not only gives you the opportunity to raise your talents, but you also unlock one of the biggest factor of the growth of your career, and that is the connections with your fellow software engineers."
-
-
-
-
-
