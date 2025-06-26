@@ -366,7 +366,7 @@ DEV ENVIRONMENT                                      PRODUCTION ENVIRONMENT
 | migrations/                                    |   | migrations/                                    |
 |   0001_initial.py                              |   |   0001_initial.py                              |
 +------------------------------------------------+   +------------------------------------------------+
-| DB: id, name, created_at                       |   | DB: id, name, created_at <--- NEW!             |
+| DB: id, name, created_at                       |   | (no DB)                                        |
 +------------------------------------------------+   +------------------------------------------------+
 ```
 
@@ -614,13 +614,14 @@ Views are the logic that handles the requests and responses.
 
 ??? example "Class-based View for Project (Recommended) (`project/views.py`)"
     ```python
-    from rest_framework import viewsets
+    from rest_framework import viewsets, permissions
     from .models import Project
     from .serializers import ProjectSerializer
 
     class ProjectViewSet(viewsets.ModelViewSet):
         queryset = Project.objects.all()
         serializer_class = ProjectSerializer
+        permission_classes = [permissions.IsAuthenticated]
     ```
 
 We recommend using class-based views (ViewSet) for most use cases, as they are more concise and easier to extend if you are always using the same pattern of accessing the database. Function-based views are better if you need to do something more custom (except if you just want to extend the existing pattern).
@@ -766,6 +767,7 @@ Let's add feedback functionality to projects.
     class ProjectViewSet(viewsets.ModelViewSet):
         queryset = Project.objects.all()
         serializer_class = ProjectSerializer
+        permission_classes = [permissions.IsAuthenticated]
 
     class ProjectFeedbackViewSet(viewsets.ModelViewSet):
         serializer_class = ProjectFeedbackSerializer
@@ -800,6 +802,7 @@ Let's add feedback functionality to projects.
     class ProjectViewSet(viewsets.ModelViewSet):
         queryset = Project.objects.all()
         serializer_class = ProjectSerializer
+        permission_classes = [permissions.IsAuthenticated]
 
     + class ProjectFeedbackViewSet(viewsets.ModelViewSet):
     +     serializer_class = ProjectFeedbackSerializer
@@ -964,6 +967,58 @@ Now if your endpoint requires authentication, you need to add the `Authorization
 
 For example `curl -X GET http://localhost:8000/api/projects/ -H "Authorization: Bearer eyJhbEXAMPLEOFJWTOKEN..."`
 
+
+## Permissions
+
+See [docs](https://www.django-rest-framework.org/api-guide/permissions/)
+
+### Example: Only Project Members Can Edit a Project (Object-Level Permissions)
+
+By default, if you set `permission_classes = [permissions.IsAuthenticated]`, any authenticated user can edit any project. But what if you want only project members to be able to edit (update/delete) a project, while all authenticated users can still view (GET) projects?
+
+This is where **object-level permissions** come in. You can create a custom permission class that checks if the user is a member of the project for unsafe methods (PUT, PATCH, DELETE), but allows all authenticated users to read (GET).
+
+#### Step 1: Create a Custom Permission Class
+
+Create a new file `project/permissions.py`:
+
+```python
+from rest_framework import permissions
+
+class IsProjectMemberOrReadOnly(permissions.BasePermission):
+    """
+    Custom permission to only allow project members to edit a project.
+    Assumes the Project model has a 'members' ManyToMany field.
+    """
+    def has_object_permission(self, request, view, obj):
+        # Read permissions are allowed to any authenticated user
+        if request.method in permissions.SAFE_METHODS:
+            return True
+        # Write permissions are only allowed to project members
+        return request.user in obj.members.all()
+```
+
+#### Step 2: Use the Permission in Your ViewSet
+
+In `project/views.py`, import and use your new permission class:
+
+```python
+from .permissions import IsProjectMemberOrReadOnly
+
+class ProjectViewSet(viewsets.ModelViewSet):
+    queryset = Project.objects.all()
+    serializer_class = ProjectSerializer
+    permission_classes = [permissions.IsAuthenticated, IsProjectMemberOrReadOnly]
+```
+
+#### Step 3: How It Works
+- Any authenticated user can view (GET) any project.
+- Only members of a project can update or delete it.
+- If a non-member tries to edit, they get a 403 Forbidden error.
+
+**Note:** DRF automatically checks object-level permissions for detail views (like retrieve, update, destroy). For list views, you may want to filter the queryset so users only see projects they are allowed to see.
+
+For more details, see the [DRF permissions documentation](https://www.django-rest-framework.org/api-guide/permissions/#object-level-permissions).
 
 ## Sending Emails
 
