@@ -828,6 +828,112 @@ The below is an extra exercise for you to try. It will really help you extend yo
 
 This has just been left as extra exercise because otherwise this workshop will be too long, unless of course we have extra time.
 
+## Filters and Search in Django REST Framework
+
+Filtering and searching are essential features for any API, allowing clients to retrieve only the data they need. Django REST Framework (DRF) provides powerful tools for both filtering and searching your API endpoints.
+
+See the [official DRF filtering documentation](https://www.django-rest-framework.org/api-guide/filtering/) for more details.
+
+### 1. Enabling Filtering and Search
+
+First, make sure you have `django-filter` installed (already included in the setup script for this workshop):
+
+```bash
+pip install django-filter
+```
+
+Add it to your `INSTALLED_APPS` in `settings.py`:
+
+```python
+INSTALLED_APPS = [
+    ...
+    'django_filters',
+    ...
+]
+```
+
+Then, set the default filter backend in your `settings.py`:
+
+```python
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': [
+        'django_filters.rest_framework.DjangoFilterBackend',
+        'rest_framework.filters.SearchFilter',
+        'rest_framework.filters.OrderingFilter',
+    ]
+}
+```
+
+### 2. Filtering and Searching Projects
+
+Suppose you want to allow users to filter projects by name or members, and search by project name or content.
+
+In your `project/views.py`:
+
+```python
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import filters
+
+class ProjectViewSet(viewsets.ModelViewSet):
+    queryset = Project.objects.all()
+    serializer_class = ProjectSerializer
+    permission_classes = [permissions.IsAuthenticated]
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
+    filterset_fields = ['name', 'members']  # Filter by project name or members
+    search_fields = ['name', 'content', 'members__username']  # Search by name, content, or member username
+    ordering_fields = ['created_at', 'name']  # Allow ordering by creation date or name
+    ordering = ['-created_at']  # Default ordering
+```
+
+Now you can try queries like:
+
+- `GET /api/projects/?name=FeedForward` (filter by name)
+- `GET /api/projects/?members=1` (filter by member user ID)
+- `GET /api/projects/?search=feedback` (search projects by name or content)
+- `GET /api/projects/?ordering=name` (order by name)
+
+### 3. Filtering and Searching Feedbacks
+
+You can do the same for feedbacks. In your `ProjectFeedbackViewSet`:
+
+```python
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import filters
+
+class ProjectFeedbackViewSet(viewsets.ModelViewSet):
+    serializer_class = ProjectFeedbackSerializer
+    permission_classes = [permissions.IsAuthenticated]
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
+    filterset_fields = ['user', 'sentiment_score']  # Filter by user or sentiment
+    search_fields = ['content', 'user__username']  # Search by feedback content or username
+    ordering_fields = ['created_at', 'sentiment_score']
+    ordering = ['-created_at']
+
+    def get_queryset(self):
+        project_id = self.kwargs.get('project_id')
+        if project_id:
+            return ProjectFeedback.objects.filter(project_id=project_id)
+        return ProjectFeedback.objects.all()
+```
+
+Now you can try queries like:
+
+- `GET /api/projects/<project_id>/feedback/?user=2` (filter feedbacks by user ID)
+- `GET /api/projects/<project_id>/feedback/?search=great` (search feedbacks by content)
+- `GET /api/projects/<project_id>/feedback/?ordering=sentiment_score` (order feedbacks by sentiment)
+
+### 4. Try It Out!
+
+- Try filtering projects by name or members.
+- Try searching for projects or feedbacks using keywords.
+- Try ordering results by different fields.
+
+**Challenge:**
+- Add more filter fields (e.g., filter feedbacks by sentiment score range).
+- Add search on related fields (e.g., search feedbacks by project name).
+
+For more advanced filtering, you can create custom filter classes using `django-filter`. See the [DRF filtering docs](https://www.django-rest-framework.org/api-guide/filtering/) for inspiration!
+
 ## Automated Testing
 
 Automated testing is a key part of building robust Django APIs. Django REST Framework provides tools to help you write tests for your endpoints.
@@ -1174,6 +1280,7 @@ get_sentiment_score("Test download")
 ```
 
 You can also automate this as part of your deployment scripts to ensure the model is ready before your app starts serving requests.
+
 
 
 
