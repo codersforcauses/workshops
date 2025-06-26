@@ -2,6 +2,9 @@
 title: Welcome to the Djangol!
 ᴴₒᴴₒᴴₒ: true
 ---
+# Introduction to Backend Development with Django
+*Welcome to the Djangol*
+
 Presented By:
 
 - [Frinze Lapuz](https://www.linkedin.com/in/frinze-erin-lapuz/), Developer Experience Software Engineer at [Atlassian](https://www.atlassian.com/)
@@ -9,7 +12,6 @@ Presented By:
 ![Atlassian](./images/atlassian_logo.svg)
 
 
-Welcome to the (Django)l !: Introduction to Backend Programming with Django.
 
 ## Prerequisites to this Workshop
 
