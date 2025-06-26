@@ -550,6 +550,44 @@ Now visit the admin interface and you'll see the ProjectFeedback model there.
 
 ## Creation Views: the Interface in API
 
+### Step 0: Initialise Rest Framework (This is done once for a django source code)
+
+We've already installed rest_framework as part of the packages, but we need to initialise it.
+
+???+ example "Putting Rest Framework in `settings.py`"
+    ```python
+    INSTALLED_APPS = [
+        ...
+        'rest_framework',
+    ]
+    ```
+
+After you put that there, we need some initialisation of "HTML templates" for the "Browsable API".
+
+??? example "Ready to Copy Paste (Copy-pastable): `urls.py`"
+    ```python
+    from django.contrib import admin
+    from django.urls import path, include
+
+    urlpatterns = [
+        path('admin/', admin.site.urls),
+        path('api-auth/', include('rest_framework.urls')),
+    ]
+    ```
+
+??? example "Diff View - Don't Copy. Copy the other one. This is only for explanation"
+    ```diff
+    @@ urls.py @@
+    from django.contrib import admin
+    from django.urls import path, include
+
+    urlpatterns = [
+        path('admin/', admin.site.urls),
+    +   path('api-auth/', include('rest_framework.urls')),
+    ]
+    ```
+
+
 ### Step 1: Project API (Basic)
 
 #### `project/serializers.py`
@@ -651,6 +689,7 @@ We recommend using class-based views (ViewSet) for most use cases, as they are m
 
     urlpatterns = [
         path('admin/', admin.site.urls),
+        path('api-auth/', include('rest_framework.urls')),
         path('api/', include('project.urls')),
     ]
     ```
@@ -1077,8 +1116,6 @@ For example `curl -X GET http://localhost:8000/api/projects/ -H "Authorization: 
 ## Permissions
 
 See [docs](https://www.django-rest-framework.org/api-guide/permissions/)
-
-### Example: Only Project Members Can Edit a Project (Object-Level Permissions)
 
 By default, if you set `permission_classes = [permissions.IsAuthenticated]`, any authenticated user can edit any project. But what if you want only project members to be able to edit (update/delete) a project, while all authenticated users can still view (GET) projects?
 
