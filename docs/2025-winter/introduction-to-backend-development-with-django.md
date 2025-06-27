@@ -368,7 +368,7 @@ DEV ENVIRONMENT                                      PRODUCTION ENVIRONMENT
 | migrations/                                    |   | migrations/                                    |
 |   0001_initial.py                              |   |   0001_initial.py                              |
 +------------------------------------------------+   +------------------------------------------------+
-| DB: id, name, created_at                       |   | (no DB)                                        |
+| DB: id, name, created_at                       |   | DB: id, name, created_at     <--- NEW!         |
 +------------------------------------------------+   +------------------------------------------------+
 ```
 
