@@ -350,8 +350,8 @@ DEV ENVIRONMENT                                      PRODUCTION ENVIRONMENT
 ```
 DEV ENVIRONMENT                                      PRODUCTION ENVIRONMENT
 +------------------------------------------------+   +------------------------------------------------+
-| models.py                                      |   | models.py                                      |
-| Project: id, name, created_at                  |   | Project: id, name, created_at                  |
+| models.py                                      |   | models.py                            <--- NEW! |
+| Project: id, name, created_at                  |   | Project: id, name, created_at        <--- NEW! |
 | migrations/                                    |   | migrations/                                    |
 |   0001_initial.py                              |   |   0001_initial.py <--- NEW!                    |
 +------------------------------------------------+   +------------------------------------------------+
@@ -368,7 +368,7 @@ DEV ENVIRONMENT                                      PRODUCTION ENVIRONMENT
 | migrations/                                    |   | migrations/                                    |
 |   0001_initial.py                              |   |   0001_initial.py                              |
 +------------------------------------------------+   +------------------------------------------------+
-| DB: id, name, created_at                       |   | (no DB)                                        |
+| DB: id, name, created_at                       |   | DB: id, name, created_at     <--- NEW!         |
 +------------------------------------------------+   +------------------------------------------------+
 ```
 
@@ -380,7 +380,7 @@ DEV ENVIRONMENT                                      PRODUCTION ENVIRONMENT
 | Project: id, name, created_at, content         |   | Project: id, name, created_at                  |
 | migrations/                                    |   | migrations/                                    |
 |   0001_initial.py                              |   |   0001_initial.py                              |
-|   0002_add_content.py <--- NEW!                |   |                                                |
+|   0002_add_content.py                          |   |                                                |
 +------------------------------------------------+   +------------------------------------------------+
 | DB: id, name, created_at                       |   | DB: id, name, created_at                       |
 +------------------------------------------------+   +------------------------------------------------+
@@ -394,7 +394,7 @@ DEV ENVIRONMENT                                      PRODUCTION ENVIRONMENT
 | Project: id, name, created_at, content         |   | Project: id, name, created_at                  |
 | migrations/                                    |   | migrations/                                    |
 |   0001_initial.py                              |   |   0001_initial.py                              |
-|   0002_add_content.py                          |   |                                                |
+|   0002_add_content.py   <--- NEW!              |   |                                                |
 +------------------------------------------------+   +------------------------------------------------+
 | DB: id, name, created_at                       |   | DB: id, name, created_at                       |
 +------------------------------------------------+   +------------------------------------------------+
@@ -466,7 +466,6 @@ When you have created that, check out `db.sqlite3` and you'll see that there's a
 
     @admin.register(Project)
     class ProjectAdmin(admin.ModelAdmin):
-        # username of the members
         list_display = ("id", "name", "created_at")
         list_filter = ("created_at",)
         search_fields = ("name",)
@@ -511,11 +510,21 @@ Now visit the [Admin page](http://localhost:8000/admin) and you'll see the Proje
         user |{--o{ project : works_on
     ```
 
-???+ example "Ready to Copy Paste"
+??? example "Ready to Copy Paste - `project/models.py`"
     ```python
     from django.db import models
     from django.contrib.auth.models import User
     import uuid
+
+    class Project(models.Model):
+        id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+        name = models.CharField(max_length=255)
+        content = models.TextField(blank=True)
+        created_at = models.DateTimeField(auto_now_add=True)
+        members = models.ManyToManyField(User, related_name="projects")
+
+        def __str__(self):
+            return f"Project {self.name} ({self.id})"
 
     class ProjectFeedback(models.Model):
         id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
@@ -529,13 +538,43 @@ Now visit the [Admin page](http://localhost:8000/admin) and you'll see the Proje
             return f"Feedback {self.id} by {self.user} on {self.project}"
     ```
 
+??? example "Diff View - Don't Copy. Copy the other one. This is only for explanation"
+    ```diff
+    @@ project/models.py @@
+        from django.db import models
+    from django.contrib.auth.models import User
+    import uuid
+
+    class Project(models.Model):
+        id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+        name = models.CharField(max_length=255)
+        content = models.TextField(blank=True)
+        created_at = models.DateTimeField(auto_now_add=True)
+        members = models.ManyToManyField(User, related_name="projects")
+
+        def __str__(self):
+            return f"Project {self.name} ({self.id})"
+
+    + class ProjectFeedback(models.Model):
+    +    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    +    project = models.ForeignKey('Project', on_delete=models.CASCADE, related_name="feedbacks")
+    +    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="feedbacks")
+    +    content = models.TextField()
+    +    created_at = models.DateTimeField(auto_now_add=True)
+    +    sentiment_score = models.FloatField(null=True, blank=True)
+
+    +    def __str__(self):
+    +        return f"Feedback {self.id} by {self.user} on {self.project}"
+    
+    ```
+
 After creating this, run `python manage.py makemigrations` and `python manage.py migrate` again.
 
 When you have created that, check out `db.sqlite3` and you'll see that there's a new table called `project_projectfeedback`.
 
 ## Creation of the Admin Interface for Project Feedback
 
-???+ example "Ready to Copy Paste"
+??? example "Ready to Copy Paste - `project/admin.py`"
     ```python
     from django.contrib import admin
     from .models import ProjectFeedback
@@ -546,6 +585,30 @@ When you have created that, check out `db.sqlite3` and you'll see that there's a
         search_fields = ("content", "user__username", "project__name")
         list_filter = ("project", "user", "created_at")
         ordering = ("-created_at",)
+    ```
+
+??? example "Diff View - Don't Copy. Copy the other one. This is only for explanation"
+    ```diff
+    @@ project/admin.py @@
+    from django.contrib import admin
+    +from .models import Project, ProjectFeedback
+    -from .models import Project
+
+    @admin.register(Project)
+    class ProjectAdmin(admin.ModelAdmin):
+        list_display = ("id", "name", "created_at")
+        list_filter = ("created_at",)
+        search_fields = ("name",)
+        filter_horizontal = ("members",)
+        date_hierarchy = "created_at"
+        ordering = ("-created_at",)
+
+    +@admin.register(ProjectFeedback)
+    +class ProjectFeedbackAdmin(admin.ModelAdmin):
+    +    list_display = ("id", "project", "user", "created_at", "sentiment_score")
+    +    search_fields = ("content", "user__username", "project__name")
+    +    list_filter = ("project", "user", "created_at")
+    +    ordering = ("-created_at",)
     ```
 
 Now visit the admin interface and you'll see the ProjectFeedback model there.
@@ -581,7 +644,8 @@ After you put that there, we need some initialisation of "HTML templates" for th
     ```diff
     @@ urls.py @@
     from django.contrib import admin
-    from django.urls import path, include
+    +from django.urls import path, include
+    -from django.urls import path
 
     urlpatterns = [
         path('admin/', admin.site.urls),
@@ -745,9 +809,130 @@ Now, when you GET a project, the members field will show full user details inste
 
 ---
 
-### Step 3: Add ProjectFeedback API (Manual Nested Route Version)
+### Step 3: Add ProjectFeedback API
 
 Let's add feedback functionality to projects.
+
+Before creating the views for ProjectFeedback, you need to define a serializer for it, just like you did for Project.
+
+#### `project/serializers.py` (ProjectFeedbackSerializer)
+
+??? example "Ready to Copy Paste: ProjectFeedbackSerializer (project/serializers.py)"
+    ```python
+    from rest_framework import serializers
+    from django.contrib.auth.models import User
+    from .models import Project, ProjectFeedback
+
+    class UserSerializer(serializers.ModelSerializer):
+        class Meta:
+            model = User
+            fields = ("id", "username", "email")
+
+    class ProjectSerializer(serializers.ModelSerializer):
+        members = UserSerializer(many=True, read_only=True)
+
+        class Meta:
+            model = Project
+            fields = "__all__"
+            read_only_fields = ("id", "created_at")
+
+    class ProjectFeedbackSerializer(serializers.ModelSerializer):
+        class Meta:
+            model = ProjectFeedback
+            fields = "__all__"
+            read_only_fields = ("id", "created_at", "user", "sentiment_score")
+    ```
+
+??? example "Diff View - Don't Copy. Copy the other one. This is only for explanation"
+    ```diff
+    @@ project/serializers.py @@
+    from rest_framework import serializers
+    from django.contrib.auth.models import User
+    +from .models import Project, ProjectFeedback
+    -from .models import Project
+
+    class UserSerializer(serializers.ModelSerializer):
+        class Meta:
+            model = User
+            fields = ("id", "username", "email")
+
+    class ProjectSerializer(serializers.ModelSerializer):
+        members = UserSerializer(many=True, read_only=True)
+
+        class Meta:
+            model = Project
+            fields = "__all__"
+            read_only_fields = ("id", "created_at")
+
+    +class ProjectFeedbackSerializer(serializers.ModelSerializer):
+    +    class Meta:
+    +        model = ProjectFeedback
+    +        fields = "__all__"
+    +        read_only_fields = ("id", "created_at", "user", "sentiment_score")
+    ```
+
+Now you can use `ProjectFeedbackSerializer` in your views.
+
+#### `project/views.py` (ProjectFeedbackViewSet: filter by project_id)
+
+**Ready to Copy Paste:**
+
+??? example "Ready to Copy Paste: ProjectFeedbackViewSet (project/views.py)"
+    ```python
+    from rest_framework import viewsets, permissions
+    from .models import ProjectFeedback, Project
+    from .serializers import ProjectFeedbackSerializer, ProjectSerializer
+
+    class ProjectViewSet(viewsets.ModelViewSet):
+        queryset = Project.objects.all()
+        serializer_class = ProjectSerializer
+        permission_classes = [permissions.IsAuthenticated]
+
+    class ProjectFeedbackViewSet(viewsets.ModelViewSet):
+        serializer_class = ProjectFeedbackSerializer
+        permission_classes = [permissions.IsAuthenticated]
+
+        def get_queryset(self):
+            project_id = self.kwargs.get('project_id')
+            if project_id:
+                return ProjectFeedback.objects.filter(project_id=project_id)
+            return ProjectFeedback.objects.all()
+
+        def perform_create(self, serializer):
+            project_id = self.kwargs.get('project_id')
+            feedback = serializer.save(user=self.request.user, project_id=project_id)
+    ```
+
+??? example "Diff View: Don't Copy. Copy the other one. This is only for explanation"
+    **Diff View:**
+    ```diff
+    from rest_framework import viewsets, permissions
+    +from .models import Project, ProjectFeedback
+    -from .models import Project
+    +from .serializers import ProjectFeedbackSerializer, ProjectSerializer
+    -from .serializers import ProjectSerializer
+
+
+    class ProjectViewSet(viewsets.ModelViewSet):
+        queryset = Project.objects.all()
+        serializer_class = ProjectSerializer
+        permission_classes = [permissions.IsAuthenticated]
+
+    + class ProjectFeedbackViewSet(viewsets.ModelViewSet):
+    +     serializer_class = ProjectFeedbackSerializer
+    +     permission_classes = [permissions.IsAuthenticated]
+    + 
+    +     def get_queryset(self):
+    +         project_id = self.kwargs.get('project_id')
+    +         if project_id:
+    +             return ProjectFeedback.objects.filter(project_id=project_id)
+    +         return ProjectFeedback.objects.all()
+    + 
+    +     def perform_create(self, serializer):
+    +         project_id = self.kwargs.get('project_id')
+    +         feedback = serializer.save(user=self.request.user, project_id=project_id)
+    ```
+
 
 #### `project/urls.py` (add feedbacks endpoint, manual nested route)
 
@@ -791,78 +976,6 @@ Let's add feedback functionality to projects.
 
 - Imported `ProjectFeedbackViewSet`.
 - Added two new `path()` entries for feedback endpoints, nested under each project.
-
-
-#### `project/views.py` (ProjectFeedbackViewSet: filter by project_id)
-
-**Ready to Copy Paste:**
-
-??? example "Ready to Copy Paste: ProjectFeedbackViewSet (project/views.py)"
-    ```python
-    from rest_framework import viewsets, permissions
-    from .models import ProjectFeedback, Project
-    from .serializers import ProjectFeedbackSerializer, ProjectSerializer
-    from .utils import send_email_to_project_members
-
-
-    class ProjectViewSet(viewsets.ModelViewSet):
-        queryset = Project.objects.all()
-        serializer_class = ProjectSerializer
-        permission_classes = [permissions.IsAuthenticated]
-
-    class ProjectFeedbackViewSet(viewsets.ModelViewSet):
-        serializer_class = ProjectFeedbackSerializer
-        permission_classes = [permissions.IsAuthenticated]
-
-        def get_queryset(self):
-            project_id = self.kwargs.get('project_id')
-            if project_id:
-                return ProjectFeedback.objects.filter(project_id=project_id)
-            return ProjectFeedback.objects.all()
-
-        def perform_create(self, serializer):
-            project_id = self.kwargs.get('project_id')
-            feedback = serializer.save(user=self.request.user, project_id=project_id)
-            project = feedback.project
-            subject = f"New Feedback on Project: {project.name}"
-            message = f"A new feedback was submitted by {self.request.user.username}:\n\n{feedback.content}"
-            send_email_to_project_members(project, subject, message)
-    ```
-
-??? example "Diff View: Don't Copy. Copy the other one. This is only for explanation"
-    **Diff View:**
-    ```diff
-    from rest_framework import viewsets, permissions
-    +from .models import ProjectFeedback, Project
-    -from .models import ProjectFeedback
-    +from .serializers import ProjectFeedbackSerializer, ProjectSerializer
-    -from .serializers import ProjectSerializer
-    from .utils import send_email_to_project_members
-
-
-    class ProjectViewSet(viewsets.ModelViewSet):
-        queryset = Project.objects.all()
-        serializer_class = ProjectSerializer
-        permission_classes = [permissions.IsAuthenticated]
-
-    + class ProjectFeedbackViewSet(viewsets.ModelViewSet):
-    +     serializer_class = ProjectFeedbackSerializer
-    +     permission_classes = [permissions.IsAuthenticated]
-    + 
-    +     def get_queryset(self):
-    +         project_id = self.kwargs.get('project_id')
-    +         if project_id:
-    +             return ProjectFeedback.objects.filter(project_id=project_id)
-    +         return ProjectFeedback.objects.all()
-    + 
-    +     def perform_create(self, serializer):
-    +         project_id = self.kwargs.get('project_id')
-    +         feedback = serializer.save(user=self.request.user, project_id=project_id)
-    +         project = feedback.project
-    +         subject = f"New Feedback on Project: {project.name}"
-    +         message = f"A new feedback was submitted by {self.request.user.username}:\n\n{feedback.content}"
-    +         send_email_to_project_members(project, subject, message)
-    ```
 
 # Extra Exercises
 The below is an extra exercise for you to try. It will really help you extend your knowledge further, and I can assure that **you will use these in your projects**.
