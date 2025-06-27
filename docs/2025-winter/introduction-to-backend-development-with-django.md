@@ -907,8 +907,8 @@ Now you can use `ProjectFeedbackSerializer` in your views.
     **Diff View:**
     ```diff
     from rest_framework import viewsets, permissions
-    +from .models import ProjectFeedback, Project
-    -from .models import ProjectFeedback
+    +from .models import Project, ProjectFeedback
+    -from .models import Project
     +from .serializers import ProjectFeedbackSerializer, ProjectSerializer
     -from .serializers import ProjectSerializer
 
