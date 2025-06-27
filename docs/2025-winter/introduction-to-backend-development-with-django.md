@@ -350,8 +350,8 @@ DEV ENVIRONMENT                                      PRODUCTION ENVIRONMENT
 ```
 DEV ENVIRONMENT                                      PRODUCTION ENVIRONMENT
 +------------------------------------------------+   +------------------------------------------------+
-| models.py                                      |   | models.py                                      |
-| Project: id, name, created_at                  |   | Project: id, name, created_at                  |
+| models.py                                      |   | models.py                            <--- NEW! |
+| Project: id, name, created_at                  |   | Project: id, name, created_at        <--- NEW! |
 | migrations/                                    |   | migrations/                                    |
 |   0001_initial.py                              |   |   0001_initial.py <--- NEW!                    |
 +------------------------------------------------+   +------------------------------------------------+
@@ -380,7 +380,7 @@ DEV ENVIRONMENT                                      PRODUCTION ENVIRONMENT
 | Project: id, name, created_at, content         |   | Project: id, name, created_at                  |
 | migrations/                                    |   | migrations/                                    |
 |   0001_initial.py                              |   |   0001_initial.py                              |
-|   0002_add_content.py <--- NEW!                |   |                                                |
+|   0002_add_content.py                          |   |                                                |
 +------------------------------------------------+   +------------------------------------------------+
 | DB: id, name, created_at                       |   | DB: id, name, created_at                       |
 +------------------------------------------------+   +------------------------------------------------+
@@ -394,7 +394,7 @@ DEV ENVIRONMENT                                      PRODUCTION ENVIRONMENT
 | Project: id, name, created_at, content         |   | Project: id, name, created_at                  |
 | migrations/                                    |   | migrations/                                    |
 |   0001_initial.py                              |   |   0001_initial.py                              |
-|   0002_add_content.py                          |   |                                                |
+|   0002_add_content.py   <--- NEW!              |   |                                                |
 +------------------------------------------------+   +------------------------------------------------+
 | DB: id, name, created_at                       |   | DB: id, name, created_at                       |
 +------------------------------------------------+   +------------------------------------------------+
