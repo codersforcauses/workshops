@@ -813,50 +813,6 @@ Now, when you GET a project, the members field will show full user details inste
 
 Let's add feedback functionality to projects.
 
-#### `project/urls.py` (add feedbacks endpoint, manual nested route)
-
-???+ example "Ready to Copy Paste: `project/urls.py` (add feedbacks endpoint, manual nested route)"
-    ```python
-    from django.urls import path, include
-    from rest_framework.routers import DefaultRouter
-    from .views import ProjectViewSet, ProjectFeedbackViewSet
-
-    router = DefaultRouter()
-    router.register(r'projects', ProjectViewSet, basename='project')
-
-    urlpatterns = [
-        path('', include(router.urls)),
-        # Manual nested feedback endpoints
-        path('projects/<uuid:project_id>/feedback/', ProjectFeedbackViewSet.as_view({'get': 'list', 'post': 'create'}), name='project-feedback-list'),
-        path('projects/<uuid:project_id>/feedback/<uuid:pk>/', ProjectFeedbackViewSet.as_view({'get': 'retrieve', 'put': 'update', 'patch': 'partial_update', 'delete': 'destroy'}), name='project-feedback-detail'),
-    ]
-    ```
-
-??? example "Diff View - Don't Copy. Copy the other one. This is only for explanation"
-    ```diff
-    @@ project/urls.py @@
-    from django.urls import path, include
-    from rest_framework.routers import DefaultRouter
-    + from .views import ProjectViewSet, ProjectFeedbackViewSet
-    - from .views import ProjectViewSet
-
-    router = DefaultRouter()
-    router.register(r'projects', ProjectViewSet, basename='project')
-    
-    urlpatterns = [
-        path('', include(router.urls)),
-        # Manual nested feedback endpoints
-    +   path('projects/<uuid:project_id>/feedback/', ProjectFeedbackViewSet.as_view({'get': 'list', 'post': 'create'}), name='project-feedback-list'),
-    +   path('projects/<uuid:project_id>/feedback/<uuid:pk>/', ProjectFeedbackViewSet.as_view({'get': 'retrieve', 'put': 'update', 'patch': 'partial_update', 'delete': 'destroy'}), name='project-feedback-detail'),
-    ]
-    ```
-
-**What changed?**
-
-- Imported `ProjectFeedbackViewSet`.
-- Added two new `path()` entries for feedback endpoints, nested under each project.
-
-
 #### `project/views.py` (ProjectFeedbackViewSet: filter by project_id)
 
 **Ready to Copy Paste:**
@@ -927,6 +883,50 @@ Let's add feedback functionality to projects.
     +         message = f"A new feedback was submitted by {self.request.user.username}:\n\n{feedback.content}"
     +         send_email_to_project_members(project, subject, message)
     ```
+
+
+#### `project/urls.py` (add feedbacks endpoint, manual nested route)
+
+???+ example "Ready to Copy Paste: `project/urls.py` (add feedbacks endpoint, manual nested route)"
+    ```python
+    from django.urls import path, include
+    from rest_framework.routers import DefaultRouter
+    from .views import ProjectViewSet, ProjectFeedbackViewSet
+
+    router = DefaultRouter()
+    router.register(r'projects', ProjectViewSet, basename='project')
+
+    urlpatterns = [
+        path('', include(router.urls)),
+        # Manual nested feedback endpoints
+        path('projects/<uuid:project_id>/feedback/', ProjectFeedbackViewSet.as_view({'get': 'list', 'post': 'create'}), name='project-feedback-list'),
+        path('projects/<uuid:project_id>/feedback/<uuid:pk>/', ProjectFeedbackViewSet.as_view({'get': 'retrieve', 'put': 'update', 'patch': 'partial_update', 'delete': 'destroy'}), name='project-feedback-detail'),
+    ]
+    ```
+
+??? example "Diff View - Don't Copy. Copy the other one. This is only for explanation"
+    ```diff
+    @@ project/urls.py @@
+    from django.urls import path, include
+    from rest_framework.routers import DefaultRouter
+    + from .views import ProjectViewSet, ProjectFeedbackViewSet
+    - from .views import ProjectViewSet
+
+    router = DefaultRouter()
+    router.register(r'projects', ProjectViewSet, basename='project')
+    
+    urlpatterns = [
+        path('', include(router.urls)),
+        # Manual nested feedback endpoints
+    +   path('projects/<uuid:project_id>/feedback/', ProjectFeedbackViewSet.as_view({'get': 'list', 'post': 'create'}), name='project-feedback-list'),
+    +   path('projects/<uuid:project_id>/feedback/<uuid:pk>/', ProjectFeedbackViewSet.as_view({'get': 'retrieve', 'put': 'update', 'patch': 'partial_update', 'delete': 'destroy'}), name='project-feedback-detail'),
+    ]
+    ```
+
+**What changed?**
+
+- Imported `ProjectFeedbackViewSet`.
+- Added two new `path()` entries for feedback endpoints, nested under each project.
 
 # Extra Exercises
 The below is an extra exercise for you to try. It will really help you extend your knowledge further, and I can assure that **you will use these in your projects**.
