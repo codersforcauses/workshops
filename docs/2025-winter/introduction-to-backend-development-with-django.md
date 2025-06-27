@@ -822,8 +822,6 @@ Let's add feedback functionality to projects.
     from rest_framework import viewsets, permissions
     from .models import ProjectFeedback, Project
     from .serializers import ProjectFeedbackSerializer, ProjectSerializer
-    from .utils import send_email_to_project_members
-
 
     class ProjectViewSet(viewsets.ModelViewSet):
         queryset = Project.objects.all()
@@ -843,10 +841,6 @@ Let's add feedback functionality to projects.
         def perform_create(self, serializer):
             project_id = self.kwargs.get('project_id')
             feedback = serializer.save(user=self.request.user, project_id=project_id)
-            project = feedback.project
-            subject = f"New Feedback on Project: {project.name}"
-            message = f"A new feedback was submitted by {self.request.user.username}:\n\n{feedback.content}"
-            send_email_to_project_members(project, subject, message)
     ```
 
 ??? example "Diff View: Don't Copy. Copy the other one. This is only for explanation"
@@ -857,7 +851,6 @@ Let's add feedback functionality to projects.
     -from .models import ProjectFeedback
     +from .serializers import ProjectFeedbackSerializer, ProjectSerializer
     -from .serializers import ProjectSerializer
-    from .utils import send_email_to_project_members
 
 
     class ProjectViewSet(viewsets.ModelViewSet):
@@ -878,10 +871,6 @@ Let's add feedback functionality to projects.
     +     def perform_create(self, serializer):
     +         project_id = self.kwargs.get('project_id')
     +         feedback = serializer.save(user=self.request.user, project_id=project_id)
-    +         project = feedback.project
-    +         subject = f"New Feedback on Project: {project.name}"
-    +         message = f"A new feedback was submitted by {self.request.user.username}:\n\n{feedback.content}"
-    +         send_email_to_project_members(project, subject, message)
     ```
 
 
