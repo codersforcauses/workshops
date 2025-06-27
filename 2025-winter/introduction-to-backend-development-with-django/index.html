@@ -2256,8 +2256,8 @@ INSTALLED_APPS = [
 <span class="normal">8</span>
 <span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>DEV ENVIRONMENT                                      PRODUCTION ENVIRONMENT
 +------------------------------------------------+   +------------------------------------------------+
-| models.py                                      |   | models.py                                      |
-| Project: id, name, created_at                  |   | Project: id, name, created_at                  |
+| models.py                                      |   | models.py                            &lt;--- NEW! |
+| Project: id, name, created_at                  |   | Project: id, name, created_at        &lt;--- NEW! |
 | migrations/                                    |   | migrations/                                    |
 |   0001_initial.py                              |   |   0001_initial.py &lt;--- NEW!                    |
 +------------------------------------------------+   +------------------------------------------------+
@@ -2280,7 +2280,7 @@ INSTALLED_APPS = [
 | migrations/                                    |   | migrations/                                    |
 |   0001_initial.py                              |   |   0001_initial.py                              |
 +------------------------------------------------+   +------------------------------------------------+
-| DB: id, name, created_at                       |   | (no DB)                                        |
+| DB: id, name, created_at                       |   | DB: id, name, created_at     &lt;--- NEW!         |
 +------------------------------------------------+   +------------------------------------------------+
 </code></pre></div></td></tr></table></div></p>
 <p><strong>Step 6: Developer adds <code>content</code> to models.py</strong>
@@ -2299,7 +2299,7 @@ INSTALLED_APPS = [
 | Project: id, name, created_at, content         |   | Project: id, name, created_at                  |
 | migrations/                                    |   | migrations/                                    |
 |   0001_initial.py                              |   |   0001_initial.py                              |
-|   0002_add_content.py &lt;--- NEW!                |   |                                                |
+|   0002_add_content.py                          |   |                                                |
 +------------------------------------------------+   +------------------------------------------------+
 | DB: id, name, created_at                       |   | DB: id, name, created_at                       |
 +------------------------------------------------+   +------------------------------------------------+
@@ -2320,7 +2320,7 @@ INSTALLED_APPS = [
 | Project: id, name, created_at, content         |   | Project: id, name, created_at                  |
 | migrations/                                    |   | migrations/                                    |
 |   0001_initial.py                              |   |   0001_initial.py                              |
-|   0002_add_content.py                          |   |                                                |
+|   0002_add_content.py   &lt;--- NEW!              |   |                                                |
 +------------------------------------------------+   +------------------------------------------------+
 | DB: id, name, created_at                       |   | DB: id, name, created_at                       |
 +------------------------------------------------+   +------------------------------------------------+
@@ -2418,13 +2418,11 @@ INSTALLED_APPS = [
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">django.contrib</span><span class="w"> </span><span class="kn">import</span> <span class="n">admin</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">django.contrib</span><span class="w"> </span><span class="kn">import</span> <span class="n">admin</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Project</span>
 
 <span class="nd">@admin</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Project</span><span class="p">)</span>
 <span class="k">class</span><span class="w"> </span><span class="nc">ProjectAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
-    <span class="c1"># username of the members</span>
     <span class="n">list_display</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;created_at&quot;</span><span class="p">)</span>
     <span class="n">list_filter</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;created_at&quot;</span><span class="p">,)</span>
     <span class="n">search_fields</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,)</span>
@@ -2466,8 +2464,8 @@ INSTALLED_APPS = [
     project ||--o{ feedback : has
     user |{--o{ project : works_on</code></pre>
 </details>
-<details class="example" open="open">
-<summary>Ready to Copy Paste</summary>
+<details class="example">
+<summary>Ready to Copy Paste - <code>project/models.py</code></summary>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -2481,9 +2479,29 @@ INSTALLED_APPS = [
 <span class="normal">11</span>
 <span class="normal">12</span>
 <span class="normal">13</span>
-<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">django.db</span><span class="w"> </span><span class="kn">import</span> <span class="n">models</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">django.db</span><span class="w"> </span><span class="kn">import</span> <span class="n">models</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">django.contrib.auth.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">User</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">uuid</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Project</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">UUIDField</span><span class="p">(</span><span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">,</span> <span class="n">editable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">255</span><span class="p">)</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">created_at</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">auto_now_add</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">members</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ManyToManyField</span><span class="p">(</span><span class="n">User</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s2">&quot;projects&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Project </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">)&quot;</span>
 
 <span class="k">class</span><span class="w"> </span><span class="nc">ProjectFeedback</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="nb">id</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">UUIDField</span><span class="p">(</span><span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">,</span> <span class="n">editable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -2497,11 +2515,64 @@ INSTALLED_APPS = [
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Feedback </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2"> by </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">user</span><span class="si">}</span><span class="s2"> on </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">project</span><span class="si">}</span><span class="s2">&quot;</span>
 </code></pre></div></td></tr></table></div>
 </details>
+<details class="example">
+<summary>Diff View - Don't Copy. Copy the other one. This is only for explanation</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gu">@@ project/models.py @@</span>
+<span class="w"> </span>   from django.db import models
+from django.contrib.auth.models import User
+import uuid
+
+class Project(models.Model):
+<span class="w"> </span>   id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+<span class="w"> </span>   name = models.CharField(max_length=255)
+<span class="w"> </span>   content = models.TextField(blank=True)
+<span class="w"> </span>   created_at = models.DateTimeField(auto_now_add=True)
+<span class="w"> </span>   members = models.ManyToManyField(User, related_name=&quot;projects&quot;)
+
+<span class="w"> </span>   def __str__(self):
+<span class="w"> </span>       return f&quot;Project {self.name} ({self.id})&quot;
+
+<span class="gi">+ class ProjectFeedback(models.Model):</span>
+<span class="gi">+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)</span>
+<span class="gi">+    project = models.ForeignKey(&#39;Project&#39;, on_delete=models.CASCADE, related_name=&quot;feedbacks&quot;)</span>
+<span class="gi">+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name=&quot;feedbacks&quot;)</span>
+<span class="gi">+    content = models.TextField()</span>
+<span class="gi">+    created_at = models.DateTimeField(auto_now_add=True)</span>
+<span class="gi">+    sentiment_score = models.FloatField(null=True, blank=True)</span>
+
+<span class="gi">+    def __str__(self):</span>
+<span class="gi">+        return f&quot;Feedback {self.id} by {self.user} on {self.project}&quot;</span>
+</code></pre></div></td></tr></table></div>
+</details>
 <p>After creating this, run <code>python manage.py makemigrations</code> and <code>python manage.py migrate</code> again.</p>
 <p>When you have created that, check out <code>db.sqlite3</code> and you'll see that there's a new table called <code>project_projectfeedback</code>.</p>
 <h2 id="creation-of-the-admin-interface-for-project-feedback">Creation of the Admin Interface for Project Feedback<a class="headerlink" href="#creation-of-the-admin-interface-for-project-feedback" title="Permanent link">&para;</a></h2>
-<details class="example" open="open">
-<summary>Ready to Copy Paste</summary>
+<details class="example">
+<summary>Ready to Copy Paste - <code>project/admin.py</code></summary>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -2519,6 +2590,49 @@ INSTALLED_APPS = [
     <span class="n">search_fields</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;content&quot;</span><span class="p">,</span> <span class="s2">&quot;user__username&quot;</span><span class="p">,</span> <span class="s2">&quot;project__name&quot;</span><span class="p">)</span>
     <span class="n">list_filter</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;project&quot;</span><span class="p">,</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;created_at&quot;</span><span class="p">)</span>
     <span class="n">ordering</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;-created_at&quot;</span><span class="p">,)</span>
+</code></pre></div></td></tr></table></div>
+</details>
+<details class="example">
+<summary>Diff View - Don't Copy. Copy the other one. This is only for explanation</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gu">@@ project/admin.py @@</span>
+from django.contrib import admin
+<span class="gi">+from .models import Project, ProjectFeedback</span>
+<span class="gd">-from .models import Project</span>
+
+<span class="gu">@admin.register(Project)</span>
+class ProjectAdmin(admin.ModelAdmin):
+<span class="w"> </span>   list_display = (&quot;id&quot;, &quot;name&quot;, &quot;created_at&quot;)
+<span class="w"> </span>   list_filter = (&quot;created_at&quot;,)
+<span class="w"> </span>   search_fields = (&quot;name&quot;,)
+<span class="w"> </span>   filter_horizontal = (&quot;members&quot;,)
+<span class="w"> </span>   date_hierarchy = &quot;created_at&quot;
+<span class="w"> </span>   ordering = (&quot;-created_at&quot;,)
+
+<span class="gi">+@admin.register(ProjectFeedback)</span>
+<span class="gi">+class ProjectFeedbackAdmin(admin.ModelAdmin):</span>
+<span class="gi">+    list_display = (&quot;id&quot;, &quot;project&quot;, &quot;user&quot;, &quot;created_at&quot;, &quot;sentiment_score&quot;)</span>
+<span class="gi">+    search_fields = (&quot;content&quot;, &quot;user__username&quot;, &quot;project__name&quot;)</span>
+<span class="gi">+    list_filter = (&quot;project&quot;, &quot;user&quot;, &quot;created_at&quot;)</span>
+<span class="gi">+    ordering = (&quot;-created_at&quot;,)</span>
 </code></pre></div></td></tr></table></div>
 </details>
 <p>Now visit the admin interface and you'll see the ProjectFeedback model there.</p>
@@ -2563,9 +2677,11 @@ INSTALLED_APPS = [
 <span class="normal">5</span>
 <span class="normal">6</span>
 <span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gu">@@ urls.py @@</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gu">@@ urls.py @@</span>
 from django.contrib import admin
-from django.urls import path, include
+<span class="gi">+from django.urls import path, include</span>
+<span class="gd">-from django.urls import path</span>
 
 urlpatterns = [
 <span class="w"> </span>   path(&#39;admin/&#39;, admin.site.urls),
@@ -2801,8 +2917,212 @@ urlpatterns = [
 </details>
 <p>Now, when you GET a project, the members field will show full user details instead of just IDs.</p>
 <hr />
-<h3 id="step-3-add-projectfeedback-api-manual-nested-route-version">Step 3: Add ProjectFeedback API (Manual Nested Route Version)<a class="headerlink" href="#step-3-add-projectfeedback-api-manual-nested-route-version" title="Permanent link">&para;</a></h3>
+<h3 id="step-3-add-projectfeedback-api">Step 3: Add ProjectFeedback API<a class="headerlink" href="#step-3-add-projectfeedback-api" title="Permanent link">&para;</a></h3>
 <p>Let's add feedback functionality to projects.</p>
+<p>Before creating the views for ProjectFeedback, you need to define a serializer for it, just like you did for Project.</p>
+<h4 id="projectserializerspy-projectfeedbackserializer"><code>project/serializers.py</code> (ProjectFeedbackSerializer)<a class="headerlink" href="#projectserializerspy-projectfeedbackserializer" title="Permanent link">&para;</a></h4>
+<details class="example">
+<summary>Ready to Copy Paste: ProjectFeedbackSerializer (project/serializers.py)</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">rest_framework</span><span class="w"> </span><span class="kn">import</span> <span class="n">serializers</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.contrib.auth.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">User</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Project</span><span class="p">,</span> <span class="n">ProjectFeedback</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">UserSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">User</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;username&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">)</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">ProjectSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+    <span class="n">members</span> <span class="o">=</span> <span class="n">UserSerializer</span><span class="p">(</span><span class="n">many</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">read_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">Project</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="s2">&quot;__all__&quot;</span>
+        <span class="n">read_only_fields</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;created_at&quot;</span><span class="p">)</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">ProjectFeedbackSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">ProjectFeedback</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="s2">&quot;__all__&quot;</span>
+        <span class="n">read_only_fields</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;created_at&quot;</span><span class="p">,</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;sentiment_score&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+</details>
+<details class="example">
+<summary>Diff View - Don't Copy. Copy the other one. This is only for explanation</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gu">@@ project/serializers.py @@</span>
+from rest_framework import serializers
+from django.contrib.auth.models import User
+<span class="gi">+from .models import Project, ProjectFeedback</span>
+<span class="gd">-from .models import Project</span>
+
+class UserSerializer(serializers.ModelSerializer):
+<span class="w"> </span>   class Meta:
+<span class="w"> </span>       model = User
+<span class="w"> </span>       fields = (&quot;id&quot;, &quot;username&quot;, &quot;email&quot;)
+
+class ProjectSerializer(serializers.ModelSerializer):
+<span class="w"> </span>   members = UserSerializer(many=True, read_only=True)
+
+<span class="w"> </span>   class Meta:
+<span class="w"> </span>       model = Project
+<span class="w"> </span>       fields = &quot;__all__&quot;
+<span class="w"> </span>       read_only_fields = (&quot;id&quot;, &quot;created_at&quot;)
+
+<span class="gi">+class ProjectFeedbackSerializer(serializers.ModelSerializer):</span>
+<span class="gi">+    class Meta:</span>
+<span class="gi">+        model = ProjectFeedback</span>
+<span class="gi">+        fields = &quot;__all__&quot;</span>
+<span class="gi">+        read_only_fields = (&quot;id&quot;, &quot;created_at&quot;, &quot;user&quot;, &quot;sentiment_score&quot;)</span>
+</code></pre></div></td></tr></table></div>
+</details>
+<p>Now you can use <code>ProjectFeedbackSerializer</code> in your views.</p>
+<h4 id="projectviewspy-projectfeedbackviewset-filter-by-project_id"><code>project/views.py</code> (ProjectFeedbackViewSet: filter by project_id)<a class="headerlink" href="#projectviewspy-projectfeedbackviewset-filter-by-project_id" title="Permanent link">&para;</a></h4>
+<p><strong>Ready to Copy Paste:</strong></p>
+<details class="example">
+<summary>Ready to Copy Paste: ProjectFeedbackViewSet (project/views.py)</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">rest_framework</span><span class="w"> </span><span class="kn">import</span> <span class="n">viewsets</span><span class="p">,</span> <span class="n">permissions</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProjectFeedback</span><span class="p">,</span> <span class="n">Project</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.serializers</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProjectFeedbackSerializer</span><span class="p">,</span> <span class="n">ProjectSerializer</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">ProjectViewSet</span><span class="p">(</span><span class="n">viewsets</span><span class="o">.</span><span class="n">ModelViewSet</span><span class="p">):</span>
+    <span class="n">queryset</span> <span class="o">=</span> <span class="n">Project</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    <span class="n">serializer_class</span> <span class="o">=</span> <span class="n">ProjectSerializer</span>
+    <span class="n">permission_classes</span> <span class="o">=</span> <span class="p">[</span><span class="n">permissions</span><span class="o">.</span><span class="n">IsAuthenticated</span><span class="p">]</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">ProjectFeedbackViewSet</span><span class="p">(</span><span class="n">viewsets</span><span class="o">.</span><span class="n">ModelViewSet</span><span class="p">):</span>
+    <span class="n">serializer_class</span> <span class="o">=</span> <span class="n">ProjectFeedbackSerializer</span>
+    <span class="n">permission_classes</span> <span class="o">=</span> <span class="p">[</span><span class="n">permissions</span><span class="o">.</span><span class="n">IsAuthenticated</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_queryset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">project_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;project_id&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">project_id</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">ProjectFeedback</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">project_id</span><span class="o">=</span><span class="n">project_id</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ProjectFeedback</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">perform_create</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">serializer</span><span class="p">):</span>
+        <span class="n">project_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;project_id&#39;</span><span class="p">)</span>
+        <span class="n">feedback</span> <span class="o">=</span> <span class="n">serializer</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="p">,</span> <span class="n">project_id</span><span class="o">=</span><span class="n">project_id</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+</details>
+<details class="example">
+<summary>Diff View: Don't Copy. Copy the other one. This is only for explanation</summary>
+<p><strong>Diff View:</strong>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code>from rest_framework import viewsets, permissions
+<span class="gi">+from .models import Project, ProjectFeedback</span>
+<span class="gd">-from .models import Project</span>
+<span class="gi">+from .serializers import ProjectFeedbackSerializer, ProjectSerializer</span>
+<span class="gd">-from .serializers import ProjectSerializer</span>
+
+
+class ProjectViewSet(viewsets.ModelViewSet):
+<span class="w"> </span>   queryset = Project.objects.all()
+<span class="w"> </span>   serializer_class = ProjectSerializer
+<span class="w"> </span>   permission_classes = [permissions.IsAuthenticated]
+
+<span class="gi">+ class ProjectFeedbackViewSet(viewsets.ModelViewSet):</span>
+<span class="gi">+     serializer_class = ProjectFeedbackSerializer</span>
+<span class="gi">+     permission_classes = [permissions.IsAuthenticated]</span>
+<span class="gi">+ </span>
+<span class="gi">+     def get_queryset(self):</span>
+<span class="gi">+         project_id = self.kwargs.get(&#39;project_id&#39;)</span>
+<span class="gi">+         if project_id:</span>
+<span class="gi">+             return ProjectFeedback.objects.filter(project_id=project_id)</span>
+<span class="gi">+         return ProjectFeedback.objects.all()</span>
+<span class="gi">+ </span>
+<span class="gi">+     def perform_create(self, serializer):</span>
+<span class="gi">+         project_id = self.kwargs.get(&#39;project_id&#39;)</span>
+<span class="gi">+         feedback = serializer.save(user=self.request.user, project_id=project_id)</span>
+</code></pre></div></td></tr></table></div></p>
+</details>
 <h4 id="projecturlspy-add-feedbacks-endpoint-manual-nested-route"><code>project/urls.py</code> (add feedbacks endpoint, manual nested route)<a class="headerlink" href="#projecturlspy-add-feedbacks-endpoint-manual-nested-route" title="Permanent link">&para;</a></h4>
 <details class="example" open="open">
 <summary>Ready to Copy Paste: <code>project/urls.py</code> (add feedbacks endpoint, manual nested route)</summary>
@@ -2871,131 +3191,6 @@ urlpatterns = [
 <li>Imported <code>ProjectFeedbackViewSet</code>.</li>
 <li>Added two new <code>path()</code> entries for feedback endpoints, nested under each project.</li>
 </ul>
-<h4 id="projectviewspy-projectfeedbackviewset-filter-by-project_id"><code>project/views.py</code> (ProjectFeedbackViewSet: filter by project_id)<a class="headerlink" href="#projectviewspy-projectfeedbackviewset-filter-by-project_id" title="Permanent link">&para;</a></h4>
-<p><strong>Ready to Copy Paste:</strong></p>
-<details class="example">
-<summary>Ready to Copy Paste: ProjectFeedbackViewSet (project/views.py)</summary>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">rest_framework</span><span class="w"> </span><span class="kn">import</span> <span class="n">viewsets</span><span class="p">,</span> <span class="n">permissions</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProjectFeedback</span><span class="p">,</span> <span class="n">Project</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">.serializers</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProjectFeedbackSerializer</span><span class="p">,</span> <span class="n">ProjectSerializer</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">send_email_to_project_members</span>
-
-
-<span class="k">class</span><span class="w"> </span><span class="nc">ProjectViewSet</span><span class="p">(</span><span class="n">viewsets</span><span class="o">.</span><span class="n">ModelViewSet</span><span class="p">):</span>
-    <span class="n">queryset</span> <span class="o">=</span> <span class="n">Project</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
-    <span class="n">serializer_class</span> <span class="o">=</span> <span class="n">ProjectSerializer</span>
-    <span class="n">permission_classes</span> <span class="o">=</span> <span class="p">[</span><span class="n">permissions</span><span class="o">.</span><span class="n">IsAuthenticated</span><span class="p">]</span>
-
-<span class="k">class</span><span class="w"> </span><span class="nc">ProjectFeedbackViewSet</span><span class="p">(</span><span class="n">viewsets</span><span class="o">.</span><span class="n">ModelViewSet</span><span class="p">):</span>
-    <span class="n">serializer_class</span> <span class="o">=</span> <span class="n">ProjectFeedbackSerializer</span>
-    <span class="n">permission_classes</span> <span class="o">=</span> <span class="p">[</span><span class="n">permissions</span><span class="o">.</span><span class="n">IsAuthenticated</span><span class="p">]</span>
-
-    <span class="k">def</span><span class="w"> </span><span class="nf">get_queryset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">project_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;project_id&#39;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">project_id</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">ProjectFeedback</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">project_id</span><span class="o">=</span><span class="n">project_id</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">ProjectFeedback</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
-
-    <span class="k">def</span><span class="w"> </span><span class="nf">perform_create</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">serializer</span><span class="p">):</span>
-        <span class="n">project_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;project_id&#39;</span><span class="p">)</span>
-        <span class="n">feedback</span> <span class="o">=</span> <span class="n">serializer</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="p">,</span> <span class="n">project_id</span><span class="o">=</span><span class="n">project_id</span><span class="p">)</span>
-        <span class="n">project</span> <span class="o">=</span> <span class="n">feedback</span><span class="o">.</span><span class="n">project</span>
-        <span class="n">subject</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;New Feedback on Project: </span><span class="si">{</span><span class="n">project</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
-        <span class="n">message</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;A new feedback was submitted by </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">username</span><span class="si">}</span><span class="s2">:</span><span class="se">\n\n</span><span class="si">{</span><span class="n">feedback</span><span class="o">.</span><span class="n">content</span><span class="si">}</span><span class="s2">&quot;</span>
-        <span class="n">send_email_to_project_members</span><span class="p">(</span><span class="n">project</span><span class="p">,</span> <span class="n">subject</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-</details>
-<details class="example">
-<summary>Diff View: Don't Copy. Copy the other one. This is only for explanation</summary>
-<p><strong>Diff View:</strong>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span></pre></div></td><td class="code"><div><pre><span></span><code>from rest_framework import viewsets, permissions
-<span class="gi">+from .models import ProjectFeedback, Project</span>
-<span class="gd">-from .models import ProjectFeedback</span>
-<span class="gi">+from .serializers import ProjectFeedbackSerializer, ProjectSerializer</span>
-<span class="gd">-from .serializers import ProjectSerializer</span>
-from .utils import send_email_to_project_members
-
-
-class ProjectViewSet(viewsets.ModelViewSet):
-<span class="w"> </span>   queryset = Project.objects.all()
-<span class="w"> </span>   serializer_class = ProjectSerializer
-<span class="w"> </span>   permission_classes = [permissions.IsAuthenticated]
-
-<span class="gi">+ class ProjectFeedbackViewSet(viewsets.ModelViewSet):</span>
-<span class="gi">+     serializer_class = ProjectFeedbackSerializer</span>
-<span class="gi">+     permission_classes = [permissions.IsAuthenticated]</span>
-<span class="gi">+ </span>
-<span class="gi">+     def get_queryset(self):</span>
-<span class="gi">+         project_id = self.kwargs.get(&#39;project_id&#39;)</span>
-<span class="gi">+         if project_id:</span>
-<span class="gi">+             return ProjectFeedback.objects.filter(project_id=project_id)</span>
-<span class="gi">+         return ProjectFeedback.objects.all()</span>
-<span class="gi">+ </span>
-<span class="gi">+     def perform_create(self, serializer):</span>
-<span class="gi">+         project_id = self.kwargs.get(&#39;project_id&#39;)</span>
-<span class="gi">+         feedback = serializer.save(user=self.request.user, project_id=project_id)</span>
-<span class="gi">+         project = feedback.project</span>
-<span class="gi">+         subject = f&quot;New Feedback on Project: {project.name}&quot;</span>
-<span class="gi">+         message = f&quot;A new feedback was submitted by {self.request.user.username}:\n\n{feedback.content}&quot;</span>
-<span class="gi">+         send_email_to_project_members(project, subject, message)</span>
-</code></pre></div></td></tr></table></div></p>
-</details>
 <h1 id="extra-exercises">Extra Exercises<a class="headerlink" href="#extra-exercises" title="Permanent link">&para;</a></h1>
 <p>The below is an extra exercise for you to try. It will really help you extend your knowledge further, and I can assure that <strong>you will use these in your projects</strong>.</p>
 <p>This has just been left as extra exercise because otherwise this workshop will be too long, unless of course we have extra time.</p>
