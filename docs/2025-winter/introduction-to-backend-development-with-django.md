@@ -554,6 +554,7 @@ Now visit the [Admin page](http://localhost:8000/admin) and you'll see the Proje
 
         def __str__(self):
             return f"Project {self.name} ({self.id})"
+
     + class ProjectFeedback(models.Model):
     +    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     +    project = models.ForeignKey('Project', on_delete=models.CASCADE, related_name="feedbacks")
@@ -587,6 +588,8 @@ When you have created that, check out `db.sqlite3` and you'll see that there's a
     ```
 
 ??? example "Diff View - Don't Copy. Copy the other one. This is only for explanation"
+    ```diff
+    @@ project/admin.py @@
     from django.contrib import admin
     +from .models import Project, ProjectFeedback
     -from .models import Project
@@ -606,6 +609,7 @@ When you have created that, check out `db.sqlite3` and you'll see that there's a
     +    search_fields = ("content", "user__username", "project__name")
     +    list_filter = ("project", "user", "created_at")
     +    ordering = ("-created_at",)
+    ```
 
 Now visit the admin interface and you'll see the ProjectFeedback model there.
 
@@ -640,7 +644,8 @@ After you put that there, we need some initialisation of "HTML templates" for th
     ```diff
     @@ urls.py @@
     from django.contrib import admin
-    from django.urls import path, include
+    +from django.urls import path, include
+    -from django.urls import path
 
     urlpatterns = [
         path('admin/', admin.site.urls),
