@@ -466,7 +466,6 @@ When you have created that, check out `db.sqlite3` and you'll see that there's a
 
     @admin.register(Project)
     class ProjectAdmin(admin.ModelAdmin):
-        # username of the members
         list_display = ("id", "name", "created_at")
         list_filter = ("created_at",)
         search_fields = ("name",)
