@@ -809,9 +809,69 @@ Now, when you GET a project, the members field will show full user details inste
 
 ---
 
-### Step 3: Add ProjectFeedback API (Manual Nested Route Version)
+### Step 3: Add ProjectFeedback API
 
 Let's add feedback functionality to projects.
+
+Before creating the views for ProjectFeedback, you need to define a serializer for it, just like you did for Project.
+
+#### `project/serializers.py` (ProjectFeedbackSerializer)
+
+??? example "Ready to Copy Paste: ProjectFeedbackSerializer (project/serializers.py)"
+    ```python
+    from rest_framework import serializers
+    from django.contrib.auth.models import User
+    from .models import Project, ProjectFeedback
+
+    class UserSerializer(serializers.ModelSerializer):
+        class Meta:
+            model = User
+            fields = ("id", "username", "email")
+
+    class ProjectSerializer(serializers.ModelSerializer):
+        members = UserSerializer(many=True, read_only=True)
+
+        class Meta:
+            model = Project
+            fields = "__all__"
+            read_only_fields = ("id", "created_at")
+
+    class ProjectFeedbackSerializer(serializers.ModelSerializer):
+        class Meta:
+            model = ProjectFeedback
+            fields = "__all__"
+            read_only_fields = ("id", "created_at", "user", "sentiment_score")
+    ```
+
+??? example "Diff View - Don't Copy. Copy the other one. This is only for explanation"
+    ```diff
+    @@ project/serializers.py @@
+    from rest_framework import serializers
+    from django.contrib.auth.models import User
+    +from .models import Project, ProjectFeedback
+    -from .models import Project
+
+    class UserSerializer(serializers.ModelSerializer):
+        class Meta:
+            model = User
+            fields = ("id", "username", "email")
+
+    class ProjectSerializer(serializers.ModelSerializer):
+        members = UserSerializer(many=True, read_only=True)
+
+        class Meta:
+            model = Project
+            fields = "__all__"
+            read_only_fields = ("id", "created_at")
+
+    +class ProjectFeedbackSerializer(serializers.ModelSerializer):
+    +    class Meta:
+    +        model = ProjectFeedback
+    +        fields = "__all__"
+    +        read_only_fields = ("id", "created_at", "user", "sentiment_score")
+    ```
+
+Now you can use `ProjectFeedbackSerializer` in your views.
 
 #### `project/views.py` (ProjectFeedbackViewSet: filter by project_id)
 
