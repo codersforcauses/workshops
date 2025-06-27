@@ -510,11 +510,21 @@ Now visit the [Admin page](http://localhost:8000/admin) and you'll see the Proje
         user |{--o{ project : works_on
     ```
 
-???+ example "Ready to Copy Paste"
+??? example "Ready to Copy Paste - `project/models.py`"
     ```python
     from django.db import models
     from django.contrib.auth.models import User
     import uuid
+
+    class Project(models.Model):
+        id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+        name = models.CharField(max_length=255)
+        content = models.TextField(blank=True)
+        created_at = models.DateTimeField(auto_now_add=True)
+        members = models.ManyToManyField(User, related_name="projects")
+
+        def __str__(self):
+            return f"Project {self.name} ({self.id})"
 
     class ProjectFeedback(models.Model):
         id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
@@ -528,13 +538,42 @@ Now visit the [Admin page](http://localhost:8000/admin) and you'll see the Proje
             return f"Feedback {self.id} by {self.user} on {self.project}"
     ```
 
+??? example "Diff View - Don't Copy. Copy the other one. This is only for explanation"
+    ```diff
+    @@ project/models.py @@
+        from django.db import models
+    from django.contrib.auth.models import User
+    import uuid
+
+    class Project(models.Model):
+        id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+        name = models.CharField(max_length=255)
+        content = models.TextField(blank=True)
+        created_at = models.DateTimeField(auto_now_add=True)
+        members = models.ManyToManyField(User, related_name="projects")
+
+        def __str__(self):
+            return f"Project {self.name} ({self.id})"
+    + class ProjectFeedback(models.Model):
+    +    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    +    project = models.ForeignKey('Project', on_delete=models.CASCADE, related_name="feedbacks")
+    +    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="feedbacks")
+    +    content = models.TextField()
+    +    created_at = models.DateTimeField(auto_now_add=True)
+    +    sentiment_score = models.FloatField(null=True, blank=True)
+
+    +    def __str__(self):
+    +        return f"Feedback {self.id} by {self.user} on {self.project}"
+    
+    ```
+
 After creating this, run `python manage.py makemigrations` and `python manage.py migrate` again.
 
 When you have created that, check out `db.sqlite3` and you'll see that there's a new table called `project_projectfeedback`.
 
 ## Creation of the Admin Interface for Project Feedback
 
-???+ example "Ready to Copy Paste"
+??? example "Ready to Copy Paste - `project/admin.py`"
     ```python
     from django.contrib import admin
     from .models import ProjectFeedback
@@ -546,6 +585,27 @@ When you have created that, check out `db.sqlite3` and you'll see that there's a
         list_filter = ("project", "user", "created_at")
         ordering = ("-created_at",)
     ```
+
+??? example "Diff View - Don't Copy. Copy the other one. This is only for explanation"
+    from django.contrib import admin
+    +from .models import Project, ProjectFeedback
+    -from .models import Project
+
+    @admin.register(Project)
+    class ProjectAdmin(admin.ModelAdmin):
+        list_display = ("id", "name", "created_at")
+        list_filter = ("created_at",)
+        search_fields = ("name",)
+        filter_horizontal = ("members",)
+        date_hierarchy = "created_at"
+        ordering = ("-created_at",)
+
+    +@admin.register(ProjectFeedback)
+    +class ProjectFeedbackAdmin(admin.ModelAdmin):
+    +    list_display = ("id", "project", "user", "created_at", "sentiment_score")
+    +    search_fields = ("content", "user__username", "project__name")
+    +    list_filter = ("project", "user", "created_at")
+    +    ordering = ("-created_at",)
 
 Now visit the admin interface and you'll see the ProjectFeedback model there.
 
