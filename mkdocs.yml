@@ -112,6 +112,10 @@ nav:
 - About: 
   - Overview: index.md
   - Contributions: contributions.md
+- 2025/2026 Summer Intermediate:
+  - Introduction to Web Development: 2025-2026-summer-intermediate/introduction-to-web-development.md
+  - Practical Software Engineering Workflow: 2025-2026-summer-intermediate/practical-software-engineering-workflow.md
+  - Working With Typescript: 2025-2026-summer-intermediate/working-with-typescript.md
 - 2025 Winter:
   - Introduction to Web Development: 2025-winter/introduction-to-web-development.md
   - Practical Software Engineering Workflow: 2025-winter/practical-software-engineering-workflow.md
