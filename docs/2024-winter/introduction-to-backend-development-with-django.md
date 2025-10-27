@@ -5,6 +5,8 @@ title: Welcome to the Djangol!
 
 Welcome to the (Django)l !: Introduction to Backend Programming with Django 
 
+---
+
 ## Prerequisites to this Workshop
 
 You need the following installed:
@@ -14,6 +16,8 @@ You need the following installed:
 - Docker
 
 The starting repo for this workshop: [https://github.com/CodersforLearning/django-workshop-winter-2024](https://github.com/CodersforLearning/django-workshop-winter-2024)
+
+---
 
 ## What you will be building as part of this workshop?
 You're launching a new startup called "Snapstagram" - a social media app that showcases images through posts.
@@ -61,6 +65,8 @@ erDiagram
     post ||--o{ comment : has
     comment ||--o{ comment : "replies to"
 ```
+---
+
 ## What are APIs and REST-APIs?
 **Application Programming Interface**
 ???+ info "Analogy"
@@ -90,6 +96,8 @@ In terms of using RESTful APIs, there are some naming and implementation convent
 
     ![rest-verbs](./images/rest-verbs.jpg)
 
+---
+
 ## What is Django?
 
 ![Django](./images/django-2.png)
@@ -106,6 +114,8 @@ Follows MVC:
 
 See [Documentation](https://www.djangoproject.com/)
 
+---
+
 ## What is Django REST Framework (DRF)?
 - library for creating REST-API
 - just makes it easier develop REST-API
@@ -117,6 +127,8 @@ In:
 - Serialisers (payload validation and format)
 
 See [Documentation](https://www.django-rest-framework.org/)
+
+---
 
 ## Interactive Workshop Time!!!
 
@@ -181,6 +193,8 @@ Firstly, open your IDE (VSCode) and open the terminal.
     For the `db.sqlite3` file, it's the default database that Django uses. You can change this to other databases like MySQL, PostgreSQL, etc.
 
 
+---
+
 ## Let's create our first Django app: post
 
 Run this command `python manage.py startapp post`.
@@ -199,6 +213,8 @@ Some files you want to create later are:
 - `post/serializers.py` - the serializers
 - `post/urls.py` - the URL routes
 - `post/permissions.py` - the permissions
+
+---
 
 ## Creation of the database schema
 
@@ -274,6 +290,8 @@ Then run `python manage.py makemigrations` and `python manage.py migrate`.
     Similar to how we performed our initial migration
 
 When you have created that, check out `db.sqlite3` and you'll see that there's a new table called `post_post`.
+
+---
 
 ## Creation of the admin interface
 
@@ -412,6 +430,8 @@ Now visit the admin interface and you'll see the Post model there.
         search_fields = ("url",)
         ordering = ("id",)
     ```
+
+---
 
 ## Creation Views: the Interface in API
 
@@ -729,6 +749,8 @@ Docs: [Viewset Actions](https://www.django-rest-framework.org/api-guide/viewsets
 
 For example, what if you want a new endpoint called `POST /api/posts/<id>/schedule-publish`, which adds to another database, and there's some task that will change the `is_draft` to `False` after a certain time.
 
+---
+
 ## Automated Testing
 [https://www.django-rest-framework.org/api-guide/testing/](https://www.django-rest-framework.org/api-guide/testing/)
 
@@ -779,6 +801,8 @@ class PostTest(APITestCase):
 ```
 
 To run this test, run `python manage.py test`
+
+---
 
 ## Authentication and Authorization
 What if we only want the `PUT/PATCH/DELETE` methods to be accessible by the organizer?
@@ -849,6 +873,8 @@ class PostTest(APITestCase):
     The example code given is broken after the authentication enforcement.
     Can you fix the issue?
 
+---
+
 ## Extra-Reading - JWT Authentication
 [Summary of Django Simple JWT](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/getting_started.html#installation)
 
@@ -903,6 +929,8 @@ you're going to get something like this back
 
 And if you are using an authenticated endpoint, you need to add the `Authorization` header with the token.
 `"Authorization: Bearer eyJhbEXAMPLEOFJWTOKEN..."`
+
+---
 
 ## Bonus" Sending Emails
 

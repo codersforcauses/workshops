@@ -5,6 +5,8 @@ title: Practical Software Engineering Workflow
 
 *How software engineer [GSD](https://www.atlassian.com/team-playbook/plays/gsd-day)!*
 
+---
+
 ## How do software engineers work?
 They use **issue/ticket management system** to track their work.
 
@@ -21,6 +23,8 @@ Listing of issues can be displayed in **kanban boards**.
     ![github-kanban](images/github-kanban.png)
     ![jira-kanban](images/jira-kanban.png)
 
+---
+
 ## Why do Software Engineers Work like this?
 
 <iframe width="100%" height="500rem"
@@ -32,6 +36,8 @@ allowfullscreen></iframe>
 ???+ info "Scrums"
     One example of "agile" ways of working and it looks like this.
     ![scrum](images/scrum.png)
+
+---
 
 ## What is Git?
 <iframe width="100%" height="500rem"
@@ -73,6 +79,8 @@ Used for compiling features for a release
 - Branch used for development for a
 particular issue
 
+---
+
 ## GitHub and Code Repositories
 
 **GitHub**
@@ -81,6 +89,8 @@ particular issue
 **Repositories**
 - Place where codes are stored with different versions
 
+
+---
 
 ## INTERACTIVE WORKSHOP TIME !!!!
 1. Do the following from [codersforcauses/software-engineering-practices-demo-2024-summer](https://github.com/codersforcauses/software-engineering-practices-demo-2024-summer): Demonstration of software engineering practices (github.com):
@@ -91,6 +101,8 @@ particular issue
 6. Create the change to satisfy or complete the github issue
 7. Commit (package) the change `git commit -m "{insert message here}"` and push git push.
 8. Create a pull request and request for a reviewer from CFC peeps
+
+---
 
 ## Other Resources
 - [Git and Github](https://www.youtube.com/watch?v=HkdAHXoRtos)

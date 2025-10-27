@@ -14,15 +14,21 @@ You need the following installed:
 
 The starting repo for this workshop: <https://github.com/codersforcauses/docker-workshop>
 
+---
+
 ## What you will be building as part of this workshop?
 
 CFC wants to make an app for accepting coffee orders. You will be creating a Dockerfile for CFC's (totally real) new and upcoming rebrand: *Coders for Coffee 🐳*. The architecture is a simple frontend and backend both made in TypeScript. Below is a diagram of it:
 
 ![App Architecture](./images/app-architecture.png)
 
+---
+
 ## Important information
 
 This workshop relies on a certain understanding of terminal commands and a bit of familiarity with Node.js projects. If you're not familiar with these, don't worry! I'll be explaining everything as we go along. If you have any questions, feel free to ask.
+
+---
 
 ## What is Docker?
 
@@ -55,6 +61,8 @@ In action, you'll only need to know a few commands to get started:
 2. `docker run <image>`: Run a **container** from an **image**.
 3. `docker build`: Build a **Dockerfile** into an **image**.
 
+---
+
 ## Getting started
 
 Firstly, open your IDE and open the terminal.
@@ -72,6 +80,8 @@ Firstly, open your IDE and open the terminal.
     npm install --prefix apps/backend -g && # install dependencies for the backend
     npm install # install dependencies for the root (just a little handy package to run both apps with one command)
     ```
+
+---
 
 ## What does the app do?
 
@@ -99,12 +109,16 @@ The backend is a simple Hono http server that listens for certain requests. It r
 
 You can view the first two by going to <http://localhost:3001> and <http://localhost:3001/orders> in your browser.
 
+---
+
 ## What do we need to do?
 
 We need to create a **Dockerfile** to **build** the frontend and backend to **images**, then run them as **containers**. I have already created a Dockerfile for the backend, which is located in the `apps/backend` directory. You will need to create a Dockerfile for the frontend.
 
 ??? info "Can I cheat?"
     Yes... If you choose to look at it, you might find it helpful. However, it comes with a few optimisations which may be confusing.
+
+---
 
 ## Building and running an image
 
@@ -132,6 +146,8 @@ docker run -p 3001:3001 docker-workshop-backend
     In order for our container to make connect with the outside world, we need to create a little tunnel. This is done by mapping a port on the host machine to a port on the container. In our case, I've configured the backend to run internally on port `3001`. Therefore, we need to map that internal port to a port on the host machine so we can access it. I kept it simple and mapped it to the same port, but you can change it to any port you like (given our frontend knows about it). Ports are mapped like this: `-p <host-port>:<container-port>` This also improves security, as you can run multiple containers on the same host machine without them interfering with each other.
 
 Now, visit [http://localhost:3001](http://localhost:3001) to see the backend now running from a Docker container.
+
+---
 
 ## Manual build
 
@@ -168,6 +184,8 @@ The `build` and `start` scripts are located in `apps/frontend/package.json`.
 ```
 
 You can run these commands in the terminal yourself and open it up at <http://localhost:9876/> to see the optimised production build of the frontend. Notice how the bottom text has changed from "development" to "production".
+
+---
 
 ## Creating a Dockerfile
 
@@ -283,6 +301,8 @@ If we open up Docker desktop, you can even inspect the container's filesystem to
 
 The frontend is now running at [http://localhost:3000](http://localhost:3000)!
 
+---
+
 ## Optimising the Dockerfile
 
 Let's think about what we've done. We've copied the source code, installed dependencies, built the app, and served the build files. But there are a few things we can do to optimise the Dockerfile:
@@ -342,6 +362,8 @@ EXPOSE 9876
 CMD ["npm", "run", "start"]
 ```
 
+---
+
 ## Final touches
 
 So now we know how to build a Dockerfile into an image and run it as a container. But there is one more thing we can do to make our lives easier: **Docker Compose**.
@@ -355,6 +377,8 @@ docker compose up
 ```
 
 You also might find the frontend starting on port `9876` inside the container to be a little confusing. You can change the port mapping in the `docker-compose.yml` file to map it to port `3000` on the host machine. Don't forget to change the `package.json` script and the `EXPOSE` command in the Dockerfile as well.
+
+---
 
 ## Conclusion
 

@@ -26,6 +26,8 @@ This workshop covers a brief overview of the most common tools and technologies 
     - [Roadmaps](#roadmaps)
   - [Word of Encouragement](#word-of-encouragement)
 
+---
+
 ## What and Why Web Development?
 
 ### What is web development?
@@ -44,6 +46,8 @@ This workshop covers a brief overview of the most common tools and technologies 
     "Half of Developers are Web Developers"
     ![occupation](https://cdn-media-1.freecodecamp.org/images/1*l3TGs4XuDhqGfIdeef9AeA.jpeg)
 
+
+---
 
 ## FAQs about Web Development
 
@@ -102,6 +106,8 @@ In summary, the best way to learn:
 
     It is much more valuable for you to learn a backend framework because that helps you build a **functional** app.
 
+
+---
 
 ## Basics of Web and Limitation
 
@@ -309,6 +315,8 @@ In summary, the best way to learn:
         export default memo(Services)
         ```
 
+---
+
 ## Server-side Applications (Backend)
 
 <div style="display:flex;justify-content:space-around;flex-wrap:wrap;flex-wrap:wrap;">
@@ -342,6 +350,8 @@ Allows for database design to be modified without complex migration or data loss
 **SQL**
 
 Typically faster and better for large amounts of data or systems that need data consistency and reliability
+
+---
 
 ## Others
 
@@ -453,6 +463,8 @@ There's an open-source community that maintains a learning roadmap for developer
 
 ??? info "Dev-Ops"
     ![devops-roadmap](https://roadmap.sh/roadmaps/devops.png)
+
+---
 
 ## Word of Encouragement
 
