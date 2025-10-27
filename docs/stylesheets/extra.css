@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=IBM+Plex+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
 :root {
   --md-text-font: "IBM Plex Sans";
@@ -8,8 +8,8 @@
 [data-md-color-scheme="cfclight"] {
   --md-default-fg-color: #000;
   --md-default-fg-color--light: #000;
-  --md-default-fg-color--lighter: #fff;
-  --md-default-fg-color--lightest: #fff;
+  --md-default-fg-color--lighter: #5f5f5f;
+  --md-default-fg-color--lightest: #c5c5c5;
   --md-default-bg-color: #fff;
   --md-default-bg-color--light: #fff;
   --md-default-bg-color--lighter: #fff;
@@ -17,7 +17,7 @@
 
   --md-code-fg-color: #000;
   --md-code-bg-color: #fafafa;
-  --md-code-hl-color: #559999;
+  --md-code-hl-color: #01f1cc;
   --md-code-hl-color--light: #5599991a;
   --md-code-hl-number-color: #d52a2a;
   --md-code-hl-special-color: #db1457;
@@ -33,7 +33,7 @@
   --md-code-hl-variable-color: var(--md-default-fg-color--light);
   
   --md-typeset-color: var(--md-default-fg-color);
-  --md-typeset-a-color: #488;
+  --md-typeset-a-color: #a5a5a5;
   --md-typeset-del-color: #f5503d26;
   --md-typeset-ins-color: #0bd57026;
   --md-typeset-kbd-color: #fafafa;
@@ -62,8 +62,8 @@
   --md-primary-fg-color--dark: #000;
   --md-primary-bg-color: #fff;
   --md-primary-bg-color--light: #fff;
-  --md-accent-fg-color: #488;
-  --md-accent-fg-color--transparent: #488;
+  --md-accent-fg-color: #01f1cc;
+  --md-accent-fg-color--transparent: rgba(1, 241, 204, 0.5);
   --md-accent-bg-color: #fff;
   --md-accent-bg-color--light: #fff;
   }
@@ -71,7 +71,7 @@
 [data-md-color-scheme="cfcdark"] {
   --md-default-fg-color: #fff;
   --md-default-fg-color--light: #fff;
-  --md-default-fg-color--lighter: #000;
+  --md-default-fg-color--lighter: #a5a5a5;
   --md-default-fg-color--lightest: #000;
   --md-default-bg-color: #000;
   --md-default-bg-color--light: #000;
@@ -80,7 +80,7 @@
 
   --md-code-fg-color: #fff;
   --md-code-bg-color: #101010;
-  --md-code-hl-color: #559999;
+  --md-code-hl-color: #01f1cc;
   --md-code-hl-color--light: #5599991a;
   --md-code-hl-number-color: #d52a2a;
   --md-code-hl-special-color: #db1457;
@@ -96,7 +96,7 @@
   --md-code-hl-variable-color: var(--md-default-fg-color--light);
   
   --md-typeset-color: var(--md-default-fg-color);
-  --md-typeset-a-color: #8ff;
+  --md-typeset-a-color: #dfdfdf;
   --md-typeset-del-color: #f5503d26;
   --md-typeset-ins-color: #0bd57026;
   --md-typeset-kbd-color: #fafafa;
@@ -125,8 +125,85 @@
   --md-primary-fg-color--dark: #000;
   --md-primary-bg-color: #fff;
   --md-primary-bg-color--light: #fff;
-  --md-accent-fg-color: #4db4d0;
-  --md-accent-fg-color--transparent: #4db4d0;
+  --md-accent-fg-color: #01f1cc;
+  --md-accent-fg-color--transparent: rgba(1, 241, 204, 0.7);
   --md-accent-bg-color: #000;
   --md-accent-bg-color--light: #000;
+}
+
+.md-typeset a {
+  text-decoration: underline;
+  text-decoration-thickness: 0.5px;
+  text-underline-offset: 2px !important;
+}
+
+.md-typeset h1 {
+  color: var(--md-accent-fg-color) !important;
+}
+
+.md-typeset h3 {
+  margin-top: 2rem !important;
+  margin-bottom: 1rem !important;
+  font-weight: 420 !important;
+  color: var(--md-accent-fg-color) !important;
+}
+
+.md-typeset h4 {
+  margin-top: 1.5rem !important;
+  margin-bottom: 0.5rem !important;
+  font-weight: 470 !important;
+  font-size: 1.05em !important;
+}
+
+.md-typeset h2 {
+  position: relative;
+  padding: 1rem;
+  font-weight: 480 !important;
+  background-color: #01f1cd11;
+  border-radius: 0.3rem;
+  border: 0.5px solid var(--md-accent-fg-color);
+  margin-top: 2rem !important;
+  margin-bottom: 2rem !important;
+}
+
+.md-nav--secondary .md-nav__item--active>.md-nav__link{
+  color: var(--md-accent-fg-color) !important;
+}
+
+/* extra info box styling */
+.md-typeset .info>.admonition-title,.md-typeset .info>summary {
+  background-color: var(--md-default-bg-color) !important;
+}
+
+.md-typeset .admonition.info,.md-typeset details.info {
+  border-color: rgba(1, 241, 204, 0.8) !important;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.md-typeset .info>.admonition-title:before,.md-typeset .info>summary:before {
+  background-color: rgba(1, 241, 204, 0.8) !important;
+}
+
+.md-typeset .info>.admonition-title:after,.md-typeset .info>summary:after {
+  color: rgba(1, 241, 204, 0.8) !important;
+}
+
+.md-typeset h2 ~ *:not(h2):not(hr) {
+  margin-left: 1rem !important;
+}
+
+.md-typeset h3 ~ *:not(h3):not(h2):not(hr){
+  margin-left: 2rem !important;
+}
+
+.md-typeset h4 ~ *:not(h4):not(h3):not(h2):not(hr) {
+  margin-left: 2.5rem !important;
+}
+
+hr {
+  margin-top: 3rem !important;
+  margin-bottom: 3rem !important;
+  border-color: 0.5px solid var(--md-default-fg-color) !important;
+  height: 0.5px;
 }
