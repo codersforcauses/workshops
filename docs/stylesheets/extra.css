@@ -63,7 +63,7 @@
   --md-primary-bg-color: #fff;
   --md-primary-bg-color--light: #fff;
   --md-accent-fg-color: #01f1cc;
-  --md-accent-fg-color--transparent: rgba(1, 241, 204, 0.5);
+  --md-accent-fg-color--transparent: rgba(1, 241, 204, 0.1);
   --md-accent-bg-color: #fff;
   --md-accent-bg-color--light: #fff;
   }
@@ -126,7 +126,7 @@
   --md-primary-bg-color: #fff;
   --md-primary-bg-color--light: #fff;
   --md-accent-fg-color: #01f1cc;
-  --md-accent-fg-color--transparent: rgba(1, 241, 204, 0.7);
+  --md-accent-fg-color--transparent: rgba(1, 241, 204, 0.1);
   --md-accent-bg-color: #000;
   --md-accent-bg-color--light: #000;
 }
@@ -170,9 +170,49 @@
   color: var(--md-accent-fg-color) !important;
 }
 
-/* extra info box styling */
-.md-typeset .info>.admonition-title,.md-typeset .info>summary {
+.md-nav--primary .md-nav__item .md-nav__link--active {
+    background: var(--md-accent-fg-color--transparent);
+    color: var(--md-accent-fg-color);
+}
+
+.md-nav--primary .md-nav__link {
+    margin-top: 1rem !important;
+    padding: .6rem .8rem !important;
+}
+.md-nav--primary .md-nav__title~.md-nav__list {
+    box-shadow: none !important;
+}
+
+.md-nav__link {
+    align-items: flex-start;
+    border-radius: .4rem;
+    cursor: pointer;
+    display: flex;
+    gap: .4rem !important;
+    margin-left: .2rem;
+    margin-right: .2rem;
+    padding: .35rem .8rem;
+    transition: color .25s, background-color .25s;
+}
+
+/* extra info details styling */
+
+.md-typeset .info>.admonition-title,.md-typeset summary {
   background-color: var(--md-default-bg-color) !important;
+}
+
+.md-typeset .admonition, .md-typeset details {
+    background-color: var(--md-admonition-bg-color);
+    border: .05rem solid #448aff;
+    border-radius: .2rem;
+    box-shadow: var(--md-shadow-z1);
+    color: var(--md-admonition-fg-color);
+    display: flow-root;
+    font-size: .64rem;
+    margin: 1.5625em 0;
+    padding: 0.2rem 0.8rem !important;
+    page-break-inside: avoid;
+    transition: box-shadow 125ms;
 }
 
 .md-typeset .admonition.info,.md-typeset details.info {
@@ -188,6 +228,11 @@
 .md-typeset .info>.admonition-title:after,.md-typeset .info>summary:after {
   color: rgba(1, 241, 204, 0.8) !important;
 }
+
+[dir=ltr] .md-typeset .admonition-title,[dir=ltr] .md-typeset summary {
+    padding-left: 2.2rem !important;
+}
+
 
 .md-typeset h2 ~ *:not(h2):not(hr) {
   margin-left: 1rem !important;
