@@ -1,3 +1,7 @@
+Here are some (hopefully) useful websites for web dev/ design, let us know if you have any more to add!
+
+---
+
 ## Open-Source Component Libraries
 ??? example "React Components - [React Bits](https://reactbits.dev/)"
     ![reactbits](../images/../2025-2026-summer-intermediate/intermediate-imgs/reactbits.png)

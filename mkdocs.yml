@@ -115,8 +115,10 @@ nav:
 - 2025/2026 Summer Intermediate:
   - Recommended Resources: 2025-2026-summer-intermediate/recommended-resources.md
   - Introduction to Web Development: 2025-2026-summer-intermediate/introduction-to-web-development.md
-  - Practical Software Engineering Workflow: 2025-2026-summer-intermediate/practical-software-engineering-workflow.md
+  - Introduction to Frontend Frameworks: 2025-2026-summer-intermediate/introduction-to-frontend-frameworks.md
+  - Introduction to React: 2025-2026-summer-intermediate/introduction-to-react.md
   - Working With Typescript: 2025-2026-summer-intermediate/working-with-typescript.md
+  - Practical Software Engineering Workflow: 2025-2026-summer-intermediate/practical-software-engineering-workflow.md
 - 2025 Winter:
   - Introduction to Web Development: 2025-winter/introduction-to-web-development.md
   - Practical Software Engineering Workflow: 2025-winter/practical-software-engineering-workflow.md
