@@ -3,6 +3,8 @@
 
 ![dog](./images/dog.png)
 
+---
+
 ## Decomposing the HTML User Interface
 ??? example "Complete code"
     ```html
@@ -283,6 +285,8 @@ or with JSX
     </div>
 ```
 
+---
+
 ## Intro to React
 
 <iframe width="100%" height="500rem"
@@ -343,6 +347,8 @@ allowfullscreen></iframe>
     }
     ```
 
+---
+
 ## React Component Hierarchy and State Flow
 
 In a React application, components are organized into a **hierarchy**. Components can be **parents**, **children**, or **siblings** of each other, and data typically flows **from parent to child** through **props**.
@@ -398,6 +404,8 @@ const Parent = () => {
 
 React enforces a **top-down data flow**. Children **cannot directly update** a parent’s state, but parents can **pass down callbacks** to allow children to trigger updates.
 
+---
+
 ## Getting Started with React
 Getting Started with the app
 
@@ -416,6 +424,8 @@ Notice that it created a couple of folders. In a couple of sentences:
 `package.json` - dependencies and scripts for the app
 
 type `yarn start` to run the development version of React (it will run `react-scripts` start within the node_modules … so running `react-scripts` start will not exactly be the same). This will serve up React on a port.
+
+---
 
 ## React Frameworks
 React is only a library, and so only controls behaviour *on* the webpage and not *between* webpages, etc. Often React will be used as part of a React-based framework such as:

@@ -1,6 +1,8 @@
 # Introduction to Frontend Frameworks
 *An intuitive explanation of why frontend frameworks are used*
 
+---
+
 ## Frontend Engineering
 
 - Frontend Engineering, one of the most important aspect of web dev
@@ -11,6 +13,8 @@
     ![frontend-meme-2](./images/frontend-meme-2.jpg)
     ![frontend-meme-3](./images/frontend-meme-3.jpg)
     ![frontend-meme-4](./images/frontend-meme-4.jpg)
+
+---
 
 ## Job Market and Trends
 
@@ -32,6 +36,8 @@
 <!-- ???+ examples "Github Copilot and Squarespace" -->
 <!--     ![copilot](./images/copilot.png) -->
 <!--     ![squarespace](./images/squarespace.png) -->
+
+---
 
 ## Problems 
 
@@ -107,6 +113,8 @@ How do we handle when we "Submit Guess"?
        - code complexity
        - hard to keep track of states (especially if different portion of the UI relies on a certain data)
 
+---
+
 ## How do we fix it?
 
 ### Cross-Browser Support
@@ -158,6 +166,8 @@ Bundles the JavaScript modules into a single minified file
 **What if HTML has condition?**
 
 - Conditional rendering (solves Reloading to show different view)
+
+---
 
 ## What's next?
 Let's explore a frontend framework, React!
