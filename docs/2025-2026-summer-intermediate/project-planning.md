@@ -1,10 +1,13 @@
 # The Basics of Software Project Planning
+> Presented By: Oscar Hermoso, Cloud Automation + DevOps Lead @ RAC
 
-Why are we planning at all?
+#### Why are we planning at all?
 
 - Helps break down a large project into manageable pieces
 - Helps prioritise important features (and deprioritise unnecessary ones)
 - Enables your team to complete work in parallel
+
+---
 
 ## Approach
 
@@ -20,6 +23,8 @@ Top-down approach:
 
 Not strictly linear.
 
+---
+
 ## Goals
 
 What are you trying to achieve?
@@ -31,6 +36,8 @@ What is out of scope?
 
 (Hint: For an MVP, don't worry about cybersecurity, performance, accessibility, etc.)
 
+---
+
 ## Personas
 
 Who are you building this for?
@@ -41,6 +48,8 @@ Common personas:
 - Client (if applicable)
 - Developers (you and your team)
 
+---
+
 ## User Journey
 
 Once you've identified personas, features naturally take a user story format:
@@ -50,6 +59,8 @@ Once you've identified personas, features naturally take a user story format:
 You should do some research here - look at similar applications.
 
 Good to do some light wireframing here - sketch out the pages of your application.
+
+---
 
 ## Writing Tickets
 
@@ -92,6 +103,8 @@ Take the format:
 >
 > Extra info:
 > [Browser, error logs, etc]
+
+---
 
 ## Some parting advice
 
