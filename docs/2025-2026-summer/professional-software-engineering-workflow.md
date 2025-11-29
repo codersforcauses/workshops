@@ -73,6 +73,8 @@ It's good to use this branch for development to increase visibility of any work-
 
 **Watch out!** The branch is created from main at the point in time when the ticket was assigned, it might be out of date when you start working on it. Using a Git GUI can be very helpful help here.
 
+![GitKraken Git GUI, showing CFC branch automation](images/gitkraken-git-gui.png)
+
 #### Development
 
 Push commits with your code often.
