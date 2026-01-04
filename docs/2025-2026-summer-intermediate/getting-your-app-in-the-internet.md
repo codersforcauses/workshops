@@ -33,7 +33,7 @@ sequenceDiagram
     Server ->> Client Browser: HTML, CSS, JS file / JSON response
 ```
 
-## A Simple Practical Example of a Server: Your Laptop as a Server for your Phone
+## (Optional to follow) A Simple Practical Example of a Server: Your Laptop as a Server for your Phone
 
 ???+ warning "This will not work in more complicated Networking"
     This is a simple example to help you understand the concept. This will not work for complicated networking such as the one that university has
@@ -126,7 +126,10 @@ en7: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
 3. Restart the computer
 4. Now when you go to your laptop and open the browser, you can type in `http://my-app.local:8000` to access your app with the local domain name.
 
-## Taking it now to the cloud!
+## Interactive Workshop Time: Taking it now to the cloud!
+
+???+ info "It is highly recommended that you follow along with the workshop"
+    It is highly recommended that you follow along with the workshop. This will help you understand the concepts better because you'll get your hands dirty, see things for yourself!
 
 Congratulations! You have successfully hosted your app already in your local network!
 
