@@ -1,10 +1,19 @@
 # Getting Your App in the Internet
 **An Introduction to Infrastructure to Host Your App in the Internet**
 
+Presented By:
+
+- [Frinze Lapuz](https://www.linkedin.com/in/frinze-erin-lapuz/), Developer Experience Software Engineer at [Atlassian](https://www.atlassian.com/)
+
+![Atlassian](./images/atlassian_logo.svg)
+
 ## Goal
 After this workshop, you will be able to:
 
 - Understand what's involved in hosting your app in the internet (from first principles)
+
+??? info "Why are we learning from first principles?"
+    First principle allows you to properly understand how each different parts of what we do connect with one another. When you know this first principle, whether you use AWS ECS, Google Cloud Run, Kubernetes, etc. - you'll be able to understand what it does under the hood enough for you to consider how that one particular tech handle the parts that we're doing in this workshop.
 
 ## Prerequisites
 
@@ -141,7 +150,7 @@ However, there's a couple of things now that you need to consider:
 
 In this workshop, we'll be focusing on hosting your app in the cloud.
 
-???+ info "Self-Hosting"
+??? info "Self-Hosting"
     If you're interested in what's involved in self-hosting, there's only really a couple of differences.
 
     Firstly, you'll need to set your server up to always have power and always running. The next is, you'll need to configure your server to accessible in the public internet. Your router that you have will have an assigned public IP address. You just need to configure your router to do "port-forwarding" via private IP address to your server.
@@ -171,11 +180,11 @@ You can use other providers such as AWS EC2, GCP Compute Engine, etc.
 
 1. Login to DigitalOcean
 2. Go to Droplet -> Create a new Droplet. Select these options
-   1. Region: Pick a region closest to you (for Perth - it will either be Singapore or Sydney)
-   2. Choose an Image: Go to "Marketplace" and search "Docker" (You'll probably find - "Docker latest on Ubuntu 22.04"). Choose that
-   3. Droplet Type: Just do Basic (but it's up to you)
-   4. CPU Options: Regular (Disk type: SSD). `$6/mo` (the lowest possible option) should be enough
-   5. Authentication Method: Select SSH Key - then add a new SSH key. Follow the instructions. If this doesn't work, please ask for help.
+      1. Region: Pick a region closest to you (for Perth - it will either be Singapore or Sydney)
+      2. Choose an Image: Go to "Marketplace" and search "Docker" (You'll probably find - "Docker latest on Ubuntu 22.04"). Choose that
+      3. Droplet Type: Just do Basic (but it's up to you)
+      4. CPU Options: Regular (Disk type: SSD). `$6/mo` (the lowest possible option) should be enough
+      5. Authentication Method: Select SSH Key - then add a new SSH key. Follow the instructions. If this doesn't work, please ask for help.
 3. Once you've created the Droplet, you'll be able to see the IP address of the Droplet.
 4. Connect to the Droplet using the SSH key you added.
 
@@ -283,17 +292,42 @@ Now that's a demonstration of you serving something in the wider internet!
 
 ## Let's add a Recognizable Domain Name to your app!
 
-???+ note "Where do you buy domain names?"
+??? note "Where do you buy domain names?"
     You can buy it in multiple providers. If you want recommendations, Namecheap and Cloudflare are good options.
 
     Cloudflare gives you an extra feature about protected DNS by doing "proxy" mode. This means that the IP address associated with the domain name is the IP address of the Cloudflare server. Only when the request is "allowed" (by your rules), the request is forwarded to your server, so you don't expose the IP address of your server to the wider internet.
+
+    Here's how it works:
+
+    ```mermaid
+    sequenceDiagram
+        participant Client as Client Browser
+        participant DNS as DNS Server
+        participant CF as Cloudflare Proxy
+        participant Server as Your Server
+        
+        Client->>DNS: What's the IP for my-app.codersforcauses.org?
+        DNS-->>Client: Cloudflare's IP (not your server IP)
+        Client->>CF: GET my-app.codersforcauses.org (request)
+        CF->>CF: Check security rules
+        
+        alt Request Allowed ✓
+            CF->>Server: Forward request
+            Server-->>CF: Response (HTML, JSON, etc)
+            CF-->>Client: Response
+        else Request Blocked ❌
+            CF-->>Client: 403 Forbidden / Error Response
+        end
+        
+        Note over Client,Server: Your actual server IP stays hidden! 🔒
+    ```
 
 Assuming you now have a domain name (or you're borrowing the codersforcauses.org domain name), you can now configure your DNS to point to your server.
 
 ???+ info "Subdomains"
     For this workshop, we'll give you access to subdomains of codersforcauses.org. We are able to create as much subdomain for you.
 
-You may want to create two subdomains for your app. One for the frontend and one for the backend.
+You may want to create a subdomain for your app.
 
 Borrow a CFC Laptop logged in to the Cloudflare DNS management page.
 
@@ -505,6 +539,34 @@ So far we've setup the infrastructure to host your app. However, when you do sof
 
 The process of automating how your code gets to production is called "Continuous Deployment" (sometimes it's referred to as "Continuous Delivery" in a "Product Engineering" context where each code change is a "deliverable").
 
+Here's the complete pipeline:
+
+```mermaid
+sequenceDiagram
+    participant Dev as Developer
+    participant GitHub as GitHub
+    participant Actions as GitHub Actions
+    participant Registry as GitHub Registry
+    participant Watchtower as Watchtower
+    participant Server as Your Server
+    
+    Dev->>GitHub: Push code & create PR
+    GitHub->>Actions: Trigger workflow (PR merged)
+    Actions->>Actions: Build Docker image
+    Actions->>Registry: Publish image
+    
+    loop Poll every 30 seconds
+        Watchtower->>Registry: Check for new images
+        Registry-->>Watchtower: New version found!
+    end
+    
+    Watchtower->>Watchtower: Pull new image
+    Watchtower->>Server: Start new container (blue-green)
+    Server-->>Watchtower: New container healthy ✓
+    Watchtower->>Server: Stop old container
+    Server-->>Watchtower: Deployment complete ✓
+```
+
 In this workshop, we've setup "Watchtower" to automatically update your app when you push to the repository. How it works is essentially, whenever there's a new image pushed to the registry, Watchtower will pull it, start the container with the new image and stop the old one.
 
 Because we know that the images pushed to the registry happens only when code is merged to the main branch, this means that whenever you merge your code to the main branch, your app will automatically be picked up and deployed to your server.
@@ -512,6 +574,23 @@ Because we know that the images pushed to the registry happens only when code is
 For small projects, watchtower is a great way to automate your deployment. However, for larger projects with more critical serving requirements, you may want to use a more sophisticated CD tool (such as AWS ECS), but also other more sophisticated infrastructure setup such as supporting "Blue/Green" deployment, "Canary" deployment, "A/B" testing, etc.
 
 (if none of these buzzwords make sense, search it. You'll learn a lot! 🤓).
+
+??? info "Alternatives to Watchtower"
+    On top of the commercial ones like AWS ECS, Google Cloud Run, etc. - you can use things like Docker Swarm, Kubernetes... Or if you want simpler, there's MicroK8s, k3s, or if you want even simpler... There's making Github actions SSH into your server and run the commands to deploy your app.
+
+    But at the end of the day, these are all tradeoffs you gotta make between a number of factors:
+
+    - Complexity of the infrastructure
+    - Cost
+    - Scalability
+    - Reliability
+    - Maintainability
+    - Security
+    - Performance
+    - Availability
+    - Disaster Recovery
+
+    Sometimes if you want to be practical, choose the simplest one that works. A scalable and reliable app is useless if it doesn't have users 😜, so until you have proper users and you really need it to scale... Choose the simplest one that works!
 
 
 ## You're done!
