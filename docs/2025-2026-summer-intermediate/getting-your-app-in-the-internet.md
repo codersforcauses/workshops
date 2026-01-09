@@ -27,11 +27,6 @@ After this workshop, you will be able to:
 - Domain Name
 - Your app 😄
 
-I need a mermaid diagram that shows this
-1. Client Browser talks to DNS to get IP address for domain name `my-app.codersforcauses.org`
-2. Client Browser contacts the "Computer/Server"
-3. Server talks to the Server App (Django or NGINX) to serve the html file, json response
-
 ```mermaid
 sequenceDiagram
     Client Browser ->> DNS: my-app.codersforcauses.org
