@@ -107,14 +107,11 @@ In terms of using RESTful APIs, there are some naming and implementation convent
 
 - Python web framework for creating server-side application
 
-Follows the **MTV** (Model-Template-View) pattern:
+For this API workshop, think of it as **MVC**:
 
-- **Model** – Database schema and business logic
-- **Template** – HTML presentation (or JSON via DRF serializers for APIs)
-- **View** – Request/response logic (similar to "Controller" in traditional MVC)
-
-??? info "MTV vs MVC"
-    Django's naming is different from traditional MVC frameworks. Django's "View" handles what MVC calls a "Controller". In this API workshop, we skip Templates entirely — DRF serializers handle data formatting instead.
+- **Model** – Database (`models.py`)
+- **View** – What the client sees — JSON responses (`serializers.py`)
+- **Controller** – Request handling logic (`views.py` + `urls.py`)
 
 See [Documentation](https://www.djangoproject.com/)
 
