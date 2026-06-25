@@ -25,24 +25,25 @@ export const Step6_AddField: React.FC = () => {
             startDelay={30}
             highlightNew={true}
           />
+          <div style={{ backgroundColor: '#1e1e3f', padding: 10, borderRadius: 8, fontFamily: 'monospace', fontSize: 14, color: '#e0e0e0', marginTop: 10 }}>
+            <div style={{ color: '#666', marginBottom: 3 }}>📋 migrations/</div>
+            <div>0001_initial.py</div>
+          </div>
+          <div style={{ marginTop: 10, zoom: 0.85 }}>
+            <DatabaseTable
+              tableName="project_project"
+              columns={["id", "name", "created_at"]}
+            />
+          </div>
         </EnvironmentColumn>
         <EnvironmentColumn title="PROD ENVIRONMENT" color="#4aff9e">
-          <div style={{
-            backgroundColor: 'rgba(255, 152, 0, 0.12)',
-            border: '1px solid rgba(255, 152, 0, 0.4)',
-            borderRadius: 8,
-            padding: '8px 16px',
-            marginBottom: 15,
-            display: 'flex',
-            alignItems: 'center',
-            gap: 8,
-          }}>
-            <span style={{ fontSize: 20 }}>⚠️</span>
-            <span style={{ color: '#ff9800', fontSize: 16, fontWeight: 'bold' }}>OUT OF SYNC — still on old version</span>
-          </div>
-          <div style={{ zoom: 0.7, opacity: 0.7 }}>
-            <div style={{ backgroundColor: '#1e1e3f', padding: 15, borderRadius: 8, fontFamily: 'monospace', color: '#888', marginBottom: 20 }}>
+          <div style={{ zoom: 0.7 }}>
+            <div style={{ backgroundColor: '#1e1e3f', padding: 15, borderRadius: 8, fontFamily: 'monospace', color: '#888', marginBottom: 15 }}>
               {oldModelCode.map((l, i) => <div key={i}>{l || ' '}</div>)}
+            </div>
+            <div style={{ backgroundColor: '#1e1e3f', padding: 12, borderRadius: 8, fontFamily: 'monospace', fontSize: 14, color: '#888', marginBottom: 15 }}>
+              <div style={{ color: '#666', marginBottom: 5 }}>📋 migrations/</div>
+              <div>0001_initial.py</div>
             </div>
             <DatabaseTable 
               tableName="project_project"

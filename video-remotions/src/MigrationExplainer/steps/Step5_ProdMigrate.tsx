@@ -68,13 +68,15 @@ export const Step5_ProdMigrate: React.FC = () => {
       <div style={{ display: 'flex', flex: 1, gap: 40, paddingBottom: 100 }}>
         <EnvironmentColumn title="💻 DEV" color="#4a9eff">
           <div style={{ display: 'flex', flexDirection: 'column', gap: 15 }}>
-            <div style={{ backgroundColor: '#1e1e3f', padding: 12, borderRadius: 8, fontFamily: 'monospace', fontSize: 16, color: '#e0e0e0' }}>
+            <div style={{ backgroundColor: '#1e1e3f', padding: 12, borderRadius: 8, fontFamily: 'monospace', fontSize: 14, color: '#e0e0e0' }}>
               <div style={{ color: '#666', marginBottom: 5 }}>📄 models.py</div>
+              <div style={{ color: '#888' }}>from django.db import models</div>
+              <div>&nbsp;</div>
               <div>class Project(models.Model):</div>
-              <div>    name = CharField(max_length=100)</div>
-              <div>    created_at = DateTimeField()</div>
+              <div>    name = models.CharField(max_length=100)</div>
+              <div>    created_at = models.DateTimeField(auto_now_add=True)</div>
             </div>
-            <div style={{ backgroundColor: '#1e1e3f', padding: 12, borderRadius: 8, fontFamily: 'monospace', fontSize: 16, color: '#e0e0e0' }}>
+            <div style={{ backgroundColor: '#1e1e3f', padding: 12, borderRadius: 8, fontFamily: 'monospace', fontSize: 14, color: '#e0e0e0' }}>
               <div style={{ color: '#666', marginBottom: 5 }}>📋 migrations/</div>
               <div>0001_initial.py</div>
             </div>
@@ -87,13 +89,15 @@ export const Step5_ProdMigrate: React.FC = () => {
 
         <EnvironmentColumn title="☁️ PROD" color="#4aff9e">
           <div style={{ display: 'flex', flexDirection: 'column', gap: 15 }}>
-            <div style={{ backgroundColor: '#1e1e3f', padding: 12, borderRadius: 8, fontFamily: 'monospace', fontSize: 16, color: '#e0e0e0' }}>
+            <div style={{ backgroundColor: '#1e1e3f', padding: 12, borderRadius: 8, fontFamily: 'monospace', fontSize: 14, color: '#e0e0e0' }}>
               <div style={{ color: '#666', marginBottom: 5 }}>📄 models.py</div>
+              <div style={{ color: '#888' }}>from django.db import models</div>
+              <div>&nbsp;</div>
               <div>class Project(models.Model):</div>
-              <div>    name = CharField(max_length=100)</div>
-              <div>    created_at = DateTimeField()</div>
+              <div>    name = models.CharField(max_length=100)</div>
+              <div>    created_at = models.DateTimeField(auto_now_add=True)</div>
             </div>
-            <div style={{ backgroundColor: '#1e1e3f', padding: 12, borderRadius: 8, fontFamily: 'monospace', fontSize: 16, color: '#e0e0e0' }}>
+            <div style={{ backgroundColor: '#1e1e3f', padding: 12, borderRadius: 8, fontFamily: 'monospace', fontSize: 14, color: '#e0e0e0' }}>
               <div style={{ color: '#666', marginBottom: 5 }}>📋 migrations/</div>
               <div>0001_initial.py</div>
             </div>

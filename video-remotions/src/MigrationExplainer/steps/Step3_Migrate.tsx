@@ -22,6 +22,10 @@ export const Step3_Migrate: React.FC = () => {
             filename="models.py"
             existingLines={modelCode}
           />
+          <div style={{ backgroundColor: '#1e1e3f', padding: 10, borderRadius: 8, fontFamily: 'monospace', fontSize: 14, color: '#e0e0e0', marginTop: 10 }}>
+            <div style={{ color: '#666', marginBottom: 3 }}>📋 migrations/</div>
+            <div>0001_initial.py</div>
+          </div>
           <TerminalTyping 
             command="python manage.py migrate"
             output={[
@@ -32,7 +36,7 @@ export const Step3_Migrate: React.FC = () => {
             ]}
             startDelay={30}
           />
-          <div style={{ marginTop: 20 }}>
+          <div style={{ marginTop: 10 }}>
             <DatabaseTable 
               tableName="project_project"
               columns={["id", "name", "created_at"]}

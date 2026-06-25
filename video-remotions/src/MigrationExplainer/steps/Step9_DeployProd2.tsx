@@ -58,31 +58,41 @@ export const Step9_DeployProd2: React.FC = () => {
           gap: 20,
         }}>
           <div style={{ color: '#aaa', fontSize: 22, marginBottom: 5 }}>
-            📦 New files being deployed:
+            📦 Files being deployed:
           </div>
-          <div style={{ display: 'flex', gap: 30 }}>
+          <div style={{ display: 'flex', gap: 20, flexWrap: 'wrap', justifyContent: 'center' }}>
             <div style={{
               backgroundColor: '#2d2d4e',
-              padding: '15px 30px',
+              padding: '12px 24px',
               borderRadius: 8,
               color: '#4a9eff',
-              fontSize: 24,
+              fontSize: 20,
               border: '2px solid #4a9eff',
             }}>
-              📄 models.py <span style={{ color: '#ffeb3b', fontSize: 16 }}>(updated)</span>
+              📄 models.py <span style={{ color: '#ffeb3b', fontSize: 14 }}>(updated)</span>
             </div>
             <div style={{
               backgroundColor: '#2d2d4e',
-              padding: '15px 30px',
+              padding: '12px 24px',
+              borderRadius: 8,
+              color: '#e0e0e0',
+              fontSize: 20,
+              border: '2px solid #555',
+            }}>
+              📋 0001_initial.py <span style={{ color: '#888', fontSize: 14 }}>(existing)</span>
+            </div>
+            <div style={{
+              backgroundColor: '#2d2d4e',
+              padding: '12px 24px',
               borderRadius: 8,
               color: '#ffeb3b',
-              fontSize: 24,
+              fontSize: 20,
               border: '2px solid #ffeb3b',
               boxShadow: migrationPulse > 0
                 ? `0 0 ${migrationPulse * 25}px ${migrationPulse * 8}px rgba(255, 235, 59, ${migrationPulse * 0.5})`
                 : 'none',
             }}>
-              📋 migrations/0002_add_content.py <span style={{ fontSize: 16 }}>NEW!</span>
+              📋 0002_add_content.py <span style={{ fontSize: 14 }}>NEW!</span>
             </div>
           </div>
         </div>
