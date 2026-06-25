@@ -10,6 +10,7 @@ interface TerminalTypingProps {
   outputDelay?: number;
   startDelay?: number;
   title?: string;
+  instant?: boolean;  // Command appears instantly (automated/Docker execution)
 }
 
 export const TerminalTyping: React.FC<TerminalTypingProps> = ({
@@ -20,11 +21,15 @@ export const TerminalTyping: React.FC<TerminalTypingProps> = ({
   outputDelay = 15,
   startDelay = 0,
   title,
+  instant = false,
 }) => {
   const frame = useCurrentFrame();
   const { visibleText, cursorVisible, isComplete } = useTypingAnimation(command, typingSpeed, startDelay);
 
-  const commandEndFrame = startDelay + command.length * typingSpeed;
+  // In instant mode: command appears immediately, output starts after a short delay
+  const effectiveVisibleText = instant ? (frame >= startDelay ? command : '') : visibleText;
+  const effectiveCursor = instant ? false : cursorVisible;
+  const commandEndFrame = instant ? startDelay + 5 : startDelay + command.length * typingSpeed;
   const outputStartFrame = commandEndFrame + outputDelay;
 
   const allOutputDoneFrame = outputStartFrame + output.length * 10 + 8;
@@ -77,9 +82,9 @@ export const TerminalTyping: React.FC<TerminalTypingProps> = ({
       {/* Content */}
       <div style={{ padding: '20px', flex: 1, overflow: 'hidden' }}>
         <div style={{ marginBottom: '10px' }}>
-          <span style={{ color: '#4aff9e', marginRight: '10px' }}>{prompt}</span>
-          <span>{visibleText}</span>
-          {cursorVisible && <span>|</span>}
+          <span style={{ color: instant ? '#0db7ed' : '#4aff9e', marginRight: '10px' }}>{instant ? '▶ ' : prompt}</span>
+          <span>{effectiveVisibleText}</span>
+          {effectiveCursor && <span>|</span>}
         </div>
 
         {output.map((line, i) => {

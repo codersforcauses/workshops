@@ -16,6 +16,8 @@ export const Step5_ProdMigrate: React.FC = () => {
             command="python manage.py migrate"
             output={["Applying project.0001_initial... OK"]}
             startDelay={30}
+            instant={true}
+            title="Docker: web-app"
           />
         </div>
         <div style={{ width: '50%' }}>
@@ -24,7 +26,7 @@ export const Step5_ProdMigrate: React.FC = () => {
             columns={["id", "name", "created_at"]}
             isNew={true}
             showEmptyBefore={true}
-            startDelay={130}
+            startDelay={75}
           />
         </div>
       </div>

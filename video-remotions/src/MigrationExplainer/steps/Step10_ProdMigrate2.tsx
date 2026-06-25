@@ -16,6 +16,8 @@ export const Step10_ProdMigrate2: React.FC = () => {
             command="python manage.py migrate"
             output={["Applying project.0002_add_content... OK"]}
             startDelay={30}
+            instant={true}
+            title="Docker: web-app"
           />
         </div>
         <div style={{ width: '50%' }}>
@@ -23,7 +25,7 @@ export const Step10_ProdMigrate2: React.FC = () => {
             tableName="project_project"
             columns={["id", "name", "created_at", "content"]}
             newColumns={["content"]}
-            startDelay={130}
+            startDelay={75}
           />
         </div>
       </div>
