@@ -1,18 +1,18 @@
 import React from 'react';
 
 interface EnvironmentColumnProps {
-  type: 'dev' | 'prod';
+  title: string;
+  color: string;
   children: React.ReactNode;
+  grayedOut?: boolean;
 }
 
 export const EnvironmentColumn: React.FC<EnvironmentColumnProps> = ({
-  type,
+  title,
+  color,
   children,
+  grayedOut = false,
 }) => {
-  const isDev = type === 'dev';
-  const color = isDev ? '#4a9eff' : '#4aff9e';
-  const label = isDev ? '💻 DEV' : '☁️ PROD';
-
   return (
     <div style={{
       flex: 1,
@@ -20,7 +20,8 @@ export const EnvironmentColumn: React.FC<EnvironmentColumnProps> = ({
       display: 'flex',
       flexDirection: 'column',
       border: `1px solid ${color}33`,
-      backgroundColor: 'rgba(255,255,255,0.02)',
+      backgroundColor: grayedOut ? 'rgba(255,255,255,0.01)' : 'rgba(255,255,255,0.02)',
+      opacity: grayedOut ? 0.5 : 1,
     }}>
       <div style={{
         padding: '15px 25px',
@@ -30,15 +31,15 @@ export const EnvironmentColumn: React.FC<EnvironmentColumnProps> = ({
         borderBottom: `4px solid ${color}`,
         backgroundColor: 'rgba(0,0,0,0.2)',
       }}>
-        {label}
+        {title}
       </div>
       <div style={{
         flex: 1,
-        padding: '30px',
+        padding: '20px',
         position: 'relative',
         display: 'flex',
         flexDirection: 'column',
-        gap: '30px',
+        gap: '15px',
       }}>
         {children}
       </div>
