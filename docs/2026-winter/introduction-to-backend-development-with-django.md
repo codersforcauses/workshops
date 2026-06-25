@@ -107,11 +107,12 @@ In terms of using RESTful APIs, there are some naming and implementation convent
 
 - Python web framework for creating server-side application
 
-For this API workshop, think of it as **MVC**:
+In this workshop, you'll work with these layers:
 
-- **Model** – Database (`models.py`)
-- **View** – What the client sees — JSON responses (`serializers.py`)
-- **Controller** – Request handling logic (`views.py` + `urls.py`)
+- **`models.py`** – defines your database structure
+- **`views.py`** – handles incoming requests and decides what to do
+- **`serializers.py`** – converts data to/from JSON (what the client sees)
+- **`urls.py`** – routes URLs to the right view
 
 See [Documentation](https://www.djangoproject.com/)
 
