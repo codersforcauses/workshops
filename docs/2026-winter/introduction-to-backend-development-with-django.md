@@ -89,13 +89,13 @@ In terms of using RESTful APIs, there are some naming and implementation convent
 ???+ info "CRUD to HTTP Verb Matching for JSON standard communications with REST-APIs"
     CRUD stands for Create, Read, Update, and Delete. RESTful APIs use HTTP verbs to specify the CRUD operation an endpoint is performing.
 
-    | HTTP Verb | CRUD Operation |    
-    | --------- | -------------- |
-    | POST | Create/Update |
-    | GET | Read |
-    | PUT | Update/Replace |
-    | PATCH | Update/Modify |
-    | DELETE | Delete |
+    | HTTP Verb | CRUD Operation | Example |
+    | --------- | -------------- | ------- |
+    | POST | Create | `POST /api/projects/` creates a new project |
+    | GET | Read | `GET /api/projects/1/` reads project with id 1 |
+    | PUT | Replace (whole resource) | `PUT /api/projects/1/` replaces all fields |
+    | PATCH | Update (partial) | `PATCH /api/projects/1/` updates specific fields |
+    | DELETE | Delete | `DELETE /api/projects/1/` deletes the project |
 
     ![rest-verbs](./images/rest-verbs.jpg)
 
@@ -107,34 +107,16 @@ In terms of using RESTful APIs, there are some naming and implementation convent
 
 - Python web framework for creating server-side application
 
-Follows MVC:
+Follows the **MTV** (Model-Template-View) pattern:
 
-- Model - database
-- View – Interface (API or User Interface)
-- Controller – URLs + routes
+- **Model** – Database schema and business logic
+- **Template** – HTML presentation (or JSON via DRF serializers for APIs)
+- **View** – Request/response logic (similar to "Controller" in traditional MVC)
+
+??? info "MTV vs MVC"
+    Django's naming is different from traditional MVC frameworks. Django's "View" handles what MVC calls a "Controller". In this API workshop, we skip Templates entirely — DRF serializers handle data formatting instead.
 
 See [Documentation](https://www.djangoproject.com/)
-
-??? info "How a Django Request Works"
-    ```mermaid
-    sequenceDiagram
-        participant Client
-        participant URL Router
-        participant View
-        participant Serializer
-        participant Model
-        participant Database
-        
-        Client->>URL Router: HTTP Request
-        URL Router->>View: Route to View/ViewSet
-        View->>Serializer: Validate Input
-        Serializer->>Model: Create/Query Objects
-        Model->>Database: SQL Query
-        Database-->>Model: Results
-        Model-->>Serializer: Python Objects
-        Serializer-->>View: Serialized Data
-        View-->>Client: HTTP Response (JSON)
-    ```
 
 ## What is Django REST Framework (DRF)?
 - library for creating REST-API
@@ -147,6 +129,27 @@ In:
 - Serialisers (payload validation and format)
 
 See [Documentation](https://www.django-rest-framework.org/)
+
+??? info "How a DRF API Request Works"
+    ```mermaid
+    sequenceDiagram
+        participant Client
+        participant URL Router
+        participant ViewSet
+        participant Serializer
+        participant Model
+        participant Database
+        
+        Client->>URL Router: HTTP Request (e.g. POST /api/projects/)
+        URL Router->>ViewSet: Route to ViewSet action
+        ViewSet->>Serializer: Validate input data
+        Serializer->>Model: Create/Query objects
+        Model->>Database: SQL Query
+        Database-->>Model: Results
+        Model-->>Serializer: Python objects
+        Serializer-->>ViewSet: Serialized JSON data
+        ViewSet-->>Client: HTTP Response (JSON)
+    ```
 
 ## Interactive Workshop Time!!!
 
@@ -187,6 +190,9 @@ Firstly, open your IDE (VSCode) and open the terminal.
     ```
 
 ### Initial files
+
+??? info "Django Project Structure Overview"
+    ![Django File Structure](./images/django-file-structure.png)
 
 ???+ info "Initial Files Created"
     - `manage.py` - the entrypoint of the Django application
@@ -396,6 +402,15 @@ When you have created that, check out `db.sqlite3` and you'll see that there's a
 
 Now visit the [Admin page](http://localhost:8000/admin) and you'll see the Project model there.
 
+??? warning "If the model does not appear in admin"
+    Checklist:
+    
+    - ✅ Model is registered in `project/admin.py`
+    - ✅ App is listed in `INSTALLED_APPS` in `settings.py`
+    - ✅ Migrations have been run (`python manage.py makemigrations` + `migrate`)
+    - ✅ Development server restarted if needed
+    - ✅ Logged in as a superuser (create one with `python manage.py createsuperuser`)
+
 ## Creation of a Model for ProjectFeedback
 
 ??? info "Quick Reference: ERD"
@@ -554,6 +569,9 @@ Now visit the admin interface and you'll see the ProjectFeedback model there.
         J --> L[Model]
         L --> M[Database]
     ```
+
+??? info "How a Request Flows Through URL Routing"
+    ![URL Routing Flow](./images/django-url-routing.png)
 
 ### Step 0: Initialise Rest Framework (This is done once for a django source code)
 
