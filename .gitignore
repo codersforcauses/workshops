@@ -4,3 +4,6 @@ site
 *.ipynb_checkpoints/
 
 .vscode/settings.json
+video-remotions/node_modules/
+video-remotions/out/
+fl_*/

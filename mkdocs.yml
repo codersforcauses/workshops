@@ -112,6 +112,8 @@ nav:
 - About: 
   - Overview: index.md
   - Contributions: contributions.md
+- 2026 Winter:
+  - Introduction to Backend Development with Django: 2026-winter/introduction-to-backend-development-with-django.md
 - 2025/2026 Summer Intermediate:
   - Recommended Resources: 2025-2026-summer-intermediate/recommended-resources.md
   - Project Planning: 2025-2026-summer-intermediate/project-planning.md
