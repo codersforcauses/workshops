@@ -1,5 +1,5 @@
 import React from 'react';
-import { useCurrentFrame } from 'remotion';
+import { useCurrentFrame, interpolate } from 'remotion';
 import { useTypingAnimation } from '../hooks/useTypingAnimation';
 
 interface CodeEditorProps {
@@ -30,6 +30,11 @@ export const CodeEditor: React.FC<CodeEditorProps> = ({
   const { visibleText } = useTypingAnimation(combinedNewText, typingSpeed, startDelay);
   const typedLines = visibleText.split('\n');
 
+  const typingDoneFrame = startDelay + combinedNewText.length * typingSpeed;
+  const editorPulse = (newLines.length > 0 && frame > typingDoneFrame && frame < typingDoneFrame + 30)
+    ? interpolate(frame, [typingDoneFrame, typingDoneFrame + 10, typingDoneFrame + 30], [0, 1, 0], { extrapolateRight: 'clamp' })
+    : 0;
+
   const linesToDisplay = [
     ...allLinesBeforeNew,
     ...typedLines,
@@ -52,7 +57,7 @@ export const CodeEditor: React.FC<CodeEditorProps> = ({
       fontFamily: 'monospace',
       fontSize: '20px',
       color: '#e0e0e0',
-      boxShadow: '0 10px 30px rgba(0,0,0,0.5)',
+      boxShadow: `0 10px 30px rgba(0,0,0,0.5)${editorPulse > 0 ? `, 0 0 ${editorPulse * 20}px rgba(255, 235, 59, ${editorPulse * 0.5})` : ''}`,
     }}>
       {/* Tab */}
       <div style={{

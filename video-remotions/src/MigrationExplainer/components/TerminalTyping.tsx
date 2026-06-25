@@ -27,6 +27,11 @@ export const TerminalTyping: React.FC<TerminalTypingProps> = ({
   const commandEndFrame = startDelay + command.length * typingSpeed;
   const outputStartFrame = commandEndFrame + outputDelay;
 
+  const allOutputDoneFrame = outputStartFrame + output.length * 10 + 8;
+  const terminalPulse = frame > allOutputDoneFrame && frame < allOutputDoneFrame + 30
+    ? interpolate(frame, [allOutputDoneFrame, allOutputDoneFrame + 10, allOutputDoneFrame + 30], [0, 1, 0], { extrapolateRight: 'clamp' })
+    : 0;
+
   return (
     <div style={{
       backgroundColor: '#1e1e2e',
@@ -39,7 +44,7 @@ export const TerminalTyping: React.FC<TerminalTypingProps> = ({
       fontFamily: 'monospace',
       fontSize: '22px',
       color: '#e0e0e0',
-      boxShadow: '0 10px 30px rgba(0,0,0,0.5)',
+      boxShadow: `0 10px 30px rgba(0,0,0,0.5)${terminalPulse > 0 ? `, 0 0 ${terminalPulse * 20}px rgba(74, 255, 158, ${terminalPulse * 0.5})` : ''}`,
     }}>
       {/* Title Bar */}
       <div style={{

@@ -9,7 +9,7 @@ export const Step10_ProdMigrate2: React.FC = () => {
     <AbsoluteFill style={{ backgroundColor: '#1a1a2e', padding: 50, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <h2 style={{ color: '#4aff9e', textAlign: 'center', borderBottom: '4px solid #4aff9e', paddingBottom: 10, width: '100%', marginBottom: 40 }}>PROD ENVIRONMENT</h2>
       
-      <div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 40 }}>
+      <div style={{ width: '100%', display: 'flex', flex: 1, flexDirection: 'column', alignItems: 'center', gap: 40, paddingBottom: 100 }}>
         <div style={{ width: '80%' }}>
           <div style={{ color: '#4aff9e', marginBottom: 10, fontWeight: 'bold' }}>🐳 Docker Container</div>
           <TerminalTyping 

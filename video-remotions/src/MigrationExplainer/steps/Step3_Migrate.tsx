@@ -16,7 +16,7 @@ export const Step3_Migrate: React.FC = () => {
 
   return (
     <AbsoluteFill style={{ backgroundColor: '#1a1a2e', padding: 50 }}>
-      <div style={{ display: 'flex', flex: 1, gap: 50 }}>
+      <div style={{ display: 'flex', flex: 1, gap: 50, paddingBottom: 100 }}>
         <EnvironmentColumn title="DEV ENVIRONMENT" color="#4a9eff">
           <CodeEditor 
             filename="models.py"

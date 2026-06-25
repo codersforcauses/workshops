@@ -23,6 +23,11 @@ export const DatabaseTable: React.FC<DatabaseTableProps> = ({
     ? interpolate(frame - startDelay, [0, 20], [0, 1], { extrapolateRight: 'clamp' })
     : 1;
 
+  const pulseFrame = frame - startDelay - 25;
+  const pulse = pulseFrame > 0 && pulseFrame < 40
+    ? interpolate(pulseFrame, [0, 15, 40], [0, 1, 0], { extrapolateRight: 'clamp' })
+    : 0;
+
   return (
     <div style={{
       opacity,
@@ -41,6 +46,7 @@ export const DatabaseTable: React.FC<DatabaseTableProps> = ({
         borderRadius: '8px',
         overflow: 'hidden',
         backgroundColor: '#1e1e2e',
+        boxShadow: isNew || newColumns.length > 0 ? `0 0 ${pulse * 30}px ${pulse * 10}px rgba(255, 235, 59, ${pulse * 0.6})` : 'none',
       }}>
         {columns.map((col, i) => {
           const isColNew = newColumns.includes(col);
