@@ -13,6 +13,12 @@ export const Step6_AddField: React.FC = () => {
     '    created_at = models.DateTimeField(auto_now_add=True)',
   ];
 
+  const SAMPLE_ROWS_3COL = [
+    ['1', 'My Blog', '2024-01-15'],
+    ['2', 'Portfolio', '2024-03-22'],
+    ['3', 'Shop App', '2024-06-10'],
+  ];
+
   return (
     <AbsoluteFill style={{ backgroundColor: '#1a1a2e', padding: 50 }}>
       <div style={{ display: 'flex', flex: 1, gap: 50, paddingBottom: 100 }}>
@@ -33,6 +39,8 @@ export const Step6_AddField: React.FC = () => {
             <DatabaseTable
               tableName="project_project"
               columns={["id", "name", "created_at"]}
+              rows={[['1', 'Test', '2024-01-01']]}
+              rowCount={1}
             />
           </div>
         </EnvironmentColumn>
@@ -48,6 +56,8 @@ export const Step6_AddField: React.FC = () => {
             <DatabaseTable 
               tableName="project_project"
               columns={["id", "name", "created_at"]}
+              rows={SAMPLE_ROWS_3COL}
+              rowCount={47}
             />
           </div>
         </EnvironmentColumn>

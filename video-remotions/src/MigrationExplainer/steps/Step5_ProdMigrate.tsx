@@ -63,6 +63,12 @@ export const Step5_ProdMigrate: React.FC = () => {
   }
 
   // Phase 2: Side-by-side comparison
+  const SAMPLE_ROWS_3COL = [
+    ['1', 'My Blog', '2024-01-15'],
+    ['2', 'Portfolio', '2024-03-22'],
+    ['3', 'Shop App', '2024-06-10'],
+  ];
+
   return (
     <AbsoluteFill style={{ backgroundColor: '#1a1a2e', padding: 50, opacity: comparisonOpacity }}>
       <div style={{ display: 'flex', flex: 1, gap: 40, paddingBottom: 100 }}>
@@ -83,6 +89,9 @@ export const Step5_ProdMigrate: React.FC = () => {
             <DatabaseTable
               tableName="project_project"
               columns={["id", "name", "created_at"]}
+              rows={[['1', 'Test', '2024-01-01']]}
+              rowCount={1}
+              startDelay={150}
             />
           </div>
         </EnvironmentColumn>
@@ -104,6 +113,10 @@ export const Step5_ProdMigrate: React.FC = () => {
             <DatabaseTable
               tableName="project_project"
               columns={["id", "name", "created_at"]}
+              rows={SAMPLE_ROWS_3COL}
+              rowCount={47}
+              startDelay={150}
+              rowAppearDelay={60}
             />
           </div>
         </EnvironmentColumn>
@@ -127,7 +140,10 @@ export const Step5_ProdMigrate: React.FC = () => {
         </span>
       </div>
 
-      <NarrationBar text="DEV and PROD now have identical models, migrations, and database schema" icon="🎉" />
+      <NarrationBar 
+        text={frame > 210 ? "Time passes... users add data to the production database" : "DEV and PROD now have identical models, migrations, and database schema"} 
+        icon={frame > 210 ? "⏳" : "🎉"} 
+      />
     </AbsoluteFill>
   );
 };

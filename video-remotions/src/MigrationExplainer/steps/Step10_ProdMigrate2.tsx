@@ -8,6 +8,12 @@ export const Step10_ProdMigrate2: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
+  const SAMPLE_ROWS_3COL = [
+    ['1', 'My Blog', '2024-01-15'],
+    ['2', 'Portfolio', '2024-03-22'],
+    ['3', 'Shop App', '2024-06-10'],
+  ];
+
   // Phase 1: Docker migration (frames 0-130)
   // Phase 2: Side-by-side comparison (frames 140+)
   const showComparison = frame > 140;
@@ -51,6 +57,9 @@ export const Step10_ProdMigrate2: React.FC = () => {
               tableName="project_project"
               columns={["id", "name", "created_at", "content"]}
               newColumns={["content"]}
+              nullColumns={["content"]}
+              rows={SAMPLE_ROWS_3COL}
+              rowCount={47}
               startDelay={75}
             />
           </div>
@@ -84,6 +93,9 @@ export const Step10_ProdMigrate2: React.FC = () => {
             <DatabaseTable
               tableName="project_project"
               columns={["id", "name", "created_at", "content"]}
+              rows={[['1', 'Test', '2024-01-01', null]]}
+              rowCount={1}
+              nullColumns={['content']}
             />
           </div>
         </EnvironmentColumn>
@@ -107,6 +119,9 @@ export const Step10_ProdMigrate2: React.FC = () => {
             <DatabaseTable
               tableName="project_project"
               columns={["id", "name", "created_at", "content"]}
+              rows={SAMPLE_ROWS_3COL}
+              rowCount={47}
+              nullColumns={['content']}
             />
           </div>
         </EnvironmentColumn>
@@ -130,7 +145,7 @@ export const Step10_ProdMigrate2: React.FC = () => {
         </span>
       </div>
 
-      <NarrationBar text="DEV and PROD are identical again — models, migrations, and database all match!" icon="🎉" />
+      <NarrationBar text="DEV and PROD are identical again — existing data preserved with NULL for new column! 🎉" />
     </AbsoluteFill>
   );
 };
