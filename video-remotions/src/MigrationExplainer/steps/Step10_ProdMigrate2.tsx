@@ -23,6 +23,7 @@ export const Step10_ProdMigrate2: React.FC = () => {
             tableName="project_project"
             columns={["id", "name", "created_at", "content"]}
             newColumns={["content"]}
+            startDelay={130}
           />
         </div>
       </div>

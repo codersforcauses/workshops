@@ -20,6 +20,7 @@ export const Step8_Migrate2: React.FC = () => {
               tableName="project_project"
               columns={["id", "name", "created_at", "content"]}
               newColumns={["content"]}
+              startDelay={100}
             />
           </div>
         </EnvironmentColumn>

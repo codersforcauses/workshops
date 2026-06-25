@@ -37,6 +37,8 @@ export const Step3_Migrate: React.FC = () => {
               tableName="project_project"
               columns={["id", "name", "created_at"]}
               isNew={true}
+              showEmptyBefore={true}
+              startDelay={170}
             />
           </div>
         </EnvironmentColumn>

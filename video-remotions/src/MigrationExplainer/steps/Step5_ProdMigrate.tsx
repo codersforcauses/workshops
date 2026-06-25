@@ -22,6 +22,9 @@ export const Step5_ProdMigrate: React.FC = () => {
           <DatabaseTable 
             tableName="project_project"
             columns={["id", "name", "created_at"]}
+            isNew={true}
+            showEmptyBefore={true}
+            startDelay={130}
           />
         </div>
       </div>
