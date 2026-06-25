@@ -27,7 +27,20 @@ export const Step6_AddField: React.FC = () => {
           />
         </EnvironmentColumn>
         <EnvironmentColumn title="PROD ENVIRONMENT" color="#4aff9e">
-          <div style={{ zoom: 0.7 }}>
+          <div style={{
+            backgroundColor: 'rgba(255, 152, 0, 0.12)',
+            border: '1px solid rgba(255, 152, 0, 0.4)',
+            borderRadius: 8,
+            padding: '8px 16px',
+            marginBottom: 15,
+            display: 'flex',
+            alignItems: 'center',
+            gap: 8,
+          }}>
+            <span style={{ fontSize: 20 }}>⚠️</span>
+            <span style={{ color: '#ff9800', fontSize: 16, fontWeight: 'bold' }}>OUT OF SYNC — still on old version</span>
+          </div>
+          <div style={{ zoom: 0.7, opacity: 0.7 }}>
             <div style={{ backgroundColor: '#1e1e3f', padding: 15, borderRadius: 8, fontFamily: 'monospace', color: '#888', marginBottom: 20 }}>
               {oldModelCode.map((l, i) => <div key={i}>{l || ' '}</div>)}
             </div>
