@@ -344,9 +344,9 @@ Migrations are Django's way of propagating changes you make to your models into 
 Watch this step-by-step video to understand how migrations flow from development to production:
 
 <video controls width="100%">
-  <source src="./videos/django-migrations-explained.mp4" type="video/mp4">
+  <source src="../videos/django-migrations-explained.mp4" type="video/mp4">
   Your browser does not support the video tag. 
-  <a href="./videos/django-migrations-explained.mp4">Download the video</a>.
+  <a href="../videos/django-migrations-explained.mp4">Download the video</a>.
 </video>
 
 ??? info "Migration Steps (Text Version)"
