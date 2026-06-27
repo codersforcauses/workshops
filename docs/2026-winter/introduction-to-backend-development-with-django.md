@@ -39,36 +39,7 @@ When a feedback is submitted
 
 Below is the schematics
 
-```mermaid
-erDiagram
-    user {
-        uuid user_id PK
-        string username
-        string email
-        string password
-        datetime created_at
-    }
-    
-    project {
-        uuid project_id PK
-        string name
-        datetime created_at
-        list(user) members FK
-    }
-    
-    feedback {
-        uuid feedback_id PK
-        uuid project_id FK
-        uuid user_id FK
-        string content
-        datetime created_at
-        float(nullable) sentiment_score
-    }
-
-    user ||--o{ feedback : creates
-    project ||--o{ feedback : has
-    user |{--o{ project : works_on
-```
+![FeedForward ERD](./images/feedforward-erd.png)
 
 ## What are APIs and REST-APIs?
 **Application Programming Interface**
@@ -263,36 +234,7 @@ INSTALLED_APPS = [
 ## Creation of a Model for Project
 
 ??? info "Quick Reference: ERD"
-    ```mermaid
-    erDiagram
-        user {
-            uuid user_id PK
-            string username
-            string email
-            string password
-            datetime created_at
-        }
-        
-        project {
-            uuid project_id PK
-            string name
-            datetime created_at
-            list(user) members FK
-        }
-        
-        feedback {
-            uuid feedback_id PK
-            uuid project_id FK
-            uuid user_id FK
-            string content
-            datetime created_at
-            float(nullable) sentiment_score
-        }
-
-        user ||--o{ feedback : creates
-        project ||--o{ feedback : has
-        user |{--o{ project : works_on
-    ```
+    ![FeedForward ERD](./images/feedforward-erd.png)
 
 ???+ example "Ready to Copy Paste"
     ```python
@@ -415,36 +357,7 @@ Now visit the [Admin page](http://localhost:8000/admin) and you'll see the Proje
 ## Creation of a Model for ProjectFeedback
 
 ??? info "Quick Reference: ERD"
-    ```mermaid
-    erDiagram
-        user {
-            uuid user_id PK
-            string username
-            string email
-            string password
-            datetime created_at
-        }
-        
-        project {
-            uuid project_id PK
-            string name
-            datetime created_at
-            list(user) members FK
-        }
-        
-        feedback {
-            uuid feedback_id PK
-            uuid project_id FK
-            uuid user_id FK
-            string content
-            datetime created_at
-            float(nullable) sentiment_score
-        }
-
-        user ||--o{ feedback : creates
-        project ||--o{ feedback : has
-        user |{--o{ project : works_on
-    ```
+    ![FeedForward ERD](./images/feedforward-erd.png)
 
 ??? example "Ready to Copy Paste - `project/models.py`"
     ```python
