@@ -39,7 +39,36 @@ When a feedback is submitted
 
 Below is the schematics
 
-![FeedForward ERD](./images/feedforward-erd.png)
+```mermaid
+erDiagram
+    user {
+        uuid user_id PK
+        string username
+        string email
+        string password
+        datetime created_at
+    }
+    
+    project {
+        uuid project_id PK
+        string name
+        datetime created_at
+        list(user) members FK
+    }
+    
+    feedback {
+        uuid feedback_id PK
+        uuid project_id FK
+        uuid user_id FK
+        string content
+        datetime created_at
+        float(nullable) sentiment_score
+    }
+
+    user ||--o{ feedback : creates
+    project ||--o{ feedback : has
+    user |{--o{ project : works_on
+```
 
 ## What are APIs and REST-APIs?
 **Application Programming Interface**
@@ -85,6 +114,9 @@ In this workshop, you'll work with these layers:
 - **`serializers.py`** – converts data to/from JSON (what the client sees)
 - **`urls.py`** – routes URLs to the right view
 
+??? info "How data flows through these files"
+    ![Django Data Flow](./images/django-data-flow.png)
+
 See [Documentation](https://www.djangoproject.com/)
 
 ## What is Django REST Framework (DRF)?
@@ -98,9 +130,6 @@ In:
 - Serialisers (payload validation and format)
 
 See [Documentation](https://www.django-rest-framework.org/)
-
-??? info "How data flows through Django files"
-    ![Django Data Flow](./images/django-data-flow.png)
 
 ??? info "How a DRF API Request Works"
     ```mermaid
@@ -234,7 +263,36 @@ INSTALLED_APPS = [
 ## Creation of a Model for Project
 
 ??? info "Quick Reference: ERD"
-    ![FeedForward ERD](./images/feedforward-erd.png)
+    ```mermaid
+    erDiagram
+        user {
+            uuid user_id PK
+            string username
+            string email
+            string password
+            datetime created_at
+        }
+        
+        project {
+            uuid project_id PK
+            string name
+            datetime created_at
+            list(user) members FK
+        }
+        
+        feedback {
+            uuid feedback_id PK
+            uuid project_id FK
+            uuid user_id FK
+            string content
+            datetime created_at
+            float(nullable) sentiment_score
+        }
+
+        user ||--o{ feedback : creates
+        project ||--o{ feedback : has
+        user |{--o{ project : works_on
+    ```
 
 ???+ example "Ready to Copy Paste"
     ```python
@@ -357,7 +415,36 @@ Now visit the [Admin page](http://localhost:8000/admin) and you'll see the Proje
 ## Creation of a Model for ProjectFeedback
 
 ??? info "Quick Reference: ERD"
-    ![FeedForward ERD](./images/feedforward-erd.png)
+    ```mermaid
+    erDiagram
+        user {
+            uuid user_id PK
+            string username
+            string email
+            string password
+            datetime created_at
+        }
+        
+        project {
+            uuid project_id PK
+            string name
+            datetime created_at
+            list(user) members FK
+        }
+        
+        feedback {
+            uuid feedback_id PK
+            uuid project_id FK
+            uuid user_id FK
+            string content
+            datetime created_at
+            float(nullable) sentiment_score
+        }
+
+        user ||--o{ feedback : creates
+        project ||--o{ feedback : has
+        user |{--o{ project : works_on
+    ```
 
 ??? example "Ready to Copy Paste - `project/models.py`"
     ```python
