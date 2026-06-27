@@ -114,6 +114,9 @@ In this workshop, you'll work with these layers:
 - **`serializers.py`** – converts data to/from JSON (what the client sees)
 - **`urls.py`** – routes URLs to the right view
 
+??? info "How data flows through these files"
+    ![Django Data Flow](./images/django-data-flow.png)
+
 See [Documentation](https://www.djangoproject.com/)
 
 ## What is Django REST Framework (DRF)?
