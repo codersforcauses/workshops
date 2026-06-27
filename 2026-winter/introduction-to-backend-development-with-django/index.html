@@ -2595,34 +2595,7 @@
 - it will send an email to the project members
 - sentiment analysis will be performed on the feedback. where the value is between -1 and 1.</p>
 <p>Below is the schematics</p>
-<pre class="mermaid"><code>erDiagram
-    user {
-        uuid user_id PK
-        string username
-        string email
-        string password
-        datetime created_at
-    }
-
-    project {
-        uuid project_id PK
-        string name
-        datetime created_at
-        list(user) members FK
-    }
-
-    feedback {
-        uuid feedback_id PK
-        uuid project_id FK
-        uuid user_id FK
-        string content
-        datetime created_at
-        float(nullable) sentiment_score
-    }
-
-    user ||--o{ feedback : creates
-    project ||--o{ feedback : has
-    user |{--o{ project : works_on</code></pre>
+<p><img alt="FeedForward ERD" src="../images/feedforward-erd.png" /></p>
 <h2 id="what-are-apis-and-rest-apis">What are APIs and REST-APIs?<a class="headerlink" href="#what-are-apis-and-rest-apis" title="Permanent link">&para;</a></h2>
 <p><strong>Application Programming Interface</strong></p>
 <details class="info" open="open">
@@ -2698,10 +2671,6 @@ Who interacts with the application programming interface ? - the application pro
 <li><strong><code>serializers.py</code></strong> – converts data to/from JSON (what the client sees)</li>
 <li><strong><code>urls.py</code></strong> – routes URLs to the right view</li>
 </ul>
-<details class="info">
-<summary>How data flows through these files</summary>
-<p><img alt="Django Data Flow" src="../images/django-data-flow.png" /></p>
-</details>
 <p>See <a href="https://www.djangoproject.com/">Documentation</a></p>
 <h2 id="what-is-django-rest-framework-drf">What is Django REST Framework (DRF)?<a class="headerlink" href="#what-is-django-rest-framework-drf" title="Permanent link">&para;</a></h2>
 <ul>
@@ -2715,6 +2684,10 @@ Who interacts with the application programming interface ? - the application pro
 <li>Serialisers (payload validation and format)</li>
 </ul>
 <p>See <a href="https://www.django-rest-framework.org/">Documentation</a></p>
+<details class="info">
+<summary>How data flows through Django files</summary>
+<p><img alt="Django Data Flow" src="../images/django-data-flow.png" /></p>
+</details>
 <details class="info">
 <summary>How a DRF API Request Works</summary>
 <pre class="mermaid"><code>sequenceDiagram
@@ -2873,34 +2846,7 @@ INSTALLED_APPS = [
 <h2 id="creation-of-a-model-for-project">Creation of a Model for Project<a class="headerlink" href="#creation-of-a-model-for-project" title="Permanent link">&para;</a></h2>
 <details class="info">
 <summary>Quick Reference: ERD</summary>
-<pre class="mermaid"><code>erDiagram
-    user {
-        uuid user_id PK
-        string username
-        string email
-        string password
-        datetime created_at
-    }
-
-    project {
-        uuid project_id PK
-        string name
-        datetime created_at
-        list(user) members FK
-    }
-
-    feedback {
-        uuid feedback_id PK
-        uuid project_id FK
-        uuid user_id FK
-        string content
-        datetime created_at
-        float(nullable) sentiment_score
-    }
-
-    user ||--o{ feedback : creates
-    project ||--o{ feedback : has
-    user |{--o{ project : works_on</code></pre>
+<p><img alt="FeedForward ERD" src="../images/feedforward-erd.png" /></p>
 </details>
 <details class="example" open="open">
 <summary>Ready to Copy Paste</summary>
@@ -3049,34 +2995,7 @@ INSTALLED_APPS = [
 <h2 id="creation-of-a-model-for-projectfeedback">Creation of a Model for ProjectFeedback<a class="headerlink" href="#creation-of-a-model-for-projectfeedback" title="Permanent link">&para;</a></h2>
 <details class="info">
 <summary>Quick Reference: ERD</summary>
-<pre class="mermaid"><code>erDiagram
-    user {
-        uuid user_id PK
-        string username
-        string email
-        string password
-        datetime created_at
-    }
-
-    project {
-        uuid project_id PK
-        string name
-        datetime created_at
-        list(user) members FK
-    }
-
-    feedback {
-        uuid feedback_id PK
-        uuid project_id FK
-        uuid user_id FK
-        string content
-        datetime created_at
-        float(nullable) sentiment_score
-    }
-
-    user ||--o{ feedback : creates
-    project ||--o{ feedback : has
-    user |{--o{ project : works_on</code></pre>
+<p><img alt="FeedForward ERD" src="../images/feedforward-erd.png" /></p>
 </details>
 <details class="example">
 <summary>Ready to Copy Paste - <code>project/models.py</code></summary>
