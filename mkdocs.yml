@@ -112,6 +112,8 @@ nav:
 - About: 
   - Overview: index.md
   - Contributions: contributions.md
+  - 2026/2027 Summer:
+      - Advanced React: 2026-2027-summer/advanced-react-workshop.md
 - 2026 Winter:
   - Introduction to Backend Development with Django: 2026-winter/introduction-to-backend-development-with-django.md
   - Getting Your App in the Internet: 2026-winter/getting-your-app-in-the-internet.md
