@@ -1,9 +1,4 @@
 <!-- prettier-ignore -->
----
-title: Advanced React
-ᴴₒᴴₒᴴₒ: true
----
-
 
 # Advanced React
 
@@ -242,11 +237,10 @@ View [demo code](https://github.com/codersforcauses/django-nextjs-template/pull/
 
 In the demo project, explore how the pieces work together:
 
-1. Route to a page with the Next.js App Router.
-2. Render CandidateCard components with TypeScript props.
-3. Select a candidate with `useState`.
-4. Fetch server data with Axios and TanStack Query.
-5. Build the interface with Tailwind CSS and shadcn/ui components.
+1. Break down a page into individual components.
+2. Identify the props a component needs.
+3. Fetch server data with Axios and TanStack Query.
+4. Build the interface with Tailwind CSS and shadcn/ui components.
 
 
 ---
