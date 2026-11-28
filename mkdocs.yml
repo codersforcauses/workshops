@@ -12,25 +12,25 @@ theme:
   name: material
   custom_dir: overrides # remove this if you removed the override/partial
   palette:
-  - media: "(prefers-color-scheme: light)" # below here is a palette for light mode
-    scheme: cfclight
-    toggle:
-      icon: material/toggle-switch-off-outline
-      name: Switch to dark mode
-  - media: "(prefers-color-scheme: dark)"  # below here is a palette for dark mode
-    scheme: cfcdark
-    toggle:
-      icon: material/toggle-switch
-      name: Switch to light mode
+    - media: "(prefers-color-scheme: light)" # below here is a palette for light mode
+      scheme: cfclight
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)" # below here is a palette for dark mode
+      scheme: cfcdark
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
 
   logo: images/cfc_logo_white_circle.png
   favicon: images/cfc_logo_white_circle.png
   features: # Refer to https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/
-      - navigation.instant
-      - navigation.tabs
-      - toc.integrate
-      - header.autohide
-      - content.code.annotate
+    - navigation.instant
+    - navigation.tabs
+    - toc.integrate
+    - header.autohide
+    - content.code.annotate
 
 plugins:
   - search
@@ -87,12 +87,11 @@ extra:
     - icon: fontawesome/solid/paper-plane
       link: mailto:hello@codersforcauses.org
 
-
 # Add google Analytics when you need it
 # Remove this if you dont need it
 # https://squidfunk.github.io/mkdocs-material/setup/setting-up-site-analytics/
 # google_analytics:
-#   - UA-162451015-2 
+#   - UA-162451015-2
 #   - auto
 
 # This is the extra javascript included in the documentation
@@ -109,60 +108,64 @@ extra_css:
 # This is where you adjust the hierarchy if the documentation
 # You can erase this if you want. If you erase this, Mkdocs will alphabetically sort your documentation
 nav:
-- About: 
-  - Overview: index.md
-  - Contributions: contributions.md
-- 2026 Winter:
-  - Introduction to Backend Development with Django: 2026-winter/introduction-to-backend-development-with-django.md
-  - Getting Your App in the Internet: 2026-winter/getting-your-app-in-the-internet.md
-- 2025/2026 Summer Intermediate:
-  - Recommended Resources: 2025-2026-summer-intermediate/recommended-resources.md
-  - Project Planning: 2025-2026-summer-intermediate/project-planning.md
-  - Introduction to Web Development: 2025-2026-summer-intermediate/introduction-to-web-development.md
-  - Introduction to Backend Development with Django: 2025-2026-summer-intermediate/introduction-to-backend-development-with-django.md
-  - Introduction to Frontend Frameworks: 2025-2026-summer-intermediate/introduction-to-frontend-frameworks.md
-  - Introduction to React: 2025-2026-summer-intermediate/introduction-to-react.md
-  - Working With Typescript: 2025-2026-summer-intermediate/working-with-typescript.md
-  - Practical Software Engineering Workflow: 2025-2026-summer-intermediate/practical-software-engineering-workflow.md
-  - Getting Your App in the Internet: 2025-2026-summer-intermediate/getting-your-app-in-the-internet.md
-- 2025 Winter:
-  - Introduction to Web Development: 2025-winter/introduction-to-web-development.md
-  - Practical Software Engineering Workflow: 2025-winter/practical-software-engineering-workflow.md
-  - Introduction to Frontend Frameworks: 2025-winter/introduction-to-frontend-frameworks.md
-  - Introduction to React: 2025-winter/introduction-to-react.md
-  - Introduction to Backend Development with Django: 2025-winter/introduction-to-backend-development-with-django.md
-- 2024/2025 Summer:
-  - Introduction to Web Development: 2024-2025-summer/introduction-to-web-development.md
-  - Practical Software Engineering Workflow: 2024-2025-summer/practical-software-engineering-workflow.md
-  - Working With Typescript: 2024-2025-summer/working-with-typescript.md
-- 2024 Winter:
-  - Introduction to Web Development: 2024-winter/introduction-to-web-development.md
-  - Practical Software Engineering Workflow: 2024-winter/practical-software-engineering-workflow.md
-  - Introduction to Docker: 2024-winter/introduction-to-docker.md
-  - Introduction to Backend Development With Django: 2024-winter/introduction-to-backend-development-with-django.md
-- 2023 Winter:
-  - Introduction to Backend Development With Django: 2023-winter/introduction-to-backend-development-with-django.md
-- 2022/2023 Summer:
-  - Overview: 2022-2023-summer/index.md
-  - Setup: 2022-2023-summer/setup.md
-  - Introduction to Web Development: 2022-2023-summer/introduction-to-web-development.md
-  - Practical Software Engineering Workflow: 2022-2023-summer/practical-software-engineering-workflow.md
-  - MVC and MVVM Software Architectural Patterns and Communications: 2022-2023-summer/mvc-mvvm-architecture-and-communications.md
-- 2021/2022 Summer:
-  - Overview: 2021-2022-summer/index.md
-  - Setup: 2021-2022-summer/setup.md
-  - Project and Workshop Structure: 2021-2022-summer/project-and-workshop-structure.md
-  - Introduction to Web Development: 2021-2022-summer/introduction-to-web-development.md
-  - Introduction to Web Basics: 2021-2022-summer/introduction-web-basics.md
-  - Practical Software Engineering Practices: 2021-2022-summer/practical-software-engineering-practices.md
-  - Introduction to Frontend Frameworks: 
-    - Overview: 2021-2022-summer/introduction-to-frontend-frameworks.md
-    - Introduction to React: 2021-2022-summer/introduction-to-react.md
-    - Introduction to Vue: 2021-2022-summer/introduction-to-vue.md
-  - Introduction to Backend Development with Django: 2021-2022-summer/introduction-to-backend-development-with-django.md
-  - MVC-MVMM Architecture and Communications: 2021-2022-summer/mvc-mvmm-architecture-and-communications.md
-  - Package Managers: 2021-2022-summer/package-managers.md
-  - Typical Codebase Structure: 2021-2022-summer/typical-codebase-structure.md
-  - Automated Testing and CI Pipelines: 2021-2022-summer/automated-testing-and-ci-pipelines.md
-- 2021 Winter:
-  - Overview: 2021-winter/index.md
+  - About:
+      - Overview: index.md
+      - Contributions: contributions.md
+  - 2026/2027 Summer:
+      - Advanced React: 2026-2027-summer/advanced-react-workshop.md
+  - 2026 Winter:
+      - Introduction to Backend Development with Django: 2026-winter/introduction-to-backend-development-with-django.md
+      - Getting Your App in the Internet: 2026-winter/getting-your-app-in-the-internet.md
+  - 2025/2026 Summer Intermediate:
+      - Recommended Resources: 2025-2026-summer-intermediate/recommended-resources.md
+      - Project Planning: 2025-2026-summer-intermediate/project-planning.md
+      - Introduction to Web Development: 2025-2026-summer-intermediate/introduction-to-web-development.md
+      - Introduction to Backend Development with Django: 2025-2026-summer-intermediate/introduction-to-backend-development-with-django.md
+      - Introduction to Frontend Frameworks: 2025-2026-summer-intermediate/introduction-to-frontend-frameworks.md
+      - Introduction to React: 2025-2026-summer-intermediate/introduction-to-react.md
+      - Working With Typescript: 2025-2026-summer-intermediate/working-with-typescript.md
+      - Practical Software Engineering Workflow: 2025-2026-summer-intermediate/practical-software-engineering-workflow.md
+      - Getting Your App in the Internet: 2025-2026-summer-intermediate/getting-your-app-in-the-internet.md
+  - 2025/2026 Summer:
+      - Professional Software Engineering Workflow: 2025-2026-summer/professional-software-engineering-workflow.md
+  - 2025 Winter:
+      - Introduction to Web Development: 2025-winter/introduction-to-web-development.md
+      - Practical Software Engineering Workflow: 2025-winter/practical-software-engineering-workflow.md
+      - Introduction to Frontend Frameworks: 2025-winter/introduction-to-frontend-frameworks.md
+      - Introduction to React: 2025-winter/introduction-to-react.md
+      - Introduction to Backend Development with Django: 2025-winter/introduction-to-backend-development-with-django.md
+  - 2024/2025 Summer:
+      - Introduction to Web Development: 2024-2025-summer/introduction-to-web-development.md
+      - Practical Software Engineering Workflow: 2024-2025-summer/practical-software-engineering-workflow.md
+      - Working With Typescript: 2024-2025-summer/working-with-typescript.md
+  - 2024 Winter:
+      - Introduction to Web Development: 2024-winter/introduction-to-web-development.md
+      - Practical Software Engineering Workflow: 2024-winter/practical-software-engineering-workflow.md
+      - Introduction to Docker: 2024-winter/introduction-to-docker.md
+      - Introduction to Backend Development With Django: 2024-winter/introduction-to-backend-development-with-django.md
+  - 2023 Winter:
+      - Introduction to Backend Development With Django: 2023-winter/introduction-to-backend-development-with-django.md
+  - 2022/2023 Summer:
+      - Overview: 2022-2023-summer/index.md
+      - Setup: 2022-2023-summer/setup.md
+      - Introduction to Web Development: 2022-2023-summer/introduction-to-web-development.md
+      - Practical Software Engineering Workflow: 2022-2023-summer/practical-software-engineering-workflow.md
+      - MVC and MVVM Software Architectural Patterns and Communications: 2022-2023-summer/mvc-mvvm-architecture-and-communications.md
+  - 2021/2022 Summer:
+      - Overview: 2021-2022-summer/index.md
+      - Setup: 2021-2022-summer/setup.md
+      - Project and Workshop Structure: 2021-2022-summer/project-and-workshop-structure.md
+      - Introduction to Web Development: 2021-2022-summer/introduction-to-web-development.md
+      - Introduction to Web Basics: 2021-2022-summer/introduction-web-basics.md
+      - Practical Software Engineering Practices: 2021-2022-summer/practical-software-engineering-practices.md
+      - Introduction to Frontend Frameworks:
+          - Overview: 2021-2022-summer/introduction-to-frontend-frameworks.md
+          - Introduction to React: 2021-2022-summer/introduction-to-react.md
+          - Introduction to Vue: 2021-2022-summer/introduction-to-vue.md
+      - Introduction to Backend Development with Django: 2021-2022-summer/introduction-to-backend-development-with-django.md
+      - MVC-MVMM Architecture and Communications: 2021-2022-summer/mvc-mvmm-architecture-and-communications.md
+      - Package Managers: 2021-2022-summer/package-managers.md
+      - Typical Codebase Structure: 2021-2022-summer/typical-codebase-structure.md
+      - Automated Testing and CI Pipelines: 2021-2022-summer/automated-testing-and-ci-pipelines.md
+  - 2021 Winter:
+      - Overview: 2021-winter/index.md
